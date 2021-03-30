@@ -7,9 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<!--引入bootstrap样式文件-->
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="../static/css/home.css">
 	<title>Document</title>
 </head>
 
@@ -24,9 +24,9 @@
 				</div>
 				<div class="nav">
 					<ul>
-						<li><a href="#" class="glyphicon glyphicon-eye-open">首页</a></li>
+						<li><a href="home.html" class="glyphicon glyphicon-eye-open">首页</a></li>
 						<li><a href="#" class="glyphicon glyphicon-eye-open">谣言详情</a></li>
-						<li><a href="#" class="glyphicon glyphicon-eye-open">疫情详情</a></li>
+						<li><a href="epidemic.html" class="glyphicon glyphicon-eye-open">疫情详情</a></li>
 						<li><a href="#" class="glyphicon glyphicon-eye-open">疫苗信息</a></li>
 						<li><a href="#" class="glyphicon glyphicon-eye-open">阿巴巴</a></li>
 					</ul>
@@ -66,10 +66,10 @@
 				<div class="publish">
 					<div class="row">
 						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
+							<h3 name="title">标题</h3>
+							<p class="text-muted" name="date">发布日期之类的</p>
+							<p name="type">鉴定结果</p>
+							<p class="text-muted" name="tag">浏览次数之类的</p>
 						</div>
 						<div class="col-sm-3 little_pic">
 							<img src="images/logo.jpg">
@@ -77,54 +77,43 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
+							<h3 name="title">标题</h3>
+							<p class="text-muted" name="date">发布日期之类的</p>
+							<p name="type">鉴定结果</p>
+							<p class="text-muted" name="tag">浏览次数之类的</p>
 						</div>
 						<div class="col-sm-3 little_pic">
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-					<div class="row">
+                    <div class="row">
 						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
+							<h3 name="title">标题</h3>
+							<p class="text-muted" name="date">发布日期之类的</p>
+							<p name="type">鉴定结果</p>
+							<p class="text-muted" name="tag">浏览次数之类的</p>
 						</div>
 						<div class="col-sm-3 little_pic">
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-					<div class="row">
+                    <div class="row">
 						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
+							<h3 name="title">标题</h3>
+							<p class="text-muted" name="date">发布日期之类的</p>
+							<p name="type">鉴定结果</p>
+							<p class="text-muted" name="tag">浏览次数之类的</p>
 						</div>
 						<div class="col-sm-3 little_pic">
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-					<div class="row">
+                    <div class="row">
 						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
-						</div>
-						<div class="col-sm-3 little_pic">
-							<img src="images/logo.jpg">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-9">
-							<h3>标题</h3>
-							<p class="text-muted">发布日期之类的</p>
-							<p>鉴定结果</p>
-							<p class="text-muted">浏览次数之类的</p>
+							<h3 name="title">标题</h3>
+							<p class="text-muted" name="date">发布日期之类的</p>
+							<p name="type">鉴定结果</p>
+							<p class="text-muted" name="tag">浏览次数之类的</p>
 						</div>
 						<div class="col-sm-3 little_pic">
 							<img src="images/logo.jpg">
@@ -134,10 +123,10 @@
 			</article>
 			<aside class='col-md-3'>
 				<a href="#" class='dingxiang'>
-					<img src="images/logo.jpg">
+					<img src="../static/images/dingxiang.jpg">
 				</a>
 				<a href="#" class='weijianwei'>
-					<img src="images/logo.jpg">
+					<img src="../static/images/weijianwei.jfif">
 				</a>
 			</aside>
 		</div>
@@ -146,12 +135,33 @@
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
+    var titles=document.getElementsByName("title");
+    var dates=document.getElementsByName("date");
+    var types=document.getElementsByName("type");
+    var tags=document.getElementsByName("tag");
+    var tmptag;
 	$.ajax({
     url: "/home",
     type: "GET",
+    //data: {"action":"list_rumors"},
     dataType: "json",
-    success: function(data) {
-        console.log(data);
+    success: function(result) {
+
+        for(var i=0;i< 5;i++){
+            titles[i].innerHTML=result["data"][i]["title"];
+            dates[i].innerHTML=result["data"][i]["date"];
+            types[i].innerHTML=result["data"][i]["markstyle"];
+            var objKeys=Object.keys(result["data"][i]["tag"]);
+            for(var j=0;j<objKeys.length;j++){
+                if(j==0){
+                    tmptag=result["data"][i]["tag"][j];
+                }
+                else{
+                    tmptag=tmptag+", "+result["data"][i]["tag"][j];
+                }
+            }
+            tags[i].innerHTML=tmptag;
+        }
     }
 });
 </script>
