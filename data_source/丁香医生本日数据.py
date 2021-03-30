@@ -48,6 +48,7 @@ for li in 全球数据_ul.xpath('./li'):
     type_index += 1
 
 
+
 国内数据_list = []
 #展开更多按钮
 unfold_button = bro.find_elements_by_xpath('//div[@class = "expandRow___1Y0WD internalTable___bQT_T"]/img')[0]  #有俩div的class叫这，一个国内数据，一个全球数据
