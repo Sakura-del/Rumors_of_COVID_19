@@ -1,7 +1,11 @@
-import requests
+import os
 import json
+import requests
 
 
+
+if not os.path.isdir('data_source/丁香医生每日数据'):
+    os.makedirs('data_source/丁香医生每日数据')
 
 url = 'https://file1.dxycdn.com/2021/0329/072/4781419391339442743-135.json?t=26950353'
 response = requests.get(url).json()['data']

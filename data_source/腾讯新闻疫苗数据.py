@@ -1,7 +1,11 @@
+import os
 import json
 import requests
 
 
+
+if not os.path.isdir('data_source/腾讯新闻疫苗数据'):
+    os.makedirs('data_source/腾讯新闻疫苗数据')
 
 url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=ChinaVaccineTrendData'
 response = requests.get(url = url).json()
