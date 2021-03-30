@@ -24,3 +24,6 @@ url = r'https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list?sub_
 response = requests.get(url = url).json()
 new_news_list = response['data']['list']
 news_list += new_news_list
+
+with open('data_source/腾讯新闻疫情新闻.json','w',encoding = 'utf-8') as file:
+    file.write(json.dumps(news_list,ensure_ascii = False))

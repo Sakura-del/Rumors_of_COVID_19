@@ -1,0 +1,12 @@
+{
+    "中国": {
+        "total_vaccinations": 110962000,
+        "new_vaccinations": 4349000,
+        "total_vaccinations_per_hundred": 7.71
+    },
+    "全球": {
+        "total_vaccinations": 551999780,
+        "new_vaccinations": 9208212,
+        "total_vaccinations_per_hundred": 7.08
+    }
+}
