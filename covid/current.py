@@ -65,11 +65,18 @@ def listCurrentGlobal(request):
                          "date": date})
 
 
+def listCurrentProvinces(request):
+    data = CurrentCovidProvinces.objects.values().filter(date=datetime.date.today())
+    data = list(data)
+
+    return JsonResponse({"ret": 0, "data": data, "total": len(data), "msg": ""})
+
 
 
 ActionHandler = {
     'list_current_internal': listCurrentInternal,
-    'list_current_global': listCurrentGlobal
+    'list_current_global': listCurrentGlobal,
+    'list_current_provinces': listCurrentProvinces
 }
 
 
