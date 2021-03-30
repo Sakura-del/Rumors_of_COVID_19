@@ -1,0 +1,5 @@
+爬较真网（https://fact.qq.com/）返回的json
+爬丁香医生（https://ncov.dxy.cn/ncovh5/view/pneumonia）往日数据的json
+爬疫苗数据（https://news.qq.com/ylh5/worldvaccine.htm#/?ADTAG=tools）json格式
+爬丁香医生谣言（https://ncov.dxy.cn/ncovh5/view/pneumonia_rumors）
+爬疫情新闻（https://new.qq.com/ch/antip/）
