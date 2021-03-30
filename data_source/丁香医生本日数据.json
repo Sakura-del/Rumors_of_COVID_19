@@ -6,5203 +6,5183 @@
       "incr": -9
     },
     {
-      "type": "境外输入",
+      "type": "abroad",
       "count": 5285,
       "incr": 8
     },
     {
-      "type": "现存无症状",
+      "type": "current_asym",
       "count": 263,
       "incr": -10
     },
     {
-      "type": "累计确诊",
+      "type": "confirmed",
       "count": 102715,
       "incr": 17
     },
     {
-      "type": "累计死亡",
+      "type": "death",
       "count": 4851,
       "incr": 0
     },
     {
-      "type": "累计治愈",
+      "type": "cured",
       "count": 97483,
       "incr": 26
     }
   ],
-  "全球总体数据": [
+  "current_covid_global": [
     {
       "type": "current_confirmed",
-      "count": 29536776,
-      "incr": 29787
+      "count": 29520779,
+      "incr": 13790
     },
     {
-      "type": "累计确诊",
-      "count": 127408778,
-      "incr": 184051
+      "type": "confirmed",
+      "count": 127696885,
+      "incr": 472158
     },
     {
-      "type": "累计死亡",
-      "count": 2812216,
-      "incr": 3510
+      "type": "death",
+      "count": 2816657,
+      "incr": 7951
     },
     {
-      "type": "累计治愈",
-      "count": 95059786,
-      "incr": 150754
+      "type": "cured",
+      "count": 95359449,
+      "incr": 450417
     }
   ],
-  "国内数据": [
+  "current_covid_provinces": [
     {
-      "总体数据": {
-        "地区": "香港",
+      "overall_data": {
+        "area": "香港",
         "current_confirmed": 174,
-        "累计确诊": 11454,
-        "死亡": 205,
-        "治愈": 11075
+        "confirmed": 11454,
+        "death": 205,
+        "cured": 11075
       },
-      "城市数据": [],
-      "额外信息": [
-        "疑似 1 例"
-      ]
+      "city_data": [],
+      "extra_info": "疑似 1 例"
     },
     {
-      "总体数据": {
-        "地区": "上海",
+      "overall_data": {
+        "area": "上海",
         "current_confirmed": 44,
-        "累计确诊": 1882,
-        "死亡": 7,
-        "治愈": 1831
+        "confirmed": 1882,
+        "death": 7,
+        "cured": 1831
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 44,
-          "累计确诊": 1511,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 1511,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "外地来沪",
+          "area": "外地来沪",
           "current_confirmed": 0,
-          "累计确诊": 113,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 113,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "浦东新区",
+          "area": "浦东新区",
           "current_confirmed": 0,
-          "累计确诊": 69,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 69,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "宝山区",
+          "area": "宝山区",
           "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 26,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "黄浦区",
+          "area": "黄浦区",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 22,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "闵行区",
+          "area": "闵行区",
           "current_confirmed": 0,
-          "累计确诊": 19,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 19,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "徐汇区",
+          "area": "徐汇区",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 18,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "静安区",
+          "area": "静安区",
           "current_confirmed": 0,
-          "累计确诊": 16,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 16,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "松江区",
+          "area": "松江区",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 14,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "长宁区",
+          "area": "长宁区",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 14,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "普陀区",
+          "area": "普陀区",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 11,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "杨浦区",
+          "area": "杨浦区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 9,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "嘉定区",
+          "area": "嘉定区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 9,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "奉贤区",
+          "area": "奉贤区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 9,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "虹口区",
+          "area": "虹口区",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 7,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "青浦区",
+          "area": "青浦区",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 6,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "金山区",
+          "area": "金山区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 4,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "崇明区",
+          "area": "崇明区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 4,
+          "death": -1,
+          "cured": -1
         },
         {
-          "地区": "境外来沪",
+          "area": "境外来沪",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": "-",
-          "治愈": "-"
+          "confirmed": 1,
+          "death": -1,
+          "cured": -1
         }
       ],
-      "额外信息": [
-        "因未公布分区死亡和治愈，仅展示累计确诊和current_confirmed"
-      ]
+      "extra_info": "因未公布分区死亡和治愈，仅展示累计确诊和现存确诊"
     },
     {
-      "总体数据": {
-        "地区": "广东",
-        "current_confirmed": 37,
-        "累计确诊": 2277,
-        "死亡": 8,
-        "治愈": 2232
+      "overall_data": {
+        "area": "广东",
+        "current_confirmed": 36,
+        "confirmed": 2277,
+        "death": 8,
+        "cured": 2233
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "广州",
+          "area": "广州",
           "current_confirmed": 23,
-          "累计确诊": 1081,
-          "死亡": 1,
-          "治愈": 1057
+          "confirmed": 1081,
+          "death": 1,
+          "cured": 1057
         },
         {
-          "地区": "肇庆",
+          "area": "肇庆",
           "current_confirmed": 7,
-          "累计确诊": 32,
-          "死亡": 1,
-          "治愈": 24
+          "confirmed": 32,
+          "death": 1,
+          "cured": 24
         },
         {
-          "地区": "深圳",
+          "area": "深圳",
           "current_confirmed": 6,
-          "累计确诊": 501,
-          "死亡": 3,
-          "治愈": 492
+          "confirmed": 501,
+          "death": 3,
+          "cured": 492
         },
         {
-          "地区": "佛山",
+          "area": "佛山",
           "current_confirmed": 2,
-          "累计确诊": 129,
-          "死亡": 0,
-          "治愈": 127
+          "confirmed": 129,
+          "death": 0,
+          "cured": 127
         },
         {
-          "地区": "江门",
+          "area": "江门",
           "current_confirmed": 1,
-          "累计确诊": 29,
-          "死亡": 0,
-          "治愈": 28
+          "confirmed": 29,
+          "death": 0,
+          "cured": 28
         },
         {
-          "地区": "清远",
+          "area": "清远",
           "current_confirmed": 1,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 14,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "珠海",
+          "area": "珠海",
           "current_confirmed": 0,
-          "累计确诊": 113,
-          "死亡": 1,
-          "治愈": 112
+          "confirmed": 113,
+          "death": 1,
+          "cured": 112
         },
         {
-          "地区": "东莞",
+          "area": "东莞",
           "current_confirmed": 0,
-          "累计确诊": 101,
-          "死亡": 1,
-          "治愈": 100
+          "confirmed": 101,
+          "death": 1,
+          "cured": 100
         },
         {
-          "地区": "中山",
+          "area": "中山",
           "current_confirmed": 0,
-          "累计确诊": 69,
-          "死亡": 0,
-          "治愈": 69
+          "confirmed": 69,
+          "death": 0,
+          "cured": 69
         },
         {
-          "地区": "惠州",
+          "area": "惠州",
           "current_confirmed": 0,
-          "累计确诊": 63,
-          "死亡": 0,
-          "治愈": 63
+          "confirmed": 63,
+          "death": 0,
+          "cured": 63
         },
         {
-          "地区": "湛江",
+          "area": "湛江",
           "current_confirmed": 0,
-          "累计确诊": 30,
-          "死亡": 0,
-          "治愈": 30
+          "confirmed": 30,
+          "death": 0,
+          "cured": 30
         },
         {
-          "地区": "汕头",
+          "area": "汕头",
           "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": 0,
-          "治愈": 26
+          "confirmed": 26,
+          "death": 0,
+          "cured": 26
         },
         {
-          "地区": "梅州",
+          "area": "梅州",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "茂名",
+          "area": "茂名",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "阳江",
+          "area": "阳江",
           "current_confirmed": 0,
-          "累计确诊": 16,
-          "死亡": 0,
-          "治愈": 16
+          "confirmed": 16,
+          "death": 0,
+          "cured": 16
         },
         {
-          "地区": "揭阳",
+          "area": "揭阳",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "韶关",
+          "area": "韶关",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 1,
-          "治愈": 9
+          "confirmed": 10,
+          "death": 1,
+          "cured": 9
         },
         {
-          "地区": "潮州",
+          "area": "潮州",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "汕尾",
+          "area": "汕尾",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "河源",
+          "area": "河源",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "待明确地区",
-          "current_confirmed": "-",
-          "累计确诊": 0,
-          "死亡": 0,
-          "治愈": 3
+          "area": "待明确地区",
+          "current_confirmed": -1,
+          "confirmed": 0,
+          "death": 0,
+          "cured": 3
         }
       ],
-      "额外信息": [
-        "广东卫健委未明确部分治愈病例的地市归属，因此各地市的current_confirmed存在一定偏差。"
-      ]
+      "extra_info": "广东卫健委未明确部分治愈病例的地市归属，因此各地市的现存确诊存在一定偏差。"
     },
     {
-      "总体数据": {
-        "地区": "台湾",
+      "overall_data": {
+        "area": "台湾",
         "current_confirmed": 34,
-        "累计确诊": 1023,
-        "死亡": 10,
-        "治愈": 979
+        "confirmed": 1023,
+        "death": 10,
+        "cured": 979
       },
-      "城市数据": [],
-      "额外信息": ""
+      "city_data": [],
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "四川",
+      "overall_data": {
+        "area": "四川",
         "current_confirmed": 23,
-        "累计确诊": 948,
-        "死亡": 3,
-        "治愈": 922
+        "confirmed": 948,
+        "death": 3,
+        "cured": 922
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "成都",
+          "area": "成都",
           "current_confirmed": 23,
-          "累计确诊": 551,
-          "死亡": 3,
-          "治愈": 525
+          "confirmed": 551,
+          "death": 3,
+          "cured": 525
         },
         {
-          "地区": "甘孜州",
+          "area": "甘孜州",
           "current_confirmed": 0,
-          "累计确诊": 78,
-          "死亡": 0,
-          "治愈": 78
+          "confirmed": 78,
+          "death": 0,
+          "cured": 78
         },
         {
-          "地区": "达州",
+          "area": "达州",
           "current_confirmed": 0,
-          "累计确诊": 42,
-          "死亡": 0,
-          "治愈": 42
+          "confirmed": 42,
+          "death": 0,
+          "cured": 42
         },
         {
-          "地区": "南充",
+          "area": "南充",
           "current_confirmed": 0,
-          "累计确诊": 39,
-          "死亡": 0,
-          "治愈": 39
+          "confirmed": 39,
+          "death": 0,
+          "cured": 39
         },
         {
-          "地区": "广安",
+          "area": "广安",
           "current_confirmed": 0,
-          "累计确诊": 30,
-          "死亡": 0,
-          "治愈": 30
+          "confirmed": 30,
+          "death": 0,
+          "cured": 30
         },
         {
-          "地区": "泸州",
+          "area": "泸州",
           "current_confirmed": 0,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 24
+          "confirmed": 24,
+          "death": 0,
+          "cured": 24
         },
         {
-          "地区": "巴中",
+          "area": "巴中",
           "current_confirmed": 0,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 24
+          "confirmed": 24,
+          "death": 0,
+          "cured": 24
         },
         {
-          "地区": "绵阳",
+          "area": "绵阳",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": 0,
-          "治愈": 22
+          "confirmed": 22,
+          "death": 0,
+          "cured": 22
         },
         {
-          "地区": "内江",
+          "area": "内江",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": 0,
-          "治愈": 22
+          "confirmed": 22,
+          "death": 0,
+          "cured": 22
         },
         {
-          "地区": "德阳",
+          "area": "德阳",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 18,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "遂宁",
+          "area": "遂宁",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "攀枝花",
+          "area": "攀枝花",
           "current_confirmed": 0,
-          "累计确诊": 16,
-          "死亡": 0,
-          "治愈": 16
+          "confirmed": 16,
+          "death": 0,
+          "cured": 16
         },
         {
-          "地区": "凉山州",
+          "area": "凉山州",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
         },
         {
-          "地区": "宜宾",
+          "area": "宜宾",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "自贡",
+          "area": "自贡",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "眉山",
+          "area": "眉山",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "雅安",
+          "area": "雅安",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "广元",
+          "area": "广元",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "资阳",
+          "area": "资阳",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "乐山",
+          "area": "乐山",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "阿坝州",
+          "area": "阿坝州",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "天津",
+      "overall_data": {
+        "area": "天津",
         "current_confirmed": 14,
-        "累计确诊": 373,
-        "死亡": 3,
-        "治愈": 356
+        "confirmed": 373,
+        "death": 3,
+        "cured": 356
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 14,
-          "累计确诊": 226,
-          "死亡": 0,
-          "治愈": 212
+          "confirmed": 226,
+          "death": 0,
+          "cured": 212
         },
         {
-          "地区": "宝坻区",
+          "area": "宝坻区",
           "current_confirmed": 0,
-          "累计确诊": 60,
-          "死亡": 2,
-          "治愈": 58
+          "confirmed": 60,
+          "death": 2,
+          "cured": 58
         },
         {
-          "地区": "河东区",
+          "area": "河东区",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 1,
-          "治愈": 14
+          "confirmed": 15,
+          "death": 1,
+          "cured": 14
         },
         {
-          "地区": "滨海新区",
+          "area": "滨海新区",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "河北区",
+          "area": "河北区",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "北辰区",
+          "area": "北辰区",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "南开区",
+          "area": "南开区",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "和平区",
+          "area": "和平区",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "外地来津",
+          "area": "外地来津",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "东丽区",
+          "area": "东丽区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "宁河区",
+          "area": "宁河区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "河西区",
+          "area": "河西区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "西青区",
+          "area": "西青区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "武清区",
+          "area": "武清区",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "红桥区",
+          "area": "红桥区",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "津南区",
+          "area": "津南区",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "陕西",
-        "current_confirmed": 12,
-        "累计确诊": 566,
-        "死亡": 3,
-        "治愈": 551
+      "overall_data": {
+        "area": "陕西",
+        "current_confirmed": 10,
+        "confirmed": 566,
+        "death": 3,
+        "cured": 553
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
-          "current_confirmed": 11,
-          "累计确诊": 318,
-          "死亡": 0,
-          "治愈": 307
-        },
-        {
-          "地区": "西安",
-          "current_confirmed": 1,
-          "累计确诊": 121,
-          "死亡": 3,
-          "治愈": 117
-        },
-        {
-          "地区": "安康",
-          "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": 0,
-          "治愈": 26
-        },
-        {
-          "地区": "汉中",
-          "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": 0,
-          "治愈": 26
-        },
-        {
-          "地区": "咸阳",
-          "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
-        },
-        {
-          "地区": "渭南",
-          "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
-        },
-        {
-          "地区": "宝鸡",
-          "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
-        },
-        {
-          "地区": "延安",
-          "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
-        },
-        {
-          "地区": "铜川",
-          "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
-        },
-        {
-          "地区": "商洛",
-          "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
-        },
-        {
-          "地区": "榆林",
-          "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
-        },
-        {
-          "地区": "韩城",
-          "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
-        },
-        {
-          "地区": "杨凌",
-          "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
-        }
-      ],
-      "额外信息": ""
-    },
-    {
-      "总体数据": {
-        "地区": "福建",
-        "current_confirmed": 9,
-        "累计确诊": 560,
-        "死亡": 1,
-        "治愈": 550
-      },
-      "城市数据": [
-        {
-          "地区": "境外输入人员",
+          "area": "境外输入",
           "current_confirmed": 9,
-          "累计确诊": 264,
-          "死亡": 0,
-          "治愈": 255
+          "confirmed": 318,
+          "death": 0,
+          "cured": 309
         },
         {
-          "地区": "福州",
-          "current_confirmed": 0,
-          "累计确诊": 72,
-          "死亡": 1,
-          "治愈": 71
+          "area": "西安",
+          "current_confirmed": 1,
+          "confirmed": 121,
+          "death": 3,
+          "cured": 117
         },
         {
-          "地区": "莆田",
+          "area": "安康",
           "current_confirmed": 0,
-          "累计确诊": 56,
-          "死亡": 0,
-          "治愈": 56
+          "confirmed": 26,
+          "death": 0,
+          "cured": 26
         },
         {
-          "地区": "泉州",
+          "area": "汉中",
           "current_confirmed": 0,
-          "累计确诊": 47,
-          "死亡": 0,
-          "治愈": 47
+          "confirmed": 26,
+          "death": 0,
+          "cured": 26
         },
         {
-          "地区": "厦门",
+          "area": "咸阳",
           "current_confirmed": 0,
-          "累计确诊": 35,
-          "死亡": 0,
-          "治愈": 35
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "宁德",
+          "area": "渭南",
           "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": 0,
-          "治愈": 26
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "漳州",
+          "area": "宝鸡",
           "current_confirmed": 0,
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 20
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "南平",
+          "area": "延安",
           "current_confirmed": 0,
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 20
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "三明",
+          "area": "铜川",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "龙岩",
+          "area": "商洛",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
+        },
+        {
+          "area": "榆林",
+          "current_confirmed": 0,
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
+        },
+        {
+          "area": "韩城",
+          "current_confirmed": 0,
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
+        },
+        {
+          "area": "杨凌",
+          "current_confirmed": 0,
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "甘肃",
+      "overall_data": {
+        "area": "福建",
+        "current_confirmed": 9,
+        "confirmed": 560,
+        "death": 1,
+        "cured": 550
+      },
+      "city_data": [
+        {
+          "area": "境外输入人员",
+          "current_confirmed": 9,
+          "confirmed": 264,
+          "death": 0,
+          "cured": 255
+        },
+        {
+          "area": "福州",
+          "current_confirmed": 0,
+          "confirmed": 72,
+          "death": 1,
+          "cured": 71
+        },
+        {
+          "area": "莆田",
+          "current_confirmed": 0,
+          "confirmed": 56,
+          "death": 0,
+          "cured": 56
+        },
+        {
+          "area": "泉州",
+          "current_confirmed": 0,
+          "confirmed": 47,
+          "death": 0,
+          "cured": 47
+        },
+        {
+          "area": "厦门",
+          "current_confirmed": 0,
+          "confirmed": 35,
+          "death": 0,
+          "cured": 35
+        },
+        {
+          "area": "宁德",
+          "current_confirmed": 0,
+          "confirmed": 26,
+          "death": 0,
+          "cured": 26
+        },
+        {
+          "area": "漳州",
+          "current_confirmed": 0,
+          "confirmed": 20,
+          "death": 0,
+          "cured": 20
+        },
+        {
+          "area": "南平",
+          "current_confirmed": 0,
+          "confirmed": 20,
+          "death": 0,
+          "cured": 20
+        },
+        {
+          "area": "三明",
+          "current_confirmed": 0,
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
+        },
+        {
+          "area": "龙岩",
+          "current_confirmed": 0,
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
+        }
+      ],
+      "extra_info": ""
+    },
+    {
+      "overall_data": {
+        "area": "湖南",
         "current_confirmed": 6,
-        "累计确诊": 193,
-        "死亡": 2,
-        "治愈": 185
+        "confirmed": 1042,
+        "death": 4,
+        "cured": 1032
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 6,
-          "累计确诊": 101,
-          "死亡": 0,
-          "治愈": 95
+          "confirmed": 24,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "兰州",
+          "area": "长沙",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 2,
-          "治愈": 34
+          "confirmed": 242,
+          "death": 2,
+          "cured": 240
         },
         {
-          "地区": "天水",
+          "area": "岳阳",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 156,
+          "death": 1,
+          "cured": 155
         },
         {
-          "地区": "平凉",
+          "area": "邵阳",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 102,
+          "death": 1,
+          "cured": 101
         },
         {
-          "地区": "定西",
+          "area": "常德",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 82,
+          "death": 0,
+          "cured": 82
         },
         {
-          "地区": "甘南",
+          "area": "株洲",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 80,
+          "death": 0,
+          "cured": 80
         },
         {
-          "地区": "白银",
+          "area": "娄底",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 76,
+          "death": 0,
+          "cured": 76
         },
         {
-          "地区": "陇南",
+          "area": "益阳",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 60,
+          "death": 0,
+          "cured": 60
         },
         {
-          "地区": "庆阳",
+          "area": "衡阳",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 48,
+          "death": 0,
+          "cured": 48
         },
         {
-          "地区": "临夏",
+          "area": "永州",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 44,
+          "death": 0,
+          "cured": 44
         },
         {
-          "地区": "张掖",
+          "area": "怀化",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 40,
+          "death": 0,
+          "cured": 40
         },
         {
-          "地区": "金昌",
+          "area": "郴州",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 39,
+          "death": 0,
+          "cured": 39
         },
         {
-          "地区": "省级（湖北输入）",
+          "area": "湘潭",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
+        },
+        {
+          "area": "湘西自治州",
+          "current_confirmed": 0,
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
+        },
+        {
+          "area": "张家界",
+          "current_confirmed": 0,
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "河南",
-        "current_confirmed": 5,
-        "累计确诊": 1310,
-        "死亡": 22,
-        "治愈": 1283
+      "overall_data": {
+        "area": "甘肃",
+        "current_confirmed": 6,
+        "confirmed": 193,
+        "death": 2,
+        "cured": 185
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
-          "current_confirmed": 5,
-          "累计确诊": 37,
-          "死亡": 0,
-          "治愈": 32
+          "area": "境外输入",
+          "current_confirmed": 6,
+          "confirmed": 101,
+          "death": 0,
+          "cured": 95
         },
         {
-          "地区": "信阳",
+          "area": "兰州",
           "current_confirmed": 0,
-          "累计确诊": 274,
-          "死亡": 2,
-          "治愈": 272
+          "confirmed": 36,
+          "death": 2,
+          "cured": 34
         },
         {
-          "地区": "郑州",
+          "area": "天水",
           "current_confirmed": 0,
-          "累计确诊": 157,
-          "死亡": 5,
-          "治愈": 152
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "南阳",
+          "area": "平凉",
           "current_confirmed": 0,
-          "累计确诊": 156,
-          "死亡": 3,
-          "治愈": 153
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "驻马店",
+          "area": "定西",
           "current_confirmed": 0,
-          "累计确诊": 139,
-          "死亡": 0,
-          "治愈": 139
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "商丘",
+          "area": "甘南",
           "current_confirmed": 0,
-          "累计确诊": 91,
-          "死亡": 3,
-          "治愈": 88
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "周口",
+          "area": "白银",
           "current_confirmed": 0,
-          "累计确诊": 76,
-          "死亡": 1,
-          "治愈": 75
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "平顶山",
+          "area": "陇南",
           "current_confirmed": 0,
-          "累计确诊": 58,
-          "死亡": 1,
-          "治愈": 57
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "新乡",
+          "area": "庆阳",
           "current_confirmed": 0,
-          "累计确诊": 57,
-          "死亡": 3,
-          "治愈": 54
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "安阳",
+          "area": "临夏",
           "current_confirmed": 0,
-          "累计确诊": 53,
-          "死亡": 0,
-          "治愈": 53
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "许昌",
+          "area": "张掖",
           "current_confirmed": 0,
-          "累计确诊": 39,
-          "死亡": 1,
-          "治愈": 38
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "漯河",
+          "area": "金昌",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "焦作",
+          "area": "省级（湖北输入）",
           "current_confirmed": 0,
-          "累计确诊": 32,
-          "死亡": 1,
-          "治愈": 31
-        },
-        {
-          "地区": "洛阳",
-          "current_confirmed": 0,
-          "累计确诊": 31,
-          "死亡": 1,
-          "治愈": 30
-        },
-        {
-          "地区": "开封",
-          "current_confirmed": 0,
-          "累计确诊": 26,
-          "死亡": 0,
-          "治愈": 26
-        },
-        {
-          "地区": "鹤壁",
-          "current_confirmed": 0,
-          "累计确诊": 19,
-          "死亡": 0,
-          "治愈": 19
-        },
-        {
-          "地区": "濮阳",
-          "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
-        },
-        {
-          "地区": "三门峡",
-          "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 1,
-          "治愈": 6
-        },
-        {
-          "地区": "济源",
-          "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "湖南",
+      "overall_data": {
+        "area": "河南",
         "current_confirmed": 5,
-        "累计确诊": 1041,
-        "死亡": 4,
-        "治愈": 1032
+        "confirmed": 1310,
+        "death": 22,
+        "cured": 1283
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 5,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 37,
+          "death": 0,
+          "cured": 32
         },
         {
-          "地区": "长沙",
+          "area": "信阳",
           "current_confirmed": 0,
-          "累计确诊": 242,
-          "死亡": 2,
-          "治愈": 240
+          "confirmed": 274,
+          "death": 2,
+          "cured": 272
         },
         {
-          "地区": "岳阳",
+          "area": "郑州",
           "current_confirmed": 0,
-          "累计确诊": 156,
-          "死亡": 1,
-          "治愈": 155
+          "confirmed": 157,
+          "death": 5,
+          "cured": 152
         },
         {
-          "地区": "邵阳",
+          "area": "南阳",
           "current_confirmed": 0,
-          "累计确诊": 102,
-          "死亡": 1,
-          "治愈": 101
+          "confirmed": 156,
+          "death": 3,
+          "cured": 153
         },
         {
-          "地区": "常德",
+          "area": "驻马店",
           "current_confirmed": 0,
-          "累计确诊": 82,
-          "死亡": 0,
-          "治愈": 82
+          "confirmed": 139,
+          "death": 0,
+          "cured": 139
         },
         {
-          "地区": "株洲",
+          "area": "商丘",
           "current_confirmed": 0,
-          "累计确诊": 80,
-          "死亡": 0,
-          "治愈": 80
+          "confirmed": 91,
+          "death": 3,
+          "cured": 88
         },
         {
-          "地区": "娄底",
+          "area": "周口",
           "current_confirmed": 0,
-          "累计确诊": 76,
-          "死亡": 0,
-          "治愈": 76
+          "confirmed": 76,
+          "death": 1,
+          "cured": 75
         },
         {
-          "地区": "益阳",
+          "area": "平顶山",
           "current_confirmed": 0,
-          "累计确诊": 60,
-          "死亡": 0,
-          "治愈": 60
+          "confirmed": 58,
+          "death": 1,
+          "cured": 57
         },
         {
-          "地区": "衡阳",
+          "area": "新乡",
           "current_confirmed": 0,
-          "累计确诊": 48,
-          "死亡": 0,
-          "治愈": 48
+          "confirmed": 57,
+          "death": 3,
+          "cured": 54
         },
         {
-          "地区": "永州",
+          "area": "安阳",
           "current_confirmed": 0,
-          "累计确诊": 44,
-          "死亡": 0,
-          "治愈": 44
+          "confirmed": 53,
+          "death": 0,
+          "cured": 53
         },
         {
-          "地区": "怀化",
+          "area": "许昌",
           "current_confirmed": 0,
-          "累计确诊": 40,
-          "死亡": 0,
-          "治愈": 40
+          "confirmed": 39,
+          "death": 1,
+          "cured": 38
         },
         {
-          "地区": "郴州",
+          "area": "漯河",
           "current_confirmed": 0,
-          "累计确诊": 39,
-          "死亡": 0,
-          "治愈": 39
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
         },
         {
-          "地区": "湘潭",
+          "area": "焦作",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 32,
+          "death": 1,
+          "cured": 31
         },
         {
-          "地区": "湘西自治州",
+          "area": "洛阳",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 31,
+          "death": 1,
+          "cured": 30
         },
         {
-          "地区": "张家界",
+          "area": "开封",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 26,
+          "death": 0,
+          "cured": 26
+        },
+        {
+          "area": "鹤壁",
+          "current_confirmed": 0,
+          "confirmed": 19,
+          "death": 0,
+          "cured": 19
+        },
+        {
+          "area": "濮阳",
+          "current_confirmed": 0,
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
+        },
+        {
+          "area": "三门峡",
+          "current_confirmed": 0,
+          "confirmed": 7,
+          "death": 1,
+          "cured": 6
+        },
+        {
+          "area": "济源",
+          "current_confirmed": 0,
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "内蒙古",
+      "overall_data": {
+        "area": "内蒙古",
         "current_confirmed": 5,
-        "累计确诊": 374,
-        "死亡": 1,
-        "治愈": 368
+        "confirmed": 374,
+        "death": 1,
+        "cured": 368
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入人员",
+          "area": "境外输入人员",
           "current_confirmed": 5,
-          "累计确诊": 269,
-          "死亡": 0,
-          "治愈": 264
+          "confirmed": 269,
+          "death": 0,
+          "cured": 264
         },
         {
-          "地区": "呼伦贝尔",
+          "area": "呼伦贝尔",
           "current_confirmed": 0,
-          "累计确诊": 37,
-          "死亡": 0,
-          "治愈": 37
+          "confirmed": 37,
+          "death": 0,
+          "cured": 37
         },
         {
-          "地区": "鄂尔多斯",
+          "area": "鄂尔多斯",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "包头",
+          "area": "包头",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "赤峰",
+          "area": "赤峰",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "锡林郭勒盟",
+          "area": "锡林郭勒盟",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "巴彦淖尔",
+          "area": "巴彦淖尔",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 1,
-          "治愈": 7
+          "confirmed": 8,
+          "death": 1,
+          "cured": 7
         },
         {
-          "地区": "呼和浩特",
+          "area": "呼和浩特",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "通辽",
+          "area": "通辽",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "乌兰察布",
+          "area": "乌兰察布",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "乌海市",
+          "area": "乌海市",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "兴安盟",
+          "area": "兴安盟",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "江苏",
+      "overall_data": {
+        "area": "江苏",
         "current_confirmed": 4,
-        "累计确诊": 708,
-        "死亡": 0,
-        "治愈": 704
+        "confirmed": 708,
+        "death": 0,
+        "cured": 704
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 4,
-          "累计确诊": 77,
-          "死亡": 0,
-          "治愈": 73
+          "confirmed": 77,
+          "death": 0,
+          "cured": 73
         },
         {
-          "地区": "南京",
+          "area": "南京",
           "current_confirmed": 0,
-          "累计确诊": 93,
-          "死亡": 0,
-          "治愈": 93
+          "confirmed": 93,
+          "death": 0,
+          "cured": 93
         },
         {
-          "地区": "苏州",
+          "area": "苏州",
           "current_confirmed": 0,
-          "累计确诊": 87,
-          "死亡": 0,
-          "治愈": 87
+          "confirmed": 87,
+          "death": 0,
+          "cured": 87
         },
         {
-          "地区": "徐州",
+          "area": "徐州",
           "current_confirmed": 0,
-          "累计确诊": 79,
-          "死亡": 0,
-          "治愈": 79
+          "confirmed": 79,
+          "death": 0,
+          "cured": 79
         },
         {
-          "地区": "淮安",
+          "area": "淮安",
           "current_confirmed": 0,
-          "累计确诊": 66,
-          "死亡": 0,
-          "治愈": 66
+          "confirmed": 66,
+          "death": 0,
+          "cured": 66
         },
         {
-          "地区": "无锡",
+          "area": "无锡",
           "current_confirmed": 0,
-          "累计确诊": 55,
-          "死亡": 0,
-          "治愈": 55
+          "confirmed": 55,
+          "death": 0,
+          "cured": 55
         },
         {
-          "地区": "常州",
+          "area": "常州",
           "current_confirmed": 0,
-          "累计确诊": 51,
-          "死亡": 0,
-          "治愈": 51
+          "confirmed": 51,
+          "death": 0,
+          "cured": 51
         },
         {
-          "地区": "连云港",
+          "area": "连云港",
           "current_confirmed": 0,
-          "累计确诊": 48,
-          "死亡": 0,
-          "治愈": 48
+          "confirmed": 48,
+          "death": 0,
+          "cured": 48
         },
         {
-          "地区": "南通",
+          "area": "南通",
           "current_confirmed": 0,
-          "累计确诊": 40,
-          "死亡": 0,
-          "治愈": 40
+          "confirmed": 40,
+          "death": 0,
+          "cured": 40
         },
         {
-          "地区": "泰州",
+          "area": "泰州",
           "current_confirmed": 0,
-          "累计确诊": 37,
-          "死亡": 0,
-          "治愈": 37
+          "confirmed": 37,
+          "death": 0,
+          "cured": 37
         },
         {
-          "地区": "盐城",
+          "area": "盐城",
           "current_confirmed": 0,
-          "累计确诊": 27,
-          "死亡": 0,
-          "治愈": 27
+          "confirmed": 27,
+          "death": 0,
+          "cured": 27
         },
         {
-          "地区": "扬州",
+          "area": "扬州",
           "current_confirmed": 0,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 23
+          "confirmed": 23,
+          "death": 0,
+          "cured": 23
         },
         {
-          "地区": "宿迁",
+          "area": "宿迁",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "镇江",
+          "area": "镇江",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "北京",
+      "overall_data": {
+        "area": "北京",
         "current_confirmed": 3,
-        "累计确诊": 1049,
-        "死亡": 9,
-        "治愈": 1037
+        "confirmed": 1049,
+        "death": 9,
+        "cured": 1037
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "丰台区",
-          "current_confirmed": "-",
-          "累计确诊": 273,
-          "死亡": 0,
-          "治愈": 257
+          "area": "丰台区",
+          "current_confirmed": -1,
+          "confirmed": 273,
+          "death": 0,
+          "cured": 257
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 16,
-          "累计确诊": 221,
-          "死亡": 0,
-          "治愈": 205
+          "confirmed": 221,
+          "death": 0,
+          "cured": 205
         },
         {
-          "地区": "大兴区",
-          "current_confirmed": "-",
-          "累计确诊": 134,
-          "死亡": 0,
-          "治愈": 118
+          "area": "大兴区",
+          "current_confirmed": -1,
+          "confirmed": 134,
+          "death": 0,
+          "cured": 118
         },
         {
-          "地区": "海淀区",
-          "current_confirmed": "-",
-          "累计确诊": 82,
-          "死亡": 0,
-          "治愈": 66
+          "area": "海淀区",
+          "current_confirmed": -1,
+          "confirmed": 82,
+          "death": 0,
+          "cured": 66
         },
         {
-          "地区": "朝阳区",
-          "current_confirmed": "-",
-          "累计确诊": 80,
-          "死亡": 0,
-          "治愈": 64
+          "area": "朝阳区",
+          "current_confirmed": -1,
+          "confirmed": 80,
+          "death": 0,
+          "cured": 64
         },
         {
-          "地区": "西城区",
-          "current_confirmed": "-",
-          "累计确诊": 59,
-          "死亡": 0,
-          "治愈": 43
+          "area": "西城区",
+          "current_confirmed": -1,
+          "confirmed": 59,
+          "death": 0,
+          "cured": 43
         },
         {
-          "地区": "顺义区",
-          "current_confirmed": "-",
-          "累计确诊": 45,
-          "死亡": 0,
-          "治愈": 29
+          "area": "顺义区",
+          "current_confirmed": -1,
+          "confirmed": 45,
+          "death": 0,
+          "cured": 29
         },
         {
-          "地区": "昌平区",
-          "current_confirmed": "-",
-          "累计确诊": 34,
-          "死亡": 0,
-          "治愈": 18
+          "area": "昌平区",
+          "current_confirmed": -1,
+          "confirmed": 34,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "外地来京",
-          "current_confirmed": "-",
-          "累计确诊": 25,
-          "死亡": 0,
-          "治愈": 9
+          "area": "外地来京",
+          "current_confirmed": -1,
+          "confirmed": 25,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "通州区",
-          "current_confirmed": "-",
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 4
+          "area": "通州区",
+          "current_confirmed": -1,
+          "confirmed": 20,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "房山区",
-          "current_confirmed": "-",
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 4
+          "area": "房山区",
+          "current_confirmed": -1,
+          "confirmed": 20,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "东城区",
-          "current_confirmed": "-",
-          "累计确诊": 19,
-          "死亡": 0,
-          "治愈": 3
+          "area": "东城区",
+          "current_confirmed": -1,
+          "confirmed": 19,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "怀柔区",
-          "current_confirmed": "-",
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 0
+          "area": "怀柔区",
+          "current_confirmed": -1,
+          "confirmed": 8,
+          "death": 0,
+          "cured": 0
         },
         {
-          "地区": "密云区",
-          "current_confirmed": "-",
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 0
+          "area": "密云区",
+          "current_confirmed": -1,
+          "confirmed": 7,
+          "death": 0,
+          "cured": 0
         },
         {
-          "地区": "石景山区",
-          "current_confirmed": "-",
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 9
+          "area": "石景山区",
+          "current_confirmed": -1,
+          "confirmed": 15,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "门头沟区",
-          "current_confirmed": "-",
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 2
+          "area": "门头沟区",
+          "current_confirmed": -1,
+          "confirmed": 5,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "延庆区",
-          "current_confirmed": "-",
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 0
+          "area": "延庆区",
+          "current_confirmed": -1,
+          "confirmed": 1,
+          "death": 0,
+          "cured": 0
         },
         {
-          "地区": "待明确地区",
-          "current_confirmed": "-",
-          "累计确诊": 1,
-          "死亡": 9,
-          "治愈": 206
+          "area": "待明确地区",
+          "current_confirmed": -1,
+          "confirmed": 1,
+          "death": 9,
+          "cured": 206
         }
       ],
-      "额外信息": [
-        "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的current_confirmed暂无法获取。"
-      ]
+      "extra_info": "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的现存确诊暂无法获取。"
     },
     {
-      "总体数据": {
-        "地区": "云南",
+      "overall_data": {
+        "area": "云南",
         "current_confirmed": 3,
-        "累计确诊": 235,
-        "死亡": 2,
-        "治愈": 230
+        "confirmed": 235,
+        "death": 2,
+        "cured": 230
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 3,
-          "累计确诊": 61,
-          "死亡": 0,
-          "治愈": 58
+          "confirmed": 61,
+          "death": 0,
+          "cured": 58
         },
         {
-          "地区": "昆明",
+          "area": "昆明",
           "current_confirmed": 0,
-          "累计确诊": 53,
-          "死亡": 0,
-          "治愈": 53
+          "confirmed": 53,
+          "death": 0,
+          "cured": 53
         },
         {
-          "地区": "昭通",
+          "area": "昭通",
           "current_confirmed": 0,
-          "累计确诊": 25,
-          "死亡": 0,
-          "治愈": 25
+          "confirmed": 25,
+          "death": 0,
+          "cured": 25
         },
         {
-          "地区": "西双版纳",
+          "area": "西双版纳",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 1,
-          "治愈": 14
+          "confirmed": 15,
+          "death": 1,
+          "cured": 14
         },
         {
-          "地区": "玉溪",
+          "area": "玉溪",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 1,
-          "治愈": 13
+          "confirmed": 14,
+          "death": 1,
+          "cured": 13
         },
         {
-          "地区": "曲靖",
+          "area": "曲靖",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "大理州",
+          "area": "大理州",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "红河州",
+          "area": "红河州",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "保山",
+          "area": "保山",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "丽江",
+          "area": "丽江",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "德宏州",
+          "area": "德宏州",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "普洱",
+          "area": "普洱",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "楚雄州",
+          "area": "楚雄州",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "文山州",
+          "area": "文山州",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "临沧",
+          "area": "临沧",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "浙江",
+      "overall_data": {
+        "area": "浙江",
         "current_confirmed": 2,
-        "累计确诊": 1323,
-        "死亡": 1,
-        "治愈": 1320
+        "confirmed": 1323,
+        "death": 1,
+        "cured": 1320
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 2,
-          "累计确诊": 104,
-          "死亡": 0,
-          "治愈": 102
+          "confirmed": 104,
+          "death": 0,
+          "cured": 102
         },
         {
-          "地区": "温州",
+          "area": "温州",
           "current_confirmed": 0,
-          "累计确诊": 504,
-          "死亡": 1,
-          "治愈": 503
+          "confirmed": 504,
+          "death": 1,
+          "cured": 503
         },
         {
-          "地区": "杭州",
+          "area": "杭州",
           "current_confirmed": 0,
-          "累计确诊": 181,
-          "死亡": 0,
-          "治愈": 181
+          "confirmed": 181,
+          "death": 0,
+          "cured": 181
         },
         {
-          "地区": "宁波",
+          "area": "宁波",
           "current_confirmed": 0,
-          "累计确诊": 157,
-          "死亡": 0,
-          "治愈": 157
+          "confirmed": 157,
+          "death": 0,
+          "cured": 157
         },
         {
-          "地区": "台州",
+          "area": "台州",
           "current_confirmed": 0,
-          "累计确诊": 147,
-          "死亡": 0,
-          "治愈": 147
+          "confirmed": 147,
+          "death": 0,
+          "cured": 147
         },
         {
-          "地区": "金华",
+          "area": "金华",
           "current_confirmed": 0,
-          "累计确诊": 55,
-          "死亡": 0,
-          "治愈": 55
+          "confirmed": 55,
+          "death": 0,
+          "cured": 55
         },
         {
-          "地区": "嘉兴",
+          "area": "嘉兴",
           "current_confirmed": 0,
-          "累计确诊": 46,
-          "死亡": 0,
-          "治愈": 46
+          "confirmed": 46,
+          "death": 0,
+          "cured": 46
         },
         {
-          "地区": "绍兴",
+          "area": "绍兴",
           "current_confirmed": 0,
-          "累计确诊": 42,
-          "死亡": 0,
-          "治愈": 42
+          "confirmed": 42,
+          "death": 0,
+          "cured": 42
         },
         {
-          "地区": "省十里丰监狱",
+          "area": "省十里丰监狱",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
         },
         {
-          "地区": "丽水",
+          "area": "丽水",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "衢州",
+          "area": "衢州",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
         },
         {
-          "地区": "湖州",
+          "area": "湖州",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "舟山",
+          "area": "舟山",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         }
       ],
-      "额外信息": [
-        "2月10日通报核减的12例在浙江省治愈的外省病例，根据国家最新要求重新纳入累计病例。"
-      ]
+      "extra_info": "2月10日通报核减的12例在浙江省治愈的外省病例，根据国家最新要求重新纳入累计病例。"
     },
     {
-      "总体数据": {
-        "地区": "江西",
+      "overall_data": {
+        "area": "江西",
         "current_confirmed": 2,
-        "累计确诊": 937,
-        "死亡": 1,
-        "治愈": 934
+        "confirmed": 937,
+        "death": 1,
+        "cured": 934
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "南昌",
+          "area": "南昌",
           "current_confirmed": 1,
-          "累计确诊": 231,
-          "死亡": 0,
-          "治愈": 230
+          "confirmed": 231,
+          "death": 0,
+          "cured": 230
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 1,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 6,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "新余",
+          "area": "新余",
           "current_confirmed": 0,
-          "累计确诊": 129,
-          "死亡": 0,
-          "治愈": 129
+          "confirmed": 129,
+          "death": 0,
+          "cured": 129
         },
         {
-          "地区": "上饶",
+          "area": "上饶",
           "current_confirmed": 0,
-          "累计确诊": 123,
-          "死亡": 0,
-          "治愈": 123
+          "confirmed": 123,
+          "death": 0,
+          "cured": 123
         },
         {
-          "地区": "九江",
+          "area": "九江",
           "current_confirmed": 0,
-          "累计确诊": 116,
-          "死亡": 0,
-          "治愈": 116
+          "confirmed": 116,
+          "death": 0,
+          "cured": 116
         },
         {
-          "地区": "宜春",
+          "area": "宜春",
           "current_confirmed": 0,
-          "累计确诊": 106,
-          "死亡": 0,
-          "治愈": 106
+          "confirmed": 106,
+          "death": 0,
+          "cured": 106
         },
         {
-          "地区": "赣州",
+          "area": "赣州",
           "current_confirmed": 0,
-          "累计确诊": 74,
-          "死亡": 1,
-          "治愈": 73
+          "confirmed": 74,
+          "death": 1,
+          "cured": 73
         },
         {
-          "地区": "抚州",
+          "area": "抚州",
           "current_confirmed": 0,
-          "累计确诊": 72,
-          "死亡": 0,
-          "治愈": 72
+          "confirmed": 72,
+          "death": 0,
+          "cured": 72
         },
         {
-          "地区": "萍乡",
+          "area": "萍乡",
           "current_confirmed": 0,
-          "累计确诊": 33,
-          "死亡": 0,
-          "治愈": 33
+          "confirmed": 33,
+          "death": 0,
+          "cured": 33
         },
         {
-          "地区": "吉安",
+          "area": "吉安",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": 0,
-          "治愈": 22
+          "confirmed": 22,
+          "death": 0,
+          "cured": 22
         },
         {
-          "地区": "鹰潭",
+          "area": "鹰潭",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 18,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "景德镇",
+          "area": "景德镇",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "赣江新区",
+          "area": "赣江新区",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "湖北",
+      "overall_data": {
+        "area": "湖北",
         "current_confirmed": 1,
-        "累计确诊": 68152,
-        "死亡": 4512,
-        "治愈": 63639
+        "confirmed": 68152,
+        "death": 4512,
+        "cured": 63639
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "武汉",
+          "area": "武汉",
           "current_confirmed": 1,
-          "累计确诊": 50357,
-          "死亡": 3869,
-          "治愈": 46487
+          "confirmed": 50357,
+          "death": 3869,
+          "cured": 46487
         },
         {
-          "地区": "孝感",
+          "area": "孝感",
           "current_confirmed": 0,
-          "累计确诊": 3518,
-          "死亡": 129,
-          "治愈": 3389
+          "confirmed": 3518,
+          "death": 129,
+          "cured": 3389
         },
         {
-          "地区": "黄冈",
+          "area": "黄冈",
           "current_confirmed": 0,
-          "累计确诊": 2907,
-          "死亡": 125,
-          "治愈": 2782
+          "confirmed": 2907,
+          "death": 125,
+          "cured": 2782
         },
         {
-          "地区": "荆州",
+          "area": "荆州",
           "current_confirmed": 0,
-          "累计确诊": 1580,
-          "死亡": 52,
-          "治愈": 1528
+          "confirmed": 1580,
+          "death": 52,
+          "cured": 1528
         },
         {
-          "地区": "鄂州",
+          "area": "鄂州",
           "current_confirmed": 0,
-          "累计确诊": 1394,
-          "死亡": 59,
-          "治愈": 1335
+          "confirmed": 1394,
+          "death": 59,
+          "cured": 1335
         },
         {
-          "地区": "随州",
+          "area": "随州",
           "current_confirmed": 0,
-          "累计确诊": 1307,
-          "死亡": 45,
-          "治愈": 1262
+          "confirmed": 1307,
+          "death": 45,
+          "cured": 1262
         },
         {
-          "地区": "襄阳",
+          "area": "襄阳",
           "current_confirmed": 0,
-          "累计确诊": 1175,
-          "死亡": 40,
-          "治愈": 1135
+          "confirmed": 1175,
+          "death": 40,
+          "cured": 1135
         },
         {
-          "地区": "黄石",
+          "area": "黄石",
           "current_confirmed": 0,
-          "累计确诊": 1015,
-          "死亡": 39,
-          "治愈": 976
+          "confirmed": 1015,
+          "death": 39,
+          "cured": 976
         },
         {
-          "地区": "宜昌",
+          "area": "宜昌",
           "current_confirmed": 0,
-          "累计确诊": 931,
-          "死亡": 37,
-          "治愈": 894
+          "confirmed": 931,
+          "death": 37,
+          "cured": 894
         },
         {
-          "地区": "荆门",
+          "area": "荆门",
           "current_confirmed": 0,
-          "累计确诊": 928,
-          "死亡": 41,
-          "治愈": 887
+          "confirmed": 928,
+          "death": 41,
+          "cured": 887
         },
         {
-          "地区": "咸宁",
+          "area": "咸宁",
           "current_confirmed": 0,
-          "累计确诊": 836,
-          "死亡": 15,
-          "治愈": 821
+          "confirmed": 836,
+          "death": 15,
+          "cured": 821
         },
         {
-          "地区": "十堰",
+          "area": "十堰",
           "current_confirmed": 0,
-          "累计确诊": 672,
-          "死亡": 8,
-          "治愈": 664
+          "confirmed": 672,
+          "death": 8,
+          "cured": 664
         },
         {
-          "地区": "仙桃",
+          "area": "仙桃",
           "current_confirmed": 0,
-          "累计确诊": 575,
-          "死亡": 22,
-          "治愈": 553
+          "confirmed": 575,
+          "death": 22,
+          "cured": 553
         },
         {
-          "地区": "天门",
+          "area": "天门",
           "current_confirmed": 0,
-          "累计确诊": 496,
-          "死亡": 15,
-          "治愈": 481
+          "confirmed": 496,
+          "death": 15,
+          "cured": 481
         },
         {
-          "地区": "恩施州",
+          "area": "恩施州",
           "current_confirmed": 0,
-          "累计确诊": 252,
-          "死亡": 7,
-          "治愈": 245
+          "confirmed": 252,
+          "death": 7,
+          "cured": 245
         },
         {
-          "地区": "潜江",
+          "area": "潜江",
           "current_confirmed": 0,
-          "累计确诊": 198,
-          "死亡": 9,
-          "治愈": 189
+          "confirmed": 198,
+          "death": 9,
+          "cured": 189
         },
         {
-          "地区": "神农架林区",
+          "area": "神农架林区",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         }
       ],
-      "额外信息": [
-        "4.17 武汉市订正数据，武汉死亡核增1290，确诊核增325，治愈核减965"
-      ]
+      "extra_info": "4.17 武汉市订正数据，武汉死亡核增1290，确诊核增325，治愈核减965"
     },
     {
-      "总体数据": {
-        "地区": "山西",
+      "overall_data": {
+        "area": "山西",
         "current_confirmed": 1,
-        "累计确诊": 241,
-        "死亡": 0,
-        "治愈": 240
+        "confirmed": 241,
+        "death": 0,
+        "cured": 240
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 1,
-          "累计确诊": 103,
-          "死亡": 0,
-          "治愈": 102
+          "confirmed": 103,
+          "death": 0,
+          "cured": 102
         },
         {
-          "地区": "晋中",
+          "area": "晋中",
           "current_confirmed": 0,
-          "累计确诊": 41,
-          "死亡": 0,
-          "治愈": 41
+          "confirmed": 41,
+          "death": 0,
+          "cured": 41
         },
         {
-          "地区": "太原",
+          "area": "太原",
           "current_confirmed": 0,
-          "累计确诊": 21,
-          "死亡": 0,
-          "治愈": 21
+          "confirmed": 21,
+          "death": 0,
+          "cured": 21
         },
         {
-          "地区": "运城",
+          "area": "运城",
           "current_confirmed": 0,
-          "累计确诊": 19,
-          "死亡": 0,
-          "治愈": 19
+          "confirmed": 19,
+          "death": 0,
+          "cured": 19
         },
         {
-          "地区": "大同",
+          "area": "大同",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "晋城",
+          "area": "晋城",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "长治",
+          "area": "长治",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "朔州",
+          "area": "朔州",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "忻州",
+          "area": "忻州",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "吕梁",
+          "area": "吕梁",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "阳泉",
+          "area": "阳泉",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "临汾",
+          "area": "临汾",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "黑龙江",
+      "overall_data": {
+        "area": "黑龙江",
         "current_confirmed": 0,
-        "累计确诊": 1610,
-        "死亡": 13,
-        "治愈": 1597
+        "confirmed": 1610,
+        "death": 13,
+        "cured": 1597
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "绥化",
-          "current_confirmed": "-",
-          "累计确诊": 536,
-          "死亡": 4,
-          "治愈": 532
+          "area": "绥化",
+          "current_confirmed": -1,
+          "confirmed": 536,
+          "death": 4,
+          "cured": 532
         },
         {
-          "地区": "哈尔滨",
-          "current_confirmed": "-",
-          "累计确诊": 410,
-          "死亡": 4,
-          "治愈": 406
+          "area": "哈尔滨",
+          "current_confirmed": -1,
+          "confirmed": 410,
+          "death": 4,
+          "cured": 406
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 390,
-          "死亡": 0,
-          "治愈": 390
+          "confirmed": 390,
+          "death": 0,
+          "cured": 390
         },
         {
-          "地区": "双鸭山",
+          "area": "双鸭山",
           "current_confirmed": 0,
-          "累计确诊": 52,
-          "死亡": 3,
-          "治愈": 49
+          "confirmed": 52,
+          "death": 3,
+          "cured": 49
         },
         {
-          "地区": "鸡西",
+          "area": "鸡西",
           "current_confirmed": 0,
-          "累计确诊": 46,
-          "死亡": 0,
-          "治愈": 46
+          "confirmed": 46,
+          "death": 0,
+          "cured": 46
         },
         {
-          "地区": "齐齐哈尔",
+          "area": "齐齐哈尔",
           "current_confirmed": 0,
-          "累计确诊": 44,
-          "死亡": 1,
-          "治愈": 43
+          "confirmed": 44,
+          "death": 1,
+          "cured": 43
         },
         {
-          "地区": "牡丹江",
+          "area": "牡丹江",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
         },
         {
-          "地区": "大庆",
+          "area": "大庆",
           "current_confirmed": 0,
-          "累计确诊": 29,
-          "死亡": 1,
-          "治愈": 28
+          "confirmed": 29,
+          "death": 1,
+          "cured": 28
         },
         {
-          "地区": "黑河",
+          "area": "黑河",
           "current_confirmed": 0,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 24
+          "confirmed": 24,
+          "death": 0,
+          "cured": 24
         },
         {
-          "地区": "七台河",
+          "area": "七台河",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "佳木斯",
+          "area": "佳木斯",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         },
         {
-          "地区": "鹤岗",
+          "area": "鹤岗",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "大兴安岭",
+          "area": "大兴安岭",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "待明确",
-          "current_confirmed": "-",
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "area": "待明确",
+          "current_confirmed": -1,
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "伊春",
+          "area": "伊春",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": [
-        "黑龙江卫健委未明确部分治愈病例的地市归属，因此各地市的current_confirmed存在一定偏差。"
-      ]
+      "extra_info": "黑龙江卫健委未明确部分治愈病例的地市归属，因此各地市的现存确诊存在一定偏差。"
     },
     {
-      "总体数据": {
-        "地区": "河北",
+      "overall_data": {
+        "area": "河北",
         "current_confirmed": 0,
-        "累计确诊": 1317,
-        "死亡": 7,
-        "治愈": 1310
+        "confirmed": 1317,
+        "death": 7,
+        "cured": 1310
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "石家庄",
+          "area": "石家庄",
           "current_confirmed": 8,
-          "累计确诊": 898,
-          "死亡": 1,
-          "治愈": 889
+          "confirmed": 898,
+          "death": 1,
+          "cured": 889
         },
         {
-          "地区": "邢台",
+          "area": "邢台",
           "current_confirmed": 3,
-          "累计确诊": 94,
-          "死亡": 1,
-          "治愈": 90
+          "confirmed": 94,
+          "death": 1,
+          "cured": 90
         },
         {
-          "地区": "保定",
+          "area": "保定",
           "current_confirmed": 1,
-          "累计确诊": 49,
-          "死亡": 0,
-          "治愈": 48
+          "confirmed": 49,
+          "death": 0,
+          "cured": 48
         },
         {
-          "地区": "唐山",
+          "area": "唐山",
           "current_confirmed": 0,
-          "累计确诊": 58,
-          "死亡": 1,
-          "治愈": 57
+          "confirmed": 58,
+          "death": 1,
+          "cured": 57
         },
         {
-          "地区": "沧州",
+          "area": "沧州",
           "current_confirmed": 0,
-          "累计确诊": 49,
-          "死亡": 3,
-          "治愈": 46
+          "confirmed": 49,
+          "death": 3,
+          "cured": 46
         },
         {
-          "地区": "张家口",
+          "area": "张家口",
           "current_confirmed": 0,
-          "累计确诊": 43,
-          "死亡": 0,
-          "治愈": 43
+          "confirmed": 43,
+          "death": 0,
+          "cured": 43
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
         },
         {
-          "地区": "廊坊",
+          "area": "廊坊",
           "current_confirmed": 0,
-          "累计确诊": 33,
-          "死亡": 0,
-          "治愈": 33
+          "confirmed": 33,
+          "death": 0,
+          "cured": 33
         },
         {
-          "地区": "邯郸",
+          "area": "邯郸",
           "current_confirmed": 0,
-          "累计确诊": 32,
-          "死亡": 0,
-          "治愈": 32
+          "confirmed": 32,
+          "death": 0,
+          "cured": 32
         },
         {
-          "地区": "秦皇岛",
+          "area": "秦皇岛",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 1,
-          "治愈": 9
+          "confirmed": 10,
+          "death": 1,
+          "cured": 9
         },
         {
-          "地区": "衡水",
+          "area": "衡水",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "承德",
+          "area": "承德",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "待明确",
-          "current_confirmed": "-",
-          "累计确诊": 0,
-          "死亡": 0,
-          "治愈": 12
+          "area": "待明确",
+          "current_confirmed": -1,
+          "confirmed": 0,
+          "death": 0,
+          "cured": 12
         }
       ],
-      "额外信息": [
-        "河北卫健委未明确部分治愈病例的地市归属，因此各地市的current_confirmed存在一定偏差。"
-      ]
+      "extra_info": "河北卫健委未明确部分治愈病例的地市归属，因此各地市的现存确诊存在一定偏差。"
     },
     {
-      "总体数据": {
-        "地区": "安徽",
+      "overall_data": {
+        "area": "安徽",
         "current_confirmed": 0,
-        "累计确诊": 994,
-        "死亡": 6,
-        "治愈": 988
+        "confirmed": 994,
+        "death": 6,
+        "cured": 988
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "合肥",
+          "area": "合肥",
           "current_confirmed": 0,
-          "累计确诊": 174,
-          "死亡": 1,
-          "治愈": 173
+          "confirmed": 174,
+          "death": 1,
+          "cured": 173
         },
         {
-          "地区": "蚌埠",
+          "area": "蚌埠",
           "current_confirmed": 0,
-          "累计确诊": 160,
-          "死亡": 5,
-          "治愈": 155
+          "confirmed": 160,
+          "death": 5,
+          "cured": 155
         },
         {
-          "地区": "阜阳",
+          "area": "阜阳",
           "current_confirmed": 0,
-          "累计确诊": 156,
-          "死亡": 0,
-          "治愈": 156
+          "confirmed": 156,
+          "death": 0,
+          "cured": 156
         },
         {
-          "地区": "亳州",
+          "area": "亳州",
           "current_confirmed": 0,
-          "累计确诊": 108,
-          "死亡": 0,
-          "治愈": 108
+          "confirmed": 108,
+          "death": 0,
+          "cured": 108
         },
         {
-          "地区": "安庆",
+          "area": "安庆",
           "current_confirmed": 0,
-          "累计确诊": 83,
-          "死亡": 0,
-          "治愈": 83
+          "confirmed": 83,
+          "death": 0,
+          "cured": 83
         },
         {
-          "地区": "六安",
+          "area": "六安",
           "current_confirmed": 0,
-          "累计确诊": 69,
-          "死亡": 0,
-          "治愈": 69
+          "confirmed": 69,
+          "death": 0,
+          "cured": 69
         },
         {
-          "地区": "宿州",
+          "area": "宿州",
           "current_confirmed": 0,
-          "累计确诊": 41,
-          "死亡": 0,
-          "治愈": 41
+          "confirmed": 41,
+          "death": 0,
+          "cured": 41
         },
         {
-          "地区": "马鞍山",
+          "area": "马鞍山",
           "current_confirmed": 0,
-          "累计确诊": 38,
-          "死亡": 0,
-          "治愈": 38
+          "confirmed": 38,
+          "death": 0,
+          "cured": 38
         },
         {
-          "地区": "芜湖",
+          "area": "芜湖",
           "current_confirmed": 0,
-          "累计确诊": 34,
-          "死亡": 0,
-          "治愈": 34
+          "confirmed": 34,
+          "death": 0,
+          "cured": 34
         },
         {
-          "地区": "铜陵",
+          "area": "铜陵",
           "current_confirmed": 0,
-          "累计确诊": 29,
-          "死亡": 0,
-          "治愈": 29
+          "confirmed": 29,
+          "death": 0,
+          "cured": 29
         },
         {
-          "地区": "淮北",
+          "area": "淮北",
           "current_confirmed": 0,
-          "累计确诊": 27,
-          "死亡": 0,
-          "治愈": 27
+          "confirmed": 27,
+          "death": 0,
+          "cured": 27
         },
         {
-          "地区": "淮南",
+          "area": "淮南",
           "current_confirmed": 0,
-          "累计确诊": 27,
-          "死亡": 0,
-          "治愈": 27
+          "confirmed": 27,
+          "death": 0,
+          "cured": 27
         },
         {
-          "地区": "池州",
+          "area": "池州",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "滁州",
+          "area": "滁州",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "黄山",
+          "area": "黄山",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "宣城",
+          "area": "宣城",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "新疆",
+      "overall_data": {
+        "area": "新疆",
         "current_confirmed": 0,
-        "累计确诊": 980,
-        "死亡": 3,
-        "治愈": 977
+        "confirmed": 980,
+        "death": 3,
+        "cured": 977
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "乌鲁木齐",
+          "area": "乌鲁木齐",
           "current_confirmed": 0,
-          "累计确诊": 845,
-          "死亡": 0,
-          "治愈": 845
+          "confirmed": 845,
+          "death": 0,
+          "cured": 845
         },
         {
-          "地区": "喀什地区",
+          "area": "喀什地区",
           "current_confirmed": 0,
-          "累计确诊": 80,
-          "死亡": 0,
-          "治愈": 80
+          "confirmed": 80,
+          "death": 0,
+          "cured": 80
         },
         {
-          "地区": "伊犁州",
+          "area": "伊犁州",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 18,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "兵团第四师",
+          "area": "兵团第四师",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 1,
-          "治愈": 9
+          "confirmed": 10,
+          "death": 1,
+          "cured": 9
         },
         {
-          "地区": "昌吉州",
+          "area": "昌吉州",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "兵团第八师石河子市",
+          "area": "兵团第八师石河子市",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 1,
-          "治愈": 3
+          "confirmed": 4,
+          "death": 1,
+          "cured": 3
         },
         {
-          "地区": "兵团第九师",
+          "area": "兵团第九师",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 1,
-          "治愈": 3
+          "confirmed": 4,
+          "death": 1,
+          "cured": 3
         },
         {
-          "地区": "吐鲁番",
+          "area": "吐鲁番",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "巴州",
+          "area": "巴州",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "兵团第十二师",
+          "area": "兵团第十二师",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "兵团第六师五家渠市",
+          "area": "兵团第六师五家渠市",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "兵团第七师",
+          "area": "兵团第七师",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "阿克苏地区",
+          "area": "阿克苏地区",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "待明确地区",
-          "current_confirmed": "-",
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "area": "待明确地区",
+          "current_confirmed": -1,
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "山东",
+      "overall_data": {
+        "area": "山东",
         "current_confirmed": 0,
-        "累计确诊": 869,
-        "死亡": 7,
-        "治愈": 862
+        "confirmed": 869,
+        "death": 7,
+        "cured": 862
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "济宁",
+          "area": "济宁",
           "current_confirmed": 0,
-          "累计确诊": 260,
-          "死亡": 0,
-          "治愈": 260
+          "confirmed": 260,
+          "death": 0,
+          "cured": 260
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 91,
-          "死亡": 0,
-          "治愈": 91
+          "confirmed": 91,
+          "death": 0,
+          "cured": 91
         },
         {
-          "地区": "青岛",
+          "area": "青岛",
           "current_confirmed": 0,
-          "累计确诊": 80,
-          "死亡": 1,
-          "治愈": 79
+          "confirmed": 80,
+          "death": 1,
+          "cured": 79
         },
         {
-          "地区": "临沂",
+          "area": "临沂",
           "current_confirmed": 0,
-          "累计确诊": 49,
-          "死亡": 0,
-          "治愈": 49
+          "confirmed": 49,
+          "death": 0,
+          "cured": 49
         },
         {
-          "地区": "济南",
+          "area": "济南",
           "current_confirmed": 0,
-          "累计确诊": 47,
-          "死亡": 0,
-          "治愈": 47
+          "confirmed": 47,
+          "death": 0,
+          "cured": 47
         },
         {
-          "地区": "烟台",
+          "area": "烟台",
           "current_confirmed": 0,
-          "累计确诊": 47,
-          "死亡": 0,
-          "治愈": 47
+          "confirmed": 47,
+          "death": 0,
+          "cured": 47
         },
         {
-          "地区": "潍坊",
+          "area": "潍坊",
           "current_confirmed": 0,
-          "累计确诊": 44,
-          "死亡": 0,
-          "治愈": 44
+          "confirmed": 44,
+          "death": 0,
+          "cured": 44
         },
         {
-          "地区": "威海",
+          "area": "威海",
           "current_confirmed": 0,
-          "累计确诊": 38,
-          "死亡": 1,
-          "治愈": 37
+          "confirmed": 38,
+          "death": 1,
+          "cured": 37
         },
         {
-          "地区": "聊城",
+          "area": "聊城",
           "current_confirmed": 0,
-          "累计确诊": 38,
-          "死亡": 0,
-          "治愈": 38
+          "confirmed": 38,
+          "death": 0,
+          "cured": 38
         },
         {
-          "地区": "德州",
+          "area": "德州",
           "current_confirmed": 0,
-          "累计确诊": 37,
-          "死亡": 2,
-          "治愈": 35
+          "confirmed": 37,
+          "death": 2,
+          "cured": 35
         },
         {
-          "地区": "泰安",
+          "area": "泰安",
           "current_confirmed": 0,
-          "累计确诊": 35,
-          "死亡": 2,
-          "治愈": 33
+          "confirmed": 35,
+          "death": 2,
+          "cured": 33
         },
         {
-          "地区": "淄博",
+          "area": "淄博",
           "current_confirmed": 0,
-          "累计确诊": 30,
-          "死亡": 1,
-          "治愈": 29
+          "confirmed": 30,
+          "death": 1,
+          "cured": 29
         },
         {
-          "地区": "枣庄",
+          "area": "枣庄",
           "current_confirmed": 0,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 24
+          "confirmed": 24,
+          "death": 0,
+          "cured": 24
         },
         {
-          "地区": "菏泽",
+          "area": "菏泽",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 18,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "日照",
+          "area": "日照",
           "current_confirmed": 0,
-          "累计确诊": 16,
-          "死亡": 0,
-          "治愈": 16
+          "confirmed": 16,
+          "death": 0,
+          "cured": 16
         },
         {
-          "地区": "滨州",
+          "area": "滨州",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "重庆",
+      "overall_data": {
+        "area": "重庆",
         "current_confirmed": 0,
-        "累计确诊": 591,
-        "死亡": 6,
-        "治愈": 585
+        "confirmed": 591,
+        "death": 6,
+        "cured": 585
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "万州区",
+          "area": "万州区",
           "current_confirmed": 0,
-          "累计确诊": 118,
-          "死亡": 4,
-          "治愈": 114
+          "confirmed": 118,
+          "death": 4,
+          "cured": 114
         },
         {
-          "地区": "江北区",
+          "area": "江北区",
           "current_confirmed": 0,
-          "累计确诊": 28,
-          "死亡": 0,
-          "治愈": 28
+          "confirmed": 28,
+          "death": 0,
+          "cured": 28
         },
         {
-          "地区": "云阳县",
+          "area": "云阳县",
           "current_confirmed": 0,
-          "累计确诊": 25,
-          "死亡": 0,
-          "治愈": 25
+          "confirmed": 25,
+          "death": 0,
+          "cured": 25
         },
         {
-          "地区": "合川区",
+          "area": "合川区",
           "current_confirmed": 0,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 23
+          "confirmed": 23,
+          "death": 0,
+          "cured": 23
         },
         {
-          "地区": "綦江区",
+          "area": "綦江区",
           "current_confirmed": 0,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 23
+          "confirmed": 23,
+          "death": 0,
+          "cured": 23
         },
         {
-          "地区": "长寿区",
+          "area": "长寿区",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": 0,
-          "治愈": 22
+          "confirmed": 22,
+          "death": 0,
+          "cured": 22
         },
         {
-          "地区": "奉节县",
+          "area": "奉节县",
           "current_confirmed": 0,
-          "累计确诊": 22,
-          "死亡": 0,
-          "治愈": 22
+          "confirmed": 22,
+          "death": 0,
+          "cured": 22
         },
         {
-          "地区": "九龙坡区",
+          "area": "九龙坡区",
           "current_confirmed": 0,
-          "累计确诊": 21,
-          "死亡": 1,
-          "治愈": 20
+          "confirmed": 21,
+          "death": 1,
+          "cured": 20
         },
         {
-          "地区": "开州区",
+          "area": "开州区",
           "current_confirmed": 0,
-          "累计确诊": 21,
-          "死亡": 1,
-          "治愈": 20
+          "confirmed": 21,
+          "death": 1,
+          "cured": 20
         },
         {
-          "地区": "忠县",
+          "area": "忠县",
           "current_confirmed": 0,
-          "累计确诊": 21,
-          "死亡": 0,
-          "治愈": 21
+          "confirmed": 21,
+          "death": 0,
+          "cured": 21
         },
         {
-          "地区": "渝中区",
+          "area": "渝中区",
           "current_confirmed": 0,
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 20
+          "confirmed": 20,
+          "death": 0,
+          "cured": 20
         },
         {
-          "地区": "垫江县",
+          "area": "垫江县",
           "current_confirmed": 0,
-          "累计确诊": 20,
-          "死亡": 0,
-          "治愈": 20
+          "confirmed": 20,
+          "death": 0,
+          "cured": 20
         },
         {
-          "地区": "潼南区",
+          "area": "潼南区",
           "current_confirmed": 0,
-          "累计确诊": 18,
-          "死亡": 0,
-          "治愈": 18
+          "confirmed": 18,
+          "death": 0,
+          "cured": 18
         },
         {
-          "地区": "渝北区",
+          "area": "渝北区",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "两江新区",
+          "area": "两江新区",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "南岸区",
+          "area": "南岸区",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         },
         {
-          "地区": "石柱县",
+          "area": "石柱县",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         },
         {
-          "地区": "大足区",
+          "area": "大足区",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
         },
         {
-          "地区": "巫溪县",
+          "area": "巫溪县",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
         },
         {
-          "地区": "铜梁区",
+          "area": "铜梁区",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "丰都县",
+          "area": "丰都县",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "巫山县",
+          "area": "巫山县",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "沙坪坝区",
+          "area": "沙坪坝区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "璧山区",
+          "area": "璧山区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "荣昌区",
+          "area": "荣昌区",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 0,
-          "治愈": 9
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
         },
         {
-          "地区": "大渡口区",
+          "area": "大渡口区",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "巴南区",
+          "area": "巴南区",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "涪陵区",
+          "area": "涪陵区",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "永川区",
+          "area": "永川区",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "江津区",
+          "area": "江津区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "梁平区",
+          "area": "梁平区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "高新区",
+          "area": "高新区",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "黔江区",
+          "area": "黔江区",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "城口县",
+          "area": "城口县",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "彭水县",
+          "area": "彭水县",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "武隆区",
+          "area": "武隆区",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "秀山县",
+          "area": "秀山县",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "酉阳县",
+          "area": "酉阳县",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "万盛经开区",
+          "area": "万盛经开区",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "吉林",
+      "overall_data": {
+        "area": "吉林",
         "current_confirmed": 0,
-        "累计确诊": 573,
-        "死亡": 3,
-        "治愈": 570
+        "confirmed": 573,
+        "death": 3,
+        "cured": 570
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "通化",
+          "area": "通化",
           "current_confirmed": 0,
-          "累计确诊": 313,
-          "死亡": 1,
-          "治愈": 312
+          "confirmed": 313,
+          "death": 1,
+          "cured": 312
         },
         {
-          "地区": "长春",
+          "area": "长春",
           "current_confirmed": 0,
-          "累计确诊": 154,
-          "死亡": 0,
-          "治愈": 154
+          "confirmed": 154,
+          "death": 0,
+          "cured": 154
         },
         {
-          "地区": "吉林市",
+          "area": "吉林市",
           "current_confirmed": 0,
-          "累计确诊": 60,
-          "死亡": 1,
-          "治愈": 59
+          "confirmed": 60,
+          "death": 1,
+          "cured": 59
         },
         {
-          "地区": "四平",
+          "area": "四平",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 1,
-          "治愈": 16
+          "confirmed": 17,
+          "death": 1,
+          "cured": 16
         },
         {
-          "地区": "辽源",
+          "area": "辽源",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "延边",
+          "area": "延边",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "公主岭",
+          "area": "公主岭",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "松原",
+          "area": "松原",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "梅河口",
+          "area": "梅河口",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "白城",
+          "area": "白城",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "辽宁",
+      "overall_data": {
+        "area": "辽宁",
         "current_confirmed": 0,
-        "累计确诊": 407,
-        "死亡": 2,
-        "治愈": 405
+        "confirmed": 407,
+        "death": 2,
+        "cured": 405
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "大连",
+          "area": "大连",
           "current_confirmed": 0,
-          "累计确诊": 161,
-          "死亡": 0,
-          "治愈": 161
+          "confirmed": 161,
+          "death": 0,
+          "cured": 161
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 96,
-          "死亡": 0,
-          "治愈": 96
+          "confirmed": 96,
+          "death": 0,
+          "cured": 96
         },
         {
-          "地区": "沈阳",
+          "area": "沈阳",
           "current_confirmed": 0,
-          "累计确诊": 70,
-          "死亡": 0,
-          "治愈": 70
+          "confirmed": 70,
+          "death": 0,
+          "cured": 70
         },
         {
-          "地区": "锦州",
+          "area": "锦州",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 12,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "葫芦岛",
+          "area": "葫芦岛",
           "current_confirmed": 0,
-          "累计确诊": 12,
-          "死亡": 1,
-          "治愈": 11
+          "confirmed": 12,
+          "death": 1,
+          "cured": 11
         },
         {
-          "地区": "丹东",
+          "area": "丹东",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "盘锦",
+          "area": "盘锦",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "阜新",
+          "area": "阜新",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "铁岭",
+          "area": "铁岭",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "朝阳",
+          "area": "朝阳",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 1,
-          "治愈": 5
+          "confirmed": 6,
+          "death": 1,
+          "cured": 5
         },
         {
-          "地区": "鞍山",
+          "area": "鞍山",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "本溪",
+          "area": "本溪",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "辽阳",
+          "area": "辽阳",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "营口",
+          "area": "营口",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "抚顺",
+          "area": "抚顺",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "广西",
+      "overall_data": {
+        "area": "广西",
         "current_confirmed": 0,
-        "累计确诊": 267,
-        "死亡": 2,
-        "治愈": 265
+        "confirmed": 267,
+        "death": 2,
+        "cured": 265
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "南宁",
+          "area": "南宁",
           "current_confirmed": 0,
-          "累计确诊": 56,
-          "死亡": 0,
-          "治愈": 56
+          "confirmed": 56,
+          "death": 0,
+          "cured": 56
         },
         {
-          "地区": "北海",
+          "area": "北海",
           "current_confirmed": 0,
-          "累计确诊": 44,
-          "死亡": 1,
-          "治愈": 43
+          "confirmed": 44,
+          "death": 1,
+          "cured": 43
         },
         {
-          "地区": "桂林",
+          "area": "桂林",
           "current_confirmed": 0,
-          "累计确诊": 32,
-          "死亡": 0,
-          "治愈": 32
+          "confirmed": 32,
+          "death": 0,
+          "cured": 32
         },
         {
-          "地区": "河池",
+          "area": "河池",
           "current_confirmed": 0,
-          "累计确诊": 28,
-          "死亡": 1,
-          "治愈": 27
+          "confirmed": 28,
+          "death": 1,
+          "cured": 27
         },
         {
-          "地区": "柳州",
+          "area": "柳州",
           "current_confirmed": 0,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 24
+          "confirmed": 24,
+          "death": 0,
+          "cured": 24
         },
         {
-          "地区": "防城港",
+          "area": "防城港",
           "current_confirmed": 0,
-          "累计确诊": 19,
-          "死亡": 0,
-          "治愈": 19
+          "confirmed": 19,
+          "death": 0,
+          "cured": 19
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 14,
-          "死亡": 0,
-          "治愈": 14
+          "confirmed": 14,
+          "death": 0,
+          "cured": 14
         },
         {
-          "地区": "玉林",
+          "area": "玉林",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "来宾",
+          "area": "来宾",
           "current_confirmed": 0,
-          "累计确诊": 11,
-          "死亡": 0,
-          "治愈": 11
+          "confirmed": 11,
+          "death": 0,
+          "cured": 11
         },
         {
-          "地区": "钦州",
+          "area": "钦州",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "贵港",
+          "area": "贵港",
           "current_confirmed": 0,
-          "累计确诊": 8,
-          "死亡": 0,
-          "治愈": 8
+          "confirmed": 8,
+          "death": 0,
+          "cured": 8
         },
         {
-          "地区": "梧州",
+          "area": "梧州",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "贺州",
+          "area": "贺州",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "百色",
+          "area": "百色",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "海南",
+      "overall_data": {
+        "area": "海南",
         "current_confirmed": 0,
-        "累计确诊": 171,
-        "死亡": 6,
-        "治愈": 165
+        "confirmed": 171,
+        "death": 6,
+        "cured": 165
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "三亚",
+          "area": "三亚",
           "current_confirmed": 0,
-          "累计确诊": 57,
-          "死亡": 1,
-          "治愈": 56
+          "confirmed": 57,
+          "death": 1,
+          "cured": 56
         },
         {
-          "地区": "海口",
+          "area": "海口",
           "current_confirmed": 0,
-          "累计确诊": 39,
-          "死亡": 0,
-          "治愈": 39
+          "confirmed": 39,
+          "death": 0,
+          "cured": 39
         },
         {
-          "地区": "儋州",
+          "area": "儋州",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 1,
-          "治愈": 14
+          "confirmed": 15,
+          "death": 1,
+          "cured": 14
         },
         {
-          "地区": "万宁",
+          "area": "万宁",
           "current_confirmed": 0,
-          "累计确诊": 13,
-          "死亡": 0,
-          "治愈": 13
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
         },
         {
-          "地区": "澄迈",
+          "area": "澄迈",
           "current_confirmed": 0,
-          "累计确诊": 9,
-          "死亡": 1,
-          "治愈": 8
+          "confirmed": 9,
+          "death": 1,
+          "cured": 8
         },
         {
-          "地区": "昌江",
+          "area": "昌江",
           "current_confirmed": 0,
-          "累计确诊": 7,
-          "死亡": 0,
-          "治愈": 7
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
         },
         {
-          "地区": "琼海",
+          "area": "琼海",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 1,
-          "治愈": 5
+          "confirmed": 6,
+          "death": 1,
+          "cured": 5
         },
         {
-          "地区": "临高",
+          "area": "临高",
           "current_confirmed": 0,
-          "累计确诊": 6,
-          "死亡": 0,
-          "治愈": 6
+          "confirmed": 6,
+          "death": 0,
+          "cured": 6
         },
         {
-          "地区": "陵水",
+          "area": "陵水",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "定安",
+          "area": "定安",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 1,
-          "治愈": 2
+          "confirmed": 3,
+          "death": 1,
+          "cured": 2
         },
         {
-          "地区": "文昌",
+          "area": "文昌",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "东方",
+          "area": "东方",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 1,
-          "治愈": 2
+          "confirmed": 3,
+          "death": 1,
+          "cured": 2
         },
         {
-          "地区": "保亭",
+          "area": "保亭",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         },
         {
-          "地区": "乐东",
+          "area": "乐东",
           "current_confirmed": 0,
-          "累计确诊": 2,
-          "死亡": 0,
-          "治愈": 2
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
         },
         {
-          "地区": "琼中",
+          "area": "琼中",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "贵州",
+      "overall_data": {
+        "area": "贵州",
         "current_confirmed": 0,
-        "累计确诊": 147,
-        "死亡": 2,
-        "治愈": 145
+        "confirmed": 147,
+        "death": 2,
+        "cured": 145
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "贵阳",
+          "area": "贵阳",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 1,
-          "治愈": 35
+          "confirmed": 36,
+          "death": 1,
+          "cured": 35
         },
         {
-          "地区": "遵义",
+          "area": "遵义",
           "current_confirmed": 0,
-          "累计确诊": 32,
-          "死亡": 0,
-          "治愈": 32
+          "confirmed": 32,
+          "death": 0,
+          "cured": 32
         },
         {
-          "地区": "毕节",
+          "area": "毕节",
           "current_confirmed": 0,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 23
+          "confirmed": 23,
+          "death": 0,
+          "cured": 23
         },
         {
-          "地区": "黔南州",
+          "area": "黔南州",
           "current_confirmed": 0,
-          "累计确诊": 17,
-          "死亡": 0,
-          "治愈": 17
+          "confirmed": 17,
+          "death": 0,
+          "cured": 17
         },
         {
-          "地区": "六盘水",
+          "area": "六盘水",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 1,
-          "治愈": 9
+          "confirmed": 10,
+          "death": 1,
+          "cured": 9
         },
         {
-          "地区": "铜仁",
+          "area": "铜仁",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "黔东南州",
+          "area": "黔东南州",
           "current_confirmed": 0,
-          "累计确诊": 10,
-          "死亡": 0,
-          "治愈": 10
+          "confirmed": 10,
+          "death": 0,
+          "cured": 10
         },
         {
-          "地区": "安顺",
+          "area": "安顺",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "黔西南州",
+          "area": "黔西南州",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "境外输入",
+          "area": "境外输入",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": [
-        "3 月 17 日贵阳市新增 1 例境外输入无症状感染者"
-      ]
+      "extra_info": "3 月 17 日贵阳市新增 1 例境外输入无症状感染者"
     },
     {
-      "总体数据": {
-        "地区": "宁夏",
+      "overall_data": {
+        "area": "宁夏",
         "current_confirmed": 0,
-        "累计确诊": 75,
-        "死亡": 0,
-        "治愈": 75
+        "confirmed": 75,
+        "death": 0,
+        "cured": 75
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "银川",
+          "area": "银川",
           "current_confirmed": 0,
-          "累计确诊": 36,
-          "死亡": 0,
-          "治愈": 36
+          "confirmed": 36,
+          "death": 0,
+          "cured": 36
         },
         {
-          "地区": "吴忠",
+          "area": "吴忠",
           "current_confirmed": 0,
-          "累计确诊": 28,
-          "死亡": 0,
-          "治愈": 28
+          "confirmed": 28,
+          "death": 0,
+          "cured": 28
         },
         {
-          "地区": "固原",
+          "area": "固原",
           "current_confirmed": 0,
-          "累计确诊": 5,
-          "死亡": 0,
-          "治愈": 5
+          "confirmed": 5,
+          "death": 0,
+          "cured": 5
         },
         {
-          "地区": "中卫",
+          "area": "中卫",
           "current_confirmed": 0,
-          "累计确诊": 4,
-          "死亡": 0,
-          "治愈": 4
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
         },
         {
-          "地区": "宁东",
+          "area": "宁东",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         },
         {
-          "地区": "石嘴山",
+          "area": "石嘴山",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "澳门",
+      "overall_data": {
+        "area": "澳门",
         "current_confirmed": 0,
-        "累计确诊": 48,
-        "死亡": 0,
-        "治愈": 48
+        "confirmed": 48,
+        "death": 0,
+        "cured": 48
       },
-      "城市数据": [],
-      "额外信息": [
-        "确诊病例中含9例境外输入病例"
-      ]
+      "city_data": [],
+      "extra_info": "确诊病例中含9例境外输入病例"
     },
     {
-      "总体数据": {
-        "地区": "青海",
+      "overall_data": {
+        "area": "青海",
         "current_confirmed": 0,
-        "累计确诊": 18,
-        "死亡": 0,
-        "治愈": 18
+        "confirmed": 18,
+        "death": 0,
+        "cured": 18
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "西宁",
+          "area": "西宁",
           "current_confirmed": 0,
-          "累计确诊": 15,
-          "死亡": 0,
-          "治愈": 15
+          "confirmed": 15,
+          "death": 0,
+          "cured": 15
         },
         {
-          "地区": "海北州",
+          "area": "海北州",
           "current_confirmed": 0,
-          "累计确诊": 3,
-          "死亡": 0,
-          "治愈": 3
+          "confirmed": 3,
+          "death": 0,
+          "cured": 3
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     },
     {
-      "总体数据": {
-        "地区": "西藏",
+      "overall_data": {
+        "area": "西藏",
         "current_confirmed": 0,
-        "累计确诊": 1,
-        "死亡": 0,
-        "治愈": 1
+        "confirmed": 1,
+        "death": 0,
+        "cured": 1
       },
-      "城市数据": [
+      "city_data": [
         {
-          "地区": "拉萨",
+          "area": "拉萨",
           "current_confirmed": 0,
-          "累计确诊": 1,
-          "死亡": 0,
-          "治愈": 1
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
-      "额外信息": ""
+      "extra_info": ""
     }
   ],
-  "全球数据": [
+  "current_covid_national": [
     {
-      "州总体数据": {
-        "地区": "欧洲",
-        "current_confirmed": 18467005,
-        "累计确诊": 39146980,
-        "死亡": 926550,
-        "治愈": 19753425
+      "island_data": {
+        "area": "欧洲",
+        "current_confirmed": 18483331,
+        "confirmed": 39258711,
+        "death": 928062,
+        "cured": 19847318
       },
-      "州各国数据": [
+      "island_nation_data": [
         {
-          "地区": "英国",
-          "current_confirmed": 4180520,
-          "累计确诊": 4329184,
-          "死亡": 148125,
-          "治愈": "-"
+          "area": "英国",
+          "current_confirmed": 4189032,
+          "confirmed": 4337696,
+          "death": 148125,
+          "cured": -1
         },
         {
-          "地区": "法国",
-          "current_confirmed": 4174842,
-          "累计确诊": 4551683,
-          "死亡": 94956,
-          "治愈": "-"
+          "area": "法国",
+          "current_confirmed": 4177842,
+          "confirmed": 4554683,
+          "death": 94956,
+          "cured": -1
         },
         {
-          "地区": "西班牙",
+          "area": "西班牙",
           "current_confirmed": 3045250,
-          "累计确诊": 3270825,
-          "死亡": 75199,
-          "治愈": 150376
+          "confirmed": 3270825,
+          "death": 75199,
+          "cured": 150376
         },
         {
-          "地区": "荷兰",
-          "current_confirmed": 1216671,
-          "累计确诊": 1245007,
-          "死亡": 16450,
-          "治愈": "-"
+          "area": "荷兰",
+          "current_confirmed": 1230794,
+          "confirmed": 1259155,
+          "death": 16475,
+          "cured": -1
         },
         {
-          "地区": "比利时",
-          "current_confirmed": 823954,
-          "累计确诊": 866063,
-          "死亡": 22870,
-          "治愈": 19239
+          "area": "比利时",
+          "current_confirmed": 828621,
+          "confirmed": 870757,
+          "death": 22897,
+          "cured": 19239
         },
         {
-          "地区": "瑞典",
+          "area": "瑞典",
           "current_confirmed": 761645,
-          "累计确诊": 780018,
-          "死亡": 13402,
-          "治愈": 4971
+          "confirmed": 780018,
+          "death": 13402,
+          "cured": 4971
         },
         {
-          "地区": "塞尔维亚",
-          "current_confirmed": 593741,
-          "累计确诊": 672573,
-          "死亡": 7020,
-          "治愈": 71812
+          "area": "塞尔维亚",
+          "current_confirmed": 598514,
+          "confirmed": 677999,
+          "death": 7071,
+          "cured": 72414
         },
         {
-          "地区": "意大利",
+          "area": "意大利",
           "current_confirmed": 565993,
-          "累计确诊": 3544957,
-          "死亡": 108350,
-          "治愈": 2870614
+          "confirmed": 3544957,
+          "death": 108350,
+          "cured": 2870614
         },
         {
-          "地区": "波兰",
-          "current_confirmed": 400185,
-          "累计确诊": 2250991,
-          "死亡": 51884,
-          "治愈": 1798922
+          "area": "波兰",
+          "current_confirmed": 391601,
+          "confirmed": 2267964,
+          "death": 51932,
+          "cured": 1824431
         },
         {
-          "地区": "乌克兰",
-          "current_confirmed": 311484,
-          "累计确诊": 1644063,
-          "死亡": 31954,
-          "治愈": 1300625
+          "area": "乌克兰",
+          "current_confirmed": 316777,
+          "confirmed": 1652409,
+          "death": 32132,
+          "cured": 1303500
         },
         {
-          "地区": "俄罗斯",
+          "area": "俄罗斯",
           "current_confirmed": 284102,
-          "累计确诊": 4528543,
-          "死亡": 98033,
-          "治愈": 4146408
+          "confirmed": 4528543,
+          "death": 98033,
+          "cured": 4146408
         },
         {
-          "地区": "瑞士",
-          "current_confirmed": 264986,
-          "累计确诊": 592217,
-          "死亡": 9631,
-          "治愈": 317600
+          "area": "瑞士",
+          "current_confirmed": 269547,
+          "confirmed": 596790,
+          "death": 9643,
+          "cured": 317600
         },
         {
-          "地区": "希腊",
-          "current_confirmed": 244678,
-          "累计确诊": 254031,
-          "死亡": 7880,
-          "治愈": 1473
+          "area": "希腊",
+          "current_confirmed": 246337,
+          "confirmed": 255755,
+          "death": 7945,
+          "cured": 1473
         },
         {
-          "地区": "德国",
-          "current_confirmed": 228604,
-          "累计确诊": 2782273,
-          "死亡": 76404,
-          "治愈": 2477265
+          "area": "德国",
+          "current_confirmed": 225062,
+          "confirmed": 2796400,
+          "death": 76599,
+          "cured": 2494739
         },
         {
-          "地区": "匈牙利",
-          "current_confirmed": 218099,
-          "累计确诊": 633861,
-          "死亡": 19972,
-          "治愈": 395790
+          "area": "匈牙利",
+          "current_confirmed": 221002,
+          "confirmed": 641124,
+          "death": 20161,
+          "cured": 399961
         },
         {
-          "地区": "斯洛文尼亚",
-          "current_confirmed": 204464,
-          "累计确诊": 210787,
-          "死亡": 4296,
-          "治愈": 2027
+          "area": "斯洛文尼亚",
+          "current_confirmed": 206416,
+          "confirmed": 212753,
+          "death": 4310,
+          "cured": 2027
         },
         {
-          "地区": "爱尔兰",
-          "current_confirmed": 204453,
-          "累计确诊": 234541,
-          "死亡": 4666,
-          "治愈": 25422
+          "area": "爱尔兰",
+          "current_confirmed": 204989,
+          "confirmed": 235078,
+          "death": 4667,
+          "cured": 25422
         },
         {
-          "地区": "捷克",
-          "current_confirmed": 173584,
-          "累计确诊": 1515029,
-          "死亡": 25874,
-          "治愈": 1315571
+          "area": "捷克",
+          "current_confirmed": 148623,
+          "confirmed": 1516772,
+          "death": 26036,
+          "cured": 1342113
         },
         {
-          "地区": "斯洛伐克",
-          "current_confirmed": 93114,
-          "累计确诊": 357910,
-          "死亡": 9496,
-          "治愈": 255300
+          "area": "斯洛伐克",
+          "current_confirmed": 93273,
+          "confirmed": 358115,
+          "death": 9542,
+          "cured": 255300
         },
         {
-          "地区": "罗马尼亚",
-          "current_confirmed": 76444,
-          "累计确诊": 936618,
-          "死亡": 23114,
-          "治愈": 837060
+          "area": "罗马尼亚",
+          "current_confirmed": 77082,
+          "confirmed": 940443,
+          "death": 23234,
+          "cured": 840127
         },
         {
-          "地区": "保加利亚",
-          "current_confirmed": 66682,
-          "累计确诊": 328753,
-          "死亡": 12710,
-          "治愈": 249361
+          "area": "保加利亚",
+          "current_confirmed": 67864,
+          "confirmed": 333250,
+          "death": 12913,
+          "cured": 252473
         },
         {
-          "地区": "芬兰",
-          "current_confirmed": 44186,
-          "累计确诊": 76003,
-          "死亡": 817,
-          "治愈": 31000
+          "area": "芬兰",
+          "current_confirmed": 44603,
+          "confirmed": 76425,
+          "death": 822,
+          "cured": 31000
         },
         {
-          "地区": "挪威",
-          "current_confirmed": 37809,
-          "累计确诊": 92469,
-          "死亡": 656,
-          "治愈": 54004
+          "area": "挪威",
+          "current_confirmed": 38490,
+          "confirmed": 93150,
+          "death": 656,
+          "cured": 54004
         },
         {
-          "地区": "奥地利",
-          "current_confirmed": 35590,
-          "累计确诊": 536465,
-          "死亡": 9256,
-          "治愈": 491619
+          "area": "奥地利",
+          "current_confirmed": 35889,
+          "confirmed": 539541,
+          "death": 9275,
+          "cured": 494377
         },
         {
-          "地区": "阿尔巴尼亚",
-          "current_confirmed": 32468,
-          "累计确诊": 124134,
-          "死亡": 2210,
-          "治愈": 89456
+          "area": "阿尔巴尼亚",
+          "current_confirmed": 32179,
+          "confirmed": 124419,
+          "death": 2216,
+          "cured": 90024
         },
         {
-          "地区": "波黑",
-          "current_confirmed": 29356,
-          "累计确诊": 163875,
-          "死亡": 6278,
-          "治愈": 128241
+          "area": "波黑",
+          "current_confirmed": 30479,
+          "confirmed": 165787,
+          "death": 6328,
+          "cured": 128980
         },
         {
-          "地区": "葡萄牙",
-          "current_confirmed": 28179,
-          "累计确诊": 820407,
-          "死亡": 16837,
-          "治愈": 775391
+          "area": "葡萄牙",
+          "current_confirmed": 28024,
+          "confirmed": 820716,
+          "death": 16843,
+          "cured": 775849
         },
         {
-          "地区": "爱沙尼亚",
-          "current_confirmed": 25492,
-          "累计确诊": 103630,
-          "死亡": 868,
-          "治愈": 77270
+          "area": "爱沙尼亚",
+          "current_confirmed": 25468,
+          "confirmed": 104214,
+          "death": 879,
+          "cured": 77867
         },
         {
-          "地区": "摩尔多瓦",
+          "area": "摩尔多瓦",
           "current_confirmed": 19925,
-          "累计确诊": 226521,
-          "死亡": 4827,
-          "治愈": 201769
+          "confirmed": 226521,
+          "death": 4827,
+          "cured": 201769
         },
         {
-          "地区": "北马其顿",
-          "current_confirmed": 18907,
-          "累计确诊": 126938,
-          "死亡": 3675,
-          "治愈": 104356
+          "area": "北马其顿",
+          "current_confirmed": 18000,
+          "confirmed": 127240,
+          "death": 3716,
+          "cured": 105524
         },
         {
-          "地区": "立陶宛",
-          "current_confirmed": 12761,
-          "累计确诊": 213941,
-          "死亡": 3551,
-          "治愈": 197629
+          "area": "立陶宛",
+          "current_confirmed": 13126,
+          "confirmed": 214365,
+          "death": 3560,
+          "cured": 197679
         },
         {
-          "地区": "克罗地亚",
-          "current_confirmed": 10092,
-          "累计确诊": 267222,
-          "死亡": 5893,
-          "治愈": 251237
+          "area": "克罗地亚",
+          "current_confirmed": 9290,
+          "confirmed": 267522,
+          "death": 5911,
+          "cured": 252321
         },
         {
-          "地区": "丹麦",
-          "current_confirmed": 9711,
-          "累计确诊": 227894,
-          "死亡": 2413,
-          "治愈": 215770
+          "area": "丹麦",
+          "current_confirmed": 8576,
+          "confirmed": 228692,
+          "death": 2415,
+          "cured": 217701
         },
         {
-          "地区": "拉脱维亚",
+          "area": "白俄罗斯",
+          "current_confirmed": 7183,
+          "confirmed": 319599,
+          "death": 2227,
+          "cured": 310189
+        },
+        {
+          "area": "拉脱维亚",
           "current_confirmed": 7148,
-          "累计确诊": 101040,
-          "死亡": 1878,
-          "治愈": 92014
+          "confirmed": 101040,
+          "death": 1878,
+          "cured": 92014
         },
         {
-          "地区": "白俄罗斯",
-          "current_confirmed": 6927,
-          "累计确诊": 318681,
-          "死亡": 2219,
-          "治愈": 309535
-        },
-        {
-          "地区": "黑山",
+          "area": "黑山",
           "current_confirmed": 6904,
-          "累计确诊": 90083,
-          "死亡": 1245,
-          "治愈": 81934
+          "confirmed": 90083,
+          "death": 1245,
+          "cured": 81934
         },
         {
-          "地区": "卢森堡",
+          "area": "卢森堡",
           "current_confirmed": 3699,
-          "累计确诊": 60755,
-          "死亡": 738,
-          "治愈": 56318
+          "confirmed": 60755,
+          "death": 738,
+          "cured": 56318
         },
         {
-          "地区": "马耳他",
-          "current_confirmed": 1402,
-          "累计确诊": 28875,
-          "死亡": 387,
-          "治愈": 27086
+          "area": "马耳他",
+          "current_confirmed": 1132,
+          "confirmed": 28938,
+          "death": 388,
+          "cured": 27418
         },
         {
-          "地区": "马恩岛",
-          "current_confirmed": 1094,
-          "累计确诊": 1551,
-          "死亡": 26,
-          "治愈": 431
+          "area": "马恩岛",
+          "current_confirmed": 1098,
+          "confirmed": 1555,
+          "death": 26,
+          "cured": 431
         },
         {
-          "地区": "安道尔",
-          "current_confirmed": 644,
-          "累计确诊": 11809,
-          "死亡": 115,
-          "治愈": 11050
+          "area": "安道尔",
+          "current_confirmed": 531,
+          "confirmed": 11850,
+          "death": 115,
+          "cured": 11204
         },
         {
-          "地区": "圣马力诺",
-          "current_confirmed": 519,
-          "累计确诊": 4603,
-          "死亡": 84,
-          "治愈": 4000
+          "area": "圣马力诺",
+          "current_confirmed": 518,
+          "confirmed": 4631,
+          "death": 84,
+          "cured": 4029
         },
         {
-          "地区": "摩纳哥",
-          "current_confirmed": 472,
-          "累计确诊": 2254,
-          "死亡": 28,
-          "治愈": 1754
+          "area": "摩纳哥",
+          "current_confirmed": 477,
+          "confirmed": 2259,
+          "death": 28,
+          "cured": 1754
         },
         {
-          "地区": "列支敦士登",
-          "current_confirmed": 123,
-          "累计确诊": 2731,
-          "死亡": 56,
-          "治愈": 2552
+          "area": "列支敦士登",
+          "current_confirmed": 113,
+          "confirmed": 2731,
+          "death": 56,
+          "cured": 2562
         },
         {
-          "地区": "冰岛",
-          "current_confirmed": 94,
-          "累计确诊": 6163,
-          "死亡": 29,
-          "治愈": 6040
+          "area": "冰岛",
+          "current_confirmed": 105,
+          "confirmed": 6183,
+          "death": 29,
+          "cured": 6049
         },
         {
-          "地区": "直布罗陀",
+          "area": "直布罗陀",
           "current_confirmed": 12,
-          "累计确诊": 4273,
-          "死亡": 94,
-          "治愈": 4167
+          "confirmed": 4273,
+          "death": 94,
+          "cured": 4167
         },
         {
-          "地区": "梵蒂冈",
+          "area": "梵蒂冈",
           "current_confirmed": 2,
-          "累计确诊": 29,
-          "死亡": 0,
-          "治愈": 27
+          "confirmed": 29,
+          "death": 0,
+          "cured": 27
         },
         {
-          "地区": "根西岛",
+          "area": "根西岛",
           "current_confirmed": 0,
-          "累计确诊": 821,
-          "死亡": 14,
-          "治愈": 807
+          "confirmed": 821,
+          "death": 14,
+          "cured": 807
         },
         {
-          "地区": "法罗群岛",
+          "area": "法罗群岛",
           "current_confirmed": 0,
-          "累计确诊": 661,
-          "死亡": 1,
-          "治愈": 660
+          "confirmed": 661,
+          "death": 1,
+          "cured": 660
         },
         {
-          "地区": "泽西岛",
-          "current_confirmed": "-",
-          "累计确诊": 3225,
-          "死亡": 69,
-          "治愈": 3162
+          "area": "泽西岛",
+          "current_confirmed": -1,
+          "confirmed": 3225,
+          "death": 69,
+          "cured": 3162
         }
       ]
     },
     {
-      "州总体数据": {
-        "地区": "北美洲",
-        "current_confirmed": 6906527,
-        "累计确诊": 35080609,
-        "死亡": 804637,
-        "治愈": 27369445
+      "island_data": {
+        "area": "北美洲",
+        "current_confirmed": 6910074,
+        "confirmed": 35092604,
+        "death": 804895,
+        "cured": 27377635
       },
-      "州各国数据": [
+      "island_nation_data": [
         {
-          "地区": "美国",
+          "area": "美国",
           "current_confirmed": 6239670,
-          "累计确诊": 30291863,
-          "死亡": 549664,
-          "治愈": 23502529
+          "confirmed": 30291863,
+          "death": 549664,
+          "cured": 23502529
         },
         {
-          "地区": "墨西哥",
-          "current_confirmed": 264215,
-          "累计确诊": 2224767,
-          "死亡": 201429,
-          "治愈": 1759123
+          "area": "墨西哥",
+          "current_confirmed": 263141,
+          "confirmed": 2226550,
+          "death": 201623,
+          "cured": 1761786
         },
         {
-          "地区": "洪都拉斯",
-          "current_confirmed": 111078,
-          "累计确诊": 187015,
-          "死亡": 4553,
-          "治愈": 71384
+          "area": "洪都拉斯",
+          "current_confirmed": 110914,
+          "confirmed": 187460,
+          "death": 4558,
+          "cured": 71988
         },
         {
-          "地区": "波多黎各",
-          "current_confirmed": 103516,
-          "累计确诊": 105625,
-          "死亡": 2109,
-          "治愈": 0
+          "area": "波多黎各",
+          "current_confirmed": 103781,
+          "confirmed": 105893,
+          "death": 2112,
+          "cured": 0
         },
         {
-          "地区": "加拿大",
-          "current_confirmed": 43136,
-          "累计确诊": 964457,
-          "死亡": 22873,
-          "治愈": 898448
+          "area": "加拿大",
+          "current_confirmed": 47037,
+          "confirmed": 971688,
+          "death": 22900,
+          "cured": 901751
         },
         {
-          "地区": "多米尼加",
-          "current_confirmed": 37635,
-          "累计确诊": 251983,
-          "死亡": 3304,
-          "治愈": 211044
+          "area": "多米尼加",
+          "current_confirmed": 37466,
+          "confirmed": 252182,
+          "death": 3307,
+          "cured": 211409
         },
         {
-          "地区": "牙买加",
-          "current_confirmed": 22131,
-          "累计确诊": 37747,
-          "死亡": 557,
-          "治愈": 15059
+          "area": "牙买加",
+          "current_confirmed": 22598,
+          "confirmed": 38227,
+          "death": 570,
+          "cured": 15059
         },
         {
-          "地区": "哥斯达黎加",
+          "area": "哥斯达黎加",
           "current_confirmed": 20540,
-          "累计确诊": 215178,
-          "死亡": 2931,
-          "治愈": 191707
+          "confirmed": 215178,
+          "death": 2931,
+          "cured": 191707
         },
         {
-          "地区": "海地",
+          "area": "海地",
           "current_confirmed": 14705,
-          "累计确诊": 25130,
-          "死亡": 502,
-          "治愈": 9923
+          "confirmed": 25130,
+          "death": 502,
+          "cured": 9923
         },
         {
-          "地区": "瓜德罗普岛",
+          "area": "危地马拉",
+          "current_confirmed": 11493,
+          "confirmed": 193733,
+          "death": 6802,
+          "cured": 175438
+        },
+        {
+          "area": "瓜德罗普岛",
           "current_confirmed": 11339,
-          "累计确诊": 11512,
-          "死亡": 173,
-          "治愈": 0
+          "confirmed": 11512,
+          "death": 173,
+          "cured": 0
         },
         {
-          "地区": "危地马拉",
-          "current_confirmed": 11276,
-          "累计确诊": 193050,
-          "死亡": 6794,
-          "治愈": 174980
-        },
-        {
-          "地区": "马提尼克",
+          "area": "马提尼克",
           "current_confirmed": 7629,
-          "累计确诊": 7679,
-          "死亡": 50,
-          "治愈": 0
+          "confirmed": 7679,
+          "death": 50,
+          "cured": 0
         },
         {
-          "地区": "巴拿马",
+          "area": "巴拿马",
           "current_confirmed": 4965,
-          "累计确诊": 353839,
-          "死亡": 6100,
-          "治愈": 342774
+          "confirmed": 353839,
+          "death": 6100,
+          "cured": 342774
         },
         {
-          "地区": "古巴",
+          "area": "古巴",
           "current_confirmed": 3589,
-          "累计确诊": 72503,
-          "死亡": 415,
-          "治愈": 68499
+          "confirmed": 72503,
+          "death": 415,
+          "cured": 68499
         },
         {
-          "地区": "库拉索岛",
+          "area": "库拉索岛",
           "current_confirmed": 2183,
-          "累计确诊": 6648,
-          "死亡": 27,
-          "治愈": 4438
+          "confirmed": 6648,
+          "death": 27,
+          "cured": 4438
         },
         {
-          "地区": "尼加拉瓜",
+          "area": "尼加拉瓜",
           "current_confirmed": 2087,
-          "累计确诊": 6489,
-          "死亡": 177,
-          "治愈": 4225
+          "confirmed": 6489,
+          "death": 177,
+          "cured": 4225
         },
         {
-          "地区": "圣文森特和格林纳丁斯",
-          "current_confirmed": 1564,
-          "累计确诊": 1721,
-          "死亡": 10,
-          "治愈": 147
+          "area": "圣文森特和格林纳丁斯",
+          "current_confirmed": 1581,
+          "confirmed": 1738,
+          "death": 10,
+          "cured": 147
         },
         {
-          "地区": "巴哈马",
+          "area": "巴哈马",
           "current_confirmed": 1397,
-          "累计确诊": 9000,
-          "死亡": 188,
-          "治愈": 7415
+          "confirmed": 9000,
+          "death": 188,
+          "cured": 7415
         },
         {
-          "地区": "圣巴泰勒米岛",
+          "area": "圣巴泰勒米岛",
           "current_confirmed": 856,
-          "累计确诊": 857,
-          "死亡": 1,
-          "治愈": 0
+          "confirmed": 857,
+          "death": 1,
+          "cured": 0
         },
         {
-          "地区": "萨尔瓦多",
-          "current_confirmed": 759,
-          "累计确诊": 63766,
-          "死亡": 1998,
-          "治愈": 61009
+          "area": "萨尔瓦多",
+          "current_confirmed": 788,
+          "confirmed": 64431,
+          "death": 2003,
+          "cured": 61640
         },
         {
-          "地区": "阿鲁巴",
-          "current_confirmed": 677,
-          "累计确诊": 9214,
-          "死亡": 82,
-          "治愈": 8455
+          "area": "阿鲁巴",
+          "current_confirmed": 604,
+          "confirmed": 9294,
+          "death": 82,
+          "cured": 8608
         },
         {
-          "地区": "安提瓜和巴布达",
-          "current_confirmed": 346,
-          "累计确诊": 1122,
-          "死亡": 28,
-          "治愈": 748
+          "area": "百慕大",
+          "current_confirmed": 396,
+          "confirmed": 1136,
+          "death": 12,
+          "cured": 728
         },
         {
-          "地区": "百慕大",
-          "current_confirmed": 294,
-          "累计确诊": 1028,
-          "死亡": 12,
-          "治愈": 722
+          "area": "安提瓜和巴布达",
+          "current_confirmed": 352,
+          "confirmed": 1128,
+          "death": 28,
+          "cured": 748
         },
         {
-          "地区": "特立尼达和多巴哥",
-          "current_confirmed": 222,
-          "累计确诊": 7954,
-          "死亡": 142,
-          "治愈": 7590
+          "area": "特立尼达和多巴哥",
+          "current_confirmed": 240,
+          "confirmed": 7977,
+          "death": 142,
+          "cured": 7595
         },
         {
-          "地区": "巴巴多斯",
-          "current_confirmed": 161,
-          "累计确诊": 3603,
-          "死亡": 41,
-          "治愈": 3401
+          "area": "巴巴多斯",
+          "current_confirmed": 167,
+          "confirmed": 3609,
+          "death": 41,
+          "cured": 3401
         },
         {
-          "地区": "圣马丁岛",
+          "area": "圣马丁岛",
           "current_confirmed": 133,
-          "累计确诊": 1758,
-          "死亡": 27,
-          "治愈": 1598
+          "confirmed": 1758,
+          "death": 27,
+          "cured": 1598
         },
         {
-          "地区": "特克斯和凯科斯群岛",
-          "current_confirmed": 108,
-          "累计确诊": 2326,
-          "死亡": 17,
-          "治愈": 2201
+          "area": "特克斯和凯科斯群岛",
+          "current_confirmed": 107,
+          "confirmed": 2327,
+          "death": 17,
+          "cured": 2203
         },
         {
-          "地区": "伯利兹",
+          "area": "伯利兹",
           "current_confirmed": 99,
-          "累计确诊": 12440,
-          "死亡": 317,
-          "治愈": 12024
+          "confirmed": 12440,
+          "death": 317,
+          "cured": 12024
         },
         {
-          "地区": "美属维尔京群岛",
+          "area": "美属维尔京群岛",
           "current_confirmed": 55,
-          "累计确诊": 2907,
-          "死亡": 26,
-          "治愈": 2826
+          "confirmed": 2907,
+          "death": 26,
+          "cured": 2826
         },
         {
-          "地区": "圣卢西亚",
+          "area": "圣卢西亚",
           "current_confirmed": 34,
-          "累计确诊": 4191,
-          "死亡": 58,
-          "治愈": 4099
+          "confirmed": 4191,
+          "death": 58,
+          "cured": 4099
         },
         {
-          "地区": "荷属圣马丁",
+          "area": "荷属圣马丁",
           "current_confirmed": 30,
-          "累计确诊": 2130,
-          "死亡": 27,
-          "治愈": 2073
+          "confirmed": 2130,
+          "death": 27,
+          "cured": 2073
         },
         {
-          "地区": "开曼群岛",
+          "area": "开曼群岛",
           "current_confirmed": 23,
-          "累计确诊": 487,
-          "死亡": 2,
-          "治愈": 462
+          "confirmed": 487,
+          "death": 2,
+          "cured": 462
         },
         {
-          "地区": "英属维尔京群岛",
+          "area": "英属维尔京群岛",
           "current_confirmed": 22,
-          "累计确诊": 154,
-          "死亡": 1,
-          "治愈": 131
+          "confirmed": 154,
+          "death": 1,
+          "cured": 131
         },
         {
-          "地区": "多米尼克",
+          "area": "多米尼克",
           "current_confirmed": 20,
-          "累计确诊": 161,
-          "死亡": 0,
-          "治愈": 141
+          "confirmed": 161,
+          "death": 0,
+          "cured": 141
         },
         {
-          "地区": "格林那达",
+          "area": "格林那达",
           "current_confirmed": 15,
-          "累计确诊": 163,
-          "死亡": 1,
-          "治愈": 147
+          "confirmed": 163,
+          "death": 1,
+          "cured": 147
         },
         {
-          "地区": "圣皮埃尔和密克隆群岛",
+          "area": "圣皮埃尔和密克隆群岛",
           "current_confirmed": 12,
-          "累计确诊": 24,
-          "死亡": 0,
-          "治愈": 12
+          "confirmed": 24,
+          "death": 0,
+          "cured": 12
         },
         {
-          "地区": "安圭拉",
+          "area": "安圭拉",
           "current_confirmed": 3,
-          "累计确诊": 23,
-          "死亡": 0,
-          "治愈": 20
+          "confirmed": 23,
+          "death": 0,
+          "cured": 20
         },
         {
-          "地区": "圣其茨和尼维斯",
+          "area": "圣其茨和尼维斯",
           "current_confirmed": 2,
-          "累计确诊": 44,
-          "死亡": 0,
-          "治愈": 42
+          "confirmed": 44,
+          "death": 0,
+          "cured": 42
         },
         {
-          "地区": "蒙特塞拉特",
+          "area": "蒙特塞拉特",
           "current_confirmed": 1,
-          "累计确诊": 20,
-          "死亡": 1,
-          "治愈": 18
+          "confirmed": 20,
+          "death": 1,
+          "cured": 18
         },
         {
-          "地区": "格陵兰",
+          "area": "格陵兰",
           "current_confirmed": 0,
-          "累计确诊": 31,
-          "死亡": 0,
-          "治愈": 31
+          "confirmed": 31,
+          "death": 0,
+          "cured": 31
         }
       ]
     },
     {
-      "州总体数据": {
-        "地区": "亚洲",
-        "current_confirmed": 1952507,
-        "累计确诊": 28055162,
-        "死亡": 425624,
-        "治愈": 25677031
+      "island_data": {
+        "area": "亚洲",
+        "current_confirmed": 1985323,
+        "confirmed": 28160535,
+        "death": 426630,
+        "cured": 25748582
       },
-      "州各国数据": [
+      "island_nation_data": [
         {
-          "地区": "印度",
+          "area": "印度",
           "current_confirmed": 521808,
-          "累计确诊": 12039644,
-          "死亡": 161843,
-          "治愈": 11355993
+          "confirmed": 12039644,
+          "death": 161843,
+          "cured": 11355993
         },
         {
-          "地区": "土耳其",
-          "current_confirmed": 220004,
-          "累计确诊": 3208173,
-          "死亡": 31076,
-          "治愈": 2957093
+          "area": "土耳其",
+          "current_confirmed": 234239,
+          "confirmed": 3240577,
+          "death": 31230,
+          "cured": 2975108
         },
         {
-          "地区": "伊朗",
-          "current_confirmed": 199501,
-          "累计确诊": 1846923,
-          "死亡": 62308,
-          "治愈": 1585114
+          "area": "伊朗",
+          "current_confirmed": 202007,
+          "confirmed": 1864974,
+          "death": 62479,
+          "cured": 1600488
         },
         {
-          "地区": "哈萨克斯坦",
-          "current_confirmed": 165859,
-          "累计确诊": 290792,
-          "死亡": 3586,
-          "治愈": 121347
+          "area": "哈萨克斯坦",
+          "current_confirmed": 167263,
+          "confirmed": 292306,
+          "death": 3696,
+          "cured": 121347
         },
         {
-          "地区": "印度尼西亚",
-          "current_confirmed": 124236,
-          "累计确诊": 1496085,
-          "死亡": 40449,
-          "治愈": 1331400
+          "area": "印度尼西亚",
+          "current_confirmed": 123694,
+          "confirmed": 1501093,
+          "death": 40581,
+          "cured": 1336818
         },
         {
-          "地区": "菲律宾",
-          "current_confirmed": 105568,
-          "累计确诊": 721892,
-          "死亡": 13170,
-          "治愈": 603154
+          "area": "菲律宾",
+          "current_confirmed": 115495,
+          "confirmed": 731894,
+          "death": 13186,
+          "cured": 603213
         },
         {
-          "地区": "约旦",
-          "current_confirmed": 99571,
-          "累计确诊": 582133,
-          "死亡": 6472,
-          "治愈": 476090
+          "area": "约旦",
+          "current_confirmed": 96188,
+          "confirmed": 597256,
+          "death": 6651,
+          "cured": 494417
         },
         {
-          "地区": "黎巴嫩",
+          "area": "黎巴嫩",
           "current_confirmed": 94722,
-          "累计确诊": 461062,
-          "死亡": 6096,
-          "治愈": 360244
+          "confirmed": 461062,
+          "death": 6096,
+          "cured": 360244
         },
         {
-          "地区": "伊拉克",
+          "area": "伊拉克",
           "current_confirmed": 72281,
-          "累计确诊": 832428,
-          "死亡": 14212,
-          "治愈": 745935
+          "confirmed": 832428,
+          "death": 14212,
+          "cured": 745935
         },
         {
-          "地区": "孟加拉国",
-          "current_confirmed": 51169,
-          "累计确诊": 595714,
-          "死亡": 8904,
-          "治愈": 535641
+          "area": "孟加拉国",
+          "current_confirmed": 54228,
+          "confirmed": 600895,
+          "death": 8949,
+          "cured": 537718
         },
         {
-          "地区": "巴基斯坦",
-          "current_confirmed": 44447,
-          "累计确诊": 654591,
-          "死亡": 14215,
-          "治愈": 595929
+          "area": "巴基斯坦",
+          "current_confirmed": 46663,
+          "confirmed": 659116,
+          "death": 14256,
+          "cured": 598197
         },
         {
-          "地区": "塞浦路斯",
-          "current_confirmed": 41998,
-          "累计确诊": 44305,
-          "死亡": 250,
-          "治愈": 2057
+          "area": "塞浦路斯",
+          "current_confirmed": 42322,
+          "confirmed": 44631,
+          "death": 252,
+          "cured": 2057
         },
         {
-          "地区": "巴勒斯坦",
+          "area": "巴勒斯坦",
           "current_confirmed": 24547,
-          "累计确诊": 264934,
-          "死亡": 2834,
-          "治愈": 237553
+          "confirmed": 264934,
+          "death": 2834,
+          "cured": 237553
         },
         {
-          "地区": "日本",
-          "current_confirmed": 16581,
-          "累计确诊": 466849,
-          "死亡": 9031,
-          "治愈": 441237
+          "area": "阿塞拜疆",
+          "current_confirmed": 17317,
+          "confirmed": 257330,
+          "death": 3513,
+          "cured": 236500
         },
         {
-          "地区": "阿塞拜疆",
-          "current_confirmed": 16559,
-          "累计确诊": 256201,
-          "死亡": 3491,
-          "治愈": 236151
+          "area": "日本",
+          "current_confirmed": 17184,
+          "confirmed": 468614,
+          "death": 9061,
+          "cured": 442369
         },
         {
-          "地区": "亚美尼亚",
-          "current_confirmed": 15347,
-          "累计确诊": 190317,
-          "死亡": 3464,
-          "治愈": 171506
+          "area": "亚美尼亚",
+          "current_confirmed": 15759,
+          "confirmed": 190741,
+          "death": 3476,
+          "cured": 171506
         },
         {
-          "地区": "阿联酋",
-          "current_confirmed": 15000,
-          "累计确诊": 455187,
-          "死亡": 1481,
-          "治愈": 438706
+          "area": "卡塔尔",
+          "current_confirmed": 14906,
+          "confirmed": 178464,
+          "death": 286,
+          "cured": 163272
         },
         {
-          "地区": "卡塔尔",
-          "current_confirmed": 14580,
-          "累计确诊": 177774,
-          "死亡": 284,
-          "治愈": 162910
+          "area": "阿联酋",
+          "current_confirmed": 14854,
+          "confirmed": 457071,
+          "death": 1486,
+          "cured": 440731
         },
         {
-          "地区": "科威特",
-          "current_confirmed": 14417,
-          "累计确诊": 228299,
-          "死亡": 1286,
-          "治愈": 212596
+          "area": "科威特",
+          "current_confirmed": 14310,
+          "confirmed": 229550,
+          "death": 1298,
+          "cured": 213942
         },
         {
-          "地区": "马来西亚",
-          "current_confirmed": 14380,
-          "累计确诊": 341944,
-          "死亡": 1255,
-          "治愈": 326309
+          "area": "马来西亚",
+          "current_confirmed": 14219,
+          "confirmed": 342885,
+          "death": 1260,
+          "cured": 327406
         },
         {
-          "地区": "阿曼",
-          "current_confirmed": 11422,
-          "累计确诊": 153838,
-          "死亡": 1650,
-          "治愈": 140766
+          "area": "阿曼",
+          "current_confirmed": 11986,
+          "confirmed": 156067,
+          "death": 1661,
+          "cured": 142420
         },
         {
-          "地区": "以色列",
+          "area": "以色列",
           "current_confirmed": 9608,
-          "累计确诊": 831906,
-          "死亡": 6183,
-          "治愈": 816115
+          "confirmed": 831906,
+          "death": 6183,
+          "cured": 816115
         },
         {
-          "地区": "巴林",
-          "current_confirmed": 7850,
-          "累计确诊": 140818,
-          "死亡": 513,
-          "治愈": 132455
+          "area": "巴林",
+          "current_confirmed": 8877,
+          "confirmed": 141845,
+          "death": 513,
+          "cured": 132455
         },
         {
-          "地区": "缅甸",
+          "area": "缅甸",
           "current_confirmed": 7390,
-          "累计确诊": 142385,
-          "死亡": 3206,
-          "治愈": 131789
+          "confirmed": 142385,
+          "death": 3206,
+          "cured": 131789
         },
         {
-          "地区": "韩国",
+          "area": "韩国",
           "current_confirmed": 6291,
-          "累计确诊": 102141,
-          "死亡": 1726,
-          "治愈": 94124
+          "confirmed": 102141,
+          "death": 1726,
+          "cured": 94124
         },
         {
-          "地区": "叙利亚",
-          "current_confirmed": 5335,
-          "累计确诊": 18356,
-          "死亡": 1227,
-          "治愈": 11794
+          "area": "叙利亚",
+          "current_confirmed": 4882,
+          "confirmed": 18498,
+          "death": 1239,
+          "cured": 12377
         },
         {
-          "地区": "沙特阿拉伯",
+          "area": "沙特阿拉伯",
           "current_confirmed": 4728,
-          "累计确诊": 388325,
-          "死亡": 6650,
-          "治愈": 376947
+          "confirmed": 388325,
+          "death": 6650,
+          "cured": 376947
         },
         {
-          "地区": "格鲁吉亚",
-          "current_confirmed": 4331,
-          "累计确诊": 280301,
-          "死亡": 3751,
-          "治愈": 272219
+          "area": "格鲁吉亚",
+          "current_confirmed": 4110,
+          "confirmed": 280476,
+          "death": 3765,
+          "cured": 272601
         },
         {
-          "地区": "阿富汗",
-          "current_confirmed": 3811,
-          "累计确诊": 56294,
-          "死亡": 2470,
-          "治愈": 50013
+          "area": "阿富汗",
+          "current_confirmed": 3837,
+          "confirmed": 56322,
+          "death": 2472,
+          "cured": 50013
         },
         {
-          "地区": "斯里兰卡",
-          "current_confirmed": 2825,
-          "累计确诊": 92007,
-          "死亡": 559,
-          "治愈": 88623
+          "area": "蒙古",
+          "current_confirmed": 3020,
+          "confirmed": 7556,
+          "death": 10,
+          "cured": 4526
         },
         {
-          "地区": "马尔代夫",
-          "current_confirmed": 2809,
-          "累计确诊": 23403,
-          "死亡": 66,
-          "治愈": 20528
+          "area": "也门共和国",
+          "current_confirmed": 2835,
+          "confirmed": 4037,
+          "death": 852,
+          "cured": 350
         },
         {
-          "地区": "也门共和国",
-          "current_confirmed": 2790,
-          "累计确诊": 3973,
-          "死亡": 833,
-          "治愈": 350
+          "area": "斯里兰卡",
+          "current_confirmed": 2823,
+          "confirmed": 92303,
+          "death": 566,
+          "cured": 88914
         },
         {
-          "地区": "蒙古",
-          "current_confirmed": 2654,
-          "累计确诊": 7005,
-          "死亡": 10,
-          "治愈": 4341
+          "area": "马尔代夫",
+          "current_confirmed": 2736,
+          "confirmed": 23524,
+          "death": 66,
+          "cured": 20722
         },
         {
-          "地区": "吉尔吉斯斯坦",
-          "current_confirmed": 2190,
-          "累计确诊": 88092,
-          "死亡": 1495,
-          "治愈": 84407
+          "area": "吉尔吉斯斯坦",
+          "current_confirmed": 2013,
+          "confirmed": 88163,
+          "death": 1497,
+          "cured": 84653
         },
         {
-          "地区": "泰国",
-          "current_confirmed": 1401,
-          "累计确诊": 28734,
-          "死亡": 94,
-          "治愈": 27239
+          "area": "乌兹别克斯坦",
+          "current_confirmed": 1550,
+          "confirmed": 82536,
+          "death": 626,
+          "cured": 80360
         },
         {
-          "地区": "乌兹别克斯坦",
-          "current_confirmed": 1354,
-          "累计确诊": 82340,
-          "死亡": 626,
-          "治愈": 80360
+          "area": "泰国",
+          "current_confirmed": 1366,
+          "confirmed": 28773,
+          "death": 94,
+          "cured": 27313
         },
         {
-          "地区": "尼泊尔",
-          "current_confirmed": 1282,
-          "累计确诊": 276839,
-          "死亡": 3027,
-          "治愈": 272530
+          "area": "尼泊尔",
+          "current_confirmed": 1341,
+          "confirmed": 276980,
+          "death": 3027,
+          "cured": 272612
         },
         {
-          "地区": "柬埔寨",
-          "current_confirmed": 1057,
-          "累计确诊": 2233,
-          "死亡": 10,
-          "治愈": 1166
-        },
-        {
-          "地区": "中国",
-          "current_confirmed": 381,
-          "累计确诊": 102715,
-          "死亡": 4851,
-          "治愈": 97483
-        },
-        {
-          "地区": "东帝汶",
-          "current_confirmed": 322,
-          "累计确诊": 491,
-          "死亡": 0,
-          "治愈": 169
-        },
-        {
-          "地区": "越南",
-          "current_confirmed": 247,
-          "累计确诊": 2590,
-          "死亡": 35,
-          "治愈": 2308
-        },
-        {
-          "地区": "新加坡",
-          "current_confirmed": 236,
-          "累计确诊": 60288,
-          "死亡": 30,
-          "治愈": 60022
-        },
-        {
-          "地区": "文莱",
-          "current_confirmed": 15,
-          "累计确诊": 206,
-          "死亡": 3,
-          "治愈": 188
-        },
-        {
-          "地区": "不丹",
-          "current_confirmed": 4,
-          "累计确诊": 872,
-          "死亡": 1,
-          "治愈": 867
-        },
-        {
-          "地区": "老挝",
-          "current_confirmed": 4,
-          "累计确诊": 49,
-          "死亡": 0,
-          "治愈": 45
-        },
-        {
-          "地区": "塔吉克斯坦",
-          "current_confirmed": "-",
-          "累计确诊": 13714,
-          "死亡": 901,
-          "治愈": 13218
-        }
-      ]
-    },
-    {
-      "州总体数据": {
-        "地区": "南美洲",
-        "current_confirmed": 1797395,
-        "累计确诊": 20845598,
-        "死亡": 542031,
-        "治愈": 18506172
-      },
-      "州各国数据": [
-        {
-          "地区": "巴西",
-          "current_confirmed": 1346808,
-          "累计确诊": 12573615,
-          "死亡": 313866,
-          "治愈": 10912941
-        },
-        {
-          "地区": "阿根廷",
-          "current_confirmed": 173633,
-          "累计确诊": 2308597,
-          "死亡": 55449,
-          "治愈": 2079515
-        },
-        {
-          "地区": "哥伦比亚",
-          "current_confirmed": 52015,
-          "累计确诊": 2382730,
-          "死亡": 62955,
-          "治愈": 2267760
-        },
-        {
-          "地区": "智利",
-          "current_confirmed": 41825,
-          "累计确诊": 969913,
-          "死亡": 22653,
-          "治愈": 905435
-        },
-        {
-          "地区": "玻利维亚",
-          "current_confirmed": 39216,
-          "累计确诊": 269302,
-          "死亡": 12165,
-          "治愈": 217921
-        },
-        {
-          "地区": "秘鲁",
-          "current_confirmed": 37285,
-          "累计确诊": 1520973,
-          "死亡": 51238,
-          "治愈": 1432450
-        },
-        {
-          "地区": "巴拉圭",
-          "current_confirmed": 33397,
-          "累计确诊": 206597,
-          "死亡": 4003,
-          "治愈": 169197
-        },
-        {
-          "地区": "厄瓜多尔",
-          "current_confirmed": 26060,
-          "累计确诊": 324482,
-          "死亡": 16738,
-          "治愈": 281684
-        },
-        {
-          "地区": "乌拉圭",
-          "current_confirmed": 18924,
-          "累计确诊": 97406,
-          "死亡": 915,
-          "治愈": 77567
-        },
-        {
-          "地区": "法属圭亚那",
-          "current_confirmed": 16833,
-          "累计确诊": 16922,
-          "死亡": 89,
-          "治愈": 0
-        },
-        {
-          "地区": "委内瑞拉",
-          "current_confirmed": 9879,
-          "累计确诊": 155663,
-          "死亡": 1555,
-          "治愈": 144229
-        },
-        {
-          "地区": "圭亚那",
-          "current_confirmed": 1005,
-          "累计确诊": 10072,
-          "死亡": 225,
-          "治愈": 8842
-        },
-        {
-          "地区": "苏里南",
-          "current_confirmed": 341,
-          "累计确诊": 9095,
-          "死亡": 177,
-          "治愈": 8577
-        },
-        {
-          "地区": "荷兰加勒比地区",
-          "current_confirmed": 174,
-          "累计确诊": 177,
-          "死亡": 3,
-          "治愈": 0
-        },
-        {
-          "地区": "福克兰群岛",
-          "current_confirmed": 0,
-          "累计确诊": 54,
-          "死亡": 0,
-          "治愈": 54
-        }
-      ]
-    },
-    {
-      "州总体数据": {
-        "地区": "非洲",
-        "current_confirmed": 393414,
-        "累计确诊": 4216240,
-        "死亡": 112102,
-        "治愈": 3710724
-      },
-      "州各国数据": [
-        {
-          "地区": "埃塞俄比亚",
-          "current_confirmed": 43439,
-          "累计确诊": 200563,
-          "死亡": 2801,
-          "治愈": 154323
-        },
-        {
-          "地区": "肯尼亚",
-          "current_confirmed": 36370,
-          "累计确诊": 130241,
-          "死亡": 2117,
-          "治愈": 91754
-        },
-        {
-          "地区": "埃及",
-          "current_confirmed": 34993,
-          "累计确诊": 200050,
-          "死亡": 11882,
-          "治愈": 153175
-        },
-        {
-          "地区": "阿尔及利亚",
-          "current_confirmed": 32513,
-          "累计确诊": 116750,
-          "死亡": 3077,
-          "治愈": 81160
-        },
-        {
-          "地区": "突尼斯",
-          "current_confirmed": 25803,
-          "累计确诊": 249703,
-          "死亡": 8705,
-          "治愈": 215195
-        },
-        {
-          "地区": "乌干达",
-          "current_confirmed": 25289,
-          "累计确诊": 40767,
-          "死亡": 339,
-          "治愈": 15139
-        },
-        {
-          "地区": "南非",
-          "current_confirmed": 20884,
-          "累计确诊": 1545431,
-          "死亡": 52648,
-          "治愈": 1471899
-        },
-        {
-          "地区": "马约特",
-          "current_confirmed": 19152,
-          "累计确诊": 19306,
-          "死亡": 154,
-          "治愈": 0
-        },
-        {
-          "地区": "留尼旺",
-          "current_confirmed": 15459,
-          "累计确诊": 15561,
-          "死亡": 102,
-          "治愈": 0
-        },
-        {
-          "地区": "喀麦隆",
-          "current_confirmed": 14354,
-          "累计确诊": 47669,
-          "死亡": 721,
-          "治愈": 32594
-        },
-        {
-          "地区": "斯威士兰",
-          "current_confirmed": 13714,
-          "累计确诊": 17318,
-          "死亡": 668,
-          "治愈": 2936
-        },
-        {
-          "地区": "莫桑比克",
-          "current_confirmed": 11158,
-          "累计确诊": 67197,
-          "死亡": 764,
-          "治愈": 55275
-        },
-        {
-          "地区": "尼日利亚",
-          "current_confirmed": 10237,
-          "累计确诊": 162593,
-          "死亡": 2048,
-          "治愈": 150308
-        },
-        {
-          "地区": "利比亚",
-          "current_confirmed": 9817,
-          "累计确诊": 156116,
-          "死亡": 2602,
-          "治愈": 143697
-        },
-        {
-          "地区": "莱索托",
-          "current_confirmed": 5933,
-          "累计确诊": 10686,
-          "死亡": 315,
-          "治愈": 4438
-        },
-        {
-          "地区": "索马里",
-          "current_confirmed": 5786,
-          "累计确诊": 10838,
-          "死亡": 488,
-          "治愈": 4564
-        },
-        {
-          "地区": "苏丹",
-          "current_confirmed": 5389,
-          "累计确诊": 31407,
-          "死亡": 2028,
-          "治愈": 23990
-        },
-        {
-          "地区": "刚果（金）",
-          "current_confirmed": 4720,
-          "累计确诊": 27886,
-          "死亡": 734,
-          "治愈": 22432
-        },
-        {
-          "地区": "科特迪瓦",
-          "current_confirmed": 4442,
-          "累计确诊": 42468,
-          "死亡": 229,
-          "治愈": 37797
-        },
-        {
-          "地区": "博茨瓦纳",
-          "current_confirmed": 4057,
-          "累计确诊": 38466,
-          "死亡": 506,
-          "治愈": 33903
-        },
-        {
-          "地区": "摩洛哥",
-          "current_confirmed": 3476,
-          "累计确诊": 494358,
-          "死亡": 8798,
-          "治愈": 482084
-        },
-        {
-          "地区": "纳米比亚",
-          "current_confirmed": 3297,
-          "累计确诊": 43499,
-          "死亡": 508,
-          "治愈": 39694
-        },
-        {
-          "地区": "几内亚",
-          "current_confirmed": 3125,
-          "累计确诊": 19670,
-          "死亡": 120,
-          "治愈": 16425
-        },
-        {
-          "地区": "中非共和国",
-          "current_confirmed": 3100,
-          "累计确诊": 5088,
-          "死亡": 64,
-          "治愈": 1924
-        },
-        {
-          "地区": "马拉维",
-          "current_confirmed": 2756,
-          "累计确诊": 33481,
-          "死亡": 1114,
-          "治愈": 29611
-        },
-        {
-          "地区": "布隆迪共和国",
-          "current_confirmed": 2747,
-          "累计确诊": 2757,
-          "死亡": 6,
-          "治愈": 4
-        },
-        {
-          "地区": "马里",
-          "current_confirmed": 2707,
-          "累计确诊": 9871,
-          "死亡": 379,
-          "治愈": 6785
-        },
-        {
-          "地区": "加蓬",
-          "current_confirmed": 2592,
-          "累计确诊": 18777,
-          "死亡": 111,
-          "治愈": 16074
-        },
-        {
-          "地区": "加纳",
-          "current_confirmed": 2410,
-          "累计确诊": 90287,
-          "死亡": 740,
-          "治愈": 87137
-        },
-        {
-          "地区": "赞比亚共和国",
-          "current_confirmed": 2325,
-          "累计确诊": 87872,
-          "死亡": 1200,
-          "治愈": 84347
-        },
-        {
-          "地区": "多哥",
-          "current_confirmed": 2116,
-          "累计确诊": 9955,
-          "死亡": 107,
-          "治愈": 7732
-        },
-        {
-          "地区": "刚果（布）",
-          "current_confirmed": 2032,
-          "累计确诊": 9681,
-          "死亡": 135,
-          "治愈": 7514
-        },
-        {
-          "地区": "贝宁",
-          "current_confirmed": 1458,
-          "累计确诊": 7100,
-          "死亡": 90,
-          "治愈": 5552
-        },
-        {
-          "地区": "马达加斯加",
-          "current_confirmed": 1407,
-          "累计确诊": 23424,
-          "死亡": 381,
-          "治愈": 21636
-        },
-        {
-          "地区": "吉布提",
-          "current_confirmed": 1329,
-          "累计确诊": 7249,
-          "死亡": 66,
-          "治愈": 5854
-        },
-        {
-          "地区": "卢旺达",
-          "current_confirmed": 1328,
-          "累计确诊": 21370,
-          "死亡": 301,
-          "治愈": 19741
-        },
-        {
-          "地区": "塞内加尔",
-          "current_confirmed": 1315,
-          "累计确诊": 38456,
-          "死亡": 1034,
-          "治愈": 36107
-        },
-        {
-          "地区": "安哥拉",
-          "current_confirmed": 1308,
-          "累计确诊": 22031,
-          "死亡": 533,
-          "治愈": 20190
-        },
-        {
-          "地区": "几内亚比绍",
-          "current_confirmed": 1143,
-          "累计确诊": 3630,
-          "死亡": 61,
-          "治愈": 2426
-        },
-        {
-          "地区": "塞拉利昂",
+          "area": "柬埔寨",
           "current_confirmed": 1090,
-          "累计确诊": 3970,
-          "死亡": 79,
-          "治愈": 2801
+          "confirmed": 2273,
+          "death": 11,
+          "cured": 1172
         },
         {
-          "地区": "佛得角",
-          "current_confirmed": 917,
-          "累计确诊": 17018,
-          "死亡": 165,
-          "治愈": 15936
+          "area": "中国",
+          "current_confirmed": 381,
+          "confirmed": 102715,
+          "death": 4851,
+          "cured": 97483
         },
         {
-          "地区": "津巴布韦",
-          "current_confirmed": 852,
-          "累计确诊": 36818,
-          "死亡": 1519,
-          "治愈": 34447
+          "area": "东帝汶",
+          "current_confirmed": 338,
+          "confirmed": 512,
+          "death": 0,
+          "cured": 174
         },
         {
-          "地区": "乍得",
-          "current_confirmed": 734,
-          "累计确诊": 4501,
-          "死亡": 160,
-          "治愈": 3607
+          "area": "新加坡",
+          "current_confirmed": 248,
+          "confirmed": 60300,
+          "death": 30,
+          "cured": 60022
         },
         {
-          "地区": "塞舌尔",
-          "current_confirmed": 709,
-          "累计确诊": 4054,
-          "死亡": 21,
-          "治愈": 3324
+          "area": "越南",
+          "current_confirmed": 248,
+          "confirmed": 2591,
+          "death": 35,
+          "cured": 2308
         },
         {
-          "地区": "尼日尔",
+          "area": "文莱",
+          "current_confirmed": 16,
+          "confirmed": 207,
+          "death": 3,
+          "cured": 188
+        },
+        {
+          "area": "不丹",
+          "current_confirmed": 4,
+          "confirmed": 872,
+          "death": 1,
+          "cured": 867
+        },
+        {
+          "area": "老挝",
+          "current_confirmed": 4,
+          "confirmed": 49,
+          "death": 0,
+          "cured": 45
+        },
+        {
+          "area": "塔吉克斯坦",
+          "current_confirmed": -1,
+          "confirmed": 13714,
+          "death": 901,
+          "cured": 13218
+        }
+      ]
+    },
+    {
+      "island_data": {
+        "area": "南美洲",
+        "current_confirmed": 1750602,
+        "confirmed": 20898391,
+        "death": 543461,
+        "cured": 18604328
+      },
+      "island_nation_data": [
+        {
+          "area": "巴西",
+          "current_confirmed": 1293839,
+          "confirmed": 12577354,
+          "death": 314268,
+          "cured": 10969247
+        },
+        {
+          "area": "阿根廷",
+          "current_confirmed": 178729,
+          "confirmed": 2322558,
+          "death": 55611,
+          "cured": 2088218
+        },
+        {
+          "area": "哥伦比亚",
+          "current_confirmed": 52791,
+          "confirmed": 2389779,
+          "death": 63079,
+          "cured": 2273909
+        },
+        {
+          "area": "智利",
+          "current_confirmed": 42968,
+          "confirmed": 984484,
+          "death": 23070,
+          "cured": 918446
+        },
+        {
+          "area": "玻利维亚",
+          "current_confirmed": 38939,
+          "confirmed": 269628,
+          "death": 12186,
+          "cured": 218503
+        },
+        {
+          "area": "秘鲁",
+          "current_confirmed": 36008,
+          "confirmed": 1529882,
+          "death": 51469,
+          "cured": 1442405
+        },
+        {
+          "area": "巴拉圭",
+          "current_confirmed": 33790,
+          "confirmed": 208655,
+          "death": 4063,
+          "cured": 170802
+        },
+        {
+          "area": "厄瓜多尔",
+          "current_confirmed": 26060,
+          "confirmed": 324482,
+          "death": 16738,
+          "cured": 281684
+        },
+        {
+          "area": "乌拉圭",
+          "current_confirmed": 19246,
+          "confirmed": 99584,
+          "death": 928,
+          "cured": 79410
+        },
+        {
+          "area": "法属圭亚那",
+          "current_confirmed": 16833,
+          "confirmed": 16922,
+          "death": 89,
+          "cured": 0
+        },
+        {
+          "area": "委内瑞拉",
+          "current_confirmed": 9879,
+          "confirmed": 155663,
+          "death": 1555,
+          "cured": 144229
+        },
+        {
+          "area": "圭亚那",
+          "current_confirmed": 1005,
+          "confirmed": 10072,
+          "death": 225,
+          "cured": 8842
+        },
+        {
+          "area": "苏里南",
+          "current_confirmed": 341,
+          "confirmed": 9097,
+          "death": 177,
+          "cured": 8579
+        },
+        {
+          "area": "荷兰加勒比地区",
+          "current_confirmed": 174,
+          "confirmed": 177,
+          "death": 3,
+          "cured": 0
+        },
+        {
+          "area": "福克兰群岛",
+          "current_confirmed": 0,
+          "confirmed": 54,
+          "death": 0,
+          "cured": 54
+        }
+      ]
+    },
+    {
+      "island_data": {
+        "area": "非洲",
+        "current_confirmed": 371352,
+        "confirmed": 4222282,
+        "death": 112333,
+        "cured": 3738597
+      },
+      "island_nation_data": [
+        {
+          "area": "埃塞俄比亚",
+          "current_confirmed": 43439,
+          "confirmed": 200563,
+          "death": 2801,
+          "cured": 154323
+        },
+        {
+          "area": "肯尼亚",
+          "current_confirmed": 36794,
+          "confirmed": 131116,
+          "death": 2161,
+          "cured": 92161
+        },
+        {
+          "area": "埃及",
+          "current_confirmed": 35195,
+          "confirmed": 200739,
+          "death": 11914,
+          "cured": 153630
+        },
+        {
+          "area": "阿尔及利亚",
+          "current_confirmed": 32596,
+          "confirmed": 116836,
+          "death": 3080,
+          "cured": 81160
+        },
+        {
+          "area": "突尼斯",
+          "current_confirmed": 26635,
+          "confirmed": 250565,
+          "death": 8735,
+          "cured": 215195
+        },
+        {
+          "area": "南非",
+          "current_confirmed": 20624,
+          "confirmed": 1545979,
+          "death": 52710,
+          "cured": 1472645
+        },
+        {
+          "area": "马约特",
+          "current_confirmed": 19152,
+          "confirmed": 19306,
+          "death": 154,
+          "cured": 0
+        },
+        {
+          "area": "留尼旺",
+          "current_confirmed": 15459,
+          "confirmed": 15561,
+          "death": 102,
+          "cured": 0
+        },
+        {
+          "area": "喀麦隆",
+          "current_confirmed": 14354,
+          "confirmed": 47669,
+          "death": 721,
+          "cured": 32594
+        },
+        {
+          "area": "斯威士兰",
+          "current_confirmed": 13717,
+          "confirmed": 17321,
+          "death": 668,
+          "cured": 2936
+        },
+        {
+          "area": "莫桑比克",
+          "current_confirmed": 11158,
+          "confirmed": 67197,
+          "death": 764,
+          "cured": 55275
+        },
+        {
+          "area": "利比亚",
+          "current_confirmed": 10534,
+          "confirmed": 156849,
+          "death": 2618,
+          "cured": 143697
+        },
+        {
+          "area": "尼日利亚",
+          "current_confirmed": 10237,
+          "confirmed": 162593,
+          "death": 2048,
+          "cured": 150308
+        },
+        {
+          "area": "莱索托",
+          "current_confirmed": 5933,
+          "confirmed": 10686,
+          "death": 315,
+          "cured": 4438
+        },
+        {
+          "area": "索马里",
+          "current_confirmed": 5705,
+          "confirmed": 10838,
+          "death": 496,
+          "cured": 4637
+        },
+        {
+          "area": "苏丹",
+          "current_confirmed": 5389,
+          "confirmed": 31407,
+          "death": 2028,
+          "cured": 23990
+        },
+        {
+          "area": "科特迪瓦",
+          "current_confirmed": 5146,
+          "confirmed": 43180,
+          "death": 237,
+          "cured": 37797
+        },
+        {
+          "area": "刚果（金）",
+          "current_confirmed": 4758,
+          "confirmed": 27929,
+          "death": 739,
+          "cured": 22432
+        },
+        {
+          "area": "博茨瓦纳",
+          "current_confirmed": 4057,
+          "confirmed": 38466,
+          "death": 506,
+          "cured": 33903
+        },
+        {
+          "area": "纳米比亚",
+          "current_confirmed": 3429,
+          "confirmed": 43632,
+          "death": 509,
+          "cured": 39694
+        },
+        {
+          "area": "摩洛哥",
+          "current_confirmed": 3364,
+          "confirmed": 494756,
+          "death": 8807,
+          "cured": 482585
+        },
+        {
+          "area": "几内亚",
+          "current_confirmed": 3125,
+          "confirmed": 19670,
+          "death": 120,
+          "cured": 16425
+        },
+        {
+          "area": "中非共和国",
+          "current_confirmed": 3100,
+          "confirmed": 5088,
+          "death": 64,
+          "cured": 1924
+        },
+        {
+          "area": "马拉维",
+          "current_confirmed": 2756,
+          "confirmed": 33481,
+          "death": 1114,
+          "cured": 29611
+        },
+        {
+          "area": "布隆迪共和国",
+          "current_confirmed": 2747,
+          "confirmed": 2757,
+          "death": 6,
+          "cured": 4
+        },
+        {
+          "area": "马里",
+          "current_confirmed": 2707,
+          "confirmed": 9871,
+          "death": 379,
+          "cured": 6785
+        },
+        {
+          "area": "加蓬",
+          "current_confirmed": 2592,
+          "confirmed": 18777,
+          "death": 111,
+          "cured": 16074
+        },
+        {
+          "area": "加纳",
+          "current_confirmed": 2410,
+          "confirmed": 90287,
+          "death": 740,
+          "cured": 87137
+        },
+        {
+          "area": "赞比亚共和国",
+          "current_confirmed": 2348,
+          "confirmed": 88012,
+          "death": 1200,
+          "cured": 84464
+        },
+        {
+          "area": "多哥",
+          "current_confirmed": 2116,
+          "confirmed": 9955,
+          "death": 107,
+          "cured": 7732
+        },
+        {
+          "area": "刚果（布）",
+          "current_confirmed": 2032,
+          "confirmed": 9681,
+          "death": 135,
+          "cured": 7514
+        },
+        {
+          "area": "马达加斯加",
+          "current_confirmed": 1562,
+          "confirmed": 23585,
+          "death": 387,
+          "cured": 21636
+        },
+        {
+          "area": "贝宁",
+          "current_confirmed": 1458,
+          "confirmed": 7100,
+          "death": 90,
+          "cured": 5552
+        },
+        {
+          "area": "吉布提",
+          "current_confirmed": 1440,
+          "confirmed": 7361,
+          "death": 67,
+          "cured": 5854
+        },
+        {
+          "area": "卢旺达",
+          "current_confirmed": 1377,
+          "confirmed": 21419,
+          "death": 301,
+          "cured": 19741
+        },
+        {
+          "area": "塞内加尔",
+          "current_confirmed": 1376,
+          "confirmed": 38520,
+          "death": 1037,
+          "cured": 36107
+        },
+        {
+          "area": "安哥拉",
+          "current_confirmed": 1340,
+          "confirmed": 22063,
+          "death": 533,
+          "cured": 20190
+        },
+        {
+          "area": "几内亚比绍",
+          "current_confirmed": 1148,
+          "confirmed": 3635,
+          "death": 61,
+          "cured": 2426
+        },
+        {
+          "area": "塞拉利昂",
+          "current_confirmed": 1089,
+          "confirmed": 3970,
+          "death": 79,
+          "cured": 2802
+        },
+        {
+          "area": "佛得角",
+          "current_confirmed": 1024,
+          "confirmed": 17125,
+          "death": 165,
+          "cured": 15936
+        },
+        {
+          "area": "津巴布韦",
+          "current_confirmed": 855,
+          "confirmed": 36822,
+          "death": 1520,
+          "cured": 34447
+        },
+        {
+          "area": "乍得",
+          "current_confirmed": 738,
+          "confirmed": 4506,
+          "death": 161,
+          "cured": 3607
+        },
+        {
+          "area": "尼日尔",
           "current_confirmed": 552,
-          "累计确诊": 4987,
-          "死亡": 185,
-          "治愈": 4250
+          "confirmed": 4987,
+          "death": 185,
+          "cured": 4250
         },
         {
-          "地区": "布基纳法索",
-          "current_confirmed": 530,
-          "累计确诊": 12673,
-          "死亡": 145,
-          "治愈": 11998
+          "area": "布基纳法索",
+          "current_confirmed": 549,
+          "confirmed": 12692,
+          "death": 145,
+          "cured": 11998
         },
         {
-          "地区": "南苏丹",
-          "current_confirmed": 486,
-          "累计确诊": 10048,
-          "死亡": 108,
-          "治愈": 9454
+          "area": "南苏丹",
+          "current_confirmed": 536,
+          "confirmed": 10098,
+          "death": 108,
+          "cured": 9454
         },
         {
-          "地区": "坦桑尼亚",
+          "area": "塞舌尔",
+          "current_confirmed": 505,
+          "confirmed": 4114,
+          "death": 21,
+          "cured": 3588
+        },
+        {
+          "area": "毛里塔尼亚",
+          "current_confirmed": 334,
+          "confirmed": 17771,
+          "death": 448,
+          "cured": 16989
+        },
+        {
+          "area": "毛里求斯",
+          "current_confirmed": 333,
+          "confirmed": 933,
+          "death": 10,
+          "cured": 590
+        },
+        {
+          "area": "冈比亚",
+          "current_confirmed": 330,
+          "confirmed": 5420,
+          "death": 164,
+          "cured": 4926
+        },
+        {
+          "area": "坦桑尼亚",
           "current_confirmed": 321,
-          "累计确诊": 509,
-          "死亡": 21,
-          "治愈": 167
+          "confirmed": 509,
+          "death": 21,
+          "cured": 167
         },
         {
-          "地区": "毛里塔尼亚",
-          "current_confirmed": 319,
-          "累计确诊": 17756,
-          "死亡": 448,
-          "治愈": 16989
-        },
-        {
-          "地区": "赤道几内亚",
+          "area": "赤道几内亚",
           "current_confirmed": 314,
-          "累计确诊": 6902,
-          "死亡": 102,
-          "治愈": 6486
+          "confirmed": 6902,
+          "death": 102,
+          "cured": 6486
         },
         {
-          "地区": "冈比亚",
-          "current_confirmed": 312,
-          "累计确诊": 5401,
-          "死亡": 163,
-          "治愈": 4926
-        },
-        {
-          "地区": "毛里求斯",
-          "current_confirmed": 270,
-          "累计确诊": 870,
-          "死亡": 10,
-          "治愈": 590
-        },
-        {
-          "地区": "厄立特里亚",
+          "area": "厄立特里亚",
           "current_confirmed": 211,
-          "累计确诊": 3208,
-          "死亡": 35,
-          "治愈": 2962
+          "confirmed": 3208,
+          "death": 35,
+          "cured": 2962
         },
         {
-          "地区": "科摩罗",
+          "area": "科摩罗",
           "current_confirmed": 121,
-          "累计确诊": 3690,
-          "死亡": 146,
-          "治愈": 3423
+          "confirmed": 3690,
+          "death": 146,
+          "cured": 3423
         },
         {
-          "地区": "圣多美和普林西比",
-          "current_confirmed": 118,
-          "累计确诊": 2210,
-          "死亡": 34,
-          "治愈": 2058
+          "area": "圣多美和普林西比",
+          "current_confirmed": 120,
+          "confirmed": 2212,
+          "death": 34,
+          "cured": 2058
         },
         {
-          "地区": "利比里亚",
+          "area": "利比里亚",
           "current_confirmed": 78,
-          "累计确诊": 2053,
-          "死亡": 85,
-          "治愈": 1890
+          "confirmed": 2053,
+          "death": 85,
+          "cured": 1890
+        },
+        {
+          "area": "乌干达",
+          "current_confirmed": 33,
+          "confirmed": 40820,
+          "death": 339,
+          "cured": 40448
         }
       ]
     },
     {
-      "州总体数据": {
-        "地区": "大洋洲",
-        "current_confirmed": 19774,
-        "累计确诊": 63448,
-        "死亡": 1259,
-        "治愈": 42415
+      "island_data": {
+        "area": "大洋洲",
+        "current_confirmed": 19943,
+        "confirmed": 63621,
+        "death": 1263,
+        "cured": 42415
       },
-      "州各国数据": [
+      "island_nation_data": [
         {
-          "地区": "法属波利尼西亚",
+          "area": "法属波利尼西亚",
           "current_confirmed": 13299,
-          "累计确诊": 18607,
-          "死亡": 141,
-          "治愈": 5167
+          "confirmed": 18607,
+          "death": 141,
+          "cured": 5167
         },
         {
-          "地区": "巴布亚新几内亚",
-          "current_confirmed": 4293,
-          "累计确诊": 5184,
-          "死亡": 45,
-          "治愈": 846
+          "area": "巴布亚新几内亚",
+          "current_confirmed": 4454,
+          "confirmed": 5349,
+          "death": 49,
+          "cured": 846
         },
         {
-          "地区": "澳大利亚",
-          "current_confirmed": 984,
-          "累计确诊": 29252,
-          "死亡": 909,
-          "治愈": 27359
+          "area": "澳大利亚",
+          "current_confirmed": 992,
+          "confirmed": 29260,
+          "death": 909,
+          "cured": 27359
         },
         {
-          "地区": "关岛",
+          "area": "关岛",
           "current_confirmed": 910,
-          "累计确诊": 7751,
-          "死亡": 134,
-          "治愈": 6707
+          "confirmed": 7751,
+          "death": 134,
+          "cured": 6707
         },
         {
-          "地区": "北马里亚纳群岛联邦",
+          "area": "北马里亚纳群岛联邦",
           "current_confirmed": 125,
-          "累计确诊": 159,
-          "死亡": 2,
-          "治愈": 32
+          "confirmed": 159,
+          "death": 2,
+          "cured": 32
         },
         {
-          "地区": "新喀里多尼亚",
+          "area": "新喀里多尼亚",
           "current_confirmed": 91,
-          "累计确诊": 121,
-          "死亡": 0,
-          "治愈": 30
+          "confirmed": 121,
+          "death": 0,
+          "cured": 30
         },
         {
-          "地区": "新西兰",
+          "area": "新西兰",
           "current_confirmed": 71,
-          "累计确诊": 2307,
-          "死亡": 26,
-          "治愈": 2210
+          "confirmed": 2307,
+          "death": 26,
+          "cured": 2210
         },
         {
-          "地区": "斐济",
+          "area": "斐济",
           "current_confirmed": 1,
-          "累计确诊": 67,
-          "死亡": 2,
-          "治愈": 64
+          "confirmed": 67,
+          "death": 2,
+          "cured": 64
         }
       ]
     },
     {
-      "州总体数据": {
-        "地区": "其他",
+      "island_data": {
+        "area": "其他",
         "current_confirmed": 154,
-        "累计确诊": 741,
-        "死亡": 13,
-        "治愈": 574
+        "confirmed": 741,
+        "death": 13,
+        "cured": 574
       },
-      "州各国数据": [
+      "island_nation_data": [
         {
-          "地区": "钻石公主号邮轮",
+          "area": "钻石公主号邮轮",
           "current_confirmed": 154,
-          "累计确诊": 741,
-          "死亡": 13,
-          "治愈": 574
+          "confirmed": 741,
+          "death": 13,
+          "cured": 574
         }
       ]
     }

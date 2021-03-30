@@ -13,7 +13,7 @@ chrome_options = Options()
 
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
-bro = webdriver.Chrome('./chromedriver.exe',options = chrome_options)
+bro = webdriver.Chrome('data_source/chromedriver.exe',options = chrome_options)
 
 bro.get(url)
 time.sleep(1)
@@ -24,23 +24,28 @@ time.sleep(1)
 #有些数据要点击页面刷新html后才能获取，所以所有数据都统一重新获取html页面，免得被上一项数据的页面操作污染
 tree = etree.HTML(bro.page_source)
 国内数据_ul = tree.xpath('//ul[@class = "count___2lQ55"]')[0]   #有两个ul的class都叫这名，一个国内数据，一个全球数据
+li_data_type_list = ['current_confirmed','abroad','current_asym','confirmed','death','cured']
+type_index = 0
 for li in 国内数据_ul.xpath('./li'):
     较昨日变化 = li.xpath('string(./div/div/b)').replace('较昨日','').replace(',','')
-    国内总体数据_list.append({  '类型'  : li.xpath('./span/text()')[0],
-                            '数量'  : eval(str(li.xpath('./strong/text()')[0]).replace(',','')),
-                            '较昨日': 0 if 较昨日变化 == '无变化' else eval(较昨日变化)})
+    国内总体数据_list.append({  'type'  : li_data_type_list[type_index],
+                                'count' : eval(str(li.xpath('./strong/text()')[0]).replace(',','')),
+                                'incr'  : 0 if 较昨日变化 == '无变化' else eval(较昨日变化)})
+    type_index += 1
 
 
 
 全球总体数据_list = []
 tree = etree.HTML(bro.page_source)
 全球数据_ul = tree.xpath('//ul[@class = "count___2lQ55"]')[1]
+li_data_type_list = ['current_confirmed','confirmed','death','cured']
+type_index = 0
 for li in 全球数据_ul.xpath('./li'):
     较昨日变化 = li.xpath('string(./div/div/b)').replace('昨日','').replace(',','')
-    全球总体数据_list.append({  '类型'   : li.xpath('./span/text()')[0],
-                                '数量'   : eval(str(li.xpath('./strong/text()')[0]).replace(',','')),
-                                '较昨日' : 0 if 较昨日变化 == '无变化' else eval(较昨日变化)})
-
+    全球总体数据_list.append({  'type'  : li_data_type_list[type_index],
+                                'count' : eval(str(li.xpath('./strong/text()')[0]).replace(',','')),
+                                'incr'  : 0 if 较昨日变化 == '无变化' else eval(较昨日变化)})
+    type_index += 1
 
 
 国内数据_list = []
@@ -70,42 +75,42 @@ for 一省数据_div in 国内数据_div.xpath('./div'):
         pass
 
     else:
-        一省总体数据_dict = {   '地区'     : 一省数据_div.xpath('./div[1]/p[1]/text()')[0],
-                                '现存确诊' : eval(一省数据_div.xpath('./div[1]/p[2]/text()')[0].replace(',','')),
-                                '累计确诊' : eval(一省数据_div.xpath('./div[1]/p[3]/text()')[0].replace(',','')),
-                                '死亡'     : eval(一省数据_div.xpath('./div[1]/p[4]/text()')[0].replace(',','')),
-                                '治愈'     : eval(一省数据_div.xpath('./div[1]/p[5]/text()')[0].replace(',',''))}
+        一省总体数据_dict = {   'area'              : 一省数据_div.xpath('./div[1]/p[1]/text()')[0],
+                                'current_confirmed' : eval(一省数据_div.xpath('./div[1]/p[2]/text()')[0].replace(',','')),
+                                'confirmed'         : eval(一省数据_div.xpath('./div[1]/p[3]/text()')[0].replace(',','')),
+                                'death'             : eval(一省数据_div.xpath('./div[1]/p[4]/text()')[0].replace(',','')),
+                                'cured'             : eval(一省数据_div.xpath('./div[1]/p[5]/text()')[0].replace(',',''))}
 
         一市数据_dict = {}
         for 一市数据_div in 一省数据_div.xpath('./div')[1:]:
             #额外信息的div里有个span，城市数据的div里没有span
             if len(一市数据_div.xpath('./span')) == 1:
-                额外信息_str = 一市数据_div.xpath('./span/text()')
+                额外信息_str = 一市数据_div.xpath('./span/text()')[0]
             else:
                 地区 = 一市数据_div.xpath('./p[1]/span/text()')[0]
 
                 text = 一市数据_div.xpath('./p[2]/text()')[0].replace(',','')
-                现存确诊 = eval(text) if text != '-' else '-'
+                现存确诊 = eval(text) if text != '-' else -1
 
                 text = 一市数据_div.xpath('./p[3]/text()')[0].replace(',','')
-                累计确诊 = eval(text) if text != '-' else '-'
+                累计确诊 = eval(text) if text != '-' else -1
 
                 text = 一市数据_div.xpath('./p[4]/text()')[0].replace(',','')
-                死亡 = eval(text) if text != '-' else '-'
+                死亡 = eval(text) if text != '-' else -1
 
                 text = 一市数据_div.xpath('./p[5]/text()')[0].replace(',','')
-                治愈 = eval(text) if text != '-' else '-'
+                治愈 = eval(text) if text != '-' else -1
 
-                一市数据_dict = {   '地区'    : 地区,
-                                    '现存确诊': 现存确诊,
-                                    '累计确诊': 累计确诊,
-                                    '死亡'    : 死亡,
-                                    '治愈'    : 治愈}
+                一市数据_dict = {   'area'              : 地区,
+                                    'current_confirmed' : 现存确诊,
+                                    'confirmed'         : 累计确诊,
+                                    'death'             : 死亡,
+                                    'cured'             : 治愈}
                 一省城市数据_list.append(一市数据_dict)
 
-        一省数据_dict = {   '总体数据' : 一省总体数据_dict,
-                            '城市数据' : 一省城市数据_list,
-                            '额外信息' : 额外信息_str}
+        一省数据_dict = {   'overall_data' : 一省总体数据_dict,
+                            'city_data'    : 一省城市数据_list,
+                            'extra_info'   : 额外信息_str}
         国内数据_list.append(一省数据_dict)
 
 
@@ -138,57 +143,57 @@ for 州数据_div in 全球数据_div.xpath('./div')[2:9]:
     for 一国数据_div in 州数据_div.xpath('./div'):
         #表头
         if 一国数据_div.xpath('./@class')[0] == 'areaBlock1___3qjL7':
-            州总体数据_dict = { '地区'     : re.findall(r'(.+)[(]',str(一国数据_div.xpath('p[1]/text()')[0]))[0],
-                                '现存确诊' : eval(一国数据_div.xpath('./p[2]/text()')[0].replace(',','')),
-                                '累计确诊' : eval(一国数据_div.xpath('./p[3]/text()')[0].replace(',','')),
-                                '死亡'     : eval(一国数据_div.xpath('./p[4]/text()')[0].replace(',','')),
-                                '治愈'     : eval(一国数据_div.xpath('./p[5]/text()')[0].replace(',',''))}
+            州总体数据_dict = { 'area'              : re.findall(r'(.+)[(]',str(一国数据_div.xpath('p[1]/text()')[0]))[0],
+                                'current_confirmed' : eval(一国数据_div.xpath('./p[2]/text()')[0].replace(',','')),
+                                'confirmed'         : eval(一国数据_div.xpath('./p[3]/text()')[0].replace(',','')),
+                                'death'             : eval(一国数据_div.xpath('./p[4]/text()')[0].replace(',','')),
+                                'cured'             : eval(一国数据_div.xpath('./p[5]/text()')[0].replace(',',''))}
         else:
             地区 = str(一国数据_div.xpath('p[1]/span/text()')[0])
 
             text = 一国数据_div.xpath('./p[2]/text()')
             if len(text) != 0:
                 text = text[0].replace(',','')
-                现存确诊 = eval(text) if text != '-' else '-'
+                现存确诊 = eval(text) if text != '-' else -1
             else:
-                现存确诊 = '-'
+                现存确诊 = -1
 
             text = 一国数据_div.xpath('./p[3]/text()')
             if len(text) != 0:
                 text = text[0].replace(',','')
-                累计确诊 = eval(text) if text != '-' else '-'
+                累计确诊 = eval(text) if text != '-' else -1
             else:
-                累计确诊 = '-'
+                累计确诊 = -1
 
             text = 一国数据_div.xpath('./p[4]/text()')
             if len(text) != 0:
                 text = text[0].replace(',','')
-                死亡 = eval(text) if text != '-' else '-'
+                死亡 = eval(text) if text != '-' else -1
             else:
-                死亡 = '-'
+                死亡 = -1
 
             text = 一国数据_div.xpath('./p[5]/text()')
             if len(text) != 0:
                 text = text[0].replace(',','')
-                治愈 = eval(text) if text != '-' else '-'
+                治愈 = eval(text) if text != '-' else -1
             else:
-                治愈 = '-'
+                治愈 = -1
 
-            一国数据 = {'地区'     : 地区,
-                        '现存确诊' : 现存确诊,
-                        '累计确诊' : 累计确诊,
-                        '死亡'     : 死亡,
-                        '治愈'     : 治愈}
+            一国数据 = {'area'              : 地区,
+                        'current_confirmed' : 现存确诊,
+                        'confirmed'         : 累计确诊,
+                        'death'             : 死亡,
+                        'cured'             : 治愈}
             州各国数据_list.append(一国数据)
 
-    州数据 = {  '州总体数据' : 州总体数据_dict,
-                '州各国数据' : 州各国数据_list}
+    州数据 = {  'island_data'        : 州总体数据_dict,
+                'island_nation_data' : 州各国数据_list}
     全球数据_list.append(州数据)
 
 
 
-with open('丁香医生本日数据.json','w',encoding='utf-8') as file:
-    file.write(json.dumps({ '国内总体数据' : 国内总体数据_list,
-                            '全球总体数据' : 全球总体数据_list,
-                            '国内数据'     : 国内数据_list,
-                            '全球数据'     : 全球数据_list},ensure_ascii=False))
+with open('data_source/丁香医生本日数据.json','w',encoding='utf-8') as file:
+    file.write(json.dumps({ 'current_covid_internal'  : 国内总体数据_list,
+                            'current_covid_global'    : 全球总体数据_list,
+                            'current_covid_provinces' : 国内数据_list,
+                            'current_covid_national'  : 全球数据_list},ensure_ascii=False))
