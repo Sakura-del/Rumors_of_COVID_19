@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>疫情数据可视化</title>
-    <link rel="stylesheet" href="css/epidemic.css" />
+    <link rel="stylesheet" href="../static/css/epidemic.css" />
   </head>
   <body>
     <!-- 头部的盒子 -->
@@ -53,7 +53,7 @@
         </div>
         <div class="panel line">
           <h2>
-            新增确诊 
+            新增确诊
             <a href="javacript:;">2020</a>
             <a href="javascript:;">2021</a>
           </h2>
@@ -72,9 +72,9 @@
           <div class="no-hd">
             <ul>
               <!-- 国内现存确诊 -->
-              <li>888888</li>  
+              <li name="internal">888888</li>
               <!-- 全球现存确诊 -->
-              <li>888888</li>
+              <li name="abroad">888888</li>
             </ul>
           </div>
           <div class="no-bd">
@@ -114,12 +114,26 @@
         </div>
       </div>
     </section>
-    <script src="js/flexible.js"></script>
-    <script src="js/echarts.min.js"></script>
+    <script src="../static/js/flexible.js"></script>
+    <script src="../static/js/echarts.min.js"></script>
     <!-- 先引入jquery -->
-    <script src="js/jquery.js"></script>
+    <script src="../static/js/jquery.js"></script>
     <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
-    <script src="js/china.js"></script>
-    <script src="js/epidemic.js"></script>
+    <script src="../static/js/china.js"></script>
+    <script src="../static/js/epidemic.js"></script>
+    <script>
+        var internal=document.getElementsByName("internal");
+        var abroad=document.getElementsByName("abroad");
+        $.ajax({
+            url: "/home",
+            type: "GET",
+            //data: {"action":"list_rumors"},
+            dataType: "json",
+            success: function(result) {
+
+                //internal.innerHTML
+            }
+        });
+    </script>
   </body>
 </html>
