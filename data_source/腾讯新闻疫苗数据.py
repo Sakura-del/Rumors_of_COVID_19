@@ -3,7 +3,6 @@ import json
 import requests
 
 
-
 if not os.path.isdir('data_source/腾讯新闻疫苗数据'):
     os.makedirs('data_source/腾讯新闻疫苗数据')
 

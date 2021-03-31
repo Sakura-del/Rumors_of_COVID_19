@@ -1,8 +1,10 @@
 from django.urls import path
 
-from . import views
+from . import news
+from . import rumors
 
 app_name = 'details'
 urlpatterns = [
-    path('<int: rumors_id>', views.details, name='details'),
+    path('news', news.dispatcher),
+    path('rumors', rumors.dispatcher),
 ]

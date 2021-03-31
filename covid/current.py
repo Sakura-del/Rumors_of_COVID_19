@@ -1,7 +1,6 @@
 # -*-coding:utf-8-*-
+# 当前疫情数据
 from django.forms.models import model_to_dict
-
-from lib.handler import dispatcherBase
 from django.http import HttpResponse, JsonResponse
 import json
 import datetime
