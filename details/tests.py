@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 # Create your tests here.
-import requests, pprint
+import requests,pprint
 
 tag = ['新冠', '疫苗']
 payload = {'action': 'get_rumors_details', 'title': '尼帕病毒是下一个全球大流行病毒，比新冠危险75倍', "tag": tag}

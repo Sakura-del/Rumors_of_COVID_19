@@ -14,7 +14,7 @@ def listrumors(request):
                                     'explain', 'tag', 'videourl', 'cover',
                                     'coverrect', 'coversqual').order_by('date')[:5]
     except RumorInfo.DoesNotExist:
-        return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
     data = list(data)
 
     return JsonResponse({"ret": 0, "retlist": data, "total": len(data)})
