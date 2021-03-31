@@ -2,23 +2,23 @@
   "current_covid_internal": [
     {
       "type": "current_confirmed",
-      "count": 378,
-      "incr": -12
+      "count": 384,
+      "incr": 3
     },
     {
       "type": "abroad",
-      "count": 5285,
-      "incr": 8
+      "count": 5290,
+      "incr": 5
     },
     {
       "type": "current_asym",
-      "count": 263,
-      "incr": -10
+      "count": 255,
+      "incr": -8
     },
     {
       "type": "confirmed",
-      "count": 102723,
-      "incr": 25
+      "count": 102734,
+      "incr": 19
     },
     {
       "type": "death",
@@ -27,30 +27,30 @@
     },
     {
       "type": "cured",
-      "count": 97494,
-      "incr": 37
+      "count": 97499,
+      "incr": 16
     }
   ],
   "current_covid_global": [
     {
       "type": "current_confirmed",
-      "count": 29553878,
-      "incr": 46889
+      "count": 29620882,
+      "incr": 67001
     },
     {
       "type": "confirmed",
-      "count": 127824579,
-      "incr": 599852
+      "count": 128023516,
+      "incr": 198945
     },
     {
       "type": "death",
-      "count": 2819374,
-      "incr": 10668
+      "count": 2823326,
+      "incr": 3952
     },
     {
       "type": "cured",
-      "count": 95451327,
-      "incr": 542295
+      "count": 95579308,
+      "incr": 127992
     }
   ],
   "current_covid_provinces": [
@@ -68,15 +68,15 @@
     {
       "overall_data": {
         "area": "上海",
-        "current_confirmed": 44,
+        "current_confirmed": 43,
         "confirmed": 1882,
         "death": 7,
-        "cured": 1831
+        "cured": 1832
       },
       "city_data": [
         {
           "area": "境外输入",
-          "current_confirmed": 44,
+          "current_confirmed": 43,
           "confirmed": 1511,
           "death": -1,
           "cured": -1
@@ -213,16 +213,16 @@
     {
       "overall_data": {
         "area": "广东",
-        "current_confirmed": 36,
-        "confirmed": 2277,
+        "current_confirmed": 38,
+        "confirmed": 2279,
         "death": 8,
         "cured": 2233
       },
       "city_data": [
         {
           "area": "广州",
-          "current_confirmed": 22,
-          "confirmed": 1081,
+          "current_confirmed": 24,
+          "confirmed": 1083,
           "death": 1,
           "cured": 1058
         },
@@ -383,18 +383,18 @@
     {
       "overall_data": {
         "area": "四川",
-        "current_confirmed": 23,
+        "current_confirmed": 22,
         "confirmed": 948,
         "death": 3,
-        "cured": 922
+        "cured": 923
       },
       "city_data": [
         {
           "area": "成都",
-          "current_confirmed": 23,
+          "current_confirmed": 22,
           "confirmed": 551,
           "death": 3,
-          "cured": 525
+          "cured": 526
         },
         {
           "area": "甘孜州",
@@ -769,16 +769,16 @@
     {
       "overall_data": {
         "area": "福建",
-        "current_confirmed": 9,
-        "confirmed": 560,
+        "current_confirmed": 10,
+        "confirmed": 561,
         "death": 1,
         "cured": 550
       },
       "city_data": [
         {
           "area": "境外输入人员",
-          "current_confirmed": 9,
-          "confirmed": 264,
+          "current_confirmed": 10,
+          "confirmed": 265,
           "death": 0,
           "cured": 255
         },
@@ -844,6 +844,123 @@
           "confirmed": 6,
           "death": 0,
           "cured": 6
+        }
+      ],
+      "extra_info": ""
+    },
+    {
+      "overall_data": {
+        "area": "云南",
+        "current_confirmed": 9,
+        "confirmed": 241,
+        "death": 2,
+        "cured": 230
+      },
+      "city_data": [
+        {
+          "area": "德宏州",
+          "current_confirmed": 6,
+          "confirmed": 11,
+          "death": 0,
+          "cured": 5
+        },
+        {
+          "area": "境外输入",
+          "current_confirmed": 3,
+          "confirmed": 61,
+          "death": 0,
+          "cured": 58
+        },
+        {
+          "area": "昆明",
+          "current_confirmed": 0,
+          "confirmed": 53,
+          "death": 0,
+          "cured": 53
+        },
+        {
+          "area": "昭通",
+          "current_confirmed": 0,
+          "confirmed": 25,
+          "death": 0,
+          "cured": 25
+        },
+        {
+          "area": "西双版纳",
+          "current_confirmed": 0,
+          "confirmed": 15,
+          "death": 1,
+          "cured": 14
+        },
+        {
+          "area": "玉溪",
+          "current_confirmed": 0,
+          "confirmed": 14,
+          "death": 1,
+          "cured": 13
+        },
+        {
+          "area": "曲靖",
+          "current_confirmed": 0,
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
+        },
+        {
+          "area": "大理州",
+          "current_confirmed": 0,
+          "confirmed": 13,
+          "death": 0,
+          "cured": 13
+        },
+        {
+          "area": "红河州",
+          "current_confirmed": 0,
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
+        },
+        {
+          "area": "保山",
+          "current_confirmed": 0,
+          "confirmed": 9,
+          "death": 0,
+          "cured": 9
+        },
+        {
+          "area": "丽江",
+          "current_confirmed": 0,
+          "confirmed": 7,
+          "death": 0,
+          "cured": 7
+        },
+        {
+          "area": "普洱",
+          "current_confirmed": 0,
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
+        },
+        {
+          "area": "楚雄州",
+          "current_confirmed": 0,
+          "confirmed": 4,
+          "death": 0,
+          "cured": 4
+        },
+        {
+          "area": "文山州",
+          "current_confirmed": 0,
+          "confirmed": 2,
+          "death": 0,
+          "cured": 2
+        },
+        {
+          "area": "临沧",
+          "current_confirmed": 0,
+          "confirmed": 1,
+          "death": 0,
+          "cured": 1
         }
       ],
       "extra_info": ""
@@ -1556,123 +1673,6 @@
         }
       ],
       "extra_info": "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的现存确诊暂无法获取。"
-    },
-    {
-      "overall_data": {
-        "area": "云南",
-        "current_confirmed": 3,
-        "confirmed": 235,
-        "death": 2,
-        "cured": 230
-      },
-      "city_data": [
-        {
-          "area": "境外输入",
-          "current_confirmed": 3,
-          "confirmed": 61,
-          "death": 0,
-          "cured": 58
-        },
-        {
-          "area": "昆明",
-          "current_confirmed": 0,
-          "confirmed": 53,
-          "death": 0,
-          "cured": 53
-        },
-        {
-          "area": "昭通",
-          "current_confirmed": 0,
-          "confirmed": 25,
-          "death": 0,
-          "cured": 25
-        },
-        {
-          "area": "西双版纳",
-          "current_confirmed": 0,
-          "confirmed": 15,
-          "death": 1,
-          "cured": 14
-        },
-        {
-          "area": "玉溪",
-          "current_confirmed": 0,
-          "confirmed": 14,
-          "death": 1,
-          "cured": 13
-        },
-        {
-          "area": "曲靖",
-          "current_confirmed": 0,
-          "confirmed": 13,
-          "death": 0,
-          "cured": 13
-        },
-        {
-          "area": "大理州",
-          "current_confirmed": 0,
-          "confirmed": 13,
-          "death": 0,
-          "cured": 13
-        },
-        {
-          "area": "红河州",
-          "current_confirmed": 0,
-          "confirmed": 9,
-          "death": 0,
-          "cured": 9
-        },
-        {
-          "area": "保山",
-          "current_confirmed": 0,
-          "confirmed": 9,
-          "death": 0,
-          "cured": 9
-        },
-        {
-          "area": "丽江",
-          "current_confirmed": 0,
-          "confirmed": 7,
-          "death": 0,
-          "cured": 7
-        },
-        {
-          "area": "德宏州",
-          "current_confirmed": 0,
-          "confirmed": 5,
-          "death": 0,
-          "cured": 5
-        },
-        {
-          "area": "普洱",
-          "current_confirmed": 0,
-          "confirmed": 4,
-          "death": 0,
-          "cured": 4
-        },
-        {
-          "area": "楚雄州",
-          "current_confirmed": 0,
-          "confirmed": 4,
-          "death": 0,
-          "cured": 4
-        },
-        {
-          "area": "文山州",
-          "current_confirmed": 0,
-          "confirmed": 2,
-          "death": 0,
-          "cured": 2
-        },
-        {
-          "area": "临沧",
-          "current_confirmed": 0,
-          "confirmed": 1,
-          "death": 0,
-          "cured": 1
-        }
-      ],
-      "extra_info": ""
     },
     {
       "overall_data": {
@@ -3607,31 +3607,31 @@
     {
       "island_data": {
         "area": "欧洲",
-        "current_confirmed": 18480035,
-        "confirmed": 39312413,
-        "death": 929571,
-        "cured": 19902807
+        "current_confirmed": 18523293,
+        "confirmed": 39376826,
+        "death": 932039,
+        "cured": 19921494
       },
       "island_nation_data": [
         {
-          "area": "英国",
-          "current_confirmed": 4189032,
-          "confirmed": 4337696,
-          "death": 148125,
+          "area": "法国",
+          "current_confirmed": 4208163,
+          "confirmed": 4585385,
+          "death": 95337,
           "cured": -1
         },
         {
-          "area": "法国",
-          "current_confirmed": 4177842,
-          "confirmed": 4554683,
-          "death": 94956,
+          "area": "英国",
+          "current_confirmed": 4192029,
+          "confirmed": 4341736,
+          "death": 149168,
           "cured": -1
         },
         {
           "area": "西班牙",
-          "current_confirmed": 3045250,
-          "confirmed": 3270825,
-          "death": 75199,
+          "current_confirmed": 3050138,
+          "confirmed": 3275819,
+          "death": 75305,
           "cured": 150376
         },
         {
@@ -3643,9 +3643,9 @@
         },
         {
           "area": "比利时",
-          "current_confirmed": 828621,
-          "confirmed": 870757,
-          "death": 22897,
+          "current_confirmed": 830776,
+          "confirmed": 872936,
+          "death": 22921,
           "cured": 19239
         },
         {
@@ -3657,17 +3657,17 @@
         },
         {
           "area": "塞尔维亚",
-          "current_confirmed": 598514,
-          "confirmed": 677999,
+          "current_confirmed": 599245,
+          "confirmed": 678730,
           "death": 7071,
           "cured": 72414
         },
         {
           "area": "意大利",
-          "current_confirmed": 565993,
-          "confirmed": 3544957,
-          "death": 108350,
-          "cured": 2870614
+          "current_confirmed": 562832,
+          "confirmed": 3561012,
+          "death": 108879,
+          "cured": 2889301
         },
         {
           "area": "波兰",
@@ -3705,6 +3705,13 @@
           "cured": 1473
         },
         {
+          "area": "匈牙利",
+          "current_confirmed": 225337,
+          "confirmed": 645733,
+          "death": 20435,
+          "cured": 399961
+        },
+        {
           "area": "德国",
           "current_confirmed": 225062,
           "confirmed": 2796400,
@@ -3712,17 +3719,10 @@
           "cured": 2494739
         },
         {
-          "area": "匈牙利",
-          "current_confirmed": 221002,
-          "confirmed": 641124,
-          "death": 20161,
-          "cured": 399961
-        },
-        {
           "area": "斯洛文尼亚",
-          "current_confirmed": 206416,
-          "confirmed": 212753,
-          "death": 4310,
+          "current_confirmed": 206627,
+          "confirmed": 212965,
+          "death": 4311,
           "cured": 2027
         },
         {
@@ -3790,9 +3790,9 @@
         },
         {
           "area": "波黑",
-          "current_confirmed": 30479,
+          "current_confirmed": 30380,
           "confirmed": 165787,
-          "death": 6328,
+          "death": 6427,
           "cured": 128980
         },
         {
@@ -3845,6 +3845,20 @@
           "cured": 217701
         },
         {
+          "area": "拉脱维亚",
+          "current_confirmed": 7310,
+          "confirmed": 101207,
+          "death": 1883,
+          "cured": 92014
+        },
+        {
+          "area": "黑山",
+          "current_confirmed": 7237,
+          "confirmed": 90416,
+          "death": 1245,
+          "cured": 81934
+        },
+        {
           "area": "白俄罗斯",
           "current_confirmed": 7183,
           "confirmed": 319599,
@@ -3852,24 +3866,10 @@
           "cured": 310189
         },
         {
-          "area": "拉脱维亚",
-          "current_confirmed": 7148,
-          "confirmed": 101040,
-          "death": 1878,
-          "cured": 92014
-        },
-        {
-          "area": "黑山",
-          "current_confirmed": 6904,
-          "confirmed": 90083,
-          "death": 1245,
-          "cured": 81934
-        },
-        {
           "area": "卢森堡",
-          "current_confirmed": 3699,
-          "confirmed": 60755,
-          "death": 738,
+          "current_confirmed": 4014,
+          "confirmed": 61073,
+          "death": 741,
           "cured": 56318
         },
         {
@@ -3882,9 +3882,16 @@
         {
           "area": "马恩岛",
           "current_confirmed": 1098,
-          "confirmed": 1555,
-          "death": 26,
+          "confirmed": 1558,
+          "death": 29,
           "cured": 431
+        },
+        {
+          "area": "圣马力诺",
+          "current_confirmed": 566,
+          "confirmed": 4679,
+          "death": 84,
+          "cured": 4029
         },
         {
           "area": "安道尔",
@@ -3894,23 +3901,16 @@
           "cured": 11244
         },
         {
-          "area": "圣马力诺",
-          "current_confirmed": 518,
-          "confirmed": 4631,
-          "death": 84,
-          "cured": 4029
-        },
-        {
           "area": "摩纳哥",
-          "current_confirmed": 477,
-          "confirmed": 2259,
+          "current_confirmed": 483,
+          "confirmed": 2265,
           "death": 28,
           "cured": 1754
         },
         {
           "area": "列支敦士登",
-          "current_confirmed": 113,
-          "confirmed": 2731,
+          "current_confirmed": 129,
+          "confirmed": 2747,
           "death": 56,
           "cured": 2562
         },
@@ -3961,18 +3961,18 @@
     {
       "island_data": {
         "area": "北美洲",
-        "current_confirmed": 6940210,
-        "confirmed": 35134603,
-        "death": 805500,
-        "cured": 27388893
+        "current_confirmed": 6926467,
+        "confirmed": 35194043,
+        "death": 806422,
+        "cured": 27461154
       },
       "island_nation_data": [
         {
           "area": "美国",
-          "current_confirmed": 6272540,
-          "confirmed": 30331796,
-          "death": 550036,
-          "cured": 23509220
+          "current_confirmed": 6256214,
+          "confirmed": 30388625,
+          "death": 550930,
+          "cured": 23581481
         },
         {
           "area": "墨西哥",
@@ -3990,8 +3990,8 @@
         },
         {
           "area": "波多黎各",
-          "current_confirmed": 103781,
-          "confirmed": 105893,
+          "current_confirmed": 104376,
+          "confirmed": 106488,
           "death": 2112,
           "cured": 0
         },
@@ -4011,9 +4011,9 @@
         },
         {
           "area": "牙买加",
-          "current_confirmed": 22598,
-          "confirmed": 38227,
-          "death": 570,
+          "current_confirmed": 22869,
+          "confirmed": 38514,
+          "death": 586,
           "cured": 15059
         },
         {
@@ -4032,9 +4032,9 @@
         },
         {
           "area": "危地马拉",
-          "current_confirmed": 11493,
+          "current_confirmed": 11486,
           "confirmed": 193733,
-          "death": 6802,
+          "death": 6809,
           "cured": 175438
         },
         {
@@ -4060,16 +4060,16 @@
         },
         {
           "area": "古巴",
-          "current_confirmed": 3589,
-          "confirmed": 72503,
-          "death": 415,
+          "current_confirmed": 4288,
+          "confirmed": 73204,
+          "death": 417,
           "cured": 68499
         },
         {
           "area": "库拉索岛",
-          "current_confirmed": 2183,
-          "confirmed": 6648,
-          "death": 27,
+          "current_confirmed": 3090,
+          "confirmed": 7558,
+          "death": 30,
           "cured": 4438
         },
         {
@@ -4081,15 +4081,15 @@
         },
         {
           "area": "圣文森特和格林纳丁斯",
-          "current_confirmed": 1581,
-          "confirmed": 1738,
+          "current_confirmed": 1582,
+          "confirmed": 1739,
           "death": 10,
           "cured": 147
         },
         {
           "area": "巴哈马",
-          "current_confirmed": 1397,
-          "confirmed": 9000,
+          "current_confirmed": 1473,
+          "confirmed": 9076,
           "death": 188,
           "cured": 7415
         },
@@ -4123,8 +4123,8 @@
         },
         {
           "area": "安提瓜和巴布达",
-          "current_confirmed": 352,
-          "confirmed": 1128,
+          "current_confirmed": 360,
+          "confirmed": 1136,
           "death": 28,
           "cured": 748
         },
@@ -4137,8 +4137,8 @@
         },
         {
           "area": "巴巴多斯",
-          "current_confirmed": 167,
-          "confirmed": 3609,
+          "current_confirmed": 187,
+          "confirmed": 3629,
           "death": 41,
           "cured": 3401
         },
@@ -4172,8 +4172,8 @@
         },
         {
           "area": "圣卢西亚",
-          "current_confirmed": 34,
-          "confirmed": 4191,
+          "current_confirmed": 45,
+          "confirmed": 4202,
           "death": 58,
           "cured": 4099
         },
@@ -4221,8 +4221,8 @@
         },
         {
           "area": "安圭拉",
-          "current_confirmed": 3,
-          "confirmed": 23,
+          "current_confirmed": 5,
+          "confirmed": 25,
           "death": 0,
           "cured": 20
         },
@@ -4252,18 +4252,18 @@
     {
       "island_data": {
         "area": "亚洲",
-        "current_confirmed": 1996060,
-        "confirmed": 28184082,
-        "death": 426959,
-        "cured": 25761063
+        "current_confirmed": 2028189,
+        "confirmed": 28253659,
+        "death": 427374,
+        "cured": 25798096
       },
       "island_nation_data": [
         {
           "area": "印度",
-          "current_confirmed": 521808,
-          "confirmed": 12039644,
-          "death": 161843,
-          "cured": 11355993
+          "current_confirmed": 540720,
+          "confirmed": 12095855,
+          "death": 162114,
+          "cured": 11393021
         },
         {
           "area": "土耳其",
@@ -4274,15 +4274,15 @@
         },
         {
           "area": "伊朗",
-          "current_confirmed": 202007,
-          "confirmed": 1864974,
+          "current_confirmed": 202017,
+          "confirmed": 1864984,
           "death": 62479,
           "cured": 1600488
         },
         {
           "area": "哈萨克斯坦",
-          "current_confirmed": 167263,
-          "confirmed": 292306,
+          "current_confirmed": 168718,
+          "confirmed": 293761,
           "death": 3696,
           "cured": 121347
         },
@@ -4309,16 +4309,16 @@
         },
         {
           "area": "黎巴嫩",
-          "current_confirmed": 94722,
-          "confirmed": 461062,
-          "death": 6096,
+          "current_confirmed": 95959,
+          "confirmed": 462339,
+          "death": 6136,
           "cured": 360244
         },
         {
           "area": "伊拉克",
-          "current_confirmed": 72281,
-          "confirmed": 832428,
-          "death": 14212,
+          "current_confirmed": 78081,
+          "confirmed": 838265,
+          "death": 14249,
           "cured": 745935
         },
         {
@@ -4337,9 +4337,9 @@
         },
         {
           "area": "塞浦路斯",
-          "current_confirmed": 42322,
-          "confirmed": 44631,
-          "death": 252,
+          "current_confirmed": 42680,
+          "confirmed": 44991,
+          "death": 254,
           "cured": 2057
         },
         {
@@ -4365,9 +4365,9 @@
         },
         {
           "area": "亚美尼亚",
-          "current_confirmed": 15759,
-          "confirmed": 190741,
-          "death": 3476,
+          "current_confirmed": 16488,
+          "confirmed": 191491,
+          "death": 3497,
           "cured": 171506
         },
         {
@@ -4400,10 +4400,17 @@
         },
         {
           "area": "阿曼",
-          "current_confirmed": 11986,
-          "confirmed": 156067,
-          "death": 1661,
+          "current_confirmed": 12801,
+          "confirmed": 156883,
+          "death": 1662,
           "cured": 142420
+        },
+        {
+          "area": "巴林",
+          "current_confirmed": 9699,
+          "confirmed": 142669,
+          "death": 515,
+          "cured": 132455
         },
         {
           "area": "以色列",
@@ -4411,13 +4418,6 @@
           "confirmed": 831906,
           "death": 6183,
           "cured": 816115
-        },
-        {
-          "area": "巴林",
-          "current_confirmed": 8877,
-          "confirmed": 141845,
-          "death": 513,
-          "cured": 132455
         },
         {
           "area": "缅甸",
@@ -4434,31 +4434,31 @@
           "cured": 94563
         },
         {
-          "area": "叙利亚",
-          "current_confirmed": 4882,
-          "confirmed": 18498,
-          "death": 1239,
-          "cured": 12377
-        },
-        {
           "area": "沙特阿拉伯",
-          "current_confirmed": 4728,
-          "confirmed": 388325,
-          "death": 6650,
+          "current_confirmed": 5263,
+          "confirmed": 388866,
+          "death": 6656,
           "cured": 376947
         },
         {
+          "area": "叙利亚",
+          "current_confirmed": 5014,
+          "confirmed": 18638,
+          "death": 1247,
+          "cured": 12377
+        },
+        {
           "area": "格鲁吉亚",
-          "current_confirmed": 4110,
-          "confirmed": 280476,
-          "death": 3765,
+          "current_confirmed": 4771,
+          "confirmed": 281145,
+          "death": 3773,
           "cured": 272601
         },
         {
           "area": "阿富汗",
-          "current_confirmed": 3837,
-          "confirmed": 56322,
-          "death": 2472,
+          "current_confirmed": 3895,
+          "confirmed": 56384,
+          "death": 2476,
           "cured": 50013
         },
         {
@@ -4470,10 +4470,17 @@
         },
         {
           "area": "也门共和国",
-          "current_confirmed": 2835,
-          "confirmed": 4037,
-          "death": 852,
+          "current_confirmed": 2905,
+          "confirmed": 4119,
+          "death": 864,
           "cured": 350
+        },
+        {
+          "area": "马尔代夫",
+          "current_confirmed": 2883,
+          "confirmed": 23671,
+          "death": 66,
+          "cured": 20722
         },
         {
           "area": "斯里兰卡",
@@ -4483,24 +4490,17 @@
           "cured": 88914
         },
         {
-          "area": "马尔代夫",
-          "current_confirmed": 2736,
-          "confirmed": 23524,
-          "death": 66,
-          "cured": 20722
-        },
-        {
           "area": "吉尔吉斯斯坦",
-          "current_confirmed": 2013,
-          "confirmed": 88163,
-          "death": 1497,
+          "current_confirmed": 2125,
+          "confirmed": 88276,
+          "death": 1498,
           "cured": 84653
         },
         {
           "area": "乌兹别克斯坦",
-          "current_confirmed": 1550,
-          "confirmed": 82536,
-          "death": 626,
+          "current_confirmed": 1694,
+          "confirmed": 82682,
+          "death": 628,
           "cured": 80360
         },
         {
@@ -4519,17 +4519,17 @@
         },
         {
           "area": "柬埔寨",
-          "current_confirmed": 1090,
-          "confirmed": 2273,
+          "current_confirmed": 1195,
+          "confirmed": 2378,
           "death": 11,
           "cured": 1172
         },
         {
           "area": "中国",
-          "current_confirmed": 378,
-          "confirmed": 102723,
+          "current_confirmed": 384,
+          "confirmed": 102734,
           "death": 4851,
-          "cured": 97494
+          "cured": 97499
         },
         {
           "area": "东帝汶",
@@ -4539,18 +4539,18 @@
           "cured": 174
         },
         {
+          "area": "新加坡",
+          "current_confirmed": 269,
+          "confirmed": 60321,
+          "death": 30,
+          "cured": 60022
+        },
+        {
           "area": "越南",
           "current_confirmed": 251,
           "confirmed": 2594,
           "death": 35,
           "cured": 2308
-        },
-        {
-          "area": "新加坡",
-          "current_confirmed": 248,
-          "confirmed": 60300,
-          "death": 30,
-          "cured": 60022
         },
         {
           "area": "文莱",
@@ -4585,9 +4585,9 @@
     {
       "island_data": {
         "area": "南美洲",
-        "current_confirmed": 1745547,
-        "confirmed": 20904768,
-        "death": 543710,
+        "current_confirmed": 1746623,
+        "confirmed": 20905856,
+        "death": 543722,
         "cured": 18615511
       },
       "island_nation_data": [
@@ -4663,16 +4663,16 @@
         },
         {
           "area": "委内瑞拉",
-          "current_confirmed": 9879,
-          "confirmed": 155663,
-          "death": 1555,
+          "current_confirmed": 10861,
+          "confirmed": 156655,
+          "death": 1565,
           "cured": 144229
         },
         {
           "area": "圭亚那",
-          "current_confirmed": 1005,
-          "confirmed": 10072,
-          "death": 225,
+          "current_confirmed": 1099,
+          "confirmed": 10168,
+          "death": 227,
           "cured": 8842
         },
         {
@@ -4701,9 +4701,9 @@
     {
       "island_data": {
         "area": "非洲",
-        "current_confirmed": 371929,
-        "confirmed": 4224351,
-        "death": 112358,
+        "current_confirmed": 375926,
+        "confirmed": 4228476,
+        "death": 112486,
         "cured": 3740064
       },
       "island_nation_data": [
@@ -4730,16 +4730,16 @@
         },
         {
           "area": "阿尔及利亚",
-          "current_confirmed": 32596,
-          "confirmed": 116836,
-          "death": 3080,
+          "current_confirmed": 32702,
+          "confirmed": 116946,
+          "death": 3084,
           "cured": 81160
         },
         {
           "area": "突尼斯",
-          "current_confirmed": 26635,
-          "confirmed": 250565,
-          "death": 8735,
+          "current_confirmed": 27214,
+          "confirmed": 251169,
+          "death": 8760,
           "cured": 215195
         },
         {
@@ -4772,23 +4772,23 @@
         },
         {
           "area": "斯威士兰",
-          "current_confirmed": 13717,
-          "confirmed": 17321,
+          "current_confirmed": 13722,
+          "confirmed": 17326,
           "death": 668,
           "cured": 2936
         },
         {
           "area": "莫桑比克",
-          "current_confirmed": 11158,
-          "confirmed": 67197,
-          "death": 764,
+          "current_confirmed": 11248,
+          "confirmed": 67292,
+          "death": 769,
           "cured": 55275
         },
         {
           "area": "利比亚",
-          "current_confirmed": 10534,
-          "confirmed": 156849,
-          "death": 2618,
+          "current_confirmed": 11195,
+          "confirmed": 157545,
+          "death": 2653,
           "cured": 143697
         },
         {
@@ -4799,18 +4799,18 @@
           "cured": 150466
         },
         {
+          "area": "索马里",
+          "current_confirmed": 6017,
+          "confirmed": 11164,
+          "death": 510,
+          "cured": 4637
+        },
+        {
           "area": "莱索托",
           "current_confirmed": 5933,
           "confirmed": 10686,
           "death": 315,
           "cured": 4438
-        },
-        {
-          "area": "索马里",
-          "current_confirmed": 5705,
-          "confirmed": 10838,
-          "death": 496,
-          "cured": 4637
         },
         {
           "area": "苏丹",
@@ -4821,15 +4821,15 @@
         },
         {
           "area": "科特迪瓦",
-          "current_confirmed": 5146,
-          "confirmed": 43180,
-          "death": 237,
+          "current_confirmed": 5386,
+          "confirmed": 43422,
+          "death": 239,
           "cured": 37797
         },
         {
           "area": "刚果（金）",
-          "current_confirmed": 4758,
-          "confirmed": 27929,
+          "current_confirmed": 4840,
+          "confirmed": 28011,
           "death": 739,
           "cured": 22432
         },
@@ -4842,9 +4842,9 @@
         },
         {
           "area": "纳米比亚",
-          "current_confirmed": 3429,
-          "confirmed": 43632,
-          "death": 509,
+          "current_confirmed": 3716,
+          "confirmed": 43923,
+          "death": 513,
           "cured": 39694
         },
         {
@@ -4856,17 +4856,31 @@
         },
         {
           "area": "几内亚",
-          "current_confirmed": 3125,
-          "confirmed": 19670,
-          "death": 120,
+          "current_confirmed": 3225,
+          "confirmed": 19773,
+          "death": 123,
           "cured": 16425
         },
         {
           "area": "中非共和国",
-          "current_confirmed": 3100,
-          "confirmed": 5088,
-          "death": 64,
+          "current_confirmed": 3170,
+          "confirmed": 5161,
+          "death": 67,
           "cured": 1924
+        },
+        {
+          "area": "加蓬",
+          "current_confirmed": 2952,
+          "confirmed": 19140,
+          "death": 114,
+          "cured": 16074
+        },
+        {
+          "area": "马里",
+          "current_confirmed": 2752,
+          "confirmed": 9921,
+          "death": 384,
+          "cured": 6785
         },
         {
           "area": "布隆迪共和国",
@@ -4874,20 +4888,6 @@
           "confirmed": 2757,
           "death": 6,
           "cured": 4
-        },
-        {
-          "area": "马里",
-          "current_confirmed": 2707,
-          "confirmed": 9871,
-          "death": 379,
-          "cured": 6785
-        },
-        {
-          "area": "加蓬",
-          "current_confirmed": 2592,
-          "confirmed": 18777,
-          "death": 111,
-          "cured": 16074
         },
         {
           "area": "加纳",
@@ -4912,8 +4912,8 @@
         },
         {
           "area": "多哥",
-          "current_confirmed": 2116,
-          "confirmed": 9955,
+          "current_confirmed": 2153,
+          "confirmed": 9992,
           "death": 107,
           "cured": 7732
         },
@@ -4926,10 +4926,17 @@
         },
         {
           "area": "马达加斯加",
-          "current_confirmed": 1562,
-          "confirmed": 23585,
-          "death": 387,
+          "current_confirmed": 1939,
+          "confirmed": 23969,
+          "death": 394,
           "cured": 21636
+        },
+        {
+          "area": "吉布提",
+          "current_confirmed": 1688,
+          "confirmed": 7610,
+          "death": 68,
+          "cured": 5854
         },
         {
           "area": "贝宁",
@@ -4939,31 +4946,24 @@
           "cured": 5552
         },
         {
-          "area": "吉布提",
-          "current_confirmed": 1440,
-          "confirmed": 7361,
-          "death": 67,
-          "cured": 5854
-        },
-        {
           "area": "卢旺达",
-          "current_confirmed": 1377,
-          "confirmed": 21419,
-          "death": 301,
+          "current_confirmed": 1444,
+          "confirmed": 21490,
+          "death": 305,
           "cured": 19741
         },
         {
           "area": "塞内加尔",
-          "current_confirmed": 1376,
-          "confirmed": 38520,
-          "death": 1037,
+          "current_confirmed": 1415,
+          "confirmed": 38566,
+          "death": 1044,
           "cured": 36107
         },
         {
           "area": "安哥拉",
-          "current_confirmed": 1340,
-          "confirmed": 22063,
-          "death": 533,
+          "current_confirmed": 1408,
+          "confirmed": 22132,
+          "death": 534,
           "cured": 20190
         },
         {
@@ -4974,6 +4974,13 @@
           "cured": 2426
         },
         {
+          "area": "佛得角",
+          "current_confirmed": 1089,
+          "confirmed": 17190,
+          "death": 165,
+          "cured": 15936
+        },
+        {
           "area": "塞拉利昂",
           "current_confirmed": 1089,
           "confirmed": 3970,
@@ -4981,44 +4988,37 @@
           "cured": 2802
         },
         {
-          "area": "佛得角",
-          "current_confirmed": 1024,
-          "confirmed": 17125,
-          "death": 165,
-          "cured": 15936
-        },
-        {
           "area": "津巴布韦",
-          "current_confirmed": 855,
-          "confirmed": 36822,
+          "current_confirmed": 872,
+          "confirmed": 36839,
           "death": 1520,
           "cured": 34447
         },
         {
           "area": "乍得",
-          "current_confirmed": 738,
-          "confirmed": 4506,
-          "death": 161,
+          "current_confirmed": 739,
+          "confirmed": 4510,
+          "death": 164,
           "cured": 3607
         },
         {
           "area": "尼日尔",
-          "current_confirmed": 552,
-          "confirmed": 4987,
-          "death": 185,
+          "current_confirmed": 565,
+          "confirmed": 5001,
+          "death": 186,
           "cured": 4250
         },
         {
           "area": "布基纳法索",
-          "current_confirmed": 549,
-          "confirmed": 12692,
+          "current_confirmed": 559,
+          "confirmed": 12702,
           "death": 145,
           "cured": 11998
         },
         {
           "area": "南苏丹",
-          "current_confirmed": 536,
-          "confirmed": 10098,
+          "current_confirmed": 557,
+          "confirmed": 10119,
           "death": 108,
           "cured": 9454
         },
@@ -5030,18 +5030,18 @@
           "cured": 3588
         },
         {
-          "area": "毛里塔尼亚",
-          "current_confirmed": 334,
-          "confirmed": 17771,
-          "death": 448,
-          "cured": 16989
-        },
-        {
           "area": "毛里求斯",
-          "current_confirmed": 333,
-          "confirmed": 933,
+          "current_confirmed": 363,
+          "confirmed": 963,
           "death": 10,
           "cured": 590
+        },
+        {
+          "area": "毛里塔尼亚",
+          "current_confirmed": 358,
+          "confirmed": 17796,
+          "death": 449,
+          "cured": 16989
         },
         {
           "area": "冈比亚",
@@ -5066,8 +5066,8 @@
         },
         {
           "area": "厄立特里亚",
-          "current_confirmed": 211,
-          "confirmed": 3208,
+          "current_confirmed": 254,
+          "confirmed": 3251,
           "death": 35,
           "cured": 2962
         },
@@ -5104,30 +5104,30 @@
     {
       "island_data": {
         "area": "大洋洲",
-        "current_confirmed": 19943,
-        "confirmed": 63621,
-        "death": 1263,
+        "current_confirmed": 20230,
+        "confirmed": 63915,
+        "death": 1270,
         "cured": 42415
       },
       "island_nation_data": [
         {
           "area": "法属波利尼西亚",
-          "current_confirmed": 13299,
-          "confirmed": 18607,
+          "current_confirmed": 13304,
+          "confirmed": 18612,
           "death": 141,
           "cured": 5167
         },
         {
           "area": "巴布亚新几内亚",
-          "current_confirmed": 4454,
-          "confirmed": 5349,
-          "death": 49,
+          "current_confirmed": 4718,
+          "confirmed": 5620,
+          "death": 56,
           "cured": 846
         },
         {
           "area": "澳大利亚",
-          "current_confirmed": 992,
-          "confirmed": 29260,
+          "current_confirmed": 1010,
+          "confirmed": 29278,
           "death": 909,
           "cured": 27359
         },

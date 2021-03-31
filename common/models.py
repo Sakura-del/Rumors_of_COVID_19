@@ -7,7 +7,7 @@ from django.utils import timezone
 # 国内总体数据
 class CurrentCovidInternal(models.Model):
     current_confirmed = models.JSONField()  # 现存确诊
-    suspected = models.JSONField()          # 境外输入
+    abroad = models.JSONField()          # 境外输入
     current_asym = models.JSONField()       # 现存无症状
     confirmed = models.JSONField()          # 累计确诊
     death = models.JSONField()              # 累计死亡
@@ -275,3 +275,72 @@ class SpainDailyData(models.Model):
 
     class Meta:
         db_table = 'spain_daily_data'
+
+
+class News(models.Model):
+    title = models.CharField(max_length=200, blank=False)
+    url = models.URLField()
+    top_big_img = models.JSONField(default=list)
+    category_id = models.CharField(max_length=200)
+    category_name = models.CharField(max_length=200)
+    category_cn = models.CharField(max_length=200,default='')
+    sub_category_name = models.CharField(max_length=200)
+    sub_category_cn = models.CharField(max_length=200)
+    tags = models.JSONField(default=list)
+    media_name = models.CharField(max_length=200)
+    article_id = models.CharField(max_length=200)
+    comment_num = models.CharField(max_length=200)
+    publish_time = models.CharField(max_length=200)
+    update_time = models.DateTimeField()
+    img = models.URLField()
+
+    class Meta:
+        db_table = 'news'
+
+
+class CurrentVaccinations(models.Model):
+    area = models.CharField(max_length=200)
+    total_vaccinations = models.IntegerField()
+    new_vaccinations = models.IntegerField()
+    total_vaccinations_per_hundred = models.FloatField()
+
+    class Meta:
+        db_table = 'current_vaccinations'
+
+
+class TrendVaccinesInternal(models.Model):
+    year = models.CharField(max_length=200)
+    date = models.CharField(max_length=200)
+    total_vaccinations = models.IntegerField()
+    total_vaccinations_per_hundred = models.FloatField()
+
+    class Meta:
+        db_table = 'trend_vaccines_internal'
+
+
+class CurrentVaccinesNations(models.Model):
+    country = models.CharField(max_length=200)
+    date = models.CharField(max_length=200)
+    vaccines = models.CharField(max_length=200)
+    total_vaccinations = models.CharField(max_length=200)
+    total_vaccinations_per_hundred = models.FloatField()
+
+    class Meta:
+        db_table = 'current_vaccines_nations'
+
+
+class PerTrendVaccinesNations(models.Model):
+    country = models.CharField(max_length=200)
+    data = models.JSONField(default=list)
+
+    class Meta:
+        db_table = 'per_trend_accines_nations'
+
+
+class TotalTrendVaccinesNations(models.Model):
+    country = models.CharField(max_length=200)
+    data = models.JSONField(default=list)
+
+    class Meta:
+        db_table = 'total_trend_vaccines_nations'
+
