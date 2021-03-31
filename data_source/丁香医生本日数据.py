@@ -13,7 +13,7 @@ chrome_options = Options()
 
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
-bro = webdriver.Chrome('data_source/chromedriver.exe', options=chrome_options)
+bro = webdriver.Chrome('chromedriver.exe', options=chrome_options)
 
 bro.get(url)
 time.sleep(1)
