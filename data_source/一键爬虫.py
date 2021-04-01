@@ -1,6 +1,10 @@
+import os
 from threading import Thread
 
 
+
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
 
 all_func_list = []
 

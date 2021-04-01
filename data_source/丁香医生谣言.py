@@ -1,13 +1,16 @@
+import os
 import json
 import requests
 
 
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
 
 def 丁香医生谣言_func():
     url = 'https://file1.dxycdn.com/2020/0130/454/3393874921745912507-115.json?t=26951607'
     response = requests.get(url = url).json()
     丁香医生谣言  = response['data']
-    with open('data_source/丁香医生谣言.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/丁香医生谣言.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(丁香医生谣言,ensure_ascii = False))
 
 

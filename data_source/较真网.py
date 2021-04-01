@@ -1,10 +1,14 @@
 import re
+import os
 import json
 import time
 import requests
 from threading import Thread
 
 
+
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
 
 def 较真网_func():
 
@@ -37,7 +41,7 @@ def 较真网_func():
 
 
     json_data = json.dumps(rumor_needed_list,ensure_ascii=False)
-    with open('data_source/较真网.json','w',encoding='utf-8') as file:
+    with open('data_source/data_from_creeper/较真网.json','w',encoding='utf-8') as file:
         file.write(json_data)
 
 
