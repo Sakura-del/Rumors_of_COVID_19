@@ -3,15 +3,18 @@ import json
 import requests
 
 
-if not os.path.isdir('data_source/腾讯新闻疫苗数据'):
-    os.makedirs('data_source/腾讯新闻疫苗数据')
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
+
+if not os.path.isdir('data_source/data_from_creeper/腾讯新闻疫苗数据'):
+    os.makedirs('data_source/data_from_creeper/腾讯新闻疫苗数据')
 
 
 def 中国疫苗每日趋势_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=ChinaVaccineTrendData'
     response = requests.get(url = url).json()
     中国疫苗每日趋势  = response['data']['ChinaVaccineTrendData']
-    with open('data_source/腾讯新闻疫苗数据/中国疫苗每日趋势.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/腾讯新闻疫苗数据/中国疫苗每日趋势.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(中国疫苗每日趋势,ensure_ascii = False))
 
 def 重点国家地区疫苗每日趋势_func():
@@ -44,7 +47,7 @@ def 重点国家地区疫苗每日趋势_func():
                     'UK'        : trend_data['totalTrend']['英国'],}
 
     重点国家地区疫苗每日趋势  = {'perHundredTrend':perHundredTrend,'totalTrend':totalTrend}
-    with open('data_source/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(重点国家地区疫苗每日趋势,ensure_ascii = False))
 
 def 中国及全球截至今日总疫苗接种量_func():
@@ -52,14 +55,14 @@ def 中国及全球截至今日总疫苗接种量_func():
     response = requests.get(url = url).json()
     中国及全球截至今日总疫苗接种量  = { 'china'  : response['data']['VaccineTopData']['中国'],
                                         'global' : response['data']['VaccineTopData']['全球']}
-    with open('data_source/腾讯新闻疫苗数据/中国及全球截至今日总疫苗接种量.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/腾讯新闻疫苗数据/中国及全球截至今日总疫苗接种量.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(中国及全球截至今日总疫苗接种量,ensure_ascii = False))
 
 def 各国截至今日疫苗接种情况_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineSituationData'
     response = requests.get(url = url).json()
     各国截至今日疫苗接种情况  = response['data']['VaccineSituationData']
-    with open('data_source/腾讯新闻疫苗数据/各国截至今日疫苗接种情况.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/腾讯新闻疫苗数据/各国截至今日疫苗接种情况.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(各国截至今日疫苗接种情况,ensure_ascii = False))
 
 

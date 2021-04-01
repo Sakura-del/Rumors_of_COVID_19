@@ -14,8 +14,7 @@ django.setup()
 import datetime
 from common.models import *
 
-filename = 'data_source/data_source/丁香医生本日数据.json'
-
+filename = 'data_source/data_from_creeper/丁香医生本日数据.json'
 with open(filename, "r", encoding='utf-8') as f:
     data_list = json.load(f)
 
@@ -59,7 +58,7 @@ for item in current_covid_national:
         date=datetime.date.today() - datetime.timedelta(days=1)
     )
 
-filename1 = 'data_source/data_source/较真网.json'
+filename1 = 'data_source/data_from_creeper/较真网.json'
 with open(filename1, "r", encoding='utf-8') as f1:
     rumors_data = json.load(f1)
 RumorInfo.objects.all().delete()
@@ -84,7 +83,7 @@ for rumor in rumors_data:
         arttype=rumor['arttype']
     )
 
-filename2 = 'data_source/data_source/丁香医生每日数据/俄罗斯每日数据.json'
+filename2 = 'data_source/data_from_creeper/丁香医生每日数据/俄罗斯每日数据.json'
 
 with open(filename2, "r", encoding='utf-8') as f2:
     russia_data_list = json.load(f2)
@@ -106,7 +105,7 @@ for data in russia_data_list:
         suspectedCountIncr=data['suspectedCountIncr']
     )
 
-filename3 = 'data_source/data_source/丁香医生每日数据/全球每日数据.json'
+filename3 = 'data_source/data_from_creeper/丁香医生每日数据/全球每日数据.json'
 with open(filename3, "r", encoding='utf-8') as f3:
     global_data_list = json.load(f3)
 GlobalDailyData.objects.all().delete()
@@ -127,7 +126,7 @@ for data in global_data_list:
         suspectedCountIncr=data['suspectedCountIncr']
     )
 
-filename4 = 'data_source/data_source/丁香医生每日数据/国内每日数据.json'
+filename4 = 'data_source/data_from_creeper/丁香医生每日数据/国内每日数据.json'
 with open(filename4, "r", encoding='utf-8') as f4:
     internal_data_list = json.load(f4)
 InternalDailyData.objects.all().delete()
@@ -149,7 +148,7 @@ for data in internal_data_list:
     )
 
 
-filename5 = 'data_source/data_source/丁香医生每日数据/巴西每日数据.json'
+filename5 = 'data_source/data_from_creeper/丁香医生每日数据/巴西每日数据.json'
 with open(filename5, "r", encoding='utf-8') as f5:
     brazil_data_list = json.load(f5)
 BrazilDailyData.objects.all().delete()
@@ -171,7 +170,7 @@ for data in brazil_data_list:
     )
 
 
-filename6 = 'data_source/data_source/丁香医生每日数据/德国每日数据.json'
+filename6 = 'data_source/data_from_creeper/丁香医生每日数据/德国每日数据.json'
 with open(filename6, "r", encoding='utf-8') as f6:
     germany_data_list = json.load(f6)
 GermanyDailyData.objects.all().delete()
@@ -193,7 +192,7 @@ for data in germany_data_list:
     )
 
 
-filename7 = 'data_source/data_source/丁香医生每日数据/意大利每日数据.json'
+filename7 = 'data_source/data_from_creeper/丁香医生每日数据/意大利每日数据.json'
 with open(filename7, "r", encoding='utf-8') as f7:
     italy_data_list = json.load(f7)
 ItalyDailyData.objects.all().delete()
@@ -215,7 +214,7 @@ for data in italy_data_list:
     )
 
 
-filename8 = 'data_source/data_source/丁香医生每日数据/法国每日数据.json'
+filename8 = 'data_source/data_from_creeper/丁香医生每日数据/法国每日数据.json'
 with open(filename8, "r", encoding='utf-8') as f8:
     france_data_list = json.load(f8)
 FranceDailyData.objects.all().delete()
@@ -237,7 +236,7 @@ for data in france_data_list:
     )
 
 
-filename9 = 'data_source/data_source/丁香医生每日数据/美国每日数据.json'
+filename9 = 'data_source/data_from_creeper/丁香医生每日数据/美国每日数据.json'
 with open(filename9, "r", encoding='utf-8') as f9:
     us_data_list = json.load(f9)
 USDailyData.objects.all().delete()
@@ -259,7 +258,7 @@ for data in us_data_list:
     )
 
 
-filename10 = 'data_source/data_source/丁香医生每日数据/英国每日数据.json'
+filename10 = 'data_source/data_from_creeper/丁香医生每日数据/英国每日数据.json'
 with open(filename10, "r", encoding='utf-8') as f10:
     uk_data_list = json.load(f10)
 UKDailyData.objects.all().delete()
@@ -281,7 +280,7 @@ for data in uk_data_list:
     )
 
 
-filename11 = 'data_source/data_source/丁香医生每日数据/西班牙每日数据.json'
+filename11 = 'data_source/data_from_creeper/丁香医生每日数据/西班牙每日数据.json'
 with open(filename11, "r", encoding='utf-8') as f11:
     spain_data_list = json.load(f11)
 SpainDailyData.objects.all().delete()
@@ -303,7 +302,7 @@ for data in spain_data_list:
     )
 
 
-filename12 = 'data_source/data_source/腾讯新闻疫情新闻.json'
+filename12 = 'data_source/data_from_creeper/腾讯新闻疫情新闻.json'
 with open(filename12, "r", encoding='utf-8') as f12:
     news_data_list = json.load(f12)
 News.objects.all().delete()
@@ -326,7 +325,7 @@ for data in news_data_list:
         img=data['img']
     )
 
-filename13 = 'data_source/data_source/腾讯新闻疫苗数据/中国及全球截至今日总疫苗接种量.json'
+filename13 = 'data_source/data_from_creeper/腾讯新闻疫苗数据/中国及全球截至今日总疫苗接种量.json'
 with open(filename13, "r", encoding='utf-8') as f13:
     vaccinations_data = json.load(f13)
 
@@ -345,7 +344,7 @@ CurrentVaccinations.objects.create(
 )
 
 
-filename14 = 'data_source/data_source/腾讯新闻疫苗数据/中国疫苗每日趋势.json'
+filename14 = 'data_source/data_from_creeper/腾讯新闻疫苗数据/中国疫苗每日趋势.json'
 with open(filename14, "r", encoding='utf-8') as f14:
     trend_vaccine_internal_list = json.load(f14)
 TrendVaccinesInternal.objects.all().delete()
@@ -358,7 +357,7 @@ for data in trend_vaccine_internal_list:
     )
 
 
-filename15 = 'data_source/data_source/腾讯新闻疫苗数据/各国截至今日疫苗接种情况.json'
+filename15 = 'data_source/data_from_creeper/腾讯新闻疫苗数据/各国截至今日疫苗接种情况.json'
 with open(filename15, "r", encoding='utf-8') as f15:
     vaccines_national_list = json.load(f15)
 CurrentVaccinesNations.objects.all().delete()
@@ -371,7 +370,7 @@ for data in vaccines_national_list:
         total_vaccinations_per_hundred=data['total_vaccinations_per_hundred']
     )
 
-filename16 = 'data_source/data_source/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json'
+filename16 = 'data_source/data_from_creeper/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json'
 with open(filename16, "r", encoding='utf-8') as f16:
     trend_vaccines_national_list = json.load(f16)
 

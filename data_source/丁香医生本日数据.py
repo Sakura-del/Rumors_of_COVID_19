@@ -1,4 +1,5 @@
 import re
+import os
 import json
 import time
 from lxml import etree
@@ -8,6 +9,9 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 
 
+
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
 
 def 丁香医生本日数据_func():
     国内总体数据_list = []
@@ -232,10 +236,12 @@ def 丁香医生本日数据_func():
     for thread in thread_list:
         thread.join()
 
-    with open('data_source/丁香医生本日数据.json','w',encoding='utf-8') as file:
+    with open('data_source/data_from_creeper/丁香医生本日数据.json','w',encoding='utf-8') as file:
         file.write(json.dumps({ 'current_covid_internal'  : 国内总体数据_list,
                                 'current_covid_global'    : 全球总体数据_list,
                                 'current_covid_provinces' : 国内数据_list,
                                 'current_covid_national'  : 全球数据_list},ensure_ascii=False))
+
+
 
 func_list = [丁香医生本日数据_func]

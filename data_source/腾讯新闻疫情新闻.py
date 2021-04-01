@@ -1,8 +1,12 @@
+import os
 import json
 import requests
 from threading import Thread
 
 
+
+if not os.path.isdir('data_source/data_from_creeper'):
+    os.makedirs('data_source/data_from_creeper')
 
 def 腾讯新闻疫情新闻_func():
 
@@ -43,7 +47,7 @@ def 腾讯新闻疫情新闻_func():
 
 
     news_list = news_page_1_list[0] + news_page_2_list[0] + news_page_3_list[0] + news_page_4_list[0]
-    with open('data_source/腾讯新闻疫情新闻.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/腾讯新闻疫情新闻.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(news_list,ensure_ascii = False))
 
 
