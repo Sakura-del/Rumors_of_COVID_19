@@ -398,10 +398,11 @@ PerTrendVaccinesNations.objects.create(country='土耳其', data=per_trend['Turk
 PerTrendVaccinesNations.objects.create(country='奥地利', data=per_trend['Austria'])
 PerTrendVaccinesNations.objects.create(country='意大利', data=per_trend['Italy'])
 PerTrendVaccinesNations.objects.create(country='摩洛哥', data=per_trend['Morocco'])
+PerTrendVaccinesNations.objects.create(country='瑞士', data=per_trend['Switzerland'])
 PerTrendVaccinesNations.objects.create(country='智利', data=per_trend['Chile'])
 PerTrendVaccinesNations.objects.create(country='美国', data=per_trend['US'])
 PerTrendVaccinesNations.objects.create(country='英国', data=per_trend['UK'])
-PerTrendVaccinesNations.objects.create(country='葡萄牙', data=per_trend['Portugal'])
+# PerTrendVaccinesNations.objects.create(country='葡萄牙', data=per_trend['Portugal'])
 PerTrendVaccinesNations.objects.create(country='西班牙', data=per_trend['Spain'])
 PerTrendVaccinesNations.objects.create(country='阿联酋', data=per_trend['Arab'])
 

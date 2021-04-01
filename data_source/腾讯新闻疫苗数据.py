@@ -22,16 +22,19 @@ def 重点国家地区疫苗每日趋势_func():
     response = requests.get(url = url).json()
     trend_data = response['data']['VaccineTrendData']
 
-    perHundredTrend = { 'Israel'   : trend_data['perHundredTrend']['以色列'],
-                        'Hungary'  : trend_data['perHundredTrend']['匈牙利'],
-                        'Turkey'   : trend_data['perHundredTrend']['土耳其'],
-                        'Italy'    : trend_data['perHundredTrend']['奥地利'],
-                        'Morocco'  : trend_data['perHundredTrend']['意大利'],
-                        'Chile'    : trend_data['perHundredTrend']['摩洛哥'],
-                        'US'       : trend_data['perHundredTrend']['智利'],
-                        'UK'       : trend_data['perHundredTrend']['美国'],
-                        'Portugal' : trend_data['perHundredTrend']['英国'],
-                        'Arab'     : trend_data['perHundredTrend']['阿联酋']}
+    perHundredTrend = { 'Israel'     : trend_data['perHundredTrend']['以色列'],
+                        'Hungary'    : trend_data['perHundredTrend']['匈牙利'],
+                        'Turkey'     : trend_data['perHundredTrend']['土耳其'],
+                        'Austria'    : trend_data['perHundredTrend']['奥地利'],
+                        'Italy'      : trend_data['perHundredTrend']['意大利'],
+                        'Morocco'    : trend_data['perHundredTrend']['摩洛哥'],
+                        'Switzerland': trend_data['perHundredTrend']['瑞士'],
+                        'Chile'      : trend_data['perHundredTrend']['智利'],
+                        'US'         : trend_data['perHundredTrend']['美国'],
+                        'UK'         : trend_data['perHundredTrend']['英国'],
+                        # 'Portugal'   : trend_data['perHundredTrend']['葡萄牙'],
+                        'Spain'      : trend_data['perHundredTrend']['西班牙'],
+                        'Arab'       : trend_data['perHundredTrend']['阿联酋']}
 
     totalTrend = {  'Africa'    : trend_data['totalTrend']['Africa'],
                     'China'     : trend_data['totalTrend']['中国'],
@@ -63,7 +66,7 @@ def 各国截至今日疫苗接种情况_func():
     response = requests.get(url = url).json()
     各国截至今日疫苗接种情况  = response['data']['VaccineSituationData']
     with open('data_source/data_from_creeper/腾讯新闻疫苗数据/各国截至今日疫苗接种情况.json','w',encoding = 'utf-8') as file:
-        file.write(json.dumps(各国截至今日疫苗接种情况,ensure_ascii = False))
+        file.write(json.dumps(各国截至今日疫苗接种情况, ensure_ascii = False))
 
 
 
