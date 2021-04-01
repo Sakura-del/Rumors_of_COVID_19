@@ -303,6 +303,7 @@ class CurrentVaccinations(models.Model):
     total_vaccinations = models.IntegerField()
     new_vaccinations = models.IntegerField()
     total_vaccinations_per_hundred = models.FloatField()
+    date = models.DateField(default=timezone.now)
 
     class Meta:
         db_table = 'current_vaccinations'

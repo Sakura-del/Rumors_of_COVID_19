@@ -955,7 +955,8 @@
     "country": "埃及",
     "date": "2021-01-30",
     "vaccinations": "国药/北京",
-    "total_vaccinations": 1315
+    "total_vaccinations": 1315,
+    "total_vaccinations_per_hundred": -1
   },
   {
     "country": "纳米比亚",

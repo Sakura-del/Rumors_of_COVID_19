@@ -341,7 +341,8 @@ CurrentVaccinations.objects.create(
     area='全球',
     total_vaccinations=vaccinations_data['global']['total_vaccinations'],
     new_vaccinations=vaccinations_data['global']['new_vaccinations'],
-    total_vaccinations_per_hundred=vaccinations_data['global']['total_vaccinations_per_hundred']
+    total_vaccinations_per_hundred=vaccinations_data['global']['total_vaccinations_per_hundred'],
+    date=datetime.date.today()
 )
 
 
