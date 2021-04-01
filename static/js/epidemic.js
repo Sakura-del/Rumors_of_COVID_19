@@ -196,6 +196,7 @@
 })();
 // 折线图1模块制作
 (function() {
+
   var yearData = [
     {
       year: "2020", // 年份
@@ -644,6 +645,7 @@
 
 // 饼形图2 地区分布模块
 (function() {
+
   var myChart = echarts.init(document.querySelector(".pie2 .chart"));
   var option = {
     color: [
@@ -756,6 +758,9 @@
     { name: "广东", value: 123 },
     { name: "广西", value: 59 },
     { name: "海南", value: 14 },
+    { name: "香港", value: 14 },
+    { name: "台湾", value: 14 },
+    { name: "澳门", value: 14 }
   ];
 
   var geoCoordMap = {};
@@ -790,9 +795,35 @@
     { name: "新疆", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
     { name: "广东", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
     { name: "广西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-    { name: "海南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] }
+    { name: "海南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+    { name: "香港", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+    { name: "台湾", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+    { name: "澳门", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] }
   ];
+  $.ajax({
+    url: "/covid/current",
+    type: "GET",
+    data: {action:"list_current_provinces"},
+    dataType: "json",
+    success: function(result) {
+      var len=Object.keys(result["data"]).length;
+      for(var i=0;i<len;i++){
+        var tid=data.findIndex(obj=>obj["name"]==result["data"][i]["province"]);
+        if(tid>=0) {
+          data[tid]["value"]=result["data"][i]["overall_data"]["current_confirmed"];
 
+          //console.log(data[tid]["value"]);
+          toolTipData[tid]["value"][0]["value"]=result["data"][i]["overall_data"]["current_confirmed"];
+          toolTipData[tid]["value"][1]["value"]=result["data"][i]["overall_data"]["confirmed"];
+          toolTipData[tid]["value"][2]["value"]=result["data"][i]["overall_data"]["cured"];
+          toolTipData[tid]["value"][3]["value"]=result["data"][i]["overall_data"]["death"];
+        }
+      }
+    },
+    error:function (){
+      alert("failed to get data of all provinces!");
+    }
+  });
   /*获取地图数据*/
   myChart.showLoading();
   var mapFeatures = echarts.getMap(mapName).geoJson.features;
@@ -805,11 +836,10 @@
 
   });
 
+
   // console.log("============geoCoordMap===================")
   // console.log(geoCoordMap)
   // console.log("================data======================")
-  console.log(data)
-  console.log(toolTipData)
   var max = 480,
     min = 9; // todo 
   var maxSize4Pin = 100,
@@ -856,7 +886,6 @@
               }
             }
           }
-          console.log(toolTiphtml)
           // console.log(convertData(data))
           return toolTiphtml;
         } else {
@@ -869,7 +898,6 @@
               }
             }
           }
-          console.log(toolTiphtml)
           // console.log(convertData(data))
           return toolTiphtml;
         }
@@ -1031,8 +1059,8 @@
         type: 'effectScatter',
         coordinateSystem: 'geo',
         data: convertData(data.sort(function (a, b) {
-          return b.value - a.value;
-        }).slice(0, 5)),
+          return a.value < b.value;
+        }).slice(0, 1)),
         symbolSize: function (val) {
           return val[2] / 10;
         },
@@ -1066,3 +1094,4 @@
     myChart.resize();
   });
 })();
+
