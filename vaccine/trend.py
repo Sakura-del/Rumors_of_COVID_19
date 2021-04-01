@@ -9,25 +9,28 @@ from common.models import TotalTrendVaccinesNations
 from django.db.models import Q
 
 
+# 各国疫苗趋势
 def getTrendNations(request):
     try:
         per_data_list = PerTrendVaccinesNations.objects.values()
 
         per_data_list = list(per_data_list)
     except PerTrendVaccinesNations.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     try:
         total_data_list = TotalTrendVaccinesNations.objects.values()
 
         total_data_list = list(total_data_list)
     except PerTrendVaccinesNations.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     return JsonResponse({
         "ret": 0,
         "perHundredTrend": per_data_list,
         "totalTrend": total_data_list,
+        "total_per": len(per_data_list),
+        "total": len(total_data_list),
         "msg": ""
     })
 
@@ -38,7 +41,7 @@ def getTrendInternal(request):
 
         data_list = list(data_list)
     except TrendVaccinesInternal.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     return JsonResponse({
         "ret": 0,

@@ -16,10 +16,12 @@ def getCurrentVaccinations(request):
 
         return JsonResponse({
             "ret": 0,
-            "retlist": data
+            "retlist": data,
+            "total": len(data),
+            "msg": ""
         })
     except CurrentVaccinations.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
 def getCurrentVaccinesNations(request):
@@ -30,16 +32,18 @@ def getCurrentVaccinesNations(request):
 
         return JsonResponse({
             "ret": 0,
-            "retlist": data
+            "retlist": data,
+            "total": len(data),
+            "msg": ""
         })
     except CurrentVaccinesNations.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
 
 ActionHandler = {
     "get_current_vaccinations": getCurrentVaccinations,
-    "get_current_vaccinesnations": getCurrentVaccinesNations
+    "get_current_vaccines_nations": getCurrentVaccinesNations
 }
 
 
