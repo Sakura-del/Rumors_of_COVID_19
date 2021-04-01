@@ -28,7 +28,6 @@ def 重点国家地区疫苗每日趋势_func():
                         'US'       : trend_data['perHundredTrend']['智利'],
                         'UK'       : trend_data['perHundredTrend']['美国'],
                         'Portugal' : trend_data['perHundredTrend']['英国'],
-                        'Spain'    : trend_data['perHundredTrend']['葡萄牙'],
                         'Arab'     : trend_data['perHundredTrend']['阿联酋']}
 
     totalTrend = {  'Africa'    : trend_data['totalTrend']['Africa'],
