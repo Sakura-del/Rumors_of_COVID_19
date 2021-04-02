@@ -171,13 +171,13 @@
             <div class="dashboard_graph">
 
               <div class="row x_title">
-                <div class="col-md-6">
-                  <h3 style="font-size: 20px;">变化趋势</h3>
+                <div class="col-md-6" >
+                  <h3>变化趋势</h3>
                 </div>
               </div>
 
-              <div class="col-md-9 col-sm-9 "style="float: bottom;" >
-                <div style="background:black;">111<img src="../static/images/img.jpg"></div>
+              <div class="col-md-9 col-sm-9 ">
+                <div style="height: 50vh;">111</div>
                 <!-- <div id="chart_plot_01" class="demo-placeholder"></div> -->
               </div>
               <div class="col-md-3 col-sm-3  bg-white">
@@ -233,7 +233,7 @@
 
               </div>
 
-              <!-- <div class="clearfix"></div> -->
+              <div class="clearfix"></div>
             </div>
           </div>
 
@@ -338,6 +338,8 @@
 
   <!-- jQuery -->
   <script src="../static/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- 先引入jquery -->
+  <script src="../static/js/jquery.js"></script>
   <!-- Bootstrap -->
   <script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- FastClick -->
@@ -376,16 +378,15 @@
 
   <!-- Custom Theme Scripts -->
   <script src="../static/build/js/custom.min.js"></script>
-
-  <!-- 先引入jquery -->
-  <script src="../static/js/jquery.js"></script>
+  
+  
   <script src="../static/js/flexible.js"></script>
   <script src="../static/js/echarts.min.js"></script>
-  
   
   <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
   <script src="../static/js/china.js"></script>
   <script src="../static/js/index.js"></script>
+
 </body>
 
 </html>
