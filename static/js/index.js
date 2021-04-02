@@ -128,6 +128,11 @@
 })();
 
 
+
+
+var provinces = new Array();
+var current_confirms = new Array();
+var total_current_confirm = 0;
 // 现存确诊人数前5的省份
 (function () {
   var myColor = ["#1ABB9C"];
@@ -136,10 +141,8 @@
   // 2. 指定配置和数据
 
   //获取各省数据
-  var provinces=new Array();
-  var current_confirms=new Array();
-  var total_current_confirm=0;
-  
+
+
   $.ajax({
     url: "/covid/current",
     type: "GET",
@@ -147,27 +150,22 @@
     dataType: "json",
     success: function (result) {
       for (var i = 0; i < 5; i++) {
-        provinces[i]=result["data"][i]["province"];
-        current_confirms[i]=result["data"][i]["overall_data"]["current_confirmed"];
-        total_current_confirm+=result["data"][i]["overall_data"]["current_confirmed"];
+        provinces[i] = result["data"][i]["province"];
+        current_confirms[i] = result["data"][i]["overall_data"]["current_confirmed"];
+        total_current_confirm += result["data"][i]["overall_data"]["current_confirmed"];
       }
     },
     error: function () {
       alert("failed to get data of all provinces!");
     }
   });
-  var percentages=new Array();
-  // for(var i=0;i<5;i++){
-  //   percentages[i]=current_confirms[i]/total_current_confirm;
-  // }
-  provinces.forEach(function(item,index,provinces){
-    console.log(item);
-  })
-    
-  
-  // console.log(provinces);
-  // console.log(current_confirms);
-  // console.log(percentages);
+  var percentages = new Array();
+  for(var i=0;i<5;i++){
+    percentages[i]=current_confirms[i]/total_current_confirm;
+  }
+  console.log(provinces[0]);
+  console.log(current_confirms);
+  console.log(total_current_confirm);
   var option = {
     grid: {
       top: "10%",
@@ -183,7 +181,7 @@
       {
         type: "category",
         inverse: true,
-        data: ["aaa","bbb","ccc","ddd","eee"],
+        data: provinces,
         // 不显示y轴的线
         axisLine: {
           show: false
@@ -192,13 +190,13 @@
         axisTick: {
           show: false
         },
-        // 把刻度标签里面的文字颜色设置为白色
+        // 设置刻度标签颜色
         axisLabel: {
           color: "#73879C",
         }
       },
       {
-        data: [100,100,100,100,100],
+        data: current_confirms,
         inverse: true,
         // 不显示y轴的线
         axisLine: {
@@ -218,7 +216,7 @@
       {
         name: "条",
         type: "bar",
-        data: [40,35,30,27,80],
+        data: percentages,
         yAxisIndex: 0,
         // 修改第一组柱子的圆角
         itemStyle: {
@@ -271,7 +269,7 @@
 
 
 // 变化趋势图
-(function() {
+(function () {
 
   var yearData = [
     {
@@ -292,7 +290,7 @@
     }
   ];
   var xAxiscontent = [
-      ["1月",
+    ["1月",
       "2月",
       "3月",
       "4月",
@@ -304,7 +302,7 @@
       "10月",
       "11月",
       "12月"],
-      ["1月",
+    ["1月",
       "2月",
       "3月",
       "4月"]
@@ -393,12 +391,12 @@
   // 3. 把配置给实例对象
   myChart.setOption(option);
   // 4. 让图表跟随屏幕自动的去适应
-  window.addEventListener("resize", function() {
+  window.addEventListener("resize", function () {
     myChart.resize();
   });
 
   // 5.点击切换效果
-  $(".line h2").on("click", "a", function() {
+  $(".line h2").on("click", "a", function () {
     // alert(1);
     // console.log($(this).index());
     // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
