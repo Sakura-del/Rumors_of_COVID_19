@@ -806,6 +806,7 @@
     data: {action:"list_current_provinces"},
     dataType: "json",
     success: function(result) {
+      // console.log(result);
       var len=Object.keys(result["data"]).length;
       for(var i=0;i<len;i++){
         var tid=data.findIndex(obj=>obj["name"]==result["data"][i]["province"]);
