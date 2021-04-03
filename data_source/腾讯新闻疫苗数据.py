@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-#TODO
+
 
 
 if not os.path.isdir('data_source/data_from_creeper'):
@@ -22,6 +22,28 @@ def 重点国家地区疫苗每日趋势_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineTrendData'
     response = requests.get(url = url).json()
     trend_data = response['data']['VaccineTrendData']
+
+    perHundredTrend = {}
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '匈牙利' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
+    if '以色列' in trend_data['perHundredTrend']:
+        perHundredTrend.update({'Israel':trend_data['perHundredTrend']['以色列']})
 
     perHundredTrend = { 'Israel'     : trend_data['perHundredTrend']['以色列'],
                         'Hungary'    : trend_data['perHundredTrend']['匈牙利'],
@@ -72,4 +94,4 @@ def 各国截至今日疫苗接种情况_func():
 
 
 
-func_list = [中国疫苗每日趋势_func,重点国家地区疫苗每日趋势_func,中国及全球截至今日总疫苗接种量_func,各国截至今日疫苗接种情况_func]
+func_list = [中国疫苗每日趋势_func,中国及全球截至今日总疫苗接种量_func,各国截至今日疫苗接种情况_func]

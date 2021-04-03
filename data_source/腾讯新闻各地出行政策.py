@@ -60,5 +60,5 @@ def 各地出行政策_func():
         file.write(json.dumps(各地出行政策_list, ensure_ascii=False))
 
 
-各地出行政策_func()
+
 func_list = [各地出行政策_func]
