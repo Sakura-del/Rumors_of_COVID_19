@@ -10,12 +10,18 @@ from threading import Thread
 if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
+
 def 较真网_func():
 
     rumor_needed_list = []
     def creeper_thread(page):
-        url = f'https://vp.fact.qq.com/loadmore?artnum=0&page={i}&stopic=&_={int(time.time())}&callback=jsonp{i}'
-        text = requests.get(url).text
+        url = 'https://vp.fact.qq.com/loadmore'
+        params = {  'artnum'   : 0,
+                    'page'     : i,
+                    'stopic'   : None,
+                    '_'        : int(time.time()),
+                    'callback' : f'jsonp{i}'}
+        text = requests.get(url = url,params = params).text
 
         rumor_list = []
         try:
@@ -45,5 +51,5 @@ def 较真网_func():
         file.write(json_data)
 
 
-
+较真网_func()
 func_list = [较真网_func]

@@ -130,9 +130,7 @@
 
 
 
-var provinces = new Array();
-var current_confirms = new Array();
-var total_current_confirm = 0;
+
 // 现存确诊人数前5的省份
 (function () {
   var myColor = ["#1ABB9C"];
@@ -142,7 +140,9 @@ var total_current_confirm = 0;
 
   //获取各省数据
 
-
+  var provinces = new Array();
+  var current_confirms = new Array();
+  var total_current_confirm = 0;
   $.ajax({
     url: "/covid/current",
     type: "GET",
@@ -160,12 +160,13 @@ var total_current_confirm = 0;
     }
   });
   var percentages = new Array();
-  for(var i=0;i<5;i++){
-    percentages[i]=current_confirms[i]/total_current_confirm;
+  for (var i = 0; i < 5; i++) {
+    percentages[i] = current_confirms[i] / total_current_confirm;
   }
-  console.log(provinces[0]);
+  console.log(typeof provinces);
   console.log(current_confirms);
   console.log(total_current_confirm);
+  var names=["aa","bb","cc","bb","cc"];
   var option = {
     grid: {
       top: "10%",
@@ -181,7 +182,7 @@ var total_current_confirm = 0;
       {
         type: "category",
         inverse: true,
-        data: provinces,
+        data: names,
         // 不显示y轴的线
         axisLine: {
           show: false
@@ -326,10 +327,10 @@ var total_current_confirm = 0;
       right: "10%"
     },
     grid: {
-      top: "30%",
+      top: "20%",
       left: "3%",
       right: "4%",
-      bottom: "0%",
+      bottom: "3%",
       show: true, // 显示边框
       borderColor: "#73879C", // 边框颜色
       containLabel: true // 包含刻度文字在内

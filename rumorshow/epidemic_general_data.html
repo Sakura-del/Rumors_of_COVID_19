@@ -29,7 +29,45 @@
 
   <!-- Custom Theme Style -->
   <link href="../static/build/css/custom.min.css" rel="stylesheet">
-  
+
+  <style>
+    #trend_line_chart_title{
+      font-size : 2em;
+    }
+    #change_trend{
+      width:100%;
+      height:40vh;
+    }
+    #pie_age{
+      width:100%;
+      height:30vh;
+    }
+    #pie_job{
+      width:100%;
+      height:30vh;
+    }
+    #top5_provinces{
+      width:100%;
+      height:30vh;
+    }
+    #slogan_top{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          float:right;
+      }
+      .nav_menu{
+          height:100%;
+      }
+      #menu_toggle{
+          padding:10px;
+      }
+
+      #logo_top_right {
+          margin-left: 10px;
+          height:100%;
+      }
+  </style>
+
 </head>
 
 <body class="nav-md">
@@ -37,7 +75,7 @@
     <div class="main_container">
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-          <div class="navbar nav_title" style="border: 0;">
+          <div class="navbar nav_title">
             <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>识谣知疫</span></a>
           </div>
 
@@ -110,23 +148,22 @@
       <!-- top navigation -->
       <div class="top_nav">
         <div class="nav_menu">
-          <div class="nav toggle">
-            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-          </div>
-          <nav class="nav navbar-nav">
-            <ul class=" navbar-right">
-              <li class="nav-item dropdown open" style="padding-left: 15px;">
-                <a href="javascript:;" class="user-profile" aria-haspopup="true" id="navbarDropdown"
-                  data-toggle="dropdown" aria-expanded="false">
-                  标语，长亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿点
-                  <img src="../static/images/img.jpg" alt="">
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+            <nav class="nav navbar-nav" id="slogan_top">
+                <span href="javascript:;" class="user-profile" aria-haspopup="true" id="navbarDropdown"
+                    >
+                    标语，长亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿亿点
+                    <img id="logo_top_right" src="../static/images/img.jpg" alt="">
+                </span>
+
+
+
+            </nav>
         </div>
-      </div>
-      <!-- /top navigation -->
+    </div>
+    <!-- /top navigation -->
 
       <!-- page content -->
       <div class="right_col" role="main">
@@ -173,12 +210,12 @@
 
               <div class="row x_title">
                 <div class="col-md-6" >
-                  <h3>变化趋势</h3>
+                  <h3 id="trend_line_chart_title">变化趋势</h3>
                 </div>
               </div>
 
               <div class="col-md-9 col-sm-9 ">
-                <div class="chart" id="change_trend" style="width: 100%; height: 30vh;">图表</div>
+                <div class="chart" id="change_trend">图表</div>
               </div>
               <div class="col-md-3 col-sm-3  bg-white">
                 <div class="x_title">
@@ -186,7 +223,7 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <div class="chart" id="top5_provinces" style="width: 100%; height: 30vh;">图表</div>
+                  <div class="chart" id="top5_provinces">图表</div>
                 </div>
               </div>
 
@@ -246,7 +283,7 @@
                 <div class="clearfix"></div>
               </div>
               <div class="x_content">
-                <div class="chart" id="pie_age" style="width: 100%; height: 30vh;">图表</div>
+                <div class="chart" id="pie_age">图表</div>
               </div>
             </div>
           </div>
@@ -273,7 +310,7 @@
                 <div class="clearfix"></div>
               </div>
               <div class="x_content">
-                <div class="chart" id="pie_job" style="width: 100%; height: 30vh;">图表</div>
+                <div class="chart" id="pie_job">图表</div>
               </div>
             </div>
           </div>
@@ -342,7 +379,7 @@
   
   <!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
   <script src="../static/js/china.js"></script>
-  <script src="../static/js/index.js"></script>
+  <script src="../static/js/epidemic_general_data.js"></script>
 
 </body>
 

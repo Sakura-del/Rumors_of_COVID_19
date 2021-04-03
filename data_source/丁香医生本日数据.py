@@ -13,6 +13,7 @@ from selenium.webdriver.chrome.options import Options
 if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
+
 def 丁香医生本日数据_func():
     国内总体数据_list = []
     def 国内总体数据_func():
