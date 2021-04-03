@@ -29,9 +29,16 @@ def 较真网_func():
                     rumor_needed_list.append(rumor)
                     break
 
+        for rumor in rumor_list:
+            for title in rumor['title']:
+                if re.search('疫情',title) or re.search('新冠',title) or re.search('疫苗',title) or re.search('新型冠状病毒',title):
+                    if not rumor in rumor_needed_list:
+                        rumor_needed_list.append(rumor)
+                        break
+
 
     thread_list = []
-    for i in range(100):
+    for i in range(200):
         thread = Thread(target = creeper_thread,args = (i,))
         thread.start()
         thread_list.append(thread)
@@ -44,6 +51,7 @@ def 较真网_func():
     with open('data_source/data_from_creeper/较真网.json','w',encoding='utf-8') as file:
         file.write(json_data)
 
-
+较真网_func()
+print('成功')
 
 func_list = [较真网_func]

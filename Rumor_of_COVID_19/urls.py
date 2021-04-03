@@ -22,5 +22,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('details/', include('details.urls')),
     path('covid/', include('covid.urls')),
-    path('vaccine/', include('vaccine.urls'))
+    path('vaccine/', include('vaccine.urls')),
+    path('rumor/', include('rumor.urls'))
 ] + static("/", document_root="./rumorshow")
