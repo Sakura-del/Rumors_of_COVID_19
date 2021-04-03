@@ -159,6 +159,18 @@
       alert("failed to get data of all provinces!");
     }
   });
+  $.ajax({
+    url: " /covid/daily",
+    type: "GET",
+    data: { action: "list_daily_internal" },
+    dataType: "json",
+    success: function (result) {
+      console.log(result);
+    },
+    error: function () {
+      alert("failed to get data of all provinces!");
+    }
+  });
   var percentages = new Array();
   for (var i = 0; i < 5; i++) {
     percentages[i] = current_confirms[i] / total_current_confirm;
@@ -166,7 +178,7 @@
   console.log(typeof provinces);
   console.log(current_confirms);
   console.log(total_current_confirm);
-  var names=["aa","bb","cc","bb","cc"];
+  var names = ["aa", "bb", "cc", "bb", "cc"];
   var option = {
     grid: {
       top: "10%",
