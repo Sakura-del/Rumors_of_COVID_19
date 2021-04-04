@@ -11,6 +11,7 @@
     },
 
     legend: {
+      top:"82%",
       bottom: "0%",
       // 修改小图标的大小
       itemWidth: 10,
@@ -27,7 +28,7 @@
         type: "pie",
         // 这个radius可以修改饼形图的大小
         // radius 第一个值是内圆的半径 第二个值是外圆的半径
-        radius: ["40%", "60%"],
+        radius: ["48%", "68%"],
         center: ["50%", "45%"],
         avoidLabelOverlap: false,
         // 图形上的文字
@@ -84,6 +85,7 @@
       formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
     legend: {
+      top:"92%",
       bottom: "0%",
       itemWidth: 10,
       itemHeight: 10,
@@ -159,9 +161,9 @@
       }
       var option = {
         grid: {
-          top: "10%",
-          left: "16%",
-          bottom: "10%"
+          top: "2%",
+          left: "12%",
+          bottom: "2%"
           // containLabel: true
         },
         // 不显示x轴的相关信息
@@ -266,6 +268,20 @@
 
 
 
+function formatNum(str) {
+  var newStr = "";
+  var count = 0;
+  for (var i = str.length - 1; i >= 0; i--) {
+    if (count % 3 == 0 && count != 0) {
+      newStr = str.charAt(i) + "," + newStr;
+    } else {
+      newStr = str.charAt(i) + newStr;
+    }
+    count++;
+  }
+  return newStr;
+}
+
 // 变化趋势图
 (function () {
   let xAxiscontent = [];
@@ -332,8 +348,67 @@
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
-      // console.log(result["data"][result["data"].length-1]);
-
+      console.log(result["data"][result["data"].length-1]);
+      var val1=result["data"][result["data"].length-1]["currentConfirmedCount"];
+      $("#val1").html(formatNum(String(val1)));
+      var incr1=result["data"][result["data"].length-1]["currentConfirmedIncr"];
+      if(incr1>=0){
+        incr1="+"+String(incr1);
+      }
+      else{
+        incr1=String(incr1);
+      }
+      $("#incr1").html(incr1+" ");
+      var val2=result["data"][result["data"].length-1]["suspectedCount"];
+      $("#val2").html(formatNum(String(val2)));
+      var incr2=result["data"][result["data"].length-1]["suspectedCountIncr"];
+      if(incr2>=0){
+        incr2="+"+String(incr2);
+      }
+      else{
+        incr2=String(incr2);
+      }
+      $("#incr2").html(incr2+" ");
+      var val3=result["data"][result["data"].length-1]["currentConfirmedCount"];
+      $("#val3").html(formatNum(String(val3)));
+      var incr3=result["data"][result["data"].length-1]["currentConfirmedIncr"];
+      if(incr3>=0){
+        incr3="+"+String(incr3);
+      }
+      else{
+        incr3=String(incr3);
+      }
+      $("#incr3").html(incr3+" ");
+      var val4=result["data"][result["data"].length-1]["confirmedCount"];
+      $("#val4").html(formatNum(String(val4)));
+      var incr4=result["data"][result["data"].length-1]["confirmedIncr"];
+      if(incr4>=0){
+        incr4="+"+String(incr4);
+      }
+      else{
+        incr4=String(incr4);
+      }
+      $("#incr4").html(incr4+" ");
+      var val5=result["data"][result["data"].length-1]["curedCount"];
+      $("#val5").html(formatNum(String(val5)));
+      var incr5=result["data"][result["data"].length-1]["curedIncr"];
+      if(incr5>=0){
+        incr5="+"+String(incr5);
+      }
+      else{
+        incr5=String(incr5);
+      }
+      $("#incr5").html(incr5+" ");
+      var val6=result["data"][result["data"].length-1]["deadCount"];
+      $("#val6").html(formatNum(String(val6)));
+      var incr6=result["data"][result["data"].length-1]["deadIncr"];
+      if(incr6>=0){
+        incr6="+"+String(incr6);
+      }
+      else{
+        incr6=String(incr6);
+      }
+      $("#incr6").html(incr6+" ");
       var idx;
       for (idx = result["data"].length - 1; ; idx--) {
         if (String(result["data"][idx]["dateId"]) === nowdate)
@@ -408,13 +483,13 @@
             color: "#73879C",
           },
           // 这个10% 必须加引号
-          right: "1.7%",
+          right: "2.5%",
         },
         grid: {
           top: "10%",
-          left: "0.1%",
-          right: "2%",
-          bottom: "1%",
+          left: "0%",
+          right: "3%",
+          bottom: "0%",
           show: true, // 显示边框
           borderColor: "#73879C", // 边框颜色
           containLabel: true // 包含刻度文字在内
