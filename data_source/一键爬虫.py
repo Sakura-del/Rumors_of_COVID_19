@@ -9,37 +9,37 @@ def 一键爬虫():
 
     all_func_list = []
 
-    from data_source.丁香医生本日数据 import func_list
+    from 丁香医生本日数据 import func_list
     all_func_list += func_list
 
-    from data_source.丁香医生每日数据 import func_list
+    from 丁香医生每日数据 import func_list
     all_func_list += func_list
 
-    from data_source.丁香医生谣言 import func_list
+    from 丁香医生谣言 import func_list
     all_func_list += func_list
 
-    from data_source.较真网 import func_list
+    from 较真网 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻各地出行政策 import func_list
+    from 腾讯新闻各地出行政策 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻各地区风险 import func_list
+    from 腾讯新闻各地区风险 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻核酸检测机构 import func_list
+    from 腾讯新闻核酸检测机构 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻疫苗接种点 import func_list
+    from 腾讯新闻疫苗接种点 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻疫苗数据 import func_list
+    from 腾讯新闻疫苗数据 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻疫情定点医院 import func_list
+    from 腾讯新闻疫情定点医院 import func_list
     all_func_list += func_list
 
-    from data_source.腾讯新闻疫情新闻 import func_list
+    from 腾讯新闻疫情新闻 import func_list
     all_func_list += func_list
 
     thread_list = []
