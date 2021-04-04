@@ -8,11 +8,11 @@ from threading import Thread
 if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
-#TODO
-核酸检测机构_list = []
+
 def 核酸检测机构_func():
+    核酸检测机构_list = []
     def 一省_核酸检测机构_func(province):
-        一省_核酸检测机构_list = []
+        一省_核酸检测机构_原格式_list = []
         for page in range(1,6):
             url = 'https://apis.map.qq.com/place_cloud/search/region'
             params = {  'region'     : province,
@@ -22,11 +22,22 @@ def 核酸检测机构_func():
                         'page_size'  : 200,
                         'key'        : 'YNVBZ-FRJK3-BPX36-3XHBZ-U7WFQ-KBFMJ'}
             response = requests.get(url = url, params = params).json()
-            一省_核酸检测机构_list += response['result']['data']
+            一省_核酸检测机构_原格式_list += response['result']['data']
+
+        一省_核酸检测机构_正规格式_list = []
+        核酸检测机构_正规格式_dict = {}
+        for 核酸检测机构_原格式_dict in 一省_核酸检测机构_原格式_list:
+            核酸检测机构_正规格式_dict = {  'address'  :核酸检测机构_原格式_dict['address'],
+                                            'province' :核酸检测机构_原格式_dict['province'],
+                                            'city'     :核酸检测机构_原格式_dict['city'],
+                                            'district' :核酸检测机构_原格式_dict['district'],
+                                            'tel'      :核酸检测机构_原格式_dict['tel'],
+                                            'title'    :核酸检测机构_原格式_dict['title']}
+            一省_核酸检测机构_正规格式_list.append(核酸检测机构_正规格式_dict)
 
         一省_核酸检测机构_dict = {  'province' : province,
-                                    'count'    : len(一省_核酸检测机构_list),
-                                    'data'     : 一省_核酸检测机构_list}
+                                    'count'    : len(一省_核酸检测机构_正规格式_list),
+                                    'data'     : 一省_核酸检测机构_正规格式_list}
         核酸检测机构_list.append(一省_核酸检测机构_dict)
 
 
@@ -39,8 +50,9 @@ def 核酸检测机构_func():
     for thread in thread_list:
         thread.join()
 
-    with open('data_source/data_from_creeper/腾讯新闻核酸检测机构.json', 'w', encoding='utf-8') as file:
-        file.write(json.dumps(核酸检测机构_list, ensure_ascii=False))
+
+    with open('data_source/data_from_creeper/腾讯新闻核酸检测机构.json', 'w', encoding = 'utf-8') as file:
+        file.write(json.dumps(核酸检测机构_list, ensure_ascii = False))
 
 
 
