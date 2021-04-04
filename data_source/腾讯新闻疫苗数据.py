@@ -54,7 +54,7 @@ def 重点国家地区疫苗每日趋势_func():
     with open('data_source/data_from_creeper/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(重点国家地区疫苗每日趋势,ensure_ascii = False))
 
-
+重点国家地区疫苗每日趋势_func()
 def 中国及全球截至今日总疫苗接种量_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineTopData'
     response = requests.get(url = url).json()
