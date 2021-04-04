@@ -77,6 +77,28 @@ class RumorInfo(models.Model):
         db_table = 'rumor_info'
 
 
+# 用户提问
+class Question(models.Model):
+    question = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+    def __str__(self):
+        return self.question
+    
+    class Meta:
+        db_table = 'question'
+
+
+# 用户回答
+class Answer(models.Model):
+    questiont = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer = models.TextField()
+    answer_date = models.DateTimeField(default=timezone.now())
+    
+    class Meta:
+        db_table = 'answer'
+
+
 # 俄罗斯每日数据
 class RussiaDailyData(models.Model):
     dateId = models.IntegerField(blank=False)

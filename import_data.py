@@ -20,7 +20,7 @@ with open(filename, "r", encoding='utf-8') as f:
 
 # 当前国内疫情
 current_covid_internal = data_list["current_covid_internal"]
-# CurrentCovidInternal.objects.all().delete()
+CurrentCovidInternal.objects.all().delete()
 CurrentCovidInternal.objects.create(
     current_confirmed=current_covid_internal[0],
     abroad=current_covid_internal[1],
@@ -32,7 +32,7 @@ CurrentCovidInternal.objects.create(
 
 # 当前全球疫情
 current_covid_global = data_list['current_covid_global']
-# CurrentCovidGlobal.objects.all().delete()
+CurrentCovidGlobal.objects.all().delete()
 CurrentCovidGlobal.objects.create(current_confirmed=current_covid_global[0],
                                   confirmed=current_covid_global[1],
                                   death=current_covid_global[2],
@@ -41,7 +41,7 @@ CurrentCovidGlobal.objects.create(current_confirmed=current_covid_global[0],
 
 # 当前各省疫情
 current_covid_provinces = data_list['current_covid_provinces']
-# CurrentCovidProvinces.objects.all().delete()
+CurrentCovidProvinces.objects.all().delete()
 for item in current_covid_provinces:
     CurrentCovidProvinces.objects.create(province=item['overall_data']['area'],
                                          overall_data=item['overall_data'],
@@ -51,7 +51,7 @@ for item in current_covid_provinces:
 
 # 当前各国疫情
 current_covid_national = data_list['current_covid_national']
-# CurrentCovidNational.objects.all().delete()
+CurrentCovidNational.objects.all().delete()
 for item in current_covid_national:
     CurrentCovidNational.objects.create(
         island=item['island_data']['area'],
@@ -404,8 +404,8 @@ PerTrendVaccinesNations.objects.create(country='奥地利',
 PerTrendVaccinesNations.objects.create(country='意大利', data=per_trend['Italy'])
 PerTrendVaccinesNations.objects.create(country='摩洛哥',
                                        data=per_trend['Morocco'])
-# PerTrendVaccinesNations.objects.create(country='瑞士', data=per_trend['Switzerland'])
-PerTrendVaccinesNations.objects.create(country='欧盟', data=per_trend['EU'])
+PerTrendVaccinesNations.objects.create(country='瑞士', data=per_trend['Switzerland'])
+# PerTrendVaccinesNations.objects.create(country='欧盟', data=per_trend['EU'])
 PerTrendVaccinesNations.objects.create(country='智利', data=per_trend['Chile'])
 PerTrendVaccinesNations.objects.create(country='美国', data=per_trend['US'])
 PerTrendVaccinesNations.objects.create(country='英国', data=per_trend['UK'])

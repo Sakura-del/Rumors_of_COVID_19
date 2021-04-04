@@ -1,7 +1,10 @@
 import os
 import json
 import requests
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 
 
 if not os.path.isdir('data_source/data_from_creeper'):
@@ -51,8 +54,8 @@ def 重点国家地区疫苗每日趋势_func():
                         'Austria'    : trend_data['perHundredTrend']['奥地利'],
                         'Italy'      : trend_data['perHundredTrend']['意大利'],
                         'Morocco'    : trend_data['perHundredTrend']['摩洛哥'],
-                        # 'Switzerland': trend_data['perHundredTrend']['瑞士'],
-                        'EU'         : trend_data['perHundredTrend']['欧盟'],
+                        'Switzerland': trend_data['perHundredTrend']['瑞士'],
+                        # 'EU'         : trend_data['perHundredTrend']['欧盟'],
                         'Chile'      : trend_data['perHundredTrend']['智利'],
                         'US'         : trend_data['perHundredTrend']['美国'],
                         'UK'         : trend_data['perHundredTrend']['英国'],
@@ -77,6 +80,7 @@ def 重点国家地区疫苗每日趋势_func():
     with open('data_source/data_from_creeper/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(重点国家地区疫苗每日趋势,ensure_ascii = False))
 
+重点国家地区疫苗每日趋势_func()
 def 中国及全球截至今日总疫苗接种量_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=VaccineTopData'
     response = requests.get(url = url).json()

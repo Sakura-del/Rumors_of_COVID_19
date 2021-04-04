@@ -39,6 +39,7 @@ def 巴西每日数据_func():
     url = 'https://file1.dxycdn.com/2020/0315/559/3402160538577857305-135.json'
     response = requests.get(url = url).json()
     result = response['data']
+
     with open('data_source/data_from_creeper/丁香医生每日数据/巴西每日数据.json','w',encoding='utf-8') as file:
         file.write(json.dumps(result))
 
