@@ -404,16 +404,17 @@
           // 如果series 对象有name 值，则 legend可以不用写data
           // 修改图例组件 文字颜色
           textStyle: {
+            fontSize: 16,
             color: "#73879C",
           },
           // 这个10% 必须加引号
-          right: "10%"
+          right: "1.7%",
         },
         grid: {
           top: "10%",
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
+          left: "0.1%",
+          right: "2%",
+          bottom: "1%",
           show: true, // 显示边框
           borderColor: "#73879C", // 边框颜色
           containLabel: true // 包含刻度文字在内
@@ -427,6 +428,7 @@
             show: false // 去除刻度线
           },
           axisLabel: {
+            fontSize: 14,
             color: "#73879C",
           },
           axisLine: {
@@ -439,6 +441,7 @@
             show: false // 去除刻度线
           },
           axisLabel: {
+            fontSize: 14,
             color: "#73879C",
           },
           axisLine: {
@@ -481,7 +484,7 @@
       });
 
       // 5.点击切换效果
-      $(".change h2").on("click", "a", function () {
+      $(".change #switcher").on("click", "a", function () {
         // alert(1);
         // console.log($(this).index());
         // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
@@ -497,8 +500,8 @@
 
     }
   });
-  console.log(totaldata);
-  console.log(xAxiscontent);
+  // console.log(totaldata);
+  // console.log(xAxiscontent);
 
 
 })();
