@@ -27,6 +27,12 @@ from 腾讯新闻疫情新闻 import func_list
 all_func_list += func_list
 
 
+from 腾讯新闻疫苗接种点 import func_list
+all_func_list += func_list
+
+from 腾讯新闻各地区风险 import func_list
+all_func_list += func_list
+
 thread_list = []
 thread_count = 1
 for func in all_func_list:

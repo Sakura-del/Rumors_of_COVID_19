@@ -20,8 +20,7 @@ def get_count_trend(request):
 
 
 # 查询谣言
-def get_tag_relations(request):
-    key_list = ['新型冠状病毒', '新冠病毒', '新冠肺炎', '肺炎', '新冠疫情', '新型冠状病毒肺炎', '新冠']
+def get_tag_count(request):
     qs = RumorInfo.objects.values('tag')
     rumors = list(qs)
 
@@ -39,7 +38,8 @@ def get_tag_relations(request):
 
 ActionHandler = {
     'get_count_trend': get_count_trend,
-    'get_tag_relations': get_tag_relations,
+    'get_tag_count': get_tag_count,
+
 }
 
 
