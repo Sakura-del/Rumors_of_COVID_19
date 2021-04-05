@@ -1,323 +1,298 @@
-// // 模拟确诊地图
-// (function () {
-//     var myChart = echarts.init(document.querySelector("#china_world_map"));
-//     var mapName = 'china'
-//     var data = [
-//       { name: "北京", value: 177 },
-//       { name: "天津", value: 42 },
-//       { name: "河北", value: 102 },
-//       { name: "山西", value: 81 },
-//       { name: "内蒙古", value: 47 },
-//       { name: "辽宁", value: 67 },
-//       { name: "吉林", value: 82 },
-//       { name: "黑龙江", value: 66 },
-//       { name: "上海", value: 24 },
-//       { name: "江苏", value: 92 },
-//       { name: "浙江", value: 114 },
-//       { name: "安徽", value: 109 },
-//       { name: "福建", value: 116 },
-//       { name: "江西", value: 91 },
-//       { name: "山东", value: 119 },
-//       { name: "河南", value: 137 },
-//       { name: "湖北", value: 116 },
-//       { name: "湖南", value: 114 },
-//       { name: "重庆", value: 91 },
-//       { name: "四川", value: 125 },
-//       { name: "贵州", value: 62 },
-//       { name: "云南", value: 83 },
-//       { name: "西藏", value: 9 },
-//       { name: "陕西", value: 80 },
-//       { name: "甘肃", value: 56 },
-//       { name: "青海", value: 10 },
-//       { name: "宁夏", value: 18 },
-//       { name: "新疆", value: 67 },
-//       { name: "广东", value: 123 },
-//       { name: "广西", value: 59 },
-//       { name: "海南", value: 14 },
-//       { name: "香港", value: 14 },
-//       { name: "台湾", value: 14 },
-//       { name: "澳门", value: 14 }
-//     ];
-
-//     var geoCoordMap = {};
-//     var toolTipData = [
-//       { name: "北京", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "天津", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "河北", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "山西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "内蒙古", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "辽宁", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "吉林", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "黑龙江", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "上海", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "江苏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "浙江", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "安徽", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "福建", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "江西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "山东", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "河南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "湖北", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "湖南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "重庆", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "四川", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "贵州", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "云南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "西藏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "陕西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "甘肃", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "青海", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "宁夏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "新疆", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "广东", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "广西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "海南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "香港", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "台湾", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
-//       { name: "澳门", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] }
-//     ];
-//     $.ajax({
-//       url: "/covid/current",
-//       type: "GET",
-//       data: {action:"list_current_provinces"},
-//       dataType: "json",
-//       success: function(result) {
-//         // console.log(result);
-//         var len=Object.keys(result["data"]).length;
-//         for(var i=0;i<len;i++){
-//           var tid=data.findIndex(obj=>obj["name"]==result["data"][i]["province"]);
-//           if(tid>=0) {
-//             data[tid]["value"]=result["data"][i]["overall_data"]["current_confirmed"];
-
-//             //console.log(data[tid]["value"]);
-//             toolTipData[tid]["value"][0]["value"]=result["data"][i]["overall_data"]["current_confirmed"];
-//             toolTipData[tid]["value"][1]["value"]=result["data"][i]["overall_data"]["confirmed"];
-//             toolTipData[tid]["value"][2]["value"]=result["data"][i]["overall_data"]["cured"];
-//             toolTipData[tid]["value"][3]["value"]=result["data"][i]["overall_data"]["death"];
-//           }
-//         }
-//       },
-//       error:function (){
-//         alert("failed to get data of all provinces!");
-//       }
-//     });
-//     /*获取地图数据*/
-//     myChart.showLoading();
-//     var mapFeatures = echarts.getMap(mapName).geoJson.features;
-//     myChart.hideLoading();
-//     mapFeatures.forEach(function (v) {
-//       // 地区名称
-//       var name = v.properties.name;
-//       // 地区经纬度
-//       geoCoordMap[name] = v.properties.cp;
-
-//     });
-
-
-//     // console.log("============geoCoordMap===================")
-//     // console.log(geoCoordMap)
-//     // console.log("================data======================")
-//     var max = 480,
-//       min = 9; // todo 
-//     var maxSize4Pin = 100,
-//       minSize4Pin = 20;
-
-//     var convertData = function (data) {
-//       var res = [];
-//       for (var i = 0; i < data.length; i++) {
-//         var geoCoord = geoCoordMap[data[i].name];
-//         if (geoCoord) {
-//           res.push({
-//             name: data[i].name,
-//             value: geoCoord.concat(data[i].value),
-//           });
-//         }
-//       }
-//       return res;
-//     };
-//     option = {
-//       // title: {
-//       //   text: name_title,
-//       //   subtext: subname,
-//       //   x: 'center',
-//       //   textStyle: {
-//       //     color: nameColor,
-//       //     fontFamily: name_fontFamily,
-//       //     fontSize: name_fontSize
-//       //   },
-//       //   subtextStyle: {
-//       //     fontSize: subname_fontSize,
-//       //     fontFamily: name_fontFamily
-//       //   }
-//       // },
-//       tooltip: {
-//         trigger: 'item',
-//         formatter: function (params) {
-//           if (typeof (params.value)[2] == "undefined") {
-//             var toolTiphtml = ''
-//             for (var i = 0; i < toolTipData.length; i++) {
-//               if (params.name == toolTipData[i].name) {
-//                 toolTiphtml += toolTipData[i].name + ':<br>'
-//                 for (var j = 0; j < toolTipData[i].value.length; j++) {
-//                   toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
-//                 }
-//               }
-//             }
-//             // console.log(convertData(data))
-//             return toolTiphtml;
-//           } else {
-//             var toolTiphtml = ''
-//             for (var i = 0; i < toolTipData.length; i++) {
-//               if (params.name == toolTipData[i].name) {
-//                 toolTiphtml += toolTipData[i].name + ':<br>'
-//                 for (var j = 0; j < toolTipData[i].value.length; j++) {
-//                   toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
-//                 }
-//               }
-//             }
-//             // console.log(convertData(data))
-//             return toolTiphtml;
-//           }
-//         }
-//       },
-//       // legend: {
-//       //     orient: 'vertical',
-//       //     y: 'bottom',
-//       //     x: 'right',
-//       //     data: ['credit_pm2.5'],
-//       //     textStyle: {
-//       //         color: '#fff'
-//       //     }
-//       // },
-//       visualMap: {
-//         show: true,
-//         min: 0,
-//         max: 200,
-//         left: 'left',
-//         top: 'bottom',
-//         text: ['高', '低'], // 文本，默认为数值文本
-//         textStyle: {
-//           color: "rgba(255,255,255,.6)",
-//           fontSize: "12"
-//         },
-//         calculable: true,
-//         seriesIndex: [1],
-//         inRange: {
-//           // color: ['#3B5077', '#031525'] // 蓝黑
-//           color: ['#ffc0cb', '#800080'] // 红紫
-//           // color: ['#3C3B3F', '#605C3C'] // 黑绿
-//           // color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
-//           // color: ['#23074d', '#cc5333'] // 紫红
-//           // color: ['#00467F', '#A5CC82'] // 蓝绿
-//           // color: ['#1488CC', '#2B32B2'] // 浅蓝
-//         }
-//       },
-//       /*工具按钮组*/
-//       // toolbox: {
-//       //     show: true,
-//       //     orient: 'vertical',
-//       //     left: 'right',
-//       //     top: 'center',
-//       //     feature: {
-//       //         dataView: {
-//       //             readOnly: false
-//       //         },
-//       //         restore: {},
-//       //         saveAsImage: {}
-//       //     }
-//       // },
-//       geo: {
-//         show: true,
-//         map: mapName,
-//         label: {
-//           normal: {
-//             show: false
-//           },
-//           emphasis: {
-//             show: false,
-//           }
-//         },
-//         roam: true,
-//         itemStyle: {
-//           normal: {
-//             areaColor: '#031525',
-//             borderColor: '#3B5077',
-//           },
-//           emphasis: {
-//             areaColor: '#2B91B7',
-//           }
-//         }
-//       },
-//       series: [
-//         {
-//           name: '散点',
-//           type: 'scatter',
-//           coordinateSystem: 'geo',
-//           data: convertData(data),
-//           symbolSize: function (val) {
-//             return val[2] / 10;
-//           },
-//           label: {
-//             normal: {
-//               formatter: '{b}',
-//               position: 'right',
-//               show: false
-//             },
-//             emphasis: {
-//               show: false
-//             }
-//           },
-//           itemStyle: {
-//             normal: {
-//               color: '#120a3a',
-//             }
-//           }
-//         },
-//         {
-//           type: 'map',
-//           map: mapName,
-//           geoIndex: 0,
-//           aspectScale: 0.75, //长宽比
-//           showLegendSymbol: false, // 存在legend时显示
-//           label: {
-//             normal: {
-//               show: true
-//             },
-//             emphasis: {
-//               show: false,
-//               textStyle: {
-//                 color: '#fff'
-//               }
-//             }
-//           },
-//           roam: true,
-//           itemStyle: {
-//             normal: {
-//               areaColor: '#031525',
-//               borderColor: '#3B5077',
-//             },
-//             emphasis: {
-//               areaColor: '#2B91B7'
-//             }
-//           },
-//           animation: false,
-//           data: data
-//         },
-//       ]
-//     };
-//     myChart.setOption(option);
-//     // 监听浏览器缩放，图表对象调用缩放resize函数
-//     window.addEventListener("resize", function () {
-//       myChart.resize();
-//     });
-//   })();
-
-
-
-//世界地图
+// 模拟确诊地图
 (function () {
     var myChart = echarts.init(document.querySelector("#china_world_map"));
-    option = {
+    var mapName = 'china'
+    var data = [
+        { name: "北京", value: 7 },
+        { name: "天津", value: 42 },
+        { name: "河北", value: 102 },
+        { name: "山西", value: 81 },
+        { name: "内蒙古", value: 47 },
+        { name: "辽宁", value: 67 },
+        { name: "吉林", value: 82 },
+        { name: "黑龙江", value: 66 },
+        { name: "上海", value: 24 },
+        { name: "江苏", value: 92 },
+        { name: "浙江", value: 114 },
+        { name: "安徽", value: 109 },
+        { name: "福建", value: 116 },
+        { name: "江西", value: 91 },
+        { name: "山东", value: 119 },
+        { name: "河南", value: 137 },
+        { name: "湖北", value: 116 },
+        { name: "湖南", value: 114 },
+        { name: "重庆", value: 91 },
+        { name: "四川", value: 125 },
+        { name: "贵州", value: 62 },
+        { name: "云南", value: 83 },
+        { name: "西藏", value: 9 },
+        { name: "陕西", value: 80 },
+        { name: "甘肃", value: 56 },
+        { name: "青海", value: 10 },
+        { name: "宁夏", value: 18 },
+        { name: "新疆", value: 67 },
+        { name: "广东", value: 123 },
+        { name: "广西", value: 59 },
+        { name: "海南", value: 14 },
+        { name: "香港", value: 14 },
+        { name: "台湾", value: 14 },
+        { name: "澳门", value: 14 }
+    ];
+
+    var geoCoordMap = {};
+    var toolTipData = [
+        { name: "北京", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "天津", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "河北", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "山西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "内蒙古", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "辽宁", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "吉林", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "黑龙江", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "上海", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "江苏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "浙江", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "安徽", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "福建", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "江西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "山东", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "河南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "湖北", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "湖南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "重庆", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "四川", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "贵州", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "云南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "西藏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "陕西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "甘肃", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "青海", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "宁夏", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "新疆", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "广东", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "广西", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "海南", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "香港", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "台湾", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] },
+        { name: "澳门", value: [{ name: "现存确诊", value: 95 }, { name: "累计确诊", value: 82 }, { name: "累计治愈", value: 82 }, { name: "累计死亡", value: 82 }] }
+    ];
+    $.ajax({
+        url: "/covid/current",
+        type: "GET",
+        data: { action: "list_current_provinces" },
+        dataType: "json",
+        success: function (result) {
+            // console.log(result);
+            var len = Object.keys(result["data"]).length;
+            for (var i = 0; i < len; i++) {
+                var tid = data.findIndex(obj => obj["name"] == result["data"][i]["province"]);
+                if (tid >= 0) {
+                    data[tid]["value"] = result["data"][i]["overall_data"]["current_confirmed"];
+
+                    //console.log(data[tid]["value"]);
+                    toolTipData[tid]["value"][0]["value"] = result["data"][i]["overall_data"]["current_confirmed"];
+                    toolTipData[tid]["value"][1]["value"] = result["data"][i]["overall_data"]["confirmed"];
+                    toolTipData[tid]["value"][2]["value"] = result["data"][i]["overall_data"]["cured"];
+                    toolTipData[tid]["value"][3]["value"] = result["data"][i]["overall_data"]["death"];
+                }
+            }
+        },
+        error: function () {
+            alert("failed to get data of all provinces!");
+        }
+    });
+    /*获取地图数据*/
+    myChart.showLoading();
+    var mapFeatures = echarts.getMap(mapName).geoJson.features;
+    myChart.hideLoading();
+    mapFeatures.forEach(function (v) {
+        // 地区名称
+        var name = v.properties.name;
+        // 地区经纬度
+        geoCoordMap[name] = v.properties.cp;
+    });
+
+
+    // console.log("============geoCoordMap===================")
+    // console.log(geoCoordMap)
+    // console.log("================data======================")
+    var max = 480,
+        min = 9; // todo 
+    var maxSize4Pin = 100,
+        minSize4Pin = 20;
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value),
+                });
+            }
+        }
+        return res;
+    };
+    var two_options=[];
+    var temp_option = {
+        // title: {
+        //   text: name_title,
+        //   subtext: subname,
+        //   x: 'center',
+        //   textStyle: {
+        //     color: nameColor,
+        //     fontFamily: name_fontFamily,
+        //     fontSize: name_fontSize
+        //   },
+        //   subtextStyle: {
+        //     fontSize: subname_fontSize,
+        //     fontFamily: name_fontFamily
+        //   }
+        // },
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                if (typeof (params.value)[2] == "undefined") {
+                    var toolTiphtml = ''
+                    for (var i = 0; i < toolTipData.length; i++) {
+                        if (params.name == toolTipData[i].name) {
+                            toolTiphtml += toolTipData[i].name + ':<br>'
+                            for (var j = 0; j < toolTipData[i].value.length; j++) {
+                                toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
+                            }
+                        }
+                    }
+                    // console.log(convertData(data))
+                    return toolTiphtml;
+                } else {
+                    var toolTiphtml = ''
+                    for (var i = 0; i < toolTipData.length; i++) {
+                        if (params.name == toolTipData[i].name) {
+                            toolTiphtml += toolTipData[i].name + ':<br>'
+                            for (var j = 0; j < toolTipData[i].value.length; j++) {
+                                toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
+                            }
+                        }
+                    }
+                    // console.log(convertData(data))
+                    return toolTiphtml;
+                }
+            }
+        },
+        // legend: {
+        //     orient: 'vertical',
+        //     y: 'bottom',
+        //     x: 'right',
+        //     data: ['credit_pm2.5'],
+        //     textStyle: {
+        //         color: '#fff'
+        //     }
+        // },
+        visualMap: {
+            show: true,
+            min: 0,
+            max: 200,
+            left: 'left',
+            top: 'bottom',
+            text: ['高', '低'], // 文本，默认为数值文本
+            textStyle: {
+                color: "#73879C",
+                fontSize: "12"
+            },
+            calculable: true,
+            seriesIndex: [1],
+            inRange: {
+                // color: ['#3B5077', '#031525'] // 蓝黑
+                //   color: ['#ffc0cb', '#800080'] // 红紫
+                // color: ['#3C3B3F', '#605C3C'] // 黑绿
+                //   color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
+                // color: ['#23074d', '#cc5333'] // 紫红
+                color: ['#00467F', '#A5CC82'] // 蓝绿
+                //   color: ['#1488CC', '#2B32B2'] // 浅蓝
+            }
+        },
+        geo: {
+            show: true,
+            map: mapName,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: false,
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#031525',
+                    borderColor: '#3B5077',
+                },
+                emphasis: {
+                    areaColor: '#2B91B7',
+                }
+            }
+        },
+        series: [
+            {
+                name: '散点',
+                type: 'scatter',
+                coordinateSystem: 'geo',
+                data: convertData(data),
+                symbolSize: function (val) {
+                    return val[2] / 10;
+                },
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: false
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: "rgba(255,255,255,0)"
+                    }
+                }
+            },
+            {
+                type: 'map',
+                map: mapName,
+                geoIndex: 0,
+                aspectScale: 0.75, //长宽比
+                showLegendSymbol: false, // 存在legend时显示
+                label: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: false,
+                        textStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                roam: true,
+                itemStyle: {
+                    normal: {
+                        areaColor: '#031525',
+                        borderColor: '#3B5077',
+                    },
+                    emphasis: {
+                        areaColor: '#2B91B7'
+                    }
+                },
+                animation: false,
+                data: data
+            },
+        ]
+    };
+    two_options.push(temp_option);
+    temp_option = {
         tooltip: {
             trigger: 'item',
             formatter: function (params) {
@@ -529,9 +504,16 @@
             }
         ]
     };
-    myChart.setOption(option);
+    two_options.push(temp_option);
+    myChart.setOption(two_options[0]);
     // 监听浏览器缩放，图表对象调用缩放resize函数
     window.addEventListener("resize", function () {
         myChart.resize();
     });
+    $("#switcher").on("click", "a", function () {
+        temp_option=two_options[$(this).index()];
+        // 需要重新渲染
+        myChart.setOption(temp_option);
+    });
 })();
+
