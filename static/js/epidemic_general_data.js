@@ -11,7 +11,7 @@
     },
 
     legend: {
-      top:"82%",
+      top: "82%",
       bottom: "0%",
       // 修改小图标的大小
       itemWidth: 10,
@@ -85,7 +85,7 @@
       formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
     legend: {
-      top:"92%",
+      top: "92%",
       bottom: "0%",
       itemWidth: 10,
       itemHeight: 10,
@@ -348,67 +348,7 @@ function formatNum(str) {
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
-      console.log(result["data"][result["data"].length-1]);
-      var val1=result["data"][result["data"].length-1]["currentConfirmedCount"];
-      $("#val1").html(formatNum(String(val1)));
-      var incr1=result["data"][result["data"].length-1]["currentConfirmedIncr"];
-      if(incr1>=0){
-        incr1="+"+String(incr1);
-      }
-      else{
-        incr1=String(incr1);
-      }
-      $("#incr1").html(incr1+" ");
-      var val2=result["data"][result["data"].length-1]["suspectedCount"];
-      $("#val2").html(formatNum(String(val2)));
-      var incr2=result["data"][result["data"].length-1]["suspectedCountIncr"];
-      if(incr2>=0){
-        incr2="+"+String(incr2);
-      }
-      else{
-        incr2=String(incr2);
-      }
-      $("#incr2").html(incr2+" ");
-      var val3=result["data"][result["data"].length-1]["currentConfirmedCount"];
-      $("#val3").html(formatNum(String(val3)));
-      var incr3=result["data"][result["data"].length-1]["currentConfirmedIncr"];
-      if(incr3>=0){
-        incr3="+"+String(incr3);
-      }
-      else{
-        incr3=String(incr3);
-      }
-      $("#incr3").html(incr3+" ");
-      var val4=result["data"][result["data"].length-1]["confirmedCount"];
-      $("#val4").html(formatNum(String(val4)));
-      var incr4=result["data"][result["data"].length-1]["confirmedIncr"];
-      if(incr4>=0){
-        incr4="+"+String(incr4);
-      }
-      else{
-        incr4=String(incr4);
-      }
-      $("#incr4").html(incr4+" ");
-      var val5=result["data"][result["data"].length-1]["curedCount"];
-      $("#val5").html(formatNum(String(val5)));
-      var incr5=result["data"][result["data"].length-1]["curedIncr"];
-      if(incr5>=0){
-        incr5="+"+String(incr5);
-      }
-      else{
-        incr5=String(incr5);
-      }
-      $("#incr5").html(incr5+" ");
-      var val6=result["data"][result["data"].length-1]["deadCount"];
-      $("#val6").html(formatNum(String(val6)));
-      var incr6=result["data"][result["data"].length-1]["deadIncr"];
-      if(incr6>=0){
-        incr6="+"+String(incr6);
-      }
-      else{
-        incr6=String(incr6);
-      }
-      $("#incr6").html(incr6+" ");
+      // console.log(result["data"][result["data"].length-1]);
       var idx;
       for (idx = result["data"].length - 1; ; idx--) {
         if (String(result["data"][idx]["dateId"]) === nowdate)
@@ -577,6 +517,76 @@ function formatNum(str) {
   });
   // console.log(totaldata);
   // console.log(xAxiscontent);
+})();
 
-
+(function () {
+  $.ajax({
+    url: "/covid/current",
+    type: "GET",
+    data: { action: "list_current_internal" },
+    dataType: "json",
+    success: function (result) {
+      console.log(result);
+      var val1 = result["currentConfirmedCount"];
+      $("#val1").html(formatNum(String(val1)));
+      var incr1 = result["currentConfirmedIncr"];
+      if (incr1 >= 0) {
+        incr1 = "+" + String(incr1);
+      }
+      else {
+        incr1 = String(incr1);
+      }
+      $("#incr1").html(incr1 + " ");
+      var val2 = result["suspectedCount"];
+      $("#val2").html(formatNum(String(val2)));
+      var incr2 = result["suspectedCountIncr"];
+      if (incr2 >= 0) {
+        incr2 = "+" + String(incr2);
+      }
+      else {
+        incr2 = String(incr2);
+      }
+      $("#incr2").html(incr2 + " ");
+      var val3 = result["currentAsymCount"];
+      $("#val3").html(formatNum(String(val3)));
+      var incr3 = result["currentAsymIncr"];
+      if (incr3 >= 0) {
+        incr3 = "+" + String(incr3);
+      }
+      else {
+        incr3 = String(incr3);
+      }
+      $("#incr3").html(incr3 + " ");
+      var val4 = result["confirmedCount"];
+      $("#val4").html(formatNum(String(val4)));
+      var incr4 = result["confirmedIncr"];
+      if (incr4 >= 0) {
+        incr4 = "+" + String(incr4);
+      }
+      else {
+        incr4 = String(incr4);
+      }
+      $("#incr4").html(incr4 + " ");
+      var val5 = result["curedCount"];
+      $("#val5").html(formatNum(String(val5)));
+      var incr5 = result["curedIncr"];
+      if (incr5 >= 0) {
+        incr5 = "+" + String(incr5);
+      }
+      else {
+        incr5 = String(incr5);
+      }
+      $("#incr5").html(incr5 + " ");
+      var val6 = result["deadCount"];
+      $("#val6").html(formatNum(String(val6)));
+      var incr6 = result["deadIncr"];
+      if (incr6 >= 0) {
+        incr6 = "+" + String(incr6);
+      }
+      else {
+        incr6 = String(incr6);
+      }
+      $("#incr6").html(incr6 + " ");
+    }
+  })
 })();
