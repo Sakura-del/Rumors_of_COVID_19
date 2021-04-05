@@ -8,6 +8,7 @@ from common.models import *
 from lib.handler import dispatcherBase
 
 
+# 列出当前国内疫情
 def listCurrentInternal(request):
     data = CurrentCovidInternal.objects.all().filter(date=datetime.date.today()).first()
     data = model_to_dict(data)

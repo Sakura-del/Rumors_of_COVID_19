@@ -321,7 +321,7 @@ filename13 = 'data_source/data_from_creeper/腾讯新闻疫苗数据/中国及�
 with open(filename13, "r", encoding='utf-8') as f13:
     vaccinations_data = json.load(f13)
 
-# CurrentVaccinations.objects.all().delete()
+CurrentVaccinations.objects.all().delete()
 CurrentVaccinations.objects.create(
     area='中国',
     total_vaccinations=vaccinations_data['china']['total_vaccinations'],
@@ -404,7 +404,7 @@ PerTrendVaccinesNations.objects.create(country='奥地利',
 PerTrendVaccinesNations.objects.create(country='意大利', data=per_trend['Italy'])
 PerTrendVaccinesNations.objects.create(country='摩洛哥',
                                        data=per_trend['Morocco'])
-PerTrendVaccinesNations.objects.create(country='瑞士', data=per_trend['Switzerland'])
+# PerTrendVaccinesNations.objects.create(country='瑞士', data=per_trend['Switzerland'])
 # PerTrendVaccinesNations.objects.create(country='欧盟', data=per_trend['EU'])
 PerTrendVaccinesNations.objects.create(country='智利', data=per_trend['Chile'])
 PerTrendVaccinesNations.objects.create(country='美国', data=per_trend['US'])
