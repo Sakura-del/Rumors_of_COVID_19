@@ -302,6 +302,7 @@ class SpainDailyData(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=200, blank=False)
     url = models.URLField()
+    thumb_nail = models.URLField(default='')
     top_big_img = models.JSONField(default=list)
     category_id = models.CharField(max_length=200)
     category_name = models.CharField(max_length=200)
@@ -367,3 +368,61 @@ class TotalTrendVaccinesNations(models.Model):
     class Meta:
         db_table = 'total_trend_vaccines_nations'
 
+
+# 出行政策
+class TravelPolicy(models.Model):
+    province = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    district = models.CharField(max_length=200)
+    leave_policy_list = models.JSONField(default=list)
+    back_policy_list = models.JSONField(default=list)
+    stay_info_list = models.JSONField(default=list)
+
+    class Meta:
+        db_table = 'travel_policy'
+
+
+# 风险等级
+class RiskLevel(models.Model):
+    name = models.CharField(max_length=200)
+    province = models.CharField(max_length=200)
+    low_level_count = models.IntegerField()
+    medium_level_count = models.IntegerField()
+    high_level_count = models.IntegerField()
+    city_list = models.JSONField(default=list)
+
+    class Meta:
+        db_table = 'risk_level'
+
+
+# 定点医院
+class DesignatedHospital(models.Model):
+    provinceName = models.CharField(max_length=200)
+    citys = models.JSONField(default=list)
+    cityCnt = models.IntegerField()
+
+    class Meta:
+        db_table = 'designated_hospital'
+
+
+# 疫苗接种点
+class VaccinationPoint(models.Model):
+    address = models.CharField(max_length=200)
+    province = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    district = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    tel = models.CharField(max_length=200)
+
+    class Meta:
+        db_table = 'vaccination_point'
+
+
+# 核酸检测机构
+class TestAgent(models.Model):
+    province = models.CharField(max_length=200)
+    count = models.IntegerField()
+    data = models.JSONField()
+
+    class Meta:
+        db_table = 'test_agent'
