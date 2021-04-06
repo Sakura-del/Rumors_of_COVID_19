@@ -1,5 +1,4 @@
 .idea
 .vs
 .vscode
-__pycache__
 *.pyc

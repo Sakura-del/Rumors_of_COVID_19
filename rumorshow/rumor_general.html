@@ -79,6 +79,16 @@
         .little_pic img {
             width: 100%;
         }
+
+        #list_rumors h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #list_rumors p {
+            margin: 0;
+            font-size: 18px;
+        }
     </style>
 
 </head>
@@ -178,10 +188,10 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="row">
-                    <div class="col-md-9 col-sm-9">
+                    <div class="col-md-7 col-sm-7">
                         <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>谣言一览</h2>
+                                <h2>谣言速览</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -215,10 +225,10 @@
                                         <h3 name="title">标题</h3>
                                         <p class="text-muted" name="date">发布日期之类的</p>
                                         <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">浏览次数之类的</p>
+                                        <p class="text-muted" name="tag">关键词</p>
                                     </div>
                                     <div class="col-sm-3 little_pic">
-                                        <img src="images/logo.jpg">
+                                        <img name="pic" src="images/logo.jpg">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -226,10 +236,10 @@
                                         <h3 name="title">标题</h3>
                                         <p class="text-muted" name="date">发布日期之类的</p>
                                         <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">浏览次数之类的</p>
+                                        <p class="text-muted" name="tag">关键词</p>
                                     </div>
                                     <div class="col-sm-3 little_pic">
-                                        <img src="images/logo.jpg">
+                                        <img name="pic" src="images/logo.jpg">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -237,10 +247,10 @@
                                         <h3 name="title">标题</h3>
                                         <p class="text-muted" name="date">发布日期之类的</p>
                                         <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">浏览次数之类的</p>
+                                        <p class="text-muted" name="tag">关键词</p>
                                     </div>
                                     <div class="col-sm-3 little_pic">
-                                        <img src="images/logo.jpg">
+                                        <img name="pic" src="images/logo.jpg">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -248,10 +258,10 @@
                                         <h3 name="title">标题</h3>
                                         <p class="text-muted" name="date">发布日期之类的</p>
                                         <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">浏览次数之类的</p>
+                                        <p class="text-muted" name="tag">关键词</p>
                                     </div>
                                     <div class="col-sm-3 little_pic">
-                                        <img src="images/logo.jpg">
+                                        <img name="pic" src="images/logo.jpg">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -259,16 +269,16 @@
                                         <h3 name="title">标题</h3>
                                         <p class="text-muted" name="date">发布日期之类的</p>
                                         <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">浏览次数之类的</p>
+                                        <p class="text-muted" name="tag">关键词</p>
                                     </div>
                                     <div class="col-sm-3 little_pic">
-                                        <img src="images/logo.jpg">
+                                        <img name="pic" src="images/logo.jpg">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 ">
+                    <div class="col-md-5 col-sm-5">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>检索谣言</h2>
@@ -300,6 +310,22 @@
                             </div>
 
                             <div class="x_content">
+                                <div class="row">
+                                    <form>
+                                        <div class="col-md-9 col-sm-9">
+                                            <input type="email" class="form-control">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3">
+                                            <button>查询谣言</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="row">
+                                    <h3>可信度：50%</h3>
+                                    <div>
+                                        <h3>相关结果:</h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -362,6 +388,41 @@
 
     <script src="../static/js/flexible.js"></script>
     <script src="../static/js/echarts.min.js"></script>
+
+    <script src="../static/js/rumor_general.js"></script>
+    <script>
+        $.ajax({
+            url: "/home/",
+            type: "GET",
+            data: { action: "list_rumors" },
+            dataType: "json",
+            success: function (result) {
+                console.log(result);
+                var titles = document.getElementsByName("title");
+                var dates = document.getElementsByName("date");
+                var types = document.getElementsByName("type");
+                var tags = document.getElementsByName("tag");
+                var pics = document.getElementsByName("pic");
+                var tmptag;
+                for (var i = 0; i < 5; i++) {
+                    titles[i].innerHTML = result["retlist"][i]["title"];
+                    dates[i].innerHTML = result["retlist"][i]["date"];
+                    types[i].innerHTML = result["retlist"][i]["markstyle"];
+                    pic[i].src = result["retlist"][i]["coversqual"];
+                    var objKeys = Object.keys(result["retlist"][i]["tag"]);
+                    for (var j = 0; j < objKeys.length; j++) {
+                        if (j == 0) {
+                            tmptag = result["retlist"][i]["tag"][j];
+                        }
+                        else {
+                            tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
+                        }
+                    }
+                    tags[i].innerHTML = tmptag;
+                }
+            }
+        });
+    </script>
 
 
 </body>

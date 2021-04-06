@@ -36,11 +36,18 @@ def 一键爬虫():
     from 腾讯新闻疫苗数据 import func_list
     all_func_list += func_list
 
+    from 腾讯新闻疫苗研发情况 import func_list
+    all_func_list += func_list
+
     from 腾讯新闻疫情定点医院 import func_list
     all_func_list += func_list
 
     from 腾讯新闻疫情新闻 import func_list
     all_func_list += func_list
+
+    from 头条疫情新闻 import func_list
+    all_func_list += func_list
+
 
     thread_list = []
     thread_count = 1

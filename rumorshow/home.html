@@ -86,7 +86,7 @@
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-                    <div class="row">
+					<div class="row">
 						<div class="col-sm-9">
 							<h3 name="title">标题</h3>
 							<p class="text-muted" name="date">发布日期之类的</p>
@@ -97,7 +97,7 @@
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-                    <div class="row">
+					<div class="row">
 						<div class="col-sm-9">
 							<h3 name="title">标题</h3>
 							<p class="text-muted" name="date">发布日期之类的</p>
@@ -108,7 +108,7 @@
 							<img src="images/logo.jpg">
 						</div>
 					</div>
-                    <div class="row">
+					<div class="row">
 						<div class="col-sm-9">
 							<h3 name="title">标题</h3>
 							<p class="text-muted" name="date">发布日期之类的</p>
@@ -135,34 +135,35 @@
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-    var titles=document.getElementsByName("title");
-    var dates=document.getElementsByName("date");
-    var types=document.getElementsByName("type");
-    var tags=document.getElementsByName("tag");
-    var tmptag;
+	var titles = document.getElementsByName("title");
+	var dates = document.getElementsByName("date");
+	var types = document.getElementsByName("type");
+	var tags = document.getElementsByName("tag");
+	var tmptag;
 	$.ajax({
-    url: "/home",
-    type: "GET",
-    data: {action:"list_rumors"},
-    dataType: "json",
-    success: function(result) {
+		url: "/home",
+		type: "GET",
+		data: { action: "list_rumors" },
+		dataType: "json",
+		success: function (result) {
 
-        for(var i=0;i< 5;i++){
-            titles[i].innerHTML=result["data"][i]["title"];
-            dates[i].innerHTML=result["data"][i]["date"];
-            types[i].innerHTML=result["data"][i]["markstyle"];
-            var objKeys=Object.keys(result["data"][i]["tag"]);
-            for(var j=0;j<objKeys.length;j++){
-                if(j==0){
-                    tmptag=result["data"][i]["tag"][j];
-                }
-                else{
-                    tmptag=tmptag+", "+result["data"][i]["tag"][j];
-                }
-            }
-            tags[i].innerHTML=tmptag;
-        }
-    }
-});
+			for (var i = 0; i < 5; i++) {
+				titles[i].innerHTML = result["data"][i]["title"];
+				dates[i].innerHTML = result["data"][i]["date"];
+				types[i].innerHTML = result["data"][i]["markstyle"];
+				var objKeys = Object.keys(result["data"][i]["tag"]);
+				for (var j = 0; j < objKeys.length; j++) {
+					if (j == 0) {
+						tmptag = result["data"][i]["tag"][j];
+					}
+					else {
+						tmptag = tmptag + ", " + result["data"][i]["tag"][j];
+					}
+				}
+				tags[i].innerHTML = tmptag;
+			}
+		}
+	});
 </script>
+
 </html>
