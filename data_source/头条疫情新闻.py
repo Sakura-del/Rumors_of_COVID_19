@@ -22,7 +22,7 @@ def 头条疫情新闻_func():
             新闻信息_dict = {   'title'    : article.xpath('./h2/a/text()')[0],
                                 'link'     : article.xpath('./h2/a/@href')[0],
                                 'date'     : re.findall('(^\d+年\d+月\d+日)',article.xpath('./small/text()')[0])[0],
-                                'filed'    : article.xpath('./small/a[2]/text()')[0],
+                                'field'    : article.xpath('./small/a[2]/text()')[0],
                                 'summary'  : article.xpath('./div/p[1]/text()')[0].strip(),
                                 'tag_list' : [a.xpath('./text()')[0] for a in article.xpath('./div/p[2]/a')]}
             新闻列表_list.append(新闻信息_dict)
