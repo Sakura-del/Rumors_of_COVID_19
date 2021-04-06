@@ -47,5 +47,5 @@ def 头条疫情新闻_func():
         file.write(json.dumps(新闻列表_list,ensure_ascii = False))
 
 
-头条疫情新闻_func()
+
 func_list = [头条疫情新闻_func]
