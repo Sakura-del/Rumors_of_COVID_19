@@ -26,8 +26,14 @@ def 腾讯新闻疫情新闻_func():
             疫情新闻_list.append(news)
 
 
-    for page in range(2):
-        一页新闻_func(page)
+    thread_list = []
+    for page in range(4):
+        thread = Thread(target = 一页新闻_func,args = (page,))
+        thread.start()
+        thread_list.append(thread)
+
+    for thread in thread_list:
+        thread.join()
 
 
     with open('data_source/data_from_creeper/腾讯新闻疫情新闻.json','w',encoding = 'utf-8') as file:
