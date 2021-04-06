@@ -8,6 +8,7 @@ from common.models import CurrentVaccinesNations
 from django.db.models import Q
 
 
+# 获取当前疫苗接种情况
 def getCurrentVaccinations(request):
     try:
         data = CurrentVaccinations.objects.values()
@@ -24,6 +25,7 @@ def getCurrentVaccinations(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+# 获取当前各国疫苗接种情况
 def getCurrentVaccinesNations(request):
     try:
         data = CurrentVaccinesNations.objects.values().order_by('-date')

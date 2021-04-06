@@ -35,6 +35,7 @@ def getTrendNations(request):
     })
 
 
+# 国内疫苗趋势
 def getTrendInternal(request):
     try:
         data_list = TrendVaccinesInternal.objects.values()
