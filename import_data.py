@@ -503,4 +503,6 @@ for data in vaccine_status_list:
     VaccineStatus.objects.create(organization_name=data['organization_name'],
                                  progress=data['progress'],
                                  vaccine_name=data['vaccine_name'],
-                                 vaccine_type=data['vaccine_type'])
+                                 vaccine_type=data['vaccine_type'],
+                                 update_time=datetime.datetime.now()
+                                 )
