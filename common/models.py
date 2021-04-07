@@ -299,6 +299,18 @@ class SpainDailyData(models.Model):
         db_table = 'spain_daily_data'
 
 
+class HeadlinesNews(models.Model):
+    title = models.CharField(max_length=200, blank=False)
+    link = models.URLField(default= '')
+    date = models.CharField(max_length=200)
+    field = models.CharField(max_length=200)
+    summary = models.CharField(max_length=400)
+    tag_list = models.JSONField(default=list)
+
+    class Meta:
+        db_table = 'headline_news'
+
+
 class News(models.Model):
     title = models.CharField(max_length=200, blank=False)
     url = models.URLField()
@@ -306,7 +318,7 @@ class News(models.Model):
     top_big_img = models.JSONField(default=list)
     category_id = models.CharField(max_length=200)
     category_name = models.CharField(max_length=200)
-    category_cn = models.CharField(max_length=200,default='')
+    category_cn = models.CharField(max_length=200, default='')
     sub_category_name = models.CharField(max_length=200)
     sub_category_cn = models.CharField(max_length=200)
     tags = models.JSONField(default=list)
@@ -426,3 +438,14 @@ class TestAgent(models.Model):
 
     class Meta:
         db_table = 'test_agent'
+
+
+class VaccineStatus(models.Model):
+    organization_name = models.CharField(max_length=200)
+    progress = models.CharField(max_length=200)
+    vaccine_name = models.CharField(max_length=200)
+    vaccine_type = models.CharField(max_length=200)
+    update_time = models.DateTimeField(default=timezone.now())
+
+    class Meta:
+        db_table = 'vaccine_status'

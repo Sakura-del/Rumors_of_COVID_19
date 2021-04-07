@@ -73,7 +73,7 @@
         }
 
         .little_pic {
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         .little_pic img {
@@ -89,6 +89,24 @@
             margin: 0;
             font-size: 18px;
         }
+
+        .x_title {
+            margin-bottom: 0;
+        }
+
+        .x_content {
+            margin-top: 0;
+        }
+
+        #friend_link_div {
+            top:10px;
+            position: sticky;
+        }
+
+        .rumor_text_div {
+            margin-top: 3vh;
+        }
+        
     </style>
 
 </head>
@@ -188,7 +206,55 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="row">
-                    <div class="col-md-7 col-sm-7">
+                    <div class="col-md-9 col-sm-9">
+
+                        <div class="x_panel tile">
+                            <div class="x_title">
+                                <h2>检索谣言</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a class="close-link">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-9 col-sm-9">
+                                        <input id="inputid">
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <button id="btn">查询谣言</button>
+                                    </div>
+                                </div>
+                                <div class="row" id="rumors_result">
+                                    111
+                                    <!-- 查询到的记录在这里面动态加载 -->
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>谣言速览</h2>
@@ -222,10 +288,12 @@
                             <div class="x_content" id="list_rumors">
                                 <div class="row">
                                     <div class="col-sm-9">
-                                        <h3 name="title">标题</h3>
-                                        <p class="text-muted" name="date">发布日期之类的</p>
-                                        <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">关键词</p>
+                                        <div class="rumor_text_div">
+                                            <h3 name="title">标题</h3>
+                                            <p class="text-muted" name="date">发布日期之类的</p>
+                                            <p name="type">鉴定结果</p>
+                                            <p class="text-muted" name="tag">关键词</p>
+                                        </div>
                                     </div>
                                     <div class="col-sm-3 little_pic">
                                         <img name="pic" src="images/logo.jpg">
@@ -277,54 +345,42 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                    <div class="col-md-5 col-sm-5">
-                        <div class="x_panel tile">
-                            <div class="x_title">
-                                <h2>检索谣言</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li>
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </li>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="row" id="friend_link_div">
+                            <div class="x_panel tile">
+                                <div class="x_title">
+                                    <h2>友情链接</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </li>
 
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                aria-expanded="false">
+                                                <i class="fa fa-wrench"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
 
-                                    <li>
-                                        <a class="close-link">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="x_content">
-                                <div class="row">
-                                    <form>
-                                        <div class="col-md-9 col-sm-9">
-                                            <input type="email" class="form-control">
-                                        </div>
-                                        <div class="col-md-3 col-sm-3">
-                                            <button>查询谣言</button>
-                                        </div>
-                                    </form>
+                                        <li>
+                                            <a class="close-link">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="row">
-                                    <h3>可信度：50%</h3>
-                                    <div>
-                                        <h3>相关结果:</h3>
-                                    </div>
+
+                                <div class="x_content">
+                                    <!-- todo -->
                                 </div>
                             </div>
                         </div>
@@ -408,7 +464,10 @@
                     titles[i].innerHTML = result["retlist"][i]["title"];
                     dates[i].innerHTML = result["retlist"][i]["date"];
                     types[i].innerHTML = result["retlist"][i]["markstyle"];
-                    pic[i].src = result["retlist"][i]["coversqual"];
+                    pics[i].src = result["retlist"][i]["coversqual"];
+                    pics[i].style.height = "120px";
+                    pics[i].style.width = "80%";
+                    pics[i].style.marginLeft="20%";
                     var objKeys = Object.keys(result["retlist"][i]["tag"]);
                     for (var j = 0; j < objKeys.length; j++) {
                         if (j == 0) {

@@ -5,20 +5,21 @@ import json
 from common.models import CurrentCovidInternal
 from lib.handler import dispatcherBase
 from common.models import News
-from django.db.models import Q
+from common.models import HeadlinesNews
+from django.db.models import Q,Count
 
 
 # 列出疫苗新闻
 def list_vaccine_news(request):
     try:
-        news_list = News.objects.values('title', 'category_cn', 'comment_num', 'publish_time', 'media_name',
-                                        'thumb_nail',
-                                        'url').filter(title__contains='疫苗').order_by('-publish_time')[:5]
+        news_list = HeadlinesNews.objects.values(
+            'title','date','link','summary'
+        ).filter(title__contains='疫苗').order_by('-date')
         data_list = list(news_list)
         return JsonResponse({"ret": 0, "news_list": data_list, "total": len(news_list), "msg": ""})
 
     except News.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
 # 列出疫情新闻
@@ -31,7 +32,18 @@ def list_covid_news(request):
         return JsonResponse({"ret": 0, "news_list": data_list, "total": len(news_list), "msg": ""})
 
     except News.DoesNotExist:
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
+
+
+def get_headline_news(request):
+    try:
+        fields = HeadlinesNews.objects.values('field').annotate(count=Count('field'))
+
+        fields = list(fields)
+
+        return JsonResponse({"ret": 0,"retlist": fields, "total":len(fields), "msg": ""})
+    except HeadlinesNews.DoesNotExist:
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
 def getNewsDetails(request):
@@ -57,7 +69,7 @@ def getNewsDetails(request):
 
     except News.DoesNotExist:
 
-        return JsonResponse({"ret": 1, "msg": "未查到相关信息"})
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     retlist = list(qs)
     return JsonResponse({
@@ -71,7 +83,8 @@ def getNewsDetails(request):
 ActionHandler = {
     'get_news_details': getNewsDetails,
     'list_vaccine_news':list_vaccine_news,
-    'list_covid_news': list_covid_news
+    'list_covid_news': list_covid_news,
+    'get_headline_news': get_headline_news
 }
 
 
