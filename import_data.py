@@ -489,7 +489,7 @@ for data in headline_news_list:
     HeadlinesNews.objects.create(title=data['title'],
                                  link=data['link'],
                                  date=data['date'],
-                                 field=data['filed'],
+                                 field=data['field'],
                                  summary=data['summary'],
                                  tag_list=data['tag_list'])
 
