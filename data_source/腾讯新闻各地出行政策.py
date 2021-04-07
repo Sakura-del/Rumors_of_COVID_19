@@ -30,12 +30,11 @@ def 各地出行政策_func():
     def 一地出行政策_func(region_id):
         url = 'https://r.inews.qq.com/api/trackmap/citypolicy'
         params = { 'city_id' : f'110000,{region_id}'}
-        response = requests.get(url = url, params = params).json()
-
-        一地出行政策_dict = {}
-
-        #有些地区没有出行政策，要try一下
+        #有些地区没有出行政策或者腾讯那边json格式有问题，要try一下
         try:
+            response = requests.get(url = url, params = params).json()
+
+            一地出行政策_dict = {}
             target_region = response['result']['data'][1]
             一地出行政策_dict = {   'province'          : target_region['province'],
                                     'city'              : target_region['city'],
