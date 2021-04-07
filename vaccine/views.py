@@ -6,6 +6,7 @@ from lib.handler import dispatcherBase
 from common.models import DesignatedHospital
 from common.models import VaccinationPoint
 from common.models import TestAgent
+from common.models import VaccineStatus
 from django.db.models import Q,Count
 # Create your views here.
 
@@ -90,13 +91,25 @@ def get_vaccination_point_region(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+def get_vaccine_status(request):
+    try:
+        data = VaccineStatus.objects.values().order_by('progress')
+
+        data = list(data)
+
+        return JsonResponse({"ret": 0, "retlist": data, "total": len(data), "msg": ""})
+    except VaccineStatus.DoesNotExist:
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
+
+
 ActionHandler = {
     "get_hospital_region": get_hospital_region,
     "get_hospital_province": get_hospital_province,
     "get_test_agent_province": get_test_agent_province,
     "get_test_agent_region": get_test_agent_region,
     'get_vaccination_point_region': get_vaccination_point_region,
-    'get_vaccination_point_province': get_vaccination_point_province
+    'get_vaccination_point_province': get_vaccination_point_province,
+    'get_vaccine_status': get_vaccine_status
 }
 
 

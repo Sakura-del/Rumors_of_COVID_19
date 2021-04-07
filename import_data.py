@@ -414,7 +414,6 @@ PerTrendVaccinesNations.objects.create(country='英国', data=per_trend['UK'])
 PerTrendVaccinesNations.objects.create(country='西班牙', data=per_trend['Spain'])
 PerTrendVaccinesNations.objects.create(country='阿联酋', data=per_trend['Arab'])
 
-
 # 腾讯新闻各地出行政策
 filename17 = 'data_source/data_from_creeper/腾讯新闻各地出行政策.json'
 with open(filename17, "r", encoding='utf-8') as f17:
@@ -422,15 +421,12 @@ with open(filename17, "r", encoding='utf-8') as f17:
 
 TravelPolicy.objects.all().delete()
 for data in travel_policy_list:
-    TravelPolicy.objects.create(
-        province=data['province'],
-        city=data['city'],
-        district=data['district'],
-        leave_policy_list=data['leave_policy_list'],
-        back_policy_list=data['back_policy_list'],
-        stay_info_list=data['stay_info_list']
-    )
-
+    TravelPolicy.objects.create(province=data['province'],
+                                city=data['city'],
+                                district=data['district'],
+                                leave_policy_list=data['leave_policy_list'],
+                                back_policy_list=data['back_policy_list'],
+                                stay_info_list=data['stay_info_list'])
 
 # 腾讯新闻各地区风险
 filename18 = 'data_source/data_from_creeper/腾讯新闻各地区风险.json'
@@ -439,15 +435,12 @@ with open(filename18, "r", encoding='utf-8') as f18:
 
 RiskLevel.objects.all().delete()
 for data in risk_level_list:
-    RiskLevel.objects.create(
-        name=data['name'],
-        province=data['province'],
-        low_level_count=data['low_level_count'],
-        medium_level_count=data['medium_level_count'],
-        high_level_count=data['high_level_count'],
-        city_list=data['city_list']
-    )
-
+    RiskLevel.objects.create(name=data['name'],
+                             province=data['province'],
+                             low_level_count=data['low_level_count'],
+                             medium_level_count=data['medium_level_count'],
+                             high_level_count=data['high_level_count'],
+                             city_list=data['city_list'])
 
 # 腾讯新闻疫情定点医院
 filename19 = 'data_source/data_from_creeper/腾讯新闻疫情定点医院.json'
@@ -456,12 +449,9 @@ with open(filename19, "r", encoding='utf-8') as f19:
 
 DesignatedHospital.objects.all().delete()
 for data in designated_hospital_list:
-    DesignatedHospital.objects.create(
-        provinceName=data['provinceName'],
-        citys=data['citys'],
-        cityCnt=data['cityCnt']
-    )
-
+    DesignatedHospital.objects.create(provinceName=data['provinceName'],
+                                      citys=data['citys'],
+                                      cityCnt=data['cityCnt'])
 
 # 腾讯新闻疫苗接种点
 filename20 = 'data_source/data_from_creeper/腾讯新闻疫苗接种点.json'
@@ -470,15 +460,12 @@ with open(filename20, "r", encoding='utf-8') as f20:
 
 VaccinationPoint.objects.all().delete()
 for data in vaccination_point_list:
-    VaccinationPoint.objects.create(
-        address=data['address'],
-        province=data['province'],
-        city=data['city'],
-        district=data['district'],
-        title=data['title'],
-        tel=data['tel']
-    )
-
+    VaccinationPoint.objects.create(address=data['address'],
+                                    province=data['province'],
+                                    city=data['city'],
+                                    district=data['district'],
+                                    title=data['title'],
+                                    tel=data['tel'])
 
 # 腾讯新闻核酸检测机构
 filename21 = 'data_source/data_from_creeper/腾讯新闻核酸检测机构.json'
@@ -492,3 +479,30 @@ for data in test_agent_list:
         count=data['count'],
         data=data['data'],
     )
+
+filename22 = 'data_source/data_from_creeper/头条疫情新闻.json'
+with open(filename22, "r", encoding='utf-8') as f22:
+    headline_news_list = json.load(f22)
+
+HeadlinesNews.objects.all().delete()
+for data in headline_news_list:
+    HeadlinesNews.objects.create(title=data['title'],
+                                 link=data['link'],
+                                 date=data['date'],
+                                 field=data['filed'],
+                                 summary=data['summary'],
+                                 tag_list=data['tag_list'])
+
+
+filename23 = 'data_source/data_from_creeper/腾讯新闻疫苗研发情况.json'
+with open(filename23, "r", encoding='utf-8') as f23:
+    vaccine_status_list = json.load(f23)
+
+VaccineStatus.objects.all().delete()
+for data in vaccine_status_list:
+    VaccineStatus.objects.create(organization_name=data['organization_name'],
+                                 progress=data['progress'],
+                                 vaccine_name=data['vaccine_name'],
+                                 vaccine_type=data['vaccine_type'],
+                                 update_time=datetime.datetime.now()
+                                 )
