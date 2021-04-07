@@ -1,9 +1,8 @@
-// 模拟确诊地图
-(function () {
+function InitChinaMap() {
     var myChart = echarts.init(document.querySelector("#china_world_map"));
     var mapName = 'china'
     var data = [
-        { name: "北京", value: 7 },
+        { name: "北京", value: 177 },
         { name: "天津", value: 42 },
         { name: "河北", value: 102 },
         { name: "山西", value: 81 },
@@ -96,9 +95,8 @@
                     toolTipData[tid]["value"][3]["value"] = result["data"][i]["overall_data"]["death"];
                 }
             }
-        },
-        error: function () {
-            alert("failed to get data of all provinces!");
+
+
         }
     });
     /*获取地图数据*/
@@ -110,6 +108,7 @@
         var name = v.properties.name;
         // 地区经纬度
         geoCoordMap[name] = v.properties.cp;
+
     });
 
 
@@ -134,8 +133,7 @@
         }
         return res;
     };
-    var two_options=[];
-    var temp_option = {
+    option = {
         // title: {
         //   text: name_title,
         //   subtext: subname,
@@ -204,14 +202,28 @@
             seriesIndex: [1],
             inRange: {
                 // color: ['#3B5077', '#031525'] // 蓝黑
-                //   color: ['#ffc0cb', '#800080'] // 红紫
+                color: ['#ffc0cb', '#800080'] // 红紫
                 // color: ['#3C3B3F', '#605C3C'] // 黑绿
-                //   color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
+                // color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
                 // color: ['#23074d', '#cc5333'] // 紫红
-                color: ['#00467F', '#A5CC82'] // 蓝绿
-                //   color: ['#1488CC', '#2B32B2'] // 浅蓝
+                // color: ['#00467F', '#A5CC82'] // 蓝绿
+                // color: ['#1488CC', '#2B32B2'] // 浅蓝
             }
         },
+        /*工具按钮组*/
+        // toolbox: {
+        //     show: true,
+        //     orient: 'vertical',
+        //     left: 'right',
+        //     top: 'center',
+        //     feature: {
+        //         dataView: {
+        //             readOnly: false
+        //         },
+        //         restore: {},
+        //         saveAsImage: {}
+        //     }
+        // },
         geo: {
             show: true,
             map: mapName,
@@ -255,7 +267,7 @@
                 },
                 itemStyle: {
                     normal: {
-                        color: "rgba(255,255,255,0)"
+                        color: 'rgba(255,255,255,0)',
                     }
                 }
             },
@@ -291,8 +303,17 @@
             },
         ]
     };
-    two_options.push(temp_option);
-    temp_option = {
+    myChart.setOption(option);
+    // 监听浏览器缩放，图表对象调用缩放resize函数
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+}
+
+
+function InitWorldMap() {
+    var myChart = echarts.init(document.querySelector("#china_world_map"));
+    option = {
         tooltip: {
             trigger: 'item',
             formatter: function (params) {
@@ -504,16 +525,36 @@
             }
         ]
     };
-    two_options.push(temp_option);
-    myChart.setOption(two_options[0]);
+    myChart.setOption(option);
     // 监听浏览器缩放，图表对象调用缩放resize函数
     window.addEventListener("resize", function () {
         myChart.resize();
     });
+}
+
+
+
+InitChinaMap();//默认加载中国地图
+(function () {
     $("#switcher").on("click", "a", function () {
-        temp_option=two_options[$(this).index()];
-        // 需要重新渲染
-        myChart.setOption(temp_option);
+        console.log(typeof $(this).index());
+        if ($(this).index() === 0) {//加载中国地图
+            InitChinaMap();
+
+        }
+        else {//加载世界地图
+            InitWorldMap();
+        }
+        // // alert(1);
+        // // console.log($(this).index());
+        // // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
+        // // console.log(yearData[$(this).index()]);
+        // var obj = totaldata[$(this).index()];
+        // option.xAxis.data = xAxiscontent[$(this).index()];
+        // option.series[0].data = obj.data[0];
+        // option.series[1].data = obj.data[1];
+        // option.series[2].data = obj.data[2];
+        // // 需要重新渲染
+        // myChart.setOption(option);
     });
 })();
-
