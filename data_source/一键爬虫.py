@@ -56,14 +56,14 @@ def 一键爬虫():
         thread.start()
         thread_list.append(thread)
 
-        print(f'{thread_count}/{len(all_func_list)}个线程已启动')
+        print(f'{thread_count}/{len(all_func_list)}个主线程已启动')
         thread_count += 1
 
     thread_count = 1
     for thread in thread_list:
         thread.join()
 
-        print(f'{thread_count}/{len(all_func_list)}个线程已完成')
+        print(f'{thread_count}/{len(all_func_list)}个主线程已完成')
         thread_count += 1
 
     print('所有线程已完成')

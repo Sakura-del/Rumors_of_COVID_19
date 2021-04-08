@@ -28,69 +28,80 @@
     <!-- Custom Theme Style -->
     <link href="../static/build/css/custom.min.css" rel="stylesheet">
 
+    <script src='https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'></script>
+
     <style>
-        * {
-            padding: 0px;
-            margin: 0px;
+        #top_nav {
+            height: 100%;
         }
 
-        #slogan_top {
+        #top_nav #slogan_top {
             padding-top: 10px;
             padding-bottom: 10px;
+
             float: right;
         }
 
-        .nav_menu {
-            height: 100%;
-        }
-
-        #menu_toggle {
+        #top_nav #menu_toggle {
             padding: 10px;
         }
 
-        #logo_top_right {
-            margin-left: 10px;
+        #top_nav #logo_top_right {
             height: 100%;
+            margin-left: 10px;
         }
 
-        #switcher a {
-            padding: 7px 10px;
+        #rumors_list_block #result_count{
+            margin: 0;
 
-            border: 0px solid;
-            border-radius: 10px;
-            margin-right: 5px;
+            font-size: 20px;
+            font-weight: 800;
+        }
 
-            background-color: #1ABB9C;
+        #rumors_list_block .rumors_list_x_content {
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        #rumors_list_block .one_rumor_unit {
+            border-bottom: 2px solid rgb(230, 237, 233);
+            padding: 10px 0;
+            margin: 0 10px;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_type {
+            border-radius: 3px;
+            padding: 3px 5px;
+            margin-left: 1em;
 
             color: rgb(255, 255, 255);
-            font-size: 16px;
-            font-family: "Microsoft YaHei";
+            background: rgb(66, 161, 99);
+
+            font-size: 14px !important;
         }
 
-        #list_rumors .row {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
+        #rumors_list_block .rumor_text_div .rumor_title {
+            font-size: 20px;
+            font-weight: 800;
         }
 
-        .little_pic {
-            margin-top: 10px;
-        }
+        #rumors_list_block .rumor_text_div .rumor_date {
+            margin: 0px;
+            margin-top: 40px;
 
-        .little_pic img {
-            width: 100%;
-        }
-
-        #list_rumors h3 {
-            margin: 0;
             font-size: 18px;
         }
 
-        #list_rumors p {
-            margin: 0;
+        #rumors_list_block .rumor_text_div .rumor_tag {
+            margin: 0px;
+
             font-size: 18px;
         }
-        .rumor_title_h3{
-            font-size: 18px;
+
+        #rumors_list_block .rumor_pic_div img {
+            height: 150px;
+            width: 150px;
+            margin-left: 20%;
         }
     </style>
 
@@ -171,12 +182,10 @@
             </div>
 
             <!-- top navigation -->
-            <div class="top_nav">
+            <div class="top_nav" id="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
-                        <a id="menu_toggle">
-                            <i class="fa fa-bars"></i>
-                        </a>
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                     </div>
                     <nav class="nav navbar-nav" id="slogan_top">
                         <span href="javascript:;" class="user-profile" aria-haspopup="true" id="navbarDropdown">
@@ -190,45 +199,8 @@
 
             <!-- page content -->
             <div class="right_col" role="main" id="to_insert_nums">
-                <div class="row">已经为您找到xxx条结果</div>
-                <br>
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="x_panel tile">
-                            <div class="x_title">
-                                <h2>新闻结果</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li>
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </li>
-
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a class="close-link">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="x_content" id="news_result">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-7 col-sm-7" id="rumors_list_block">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>谣言结果</h2>
@@ -259,11 +231,48 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" id="rumors_result">
-                                111
+                            <div class="x_content" id="rumors_list_x_content">
+                                <div class="row" id="result_count">已经为您找到xxx条结果</div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-5 col-sm-5" id="news_block">
+                        <div class="x_panel tile">
+                            <div class="x_title">
+                                <h2>相关新闻</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a class="close-link">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content" id="news_list">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- /page content -->

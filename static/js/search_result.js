@@ -6,59 +6,67 @@ function getQueryString(name) {
     }
 }
 var input_content = getQueryString("content");
-var father_div = document.getElementById("rumors_result");
+var father_div = document.getElementById("rumors_list_x_content");
 $.ajax({
     url: "/home/",
     type: "GET",
     data: { action: "get_rumors", title: input_content },
     dataType: "json",
     success: function (result) {
-        console.log(result);
-        father_div.innerHTML="";
         for (var i = 0; i < 10 && i < result["rumors"].length; i++) {
-            var new_col_sm_9_div = document.createElement("div");
-            new_col_sm_9_div.className = "col-sm-9";
+            var new_col_sm_8_div = document.createElement("div");
+            new_col_sm_8_div.className = "col-sm-8 rumor_text_div";
 
+            var new_span = document.createElement("span");
+            new_span.className = "rumor_title";
+            new_span.innerHTML = result["rumors"][i]["title"];
+            new_col_sm_8_div.appendChild(new_span);
 
-            var new_h3 = document.createElement("h3");
-            new_h3.className="rumor_title_h3";
-            // new_h3.style.fontSize = "18px";
-            new_h3.innerHTML = result["rumors"][i]["title"];
-            new_col_sm_9_div.appendChild(new_h3);
+            var new_span = document.createElement("span");
+            new_span.className = "rumor_type";
 
-            var new_p = document.createElement("p");
-            new_p.className = "text-muted";
-            new_p.innerHTML = result["rumors"][i]["date"];
-            new_col_sm_9_div.appendChild(new_p);
-
-            var new_p = document.createElement("p");
-            new_p.innerHTML = result["rumors"][i]["markstyle"];
-            new_col_sm_9_div.appendChild(new_p);
-
-            var new_p = document.createElement("p");
-            new_p.className = "text-muted";
-            var tmptag;
-            for (var j = 0; j < result["rumors"][i]["tag"].length; j++) {
-                if (j == 0) {
-                    tmptag = result["rumors"][i]["tag"][j];
-                }
-                else {
-                    tmptag = tmptag + ", " + result["rumors"][i]["tag"][j];
-                }
+            if (result["rumors"][i]["markstyle"] == "true") {
+                new_span.innerHTML = "确实如此"
+                new_span.style.backgroundColor = 'rbg(196, 31, 32)'
             }
-            new_p.innerHTML = tmptag;
-            new_col_sm_9_div.appendChild(new_p);
+            else if (result["rumors"][i]["markstyle"] == "fake") {
+                new_span.innerHTML = "谣言"
+                new_span.style.backgroundColor = 'rbg(66, 161, 99)'
+            }
+            else {
+                new_span.innerHTML = "尚无定论"
+                new_span.style.backgroundColor = 'rbg(72, 72, 72)'
+            }
+
+            // TODO颜色
+            new_col_sm_8_div.appendChild(new_span);
+
+            var new_p = document.createElement("p");
+            new_p.className = "rumor_date";
+            new_p.innerHTML = result["rumors"][i]["date"];
+            new_col_sm_8_div.appendChild(new_p);
+
+            var new_p = document.createElement("p");
+            new_p.className = "rumor_tag";
+            var tmp_tag;
+            for (var j = 0; j < result["rumors"][i]["tag"].length; j++)
+                if (j == 0)
+                    tmp_tag = result["rumors"][i]["tag"][j];
+                else
+                    tmp_tag = tmp_tag + ", " + result["rumors"][i]["tag"][j];
+            new_p.innerHTML = tmp_tag;
+            new_col_sm_8_div.appendChild(new_p);
 
 
             var new_col_sm_3_div = document.createElement("div");
-            new_col_sm_3_div.className = "col-sm-3";
-            var newimg = document.createElement("img");
-            newimg.src = result["rumors"][i]["coversqual"];
-            new_col_sm_3_div.appendChild(newimg);
+            new_col_sm_3_div.className = "col-sm-3 rumor_pic_div";
+            var new_img = document.createElement("img");
+            new_img.src = result["rumors"][i]["coversqual"];
+            new_col_sm_3_div.appendChild(new_img);
 
             var new_row_div = document.createElement("div");
-            new_row_div.className = "row";
-            new_row_div.appendChild(new_col_sm_9_div);
+            new_row_div.className = "row one_rumor_unit";
+            new_row_div.appendChild(new_col_sm_8_div);
             new_row_div.appendChild(new_col_sm_3_div);
 
             father_div.appendChild(new_row_div);
