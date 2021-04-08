@@ -6,8 +6,11 @@ function getQueryString(name) {
     }
 }
 var input_content = getQueryString("content");
-var father_div = document.getElementById("rumor_list_x_content");
+var father_div_rumor = document.getElementById("rumor_list_x_content");
 var rumor_result_count= document.getElementById("rumor_result_count");
+
+var father_div_news = document.getElementById("news_list_x_content");
+var news_result_count= document.getElementById("news_result_count");
 $.ajax({
     url: "/home/",
     type: "GET",
@@ -16,7 +19,7 @@ $.ajax({
     success: function (result) {
         console.log(result);
         rumor_result_count.innerHTML="已经为您找到"+String(result["rumors"].length)+"条谣言结果：";
-
+        news_result_count.innerHTML="已经为您找到"+String(result["news"].length)+"条新闻结果：";
         for (var i = 0; i < 10 && i < result["rumors"].length; i++) {
             var new_col_sm_8_div = document.createElement("div");
             new_col_sm_8_div.className = "col-sm-8 rumor_text_div";
@@ -72,7 +75,29 @@ $.ajax({
             new_row_div.appendChild(new_col_sm_8_div);
             new_row_div.appendChild(new_col_sm_3_div);
 
-            father_div.appendChild(new_row_div);
+            father_div_rumor.appendChild(new_row_div);
+        }
+
+        for (var i = 0; i < 10 && i < result["news"].length; i++) {
+            var new_col_sm_12_div = document.createElement("div");
+            new_col_sm_12_div.className = "col-sm-12 rumor_text_div";
+
+            var new_span = document.createElement("span");
+            new_span.className = "rumor_title";
+            new_span.innerHTML = result["news"][i]["title"];
+            new_col_sm_12_div.appendChild(new_span);
+
+
+            var new_p = document.createElement("p");
+            new_p.className = "rumor_date";
+            new_p.innerHTML = result["news"][i]["date"];
+            new_col_sm_12_div.appendChild(new_p);
+
+            var new_row_div = document.createElement("div");
+            new_row_div.className = "row one_rumor_unit";
+            new_row_div.appendChild(new_col_sm_12_div);
+
+            father_div_news.appendChild(new_row_div);
         }
     }
 });

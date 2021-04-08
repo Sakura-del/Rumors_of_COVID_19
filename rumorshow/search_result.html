@@ -103,6 +103,37 @@
             width: 150px;
             margin-left: 20%;
         }
+
+        /* 以下设定新闻的样式 */
+        #news_list_block #news_result_count{
+            margin: 0;
+
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        #news_list_block .news_list_x_content {
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        #news_list_block .one_rumor_unit {
+            border-bottom: 2px solid rgb(230, 237, 233);
+            padding: 10px 0;
+            margin: 0 10px;
+        }
+
+        #news_list_block .rumor_text_div .rumor_title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        #news_list_block .rumor_text_div .rumor_date {
+            margin: 0px;
+            margin-top: 40px;
+
+            font-size: 18px;
+        }
     </style>
 
 </head>
@@ -232,12 +263,12 @@
                             </div>
 
                             <div class="x_content" id="rumor_list_x_content">
-                                <div class="row" id="rumor_result_count">已经为您找到xxx条结果</div>
+                                <div class="row" id="rumor_result_count"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4" id="news_block">
+                    <div class="col-md-4 col-sm-4" id="news_list_block">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>相关新闻</h2>
@@ -268,8 +299,8 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" id="news_list">
-                                <div class="row" id="news_result_count">已经为您找到xxx条结果</div>
+                            <div class="x_content" id="news_list_x_content">
+                                <div class="row" id="news_result_count"></div>
                             </div>
                         </div>
                     </div>
