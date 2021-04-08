@@ -6,13 +6,17 @@ function getQueryString(name) {
     }
 }
 var input_content = getQueryString("content");
-var father_div = document.getElementById("rumors_list_x_content");
+var father_div = document.getElementById("rumor_list_x_content");
+var rumor_result_count= document.getElementById("rumor_result_count");
 $.ajax({
     url: "/home/",
     type: "GET",
     data: { action: "get_rumors", title: input_content },
     dataType: "json",
     success: function (result) {
+        console.log(result);
+        rumor_result_count.innerHTML="已经为您找到"+String(result["rumors"].length)+"条谣言结果：";
+
         for (var i = 0; i < 10 && i < result["rumors"].length; i++) {
             var new_col_sm_8_div = document.createElement("div");
             new_col_sm_8_div.className = "col-sm-8 rumor_text_div";
@@ -27,18 +31,17 @@ $.ajax({
 
             if (result["rumors"][i]["markstyle"] == "true") {
                 new_span.innerHTML = "确实如此"
-                new_span.style.backgroundColor = 'rbg(196, 31, 32)'
+                new_span.style.backgroundColor = 'rgb(66, 161, 99)'
             }
             else if (result["rumors"][i]["markstyle"] == "fake") {
                 new_span.innerHTML = "谣言"
-                new_span.style.backgroundColor = 'rbg(66, 161, 99)'
+                new_span.style.backgroundColor = 'rgb(196, 31, 32)'  
             }
             else {
                 new_span.innerHTML = "尚无定论"
-                new_span.style.backgroundColor = 'rbg(72, 72, 72)'
+                new_span.style.backgroundColor = 'rgb(72, 72, 72)'
             }
 
-            // TODO颜色
             new_col_sm_8_div.appendChild(new_span);
 
             var new_p = document.createElement("p");
