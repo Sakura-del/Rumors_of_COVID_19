@@ -29,84 +29,122 @@
     <link href="../static/build/css/custom.min.css" rel="stylesheet">
 
     <style>
-        * {
-            padding: 0px;
-            margin: 0px;
+        #top_nav {
+            height: 100%;
         }
 
-        #slogan_top {
+        #top_nav #slogan_top {
             padding-top: 10px;
             padding-bottom: 10px;
+
             float: right;
         }
 
-        .nav_menu {
-            height: 100%;
-        }
-
-        #menu_toggle {
+        #top_nav #menu_toggle {
             padding: 10px;
         }
 
-        #logo_top_right {
-            margin-left: 10px;
+        #top_nav #logo_top_right {
             height: 100%;
+            margin-left: 10px;
         }
 
-        #switcher a {
-            padding: 7px 10px;
+        #page_content .clearfix::after {
+            display: table;
+            clear: both;
+        }
 
-            border: 0px solid;
+        #search_rumor_block input {
+            width: 70%;
+            height: 40px;
+
+            border: 2px;
+            border-right: 0;
+            border-style: solid;
             border-radius: 10px;
-            margin-right: 5px;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            border-color: rgb(236, 236, 236);
 
-            background-color: #1ABB9C;
+            margin-right: 0;
+
+            float: left;
+        }
+
+        #search_rumor_block button {
+            width: 20%;
+            height: 40px;
+
+            border: 2px;
+            border-left: 0;
+            border-style: solid;
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-color: rgb(236, 236, 236);
+
+            margin: 0;
+
+            outline: none;
+
+            float: left;
 
             color: rgb(255, 255, 255);
-            font-size: 16px;
-            font-family: "Microsoft YaHei";
+            background-color: rgb(88, 209, 169);
+
+            font-size: 22px;
         }
 
-        #list_rumors .row {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-        }
+        #friend_link_block {
+            top: 10px;
 
-        .little_pic {
-            margin-top: 0px;
-        }
-
-        .little_pic img {
-            width: 100%;
-        }
-
-        #list_rumors h3 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        #list_rumors p {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .x_title {
-            margin-bottom: 0;
-        }
-
-        .x_content {
-            margin-top: 0;
-        }
-
-        #friend_link_div {
-            top:10px;
             position: sticky;
         }
 
-        .rumor_text_div {
-            margin-top: 3vh;
+        #rumors_list_block .rumors_list_x_content {
+            padding-left: 0;
+            margin-top: 0;
         }
-        
+
+        #rumors_list_block .one_rumor_unit {
+            border-bottom: 2px solid rgb(230, 237, 233);
+            padding: 10px 0;
+            margin: 0 10px;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_type {
+            border-radius: 3px;
+            padding: 3px 5px;
+
+            color: rgb(255, 255, 255);
+            background: rgb(66, 161, 99);
+
+            font-size: 14px !important;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_date {
+            margin: 0px;
+            margin-top: 40px;
+
+            font-size: 18px;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_tag {
+            margin: 0px;
+
+            font-size: 18px;
+        }
+
+        #rumors_list_block .rumor_pic_div img {
+            height: 120px;
+            width: 80%;
+            margin-left: 20%;
+        }
     </style>
 
 </head>
@@ -186,12 +224,10 @@
             </div>
 
             <!-- top navigation -->
-            <div class="top_nav">
+            <div class="top_nav" id="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
-                        <a id="menu_toggle">
-                            <i class="fa fa-bars"></i>
-                        </a>
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                     </div>
                     <nav class="nav navbar-nav" id="slogan_top">
                         <span href="javascript:;" class="user-profile" aria-haspopup="true" id="navbarDropdown">
@@ -204,13 +240,55 @@
             <!-- /top navigation -->
 
             <!-- page content -->
-            <div class="right_col" role="main">
-                <div class="row">
-                    <div class="col-md-9 col-sm-9">
+            <div class="right_col clearfix" id="page_content" role="main">
 
+                <div class="col-md-9 col-sm-9" id="search_rumor_block">
+                    <div class="x_panel tile">
+                        <div class="x_title">
+                            <h2>查询谣言</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="close-link">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="x_content">
+                            <div class="row" id="search_rumor_content_row">
+                                <div class="col-md-12 col-sm-12">
+                                    <input id="inputid">
+                                    <button id="btn">搜索</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3" id="friend_link_block">
+                    <div class="row">
                         <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>检索谣言</h2>
+                                <h2>友情链接</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -239,153 +317,107 @@
                             </div>
 
                             <div class="x_content">
-                                <div class="row">
-                                    <div class="col-md-9 col-sm-9">
-                                        <input id="inputid">
-                                    </div>
-                                    <div class="col-md-3 col-sm-3">
-                                        <button id="btn">查询谣言</button>
-                                    </div>
-                                </div>
-                                <div class="row" id="rumors_result">
-                                    111
-                                    <!-- 查询到的记录在这里面动态加载 -->
-                                </div>
+                                <!-- <img src="../static/images/weijianwei.jfif" alt="">
+                                <a href="http://www.nhc.gov.cn/">卫健委</a>
+                                <img src="../static/images/weijianwei.jfif" alt="">
+                                <a href="http://www.nhc.gov.cn/">卫健委</a> -->
+                                暂时还不能放东西，一放页面就崩了
                             </div>
                         </div>
-
-
-                        <div class="x_panel tile">
-                            <div class="x_title">
-                                <h2>谣言速览</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li>
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </li>
-
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a class="close-link">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="x_content" id="list_rumors">
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        <div class="rumor_text_div">
-                                            <h3 name="title">标题</h3>
-                                            <p class="text-muted" name="date">发布日期之类的</p>
-                                            <p name="type">鉴定结果</p>
-                                            <p class="text-muted" name="tag">关键词</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 little_pic">
-                                        <img name="pic" src="images/logo.jpg">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        <h3 name="title">标题</h3>
-                                        <p class="text-muted" name="date">发布日期之类的</p>
-                                        <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">关键词</p>
-                                    </div>
-                                    <div class="col-sm-3 little_pic">
-                                        <img name="pic" src="images/logo.jpg">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        <h3 name="title">标题</h3>
-                                        <p class="text-muted" name="date">发布日期之类的</p>
-                                        <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">关键词</p>
-                                    </div>
-                                    <div class="col-sm-3 little_pic">
-                                        <img name="pic" src="images/logo.jpg">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        <h3 name="title">标题</h3>
-                                        <p class="text-muted" name="date">发布日期之类的</p>
-                                        <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">关键词</p>
-                                    </div>
-                                    <div class="col-sm-3 little_pic">
-                                        <img name="pic" src="images/logo.jpg">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-9">
-                                        <h3 name="title">标题</h3>
-                                        <p class="text-muted" name="date">发布日期之类的</p>
-                                        <p name="type">鉴定结果</p>
-                                        <p class="text-muted" name="tag">关键词</p>
-                                    </div>
-                                    <div class="col-sm-3 little_pic">
-                                        <img name="pic" src="images/logo.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                    <div class="col-md-3 col-sm-3">
-                        <div class="row" id="friend_link_div">
-                            <div class="x_panel tile">
-                                <div class="x_title">
-                                    <h2>友情链接</h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li>
-                                            <a class="collapse-link">
-                                                <i class="fa fa-chevron-up"></i>
-                                            </a>
-                                        </li>
+                </div>
 
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                aria-expanded="false">
-                                                <i class="fa fa-wrench"></i>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Settings 1</a>
-                                                <a class="dropdown-item" href="#">Settings 2</a>
-                                            </div>
-                                        </li>
+                <div class="col-md-9 col-sm-9" id="rumors_list_block">
+                    <div class="x_panel tile">
+                        <div class="x_title">
+                            <h2>谣言速览</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li>
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </li>
 
-                                        <li>
-                                            <a class="close-link">
-                                                <i class="fa fa-close"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="close-link">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="x_content rumors_list_x_content">
+                            <div class="row one_rumor_unit">
+                                <div class="col-sm-9 rumor_text_div">
+                                    <span class="rumor_title" name="title">标题</span>
+                                    <span class="rumor_type" name="type">鉴定结果</span>
+                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                    <p class="text-muted rumor_tag" name="tag">关键词</span>
                                 </div>
-
-                                <div class="x_content">
-                                    <!-- todo -->
+                                <div class="col-sm-3 rumor_pic_div">
+                                    <img name="pic" src="images/logo.jpg">
+                                </div>
+                            </div>
+                            <div class="row one_rumor_unit">
+                                <div class="col-sm-9 rumor_text_div">
+                                    <span class="rumor_title" name="title">标题</span>
+                                    <span class="rumor_type" name="type">鉴定结果</span>
+                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                </div>
+                                <div class="col-sm-3 rumor_pic_div">
+                                    <img name="pic" src="images/logo.jpg">
+                                </div>
+                            </div>
+                            <div class="row one_rumor_unit">
+                                <div class="col-sm-9 rumor_text_div">
+                                    <span class="rumor_title" name="title">标题</span>
+                                    <span class="rumor_type" name="type">鉴定结果</span>
+                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                </div>
+                                <div class="col-sm-3 rumor_pic_div">
+                                    <img name="pic" src="images/logo.jpg">
+                                </div>
+                            </div>
+                            <div class="row one_rumor_unit">
+                                <div class="col-sm-9 rumor_text_div">
+                                    <span class="rumor_title" name="title">标题</span>
+                                    <span class="rumor_type" name="type">鉴定结果</span>
+                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                </div>
+                                <div class="col-sm-3 rumor_pic_div">
+                                    <img name="pic" src="images/logo.jpg">
+                                </div>
+                            </div>
+                            <div class="row one_rumor_unit">
+                                <div class="col-sm-9 rumor_text_div">
+                                    <span class="rumor_title" name="title">标题</span>
+                                    <span class="rumor_type" name="type">鉴定结果</span>
+                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                </div>
+                                <div class="col-sm-3 rumor_pic_div">
+                                    <img name="pic" src="images/logo.jpg">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- /page content -->
 
@@ -400,90 +432,102 @@
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="../static/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- 先引入jquery -->
-    <script src="../static/js/jquery.js"></script>
-    <!-- Bootstrap -->
-    <script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- FastClick -->
-    <script src="../static/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../static/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="../static/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="../static/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../static/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="../static/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="../static/vendors/Flot/jquery.flot.js"></script>
-    <script src="../static/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../static/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../static/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../static/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../static/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="../static/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="../static/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="../static/vendors/moment/min/moment.min.js"></script>
-    <script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- Custom Theme Scripts -->
-    <script src="../static/build/js/custom.min.js"></script>
-
-    <script src="../static/js/flexible.js"></script>
-    <script src="../static/js/echarts.min.js"></script>
-
-    <script src="../static/js/rumor_general.js"></script>
-    <script>
-        $.ajax({
-            url: "/home/",
-            type: "GET",
-            data: { action: "list_rumors" },
-            dataType: "json",
-            success: function (result) {
-                console.log(result);
-                var titles = document.getElementsByName("title");
-                var dates = document.getElementsByName("date");
-                var types = document.getElementsByName("type");
-                var tags = document.getElementsByName("tag");
-                var pics = document.getElementsByName("pic");
-                var tmptag;
-                for (var i = 0; i < 5; i++) {
-                    titles[i].innerHTML = result["retlist"][i]["title"];
-                    dates[i].innerHTML = result["retlist"][i]["date"];
-                    types[i].innerHTML = result["retlist"][i]["markstyle"];
-                    pics[i].src = result["retlist"][i]["coversqual"];
-                    pics[i].style.height = "120px";
-                    pics[i].style.width = "80%";
-                    pics[i].style.marginLeft="20%";
-                    var objKeys = Object.keys(result["retlist"][i]["tag"]);
-                    for (var j = 0; j < objKeys.length; j++) {
-                        if (j == 0) {
-                            tmptag = result["retlist"][i]["tag"][j];
-                        }
-                        else {
-                            tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
-                        }
-                    }
-                    tags[i].innerHTML = tmptag;
-                }
-            }
-        });
-    </script>
-
-
 </body>
+
+<!-- jQuery -->
+<script src="../static/vendors/jquery/dist/jquery.min.js"></script>
+<!-- 先引入jquery -->
+<script src="../static/js/jquery.js"></script>
+<!-- Bootstrap -->
+<script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FastClick -->
+<script src="../static/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../static/vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="../static/vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="../static/vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="../static/vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="../static/vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="../static/vendors/Flot/jquery.flot.js"></script>
+<script src="../static/vendors/Flot/jquery.flot.pie.js"></script>
+<script src="../static/vendors/Flot/jquery.flot.time.js"></script>
+<script src="../static/vendors/Flot/jquery.flot.stack.js"></script>
+<script src="../static/vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="../static/vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="../static/vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="../static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="../static/vendors/moment/min/moment.min.js"></script>
+<script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../static/build/js/custom.min.js"></script>
+
+<script src="../static/js/flexible.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+
+<script src="../static/js/rumor_general.js"></script>
+
+
+<script>
+    $.ajax({
+        url: "/home/",
+        type: "GET",
+        data: { action: "list_rumors" },
+        dataType: "json",
+        success: function (result) {
+            console.log(result);
+            var titles = document.getElementsByName("title");
+            var dates = document.getElementsByName("date");
+            var types = document.getElementsByName("type");
+            var tags = document.getElementsByName("tag");
+            var pics = document.getElementsByName("pic");
+            var tmptag;
+            for (var i = 0; i < 5; i++) {
+                titles[i].innerHTML = result["retlist"][i]["title"];
+                dates[i].innerHTML = result["retlist"][i]["date"];
+
+                // TODO颜色
+                if (result["retlist"][i]["markstyle"] == "true") {
+                    types[i].innerHTML = "确实如此"
+                    types[i].style.backgroundColor = 'rgb(66, 161, 99)'
+                }
+                else if (result["retlist"][i]["markstyle"] == "fake") {
+                    types[i].innerHTML = "谣言"
+                    types[i].style.backgroundColor = 'rgb(196, 31, 32)'  
+                }
+                else {
+                    types[i].innerHTML = "尚无定论"
+                    types[i].style.backgroundColor = 'rgb(72, 72, 72)'
+                }
+
+                pics[i].src = result["retlist"][i]["coversqual"];
+                var objKeys = Object.keys(result["retlist"][i]["tag"]);
+                for (var j = 0; j < objKeys.length; j++) {
+                    if (j == 0) {
+                        tmptag = result["retlist"][i]["tag"][j];
+                    }
+                    else {
+                        tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
+                    }
+                }
+                tags[i].innerHTML = tmptag;
+            }
+        }
+    });
+</script>
 
 </html>
