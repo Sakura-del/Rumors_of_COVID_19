@@ -11,10 +11,10 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def 较真网_func():
+def QQ_fact_func():
     rumor_needed_list = []
 
-    def 较真网一页_func(page):
+    def One_page_func(page):
         url = f'https://vp.fact.qq.com/loadmore'
         params = {  'artnum'   : 0,
                     'page'     : page,
@@ -23,7 +23,6 @@ def 较真网_func():
                     'callback' : page,}
         text = requests.get(url = url,params = params).text
 
-        rumor_list = []
         try:
             rumor_list = json.loads(re.findall(r'(?:\d*)[(](.*)[)]$',text,re.S)[0].replace('\\n','').replace('\\',''))['content']
         except:
@@ -54,7 +53,7 @@ def 较真网_func():
 
     thread_list = []
     for i in range(200):
-        thread = Thread(target = 较真网一页_func,args = (i,))
+        thread = Thread(target = One_page_func,args = (i,))
         thread.start()
         thread_list.append(thread)
 
@@ -67,4 +66,4 @@ def 较真网_func():
 
 
 
-func_list = [较真网_func]
+func_list = [QQ_fact_func]

@@ -9,10 +9,10 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def 核酸检测机构_func():
-    核酸检测机构_list = []
-    def 一省_核酸检测机构_func(province):
-        一省_核酸检测机构_原格式_list = []
+def QQ_news_testing_agency_func():
+    testing_agency_list = []
+    def Province_testing_agency_func(province):
+        province_testing_agency_list_source_format = []
         for page in range(1,6):
             url = 'https://apis.map.qq.com/place_cloud/search/region'
             params = {  'region'     : province,
@@ -22,28 +22,28 @@ def 核酸检测机构_func():
                         'page_size'  : 200,
                         'key'        : 'YNVBZ-FRJK3-BPX36-3XHBZ-U7WFQ-KBFMJ'}
             response = requests.get(url = url, params = params).json()
-            一省_核酸检测机构_原格式_list += response['result']['data']
+            province_testing_agency_list_source_format += response['result']['data']
 
-        一省_核酸检测机构_正规格式_list = []
-        核酸检测机构_正规格式_dict = {}
-        for 核酸检测机构_原格式_dict in 一省_核酸检测机构_原格式_list:
-            核酸检测机构_正规格式_dict = {  'address'  :核酸检测机构_原格式_dict['address'],
-                                            'province' :核酸检测机构_原格式_dict['province'],
-                                            'city'     :核酸检测机构_原格式_dict['city'],
-                                            'district' :核酸检测机构_原格式_dict['district'],
-                                            'tel'      :核酸检测机构_原格式_dict['tel'],
-                                            'title'    :核酸检测机构_原格式_dict['title']}
-            一省_核酸检测机构_正规格式_list.append(核酸检测机构_正规格式_dict)
+        province_testing_agency_list = []
+        testing_agency_dict = {}
+        for testing_agency_source_format in province_testing_agency_list_source_format:
+            testing_agency_dict = { 'address'  :testing_agency_source_format['address'],
+                                    'province' :testing_agency_source_format['province'],
+                                    'city'     :testing_agency_source_format['city'],
+                                    'district' :testing_agency_source_format['district'],
+                                    'tel'      :testing_agency_source_format['tel'],
+                                    'title'    :testing_agency_source_format['title']}
+            province_testing_agency_list.append(testing_agency_dict)
 
-        一省_核酸检测机构_dict = {  'province' : province,
-                                    'count'    : len(一省_核酸检测机构_正规格式_list),
-                                    'data'     : 一省_核酸检测机构_正规格式_list}
-        核酸检测机构_list.append(一省_核酸检测机构_dict)
+        province_testing_agency_dict = {'province' : province,
+                                        'count'    : len(province_testing_agency_list),
+                                        'data'     : province_testing_agency_list}
+        testing_agency_list.append(province_testing_agency_dict)
 
 
     thread_list = []
     for province in ['北京','天津','河北','山西','内蒙古','辽宁','吉林','黑龙江','上海','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','广西','海南','重庆','四川','贵州','云南','西藏','陕西','甘肃','青海','宁夏','新疆']:
-        thread = Thread(target = 一省_核酸检测机构_func,args = (province,))
+        thread = Thread(target = Province_testing_agency_func,args = (province,))
         thread.start()
         thread_list.append(thread)
 
@@ -52,8 +52,8 @@ def 核酸检测机构_func():
 
 
     with open('data_source/data_from_creeper/腾讯新闻核酸检测机构.json', 'w', encoding = 'utf-8') as file:
-        file.write(json.dumps(核酸检测机构_list, ensure_ascii = False))
+        file.write(json.dumps(testing_agency_list, ensure_ascii = False))
 
 
 
-func_list = [核酸检测机构_func]
+func_list = [QQ_news_testing_agency_func]

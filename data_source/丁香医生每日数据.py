@@ -11,7 +11,7 @@ if not os.path.isdir('data_source/data_from_creeper/丁香医生每日数据'):
     os.makedirs('data_source/data_from_creeper/丁香医生每日数据')
 
 
-def 国内每日数据_func():
+def Domestic_daily_data_func():
     url = 'https://file1.dxycdn.com/2021/0329/072/4781419391339442743-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -20,7 +20,7 @@ def 国内每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 全球每日数据_func():
+def Global_daily_data_func():
     url = 'https://file1.dxycdn.com/2021/0329/270/7977712388202242743-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -29,7 +29,7 @@ def 全球每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 美国每日数据_func():
+def US_daily_data_func():
     url = ' https://file1.dxycdn.com/2020/0315/553/3402160512808052518-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -38,7 +38,7 @@ def 美国每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 巴西每日数据_func():
+def Brazil_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/559/3402160538577857305-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -47,7 +47,7 @@ def 巴西每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 法国每日数据_func():
+def France_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/929/3402160538577857318-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -56,7 +56,7 @@ def 法国每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 俄罗斯每日数据_func():
+def Russia_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/629/3402160517102843039-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -65,7 +65,7 @@ def 俄罗斯每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 英国每日数据_func():
+def UK_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/364/3402160538577680395-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -74,7 +74,7 @@ def 英国每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 意大利每日数据_func():
+def Italy_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/993/3402160517102843054-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -83,7 +83,7 @@ def 意大利每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 西班牙每日数据_func():
+def Spain_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/812/3402160512807875660-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -92,7 +92,7 @@ def 西班牙每日数据_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 德国每日数据_func():
+def Germany_daily_data_func():
     url = 'https://file1.dxycdn.com/2020/0315/631/3402160538577680475-135.json'
     response = requests.get(url = url).json()
     result = response['data']
@@ -102,4 +102,4 @@ def 德国每日数据_func():
 
 
 
-func_list = [国内每日数据_func,全球每日数据_func,美国每日数据_func,巴西每日数据_func,法国每日数据_func,俄罗斯每日数据_func,英国每日数据_func,意大利每日数据_func,西班牙每日数据_func,德国每日数据_func]
+func_list = [Domestic_daily_data_func,Global_daily_data_func,US_daily_data_func,Brazil_daily_data_func,France_daily_data_func,Russia_daily_data_func,UK_daily_data_func,Italy_daily_data_func,Spain_daily_data_func,Germany_daily_data_func]

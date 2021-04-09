@@ -9,7 +9,7 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def 疫苗接种点_func():
+def QQ_news_vaccination_place_func():
     #获取各市id
     url = 'https://stars.news.qq.com/'
     params = {'service' : 'App.Answer_YiMiaoMap.getList'}
@@ -19,8 +19,8 @@ def 疫苗接种点_func():
                             'province' : city['province']}
                           for city in response['data']['data']]
 
-    疫苗接种点_list = []
-    def 一市接种点func(city,province):
+    vaccination_place_list = []
+    def city_vaccination_place_func(city,province):
         url = 'https://apis.map.qq.com/place_cloud/search/region'
         headers = { 'Origin'     : 'https://new.qq.com',
                     'Referer'    : 'https://new.qq.com/',
@@ -37,20 +37,20 @@ def 疫苗接种点_func():
 
             result = response['result']['data']
             for hospital in result:
-                疫苗接种点_dict = { 'address'  : hospital['address'],
-                                    'province' : hospital['province'],
-                                    'city'     : hospital['city'],
-                                    'district' : hospital['district'],
-                                    'title'    : hospital['title'],
-                                    'tel'      : hospital['tel']}
-                疫苗接种点_list.append(疫苗接种点_dict)
+                city_vaccination_place_dict = { 'address'  : hospital['address'],
+                                                'province' : hospital['province'],
+                                                'city'     : hospital['city'],
+                                                'district' : hospital['district'],
+                                                'title'    : hospital['title'],
+                                                'tel'      : hospital['tel']}
+                vaccination_place_list.append(city_vaccination_place_dict)
         except :
             return
 
 
     thread_list = []
     for city in city_province_list:
-        thread = Thread(target = 一市接种点func,args = (city['city'],city['province'],))
+        thread = Thread(target = city_vaccination_place_func,args = (city['city'],city['province'],))
         thread.start()
         thread_list.append(thread)
 
@@ -59,8 +59,8 @@ def 疫苗接种点_func():
 
 
     with open('data_source/data_from_creeper/腾讯新闻疫苗接种点.json', 'w', encoding = 'utf-8') as file:
-        file.write(json.dumps(疫苗接种点_list, ensure_ascii = False))
+        file.write(json.dumps(vaccination_place_list, ensure_ascii = False))
 
 
 
-func_list = [疫苗接种点_func]
+func_list = [QQ_news_vaccination_place_func]

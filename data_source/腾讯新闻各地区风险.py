@@ -9,14 +9,14 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def 各地区风险_func():
+def QQ_news_regional_risks_func():
     url = 'https://r.inews.qq.com/api/trackmap/poilist'
     response = requests.get(url = url).json()
     result = response['result']['list']
 
-    各地区风险_list = []
+    regional_risks_list = []
     for province in result:
-        一地风险等级_dict = {   'name'               : province['fullname'],
+        regional_risks_dict = { 'name'               : province['fullname'],
                                 'province'           : province['province'],
                                 'city'               : province['city'],
                                 'district'           : province['district'],
@@ -24,12 +24,12 @@ def 各地区风险_func():
                                 'medium_level_count' : province['risk_cnt']['level2'],
                                 'high_level_count'   : province['risk_cnt']['level3'],
                                 'city_list'          : province['list']}
-        各地区风险_list.append(一地风险等级_dict)
+        regional_risks_list.append(regional_risks_dict)
 
 
     with open('data_source/data_from_creeper/腾讯新闻各地区风险.json', 'w', encoding = 'utf-8') as file:
-        file.write(json.dumps(各地区风险_list, ensure_ascii = False))
+        file.write(json.dumps(regional_risks_list, ensure_ascii = False))
 
 
 
-func_list = [各地区风险_func]
+func_list = [QQ_news_regional_risks_func]

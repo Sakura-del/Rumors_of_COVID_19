@@ -11,7 +11,7 @@ if not os.path.isdir('data_source/data_from_creeper/腾讯新闻疫苗数据'):
     os.makedirs('data_source/data_from_creeper/腾讯新闻疫苗数据')
 
 
-def 中国疫苗每日趋势_func():
+def China_vaccines_daily_trend_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'ChinaVaccineTrendData'}
     response = requests.get(url = url,params = params).json()
@@ -21,7 +21,7 @@ def 中国疫苗每日趋势_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 重点国家地区疫苗每日趋势_func():
+def Key_country_vaccines_daily_trend_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'VaccineTrendData'}
     response = requests.get(url = url,params = params).json()
@@ -83,15 +83,14 @@ def 重点国家地区疫苗每日趋势_func():
     if '英国' in trend_data['totalTrend']:
         totalTrend_dict.update({'UK'          : trend_data['totalTrend']['英国']})
 
-    重点国家地区疫苗每日趋势  = {   'perHundredTrend' : perHundredTrend_dict,
-                                    'totalTrend'      : totalTrend_dict}
+    Key_country_vaccines_daily_trend_dict  = {  'perHundredTrend' : perHundredTrend_dict,
+                                                'totalTrend'      : totalTrend_dict}
 
     with open('data_source/data_from_creeper/腾讯新闻疫苗数据/重点国家地区疫苗每日趋势.json','w',encoding = 'utf-8') as file:
-        file.write(json.dumps(重点国家地区疫苗每日趋势,ensure_ascii = False))
+        file.write(json.dumps(Key_country_vaccines_daily_trend_dict,ensure_ascii = False))
 
 
-# 重点国家地区疫苗每日趋势_func()
-def 中国及全球截至今日总疫苗接种量_func():
+def China_and_global_vaccination_amount_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'VaccineTopData'}
     response = requests.get(url = url,params = params).json()
@@ -102,7 +101,7 @@ def 中国及全球截至今日总疫苗接种量_func():
         file.write(json.dumps(result,ensure_ascii = False))
 
 
-def 各国截至今日疫苗接种情况_func():
+def All_contry_and_global_vaccination_amount_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'VaccineSituationData'}
     response = requests.get(url = url,params = params).json()
@@ -113,4 +112,4 @@ def 各国截至今日疫苗接种情况_func():
 
 
 
-func_list = [中国疫苗每日趋势_func,重点国家地区疫苗每日趋势_func,中国及全球截至今日总疫苗接种量_func,各国截至今日疫苗接种情况_func]
+func_list = [China_vaccines_daily_trend_func,Key_country_vaccines_daily_trend_func,China_and_global_vaccination_amount_func,All_contry_and_global_vaccination_amount_func]

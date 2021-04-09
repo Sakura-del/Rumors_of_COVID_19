@@ -9,9 +9,9 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def 腾讯新闻疫情新闻_func():
-    疫情新闻_list = []
-    def 一页新闻_func(page):
+def QQ_news_epidemic_news_func():
+    epidemic_news_list = []
+    def One_page_func(page):
         url = 'https://i.news.qq.com/trpc.qqnews_web.kv_srv.kv_srv_http_proxy/list'
         params = {  'sub_srv_id' : 'antip',
                     'srv_id'     : 'pc',
@@ -23,12 +23,12 @@ def 腾讯新闻疫情新闻_func():
 
         result = response['data']['list']
         for news in result:
-            疫情新闻_list.append(news)
+            epidemic_news_list.append(news)
 
 
     thread_list = []
     for page in range(4):
-        thread = Thread(target = 一页新闻_func,args = (page,))
+        thread = Thread(target = One_page_func,args = (page,))
         thread.start()
         thread_list.append(thread)
 
@@ -37,8 +37,8 @@ def 腾讯新闻疫情新闻_func():
 
 
     with open('data_source/data_from_creeper/腾讯新闻疫情新闻.json','w',encoding = 'utf-8') as file:
-        file.write(json.dumps(疫情新闻_list,ensure_ascii = False))
+        file.write(json.dumps(epidemic_news_list,ensure_ascii = False))
 
 
 
-func_list = [腾讯新闻疫情新闻_func]
+func_list = [QQ_news_epidemic_news_func]
