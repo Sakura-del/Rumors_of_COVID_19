@@ -1,14 +1,12 @@
 # 独立使用django的model
 import sys
 import os
-
+import django
+import json
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(pwd + "../")
 # 找到根目录（与工程名一样的文件夹）下的settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rumor_of_COVID_19.settings')
-
-import django
-import json
 
 django.setup()
 import datetime
@@ -506,3 +504,32 @@ for data in vaccine_status_list:
                                  vaccine_type=data['vaccine_type'],
                                  update_time=datetime.datetime.now()
                                  )
+
+# 谣言数据
+filename23 = 'data_source/data_from_creeper/中国互联网联合辟谣.json'
+with open(filename23, "r", encoding='utf-8') as f23:
+    rumors_lhpy_data = json.load(f23)
+
+for rumor in rumors_lhpy_data:
+    rumor['date'] = rumor['date'][:10]
+    if rumor['keyword'] == '事实':
+        markstyle = 'true'
+        result = '真'
+        explain = '确实如此'
+    elif rumor['keyword'] == '谣言':
+        markstyle = 'fake'
+        result = '假'
+        explain = '谣言'
+    else:
+        markstyle = 'doubt'
+        result = '疑'
+        explain = '有失实'
+    RumorInfo.objects.create(title=rumor['title'],
+                             author=rumor['source'],
+                             authordesc=rumor['source'],
+                             date=rumor['date'],
+                             abstract=rumor['pic_link'],
+                             tag=[],
+                             markstyle=markstyle,
+                             result=result,
+                             explain=explain)

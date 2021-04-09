@@ -5,6 +5,7 @@ from lib.handler import dispatcherBase
 from common.models import RumorInfo
 from django.db.models import *
 from collections import *
+import jieba
 
 
 # Create your views here.
@@ -21,27 +22,37 @@ def get_count_trend(request):
 
 # 查询谣言
 def get_tag_count(request):
-    qs = RumorInfo.objects.values('tag')
-    rumors = list(qs)
+    stopwords = [line.strip() for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()]
+    # 得到所有谣言
+    rumor_text = ''
+    rumor_list = RumorInfo.objects.values('abstract')
 
+    # 将QuerySet转成列表
+    rumor_list = list(rumor_list)
+    # 去除空格
+    for rumor in rumor_list:
+        rumor_text += rumor['abstract'].replace(' ','')
+
+    # jieba分词
+    cut_rumors = jieba.cut(rumor_text.strip())
     tag_list = []
-    for rumor in rumors:
-        if len(rumor) == 1:
-            tag_list.append(rumor['tag'][0])
-        else:
-            tag_list.append(rumor['tag'][0])
-            tag_list.append(rumor['tag'][1])
+    for item in cut_rumors:
+        if item not in stopwords:
+            tag_list.append(item)
+
+    # 用Counter字典计数
     c = Counter(tag_list)
     retlist = sorted(c.items(), key=lambda t: t[1], reverse=True)
-    return JsonResponse({'ret': 0, 'retlist': retlist, 'total': len(rumors)})
+    return JsonResponse({'ret': 0, 'retlist': retlist, 'total': len(retlist)})
 
 
+# 操作处理字典
 ActionHandler = {
     'get_count_trend': get_count_trend,
     'get_tag_count': get_tag_count,
-
 }
 
 
+# 统一事件处理函数
 def dispatcher(request):
     return dispatcherBase(request, ActionHandler)

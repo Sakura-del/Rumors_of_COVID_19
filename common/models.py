@@ -55,20 +55,20 @@ class CurrentCovidNational(models.Model):
 
 # 谣言信息
 class RumorInfo(models.Model):
-    title = models.CharField(max_length=200, blank=False)
-    author = models.CharField(max_length=200, blank=False)
-    authordesc = models.CharField(max_length=200)
-    date = models.CharField(max_length=200, blank=False)
-    markstyle = models.CharField(max_length=200, blank=False)
-    result = models.CharField(max_length=200, blank=False)
-    explain = models.CharField(max_length=200)
-    abstract = models.TextField()
-    tag = models.JSONField(default=list)
-    type = models.IntegerField()
+    title = models.CharField(max_length=200, blank=False, db_index=True)
+    author = models.CharField(max_length=200, default='中国互联网联合辟谣')
+    authordesc = models.CharField(max_length=200, default='中国互联网联合辟谣')
+    date = models.CharField(max_length=200, blank=False, db_index=True)
+    markstyle = models.CharField(max_length=200, blank=False, default='fake')
+    result = models.CharField(max_length=200, blank=False, default='假')
+    explain = models.CharField(max_length=200, default='谣言')
+    abstract = models.TextField(db_index=True)
+    tag = models.JSONField(default=list, db_index=True)
+    type = models.IntegerField(default=1)
     videourl = models.CharField(default='', max_length=200)
-    cover = models.CharField(max_length=200)
-    coverrect = models.CharField(max_length=200)
-    coversqual = models.CharField(max_length=200)
+    cover = models.CharField(max_length=200, default='')
+    coverrect = models.CharField(max_length=200, default='')
+    coversqual = models.CharField(max_length=200, default='')
     section = models.CharField(max_length=200, default='')
     iscolled = models.BooleanField(default=False)
     arttype = models.CharField(default='normal', max_length=200)
@@ -299,10 +299,11 @@ class SpainDailyData(models.Model):
         db_table = 'spain_daily_data'
 
 
+# 头条新闻
 class HeadlinesNews(models.Model):
-    title = models.CharField(max_length=200, blank=False)
+    title = models.CharField(max_length=200, blank=False, db_index=True)
     link = models.URLField(default= '')
-    date = models.CharField(max_length=200)
+    date = models.CharField(max_length=200, db_index=True)
     field = models.CharField(max_length=200)
     summary = models.CharField(max_length=400)
     tag_list = models.JSONField(default=list)
@@ -355,7 +356,7 @@ class TrendVaccinesInternal(models.Model):
 
 
 class CurrentVaccinesNations(models.Model):
-    country = models.CharField(max_length=200)
+    country = models.CharField(max_length=200,db_index=True)
     date = models.CharField(max_length=200)
     vaccines = models.CharField(max_length=200)
     total_vaccinations = models.CharField(max_length=200)
@@ -374,7 +375,7 @@ class PerTrendVaccinesNations(models.Model):
 
 
 class TotalTrendVaccinesNations(models.Model):
-    country = models.CharField(max_length=200)
+    country = models.CharField(max_length=200, db_index=True)
     data = models.JSONField(default=list)
 
     class Meta:
@@ -383,8 +384,8 @@ class TotalTrendVaccinesNations(models.Model):
 
 # 出行政策
 class TravelPolicy(models.Model):
-    province = models.CharField(max_length=200)
-    city = models.CharField(max_length=200)
+    province = models.CharField(max_length=200, db_index=True)
+    city = models.CharField(max_length=200, db_index=True)
     district = models.CharField(max_length=200)
     leave_policy_list = models.JSONField(default=list)
     back_policy_list = models.JSONField(default=list)
@@ -397,7 +398,7 @@ class TravelPolicy(models.Model):
 # 风险等级
 class RiskLevel(models.Model):
     name = models.CharField(max_length=200)
-    province = models.CharField(max_length=200)
+    province = models.CharField(max_length=200, db_index=True)
     low_level_count = models.IntegerField()
     medium_level_count = models.IntegerField()
     high_level_count = models.IntegerField()
@@ -409,7 +410,7 @@ class RiskLevel(models.Model):
 
 # 定点医院
 class DesignatedHospital(models.Model):
-    provinceName = models.CharField(max_length=200)
+    provinceName = models.CharField(max_length=200, db_index=True)
     citys = models.JSONField(default=list)
     cityCnt = models.IntegerField()
 
@@ -420,7 +421,7 @@ class DesignatedHospital(models.Model):
 # 疫苗接种点
 class VaccinationPoint(models.Model):
     address = models.CharField(max_length=200)
-    province = models.CharField(max_length=200)
+    province = models.CharField(max_length=200, db_index=True)
     city = models.CharField(max_length=200)
     district = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
@@ -432,7 +433,7 @@ class VaccinationPoint(models.Model):
 
 # 核酸检测机构
 class TestAgent(models.Model):
-    province = models.CharField(max_length=200)
+    province = models.CharField(max_length=200, db_index=True)
     count = models.IntegerField()
     data = models.JSONField()
 
