@@ -50,7 +50,9 @@ def cut_words_jieba():
     print(counter)
 
 
+# 使用hanlp提取地名
 def cut_words_hanlp():
+    # 加载停用词表
     stopwords = [
         line.strip()
         for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()

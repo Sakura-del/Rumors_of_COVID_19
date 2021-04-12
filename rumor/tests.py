@@ -3,8 +3,11 @@ from django.test import TestCase
 # Create your tests here.
 import requests, pprint
 
-payload = {'action': 'get_tag_count', 'title': '美国疫情', 'pagenum': 2,'pagesize': 10}
+# 请求数据
+payload = {'action': 'get_location_date_trend'}
 
+# 相应内容
 response = requests.get("http://127.0.0.1:8000/rumor/shows", params=payload)
 
+# 引用pprint结构化输出数据
 pprint.pprint(response.json())
