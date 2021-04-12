@@ -47,5 +47,5 @@ def TouTiao_epidemic_news_func():
         file.write(json.dumps(news_list,ensure_ascii = False))
 
 
-TouTiao_epidemic_news_func()
+# TouTiao_epidemic_news_func()
 func_list = [TouTiao_epidemic_news_func]
