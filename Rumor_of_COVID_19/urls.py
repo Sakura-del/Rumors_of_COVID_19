@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('details/', include('details.urls')),
     path('covid/', include('covid.urls')),
     path('vaccine/', include('vaccine.urls')),
     path('rumor/', include('rumor.urls'))

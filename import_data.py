@@ -369,8 +369,8 @@ with open(filename16, "r", encoding='utf-8') as f16:
 # 总量趋势
 total_trend = trend_vaccines_national_list['totalTrend']
 TotalTrendVaccinesNations.objects.all().delete()
-TotalTrendVaccinesNations.objects.create(country='Africa',
-                                         data=total_trend['Africa'])
+# TotalTrendVaccinesNations.objects.create(country='Africa',
+#                                          data=total_trend['Africa'])
 TotalTrendVaccinesNations.objects.create(country='中国',
                                          data=total_trend['China'])
 TotalTrendVaccinesNations.objects.create(country='俄罗斯',
@@ -408,7 +408,7 @@ PerTrendVaccinesNations.objects.create(country='摩洛哥',
 PerTrendVaccinesNations.objects.create(country='智利', data=per_trend['Chile'])
 PerTrendVaccinesNations.objects.create(country='美国', data=per_trend['US'])
 PerTrendVaccinesNations.objects.create(country='英国', data=per_trend['UK'])
-PerTrendVaccinesNations.objects.create(country='葡萄牙', data=per_trend['Portugal'])
+# PerTrendVaccinesNations.objects.create(country='葡萄牙', data=per_trend['Portugal'])
 PerTrendVaccinesNations.objects.create(country='西班牙', data=per_trend['Spain'])
 PerTrendVaccinesNations.objects.create(country='阿联酋', data=per_trend['Arab'])
 

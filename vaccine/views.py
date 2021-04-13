@@ -29,7 +29,12 @@ def get_hospital_province(request):
         provinces = DesignatedHospital.objects.values('provinceName','cityCnt')
         provinces = list(provinces)
 
-        return JsonResponse({"ret": 0,"provinces": provinces, "msg": ""})
+        outlist =[]
+        for data in provinces:
+            outlist.append(data['provinceName'])
+        print(outlist)
+
+        return JsonResponse({"ret": 0,"provinces": provinces,  "msg": ""})
     except DesignatedHospital.DoesNotExist:
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 

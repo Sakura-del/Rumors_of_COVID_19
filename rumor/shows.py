@@ -16,6 +16,10 @@ stopwords = [
     for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
 ]
 
+# 中国各省份名
+province_list = ['天津', '北京', '河北', '山西', '吉林', '辽宁', '内蒙古', '黑龙江', '上海', '江苏', '浙江', '福建', '安徽', '河南', '江西', '山东', '湖北',
+                 '湖南', '广东', '海南', '广西', '重庆', '贵州', '云南', '四川', '西藏', '陕西', '青海', '甘肃', '宁夏', '新疆','澳门','香港','台湾']
+
 
 # 数量变化趋势
 def get_count_trend(request):
@@ -45,7 +49,27 @@ def cut_words_hanlp(rumor_text):
                 if item[0] != '\t' and item[0] != '钟南山':
                     out_list.append(item[0])
 
-    return (out_list)
+    location_list = []
+    for location in out_list:
+        if '省' in location:
+            location_list.append(location.replace('省',''))
+        elif location in province_list:
+            location_list.append(location)
+        elif '市' in location:
+            if '北京' in location:
+                location_list.append('北京')
+            elif '上海' in location:
+                location_list.append('上海')
+            elif '重庆' in location:
+                location_list.append('重庆')
+            elif '天津' in location:
+                location_list.append('天津')
+            else:
+                location_list.append(location)
+        else:
+            location_list.append(location+'市')
+
+    return (location_list)
 
 
 # 获取谣言地点及时间变化
@@ -80,7 +104,6 @@ def get_location_date_trend(request):
 
 # 查询谣言
 def get_tag_count(request):
-    stopwords = [line.strip() for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()]
     # 得到所有谣言
     rumor_text = ''
     rumor_list = RumorInfo.objects.values('abstract')
