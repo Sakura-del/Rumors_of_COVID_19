@@ -27,7 +27,7 @@ def QQ_news_vaccine_development_status_func():
         vaccine_development_status_dict = { 'organization_name' : data['devunit'],
                                             'progress'          : progress_comparison_dict[data['progress']],
                                             'vaccine_name'      : data['vaccine_name'],
-                                            'vaccine_type'      : vaccine_type_dict[data['progress']]}
+                                            'vaccine_type'      : vaccine_type_dict[data['vaccine_type']]}
         vaccine_development_status_list.append(vaccine_development_status_dict)
 
 
@@ -35,5 +35,5 @@ def QQ_news_vaccine_development_status_func():
         file.write(json.dumps(vaccine_development_status_list,ensure_ascii = False))
 
 
-
+QQ_news_vaccine_development_status_func()
 func_list = [QQ_news_vaccine_development_status_func]
