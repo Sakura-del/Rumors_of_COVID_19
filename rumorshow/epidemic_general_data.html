@@ -98,12 +98,17 @@
             height: 30vh;
         }
 
-        #age_distribution_block .distribution_table,
+        /* #age_distribution_block .distribution_table,
         #job_distribution_block .distribution_table {
             overflow: visible;
-        }
+        } */
 
         #job_distribution_block #pie_job {
+            width: 100%;
+            height: 30vh;
+        }
+
+        #total_confirm_trend{
             width: 100%;
             height: 30vh;
         }
@@ -281,7 +286,7 @@
                     <div class="col-md-4 col-sm-4 ">
                         <div class="x_panel tile fixed_height_320">
                             <div class="x_title">
-                                <h2>折线图1</h2>
+                                <h2>累计确诊</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -310,6 +315,7 @@
                             </div>
 
                             <div class="x_content">
+                                <div class="chart" id="total_confirm_trend">图表</div>
                             </div>
                         </div>
                     </div>
