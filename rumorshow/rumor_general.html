@@ -484,7 +484,7 @@
 
 <script>
     $.ajax({
-        url: "/home/",
+        url: "/rumor/views",
         type: "GET",
         data: { action: "list_rumors" },
         dataType: "json",
@@ -500,14 +500,13 @@
                 titles[i].innerHTML = result["retlist"][i]["title"];
                 dates[i].innerHTML = result["retlist"][i]["date"];
 
-                // TODO颜色
                 if (result["retlist"][i]["markstyle"] == "true") {
                     types[i].innerHTML = "确实如此"
                     types[i].style.backgroundColor = 'rgb(66, 161, 99)'
                 }
                 else if (result["retlist"][i]["markstyle"] == "fake") {
                     types[i].innerHTML = "谣言"
-                    types[i].style.backgroundColor = 'rgb(196, 31, 32)'  
+                    types[i].style.backgroundColor = 'rgb(196, 31, 32)'
                 }
                 else {
                     types[i].innerHTML = "尚无定论"

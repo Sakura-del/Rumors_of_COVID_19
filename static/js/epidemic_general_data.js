@@ -4,7 +4,9 @@
   var myChart = echarts.init(document.querySelector("#pie_age"));
   // 2.指定配置
   var option = {
-    color: ["#065aab", "#066eab", "#0672ab", "#0686ab", "#06a0ab", "#06baab", "#06ceab", "#06d2ab", "#0686ab"],
+    // color: ["#065aab", "#066eab", "#0672ab", "#0686ab", "#06a0ab", "#06baab", "#06ceab", "#06d2ab", "#0686ab"],
+
+    //颜色什么的直接用默认值，区分度高，但有点丑...
     tooltip: {
       trigger: "item",
       formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -86,7 +88,6 @@
     },
     legend: {
       top: "92%",
-      bottom: "0%",
       itemWidth: 10,
       itemHeight: 10,
       textStyle: {
@@ -348,6 +349,7 @@ function formatNum(str) {
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
+      // console.log(result);
       // console.log(result["data"][result["data"].length-1]);
       var idx;
       for (idx = result["data"].length - 1; ; idx--) {
@@ -499,7 +501,7 @@ function formatNum(str) {
       });
 
       // 5.点击切换效果
-      $(".change #switcher").on("click", "a", function () {
+      $("#switcher_row").on("click", "a", function () {
         // alert(1);
         // console.log($(this).index());
         // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
@@ -526,7 +528,7 @@ function formatNum(str) {
     data: { action: "list_current_internal" },
     dataType: "json",
     success: function (result) {
-      console.log(result);
+      // console.log(result);
       var val1 = result["currentConfirmedCount"];
       $("#val1").html(formatNum(String(val1)));
       var incr1 = result["currentConfirmedIncr"];
@@ -589,4 +591,157 @@ function formatNum(str) {
       $("#incr6").html(incr6 + " ");
     }
   })
+})();
+
+//累计确诊变化图
+//2020年2月至现在，每月一变
+(function () {
+  let xAxis_content = ["2020/2", "2020/3", "2020/4", "2020/5", "2020/6", "2020/7", "2020/8", "2020/9", "2020/10", "2020/11", "2020/12", "2021/1", "2021/2", "2021/3"];
+  let confirmed_data = [];
+  let stmonth = 2;
+  let edmonth = 3;
+  $.ajax({
+    url: "/covid/daily",
+    type: "GET",
+    data: { action: "get_daily_internal" },
+    dataType: "json",
+    success: function (result) {
+      console.log(result["data"]);
+      for (var i = 0; i < result["data"].length; i++) {
+        var yy = Math.floor(result["data"][i]["dateId"] / 10000);
+        var mm = Math.floor(result["data"][i]["dateId"] % 10000 / 100);
+        var dd = result["data"][i]["dateId"] % 10000 % 100;
+        if (mm < stmonth && yy == 2020) {
+          continue;
+        }
+        // console.log(result["data"][i]["confirmedCount"]);
+        
+        if (dd == 1) {
+          confirmed_data.push(result["data"][i]["confirmedCount"]);
+        }
+        else {
+          if(mm == edmonth && yy == 2021){
+            break;
+          }
+        }
+      }
+      console.log(confirmed_data);
+      console.log(xAxis_content);
+      var myChart = echarts.init(document.querySelector("#total_confirm_trend"));
+      var option = {
+        tooltip: {
+          trigger: "axis"
+        },
+        legend: {
+          top: "3%",
+          right:"0.5%",
+          data: ["累计确诊"],
+          textStyle: {
+            color: "#73879C",
+            fontSize: "12"
+          }
+        },
+
+        grid: {
+          left: "0",
+          top: "30",
+          right: "7.5",
+          bottom: "0",
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: "category",
+            boundaryGap: false,
+            // x轴更换数据
+            data: xAxis_content,
+            // 文本颜色为rgba(255,255,255,.6)  文字大小为 12
+            axisLabel: {
+              textStyle: {
+                color: "#73879C",
+                fontSize: 12
+              }
+            },
+            // x轴线的颜色为   rgba(255,255,255,.2)
+            axisLine: {
+              lineStyle: {
+                color: "#73879C"
+              }
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: "value",
+            axisTick: { show: false },
+            axisLine: {
+              lineStyle: {
+                color: "#73879C"
+              }
+            },
+            axisLabel: {
+              textStyle: {
+                color: "#73879C",
+                fontSize: 12
+              }
+            },
+            // 修改分割线的颜色
+            splitLine: {
+              lineStyle: {
+                color: "#73879C"
+              }
+            }
+          }
+        ],
+        series: {
+          name: "累计确诊",
+          type: "line",
+          smooth: false,
+          // 单独修改当前线条的样式
+          lineStyle: {
+            color: "#0184d5",
+            width: "2"
+          },
+          // 填充颜色设置
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(
+              0,
+              0,
+              0,
+              1,
+              [
+                {
+                  offset: 0,
+                  color: "rgba(1, 132, 213, 0.4)" // 渐变色的起始颜色
+                },
+                {
+                  offset: 0.8,
+                  color: "rgba(1, 132, 213, 0.1)" // 渐变线的结束颜色
+                }
+              ],
+              false
+            ),
+            shadowColor: "rgba(0, 0, 0, 0.1)"
+          },
+          // 设置拐点
+          symbol: "circle",
+          // 拐点大小
+          symbolSize: 8,
+          // 开始不显示拐点， 鼠标经过显示
+          showSymbol: false,
+          // 设置拐点颜色以及边框
+          itemStyle: {
+            color: "#0184d5",
+            borderColor: "rgba(221, 220, 107, .1)",
+            borderWidth: 12
+          },
+          data: confirmed_data
+        }
+      };
+      myChart.setOption(option);
+      window.addEventListener("resize", function () {
+        myChart.resize();
+      });
+    }
+  });
 })();

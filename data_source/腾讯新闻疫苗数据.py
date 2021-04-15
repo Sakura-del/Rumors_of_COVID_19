@@ -79,7 +79,7 @@ def Key_country_vaccines_daily_trend_func():
     if '法国' in trend_data['totalTrend']:
         totalTrend_dict.update({'France'      : trend_data['totalTrend']['法国']})
     if '美国' in trend_data['totalTrend']:
-        totalTrend_dict.update({'US'      : trend_data['totalTrend']['美国']})
+        totalTrend_dict.update({'US'          : trend_data['totalTrend']['美国']})
     if '英国' in trend_data['totalTrend']:
         totalTrend_dict.update({'UK'          : trend_data['totalTrend']['英国']})
 
@@ -95,8 +95,8 @@ def China_and_global_vaccination_amount_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'VaccineTopData'}
     response = requests.get(url = url,params = params).json()
-    result = { 'china'  : response['data']['VaccineTopData']['中国'],
-                                        'global' : response['data']['VaccineTopData']['全球']}
+    result = {  'china'  : response['data']['VaccineTopData']['中国'],
+                'global' : response['data']['VaccineTopData']['全球']}
 
     with open('data_source/data_from_creeper/腾讯新闻疫苗数据/中国及全球截至今日总疫苗接种量.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(result,ensure_ascii = False))
