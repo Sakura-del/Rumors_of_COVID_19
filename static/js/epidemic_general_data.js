@@ -596,17 +596,17 @@ function formatNum(str) {
 //累计确诊变化图
 //2020年2月至现在，每月一变
 (function () {
-  let xAxis_content = ["2020/2", "2020/3", "2020/4", "2020/5", "2020/6", "2020/7", "2020/8", "2020/9", "2020/10", "2020/11", "2020/12", "2021/1", "2021/2", "2021/3", "2021/4"];
+  let xAxis_content = ["2020/2", "2020/3", "2020/4", "2020/5", "2020/6", "2020/7", "2020/8", "2020/9", "2020/10", "2020/11", "2020/12", "2021/1", "2021/2", "2021/3"];
   let confirmed_data = [];
   let stmonth = 2;
-  let edmonth = 4;
+  let edmonth = 3;
   $.ajax({
     url: "/covid/daily",
     type: "GET",
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
-      //console.log(result["data"]);
+      console.log(result["data"]);
       for (var i = 0; i < result["data"].length; i++) {
         var yy = Math.floor(result["data"][i]["dateId"] / 10000);
         var mm = Math.floor(result["data"][i]["dateId"] % 10000 / 100);
@@ -615,15 +615,14 @@ function formatNum(str) {
           continue;
         }
         // console.log(result["data"][i]["confirmedCount"]);
-        if (mm == edmonth && yy == 2021) {
-          confirmed_data.push(result["data"][i]["confirmedCount"]);
-          break;
-        }
+        
         if (dd == 1) {
           confirmed_data.push(result["data"][i]["confirmedCount"]);
         }
         else {
-          continue;
+          if(mm == edmonth && yy == 2021){
+            break;
+          }
         }
       }
       console.log(confirmed_data);
@@ -634,8 +633,8 @@ function formatNum(str) {
           trigger: "axis"
         },
         legend: {
-          top: "0%",
-          right:"-1%",
+          top: "3%",
+          right:"0.5%",
           data: ["累计确诊"],
           textStyle: {
             color: "#73879C",
@@ -646,7 +645,7 @@ function formatNum(str) {
         grid: {
           left: "0",
           top: "30",
-          right: "0",
+          right: "7.5",
           bottom: "0",
           containLabel: true
         },
@@ -697,7 +696,7 @@ function formatNum(str) {
         series: {
           name: "累计确诊",
           type: "line",
-          smooth: true,
+          smooth: false,
           // 单独修改当前线条的样式
           lineStyle: {
             color: "#0184d5",
