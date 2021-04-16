@@ -67,6 +67,7 @@ def 一键爬虫():
         thread.join()
 
         print(f'{thread_count}/{len(all_func_list)}个主线程已完成')
+        
         thread_count += 1
 
     print('所有线程已完成')
