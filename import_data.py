@@ -397,7 +397,7 @@ PerTrendVaccinesNations.objects.all().delete()
 PerTrendVaccinesNations.objects.create(country='以色列', data=per_trend['Israel'])
 PerTrendVaccinesNations.objects.create(country='匈牙利',
                                        data=per_trend['Hungary'])
-PerTrendVaccinesNations.objects.create(country='土耳其', data=per_trend['Turkey'])
+# PerTrendVaccinesNations.objects.create(country='土耳其', data=per_trend['Turkey'])
 PerTrendVaccinesNations.objects.create(country='奥地利',
                                        data=per_trend['Austria'])
 # PerTrendVaccinesNations.objects.create(country='意大利', data=per_trend['Italy'])

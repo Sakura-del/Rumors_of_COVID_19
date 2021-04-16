@@ -1,20 +1,23 @@
-$.ajax({
-    url: " /vaccine/total",
-    type: "GET",
-    data: { action: "get_current_vaccinations" },
-    dataType: "json",
-    success: function (result) {
-        var domestic_data = result['retlist'][0]
-        document.getElementById('val1').innerHTML = domestic_data['total_vaccinations']
-        document.getElementById('incr1').innerHTML = '+' + domestic_data['new_vaccinations']
-        document.getElementById('val2').innerHTML = domestic_data['total_vaccinations_per_hundred']
+(function () {
+    $.ajax({
+        url: " /vaccine/total",
+        type: "GET",
+        data: { action: "get_current_vaccinations" },
+        dataType: "json",
+        success: function (result) {
+            // console.log(result['retlist'])
+            var domestic_data = result['retlist'][0]
+            document.getElementById('val1').innerHTML = domestic_data['total_vaccinations']
+            document.getElementById('incr1').innerHTML = '+' + domestic_data['new_vaccinations']
+            document.getElementById('val2').innerHTML = domestic_data['total_vaccinations_per_hundred']
 
-        var global_data = result['retlist'][1]
-        document.getElementById('val3').innerHTML = global_data['total_vaccinations']
-        document.getElementById('incr2').innerHTML = '+' + global_data['new_vaccinations']
-        document.getElementById('val4').innerHTML = global_data['total_vaccinations_per_hundred']
-    }
-})
+            var global_data = result['retlist'][1]
+            document.getElementById('val3').innerHTML = global_data['total_vaccinations']
+            document.getElementById('incr2').innerHTML = '+' + global_data['new_vaccinations']
+            document.getElementById('val4').innerHTML = global_data['total_vaccinations_per_hundred']
+        }
+    })
+})();
 
 
 
@@ -129,37 +132,147 @@ function Make_complete_table(table_name) {
     continent_table.appendChild(table_body)
 }
 
-$.ajax({
-    url: " /vaccine/total",
-    type: "GET",
-    data: { action: "get_current_vaccines_nations" },
-    dataType: "json",
-    success: function (result) {
-        console.log(result)
-        country_data_list = result['retlist']
 
-        function Is_in_array(arr, value) {
-            for (var i = 0; i < arr.length; i++)
-                if (value === arr[i])
-                    return true;
-            return false;
+(function () {
+    $.ajax({
+        url: " /vaccine/total",
+        type: "GET",
+        data: { action: "get_current_vaccines_nations" },
+        dataType: "json",
+        success: function (result) {
+            // console.log(result)
+            country_data_list = result['retlist']
+
+            function Is_in_array(arr, value) {
+                for (var i = 0; i < arr.length; i++)
+                    if (value === arr[i])
+                        return true;
+                return false;
+            }
+
+            for (var i = 0; i < country_data_list.length; i++)
+                if (Is_in_array(asia_name_list, country_data_list[i]['country']))
+                    continent_data_dict['asia_data'].push(country_data_list[i])
+                else if (Is_in_array(europe_name_list, country_data_list[i]['country']))
+                    continent_data_dict['europe_data'].push(country_data_list[i])
+                else if (Is_in_array(africa_name_list, country_data_list[i]['country']))
+                    continent_data_dict['africa_data'].push(country_data_list[i])
+                else if (Is_in_array(oceania_name_list, country_data_list[i]['country']))
+                    continent_data_dict['oceania_data'].push(country_data_list[i])
+                else if (Is_in_array(north_name_list, country_data_list[i]['country']))
+                    continent_data_dict['north_data'].push(country_data_list[i])
+                else if (Is_in_array(south_name_list, country_data_list[i]['country']))
+                    continent_data_dict['south_data'].push(country_data_list[i])
+
+            for (continent in continent_data_dict)
+                Make_short_table(continent_data_dict[continent])
         }
+    })
+})();
 
-        for (var i = 0; i < country_data_list.length; i++)
-            if (Is_in_array(asia_name_list, country_data_list[i]['country']))
-                continent_data_dict['asia_data'].push(country_data_list[i])
-            else if (Is_in_array(europe_name_list, country_data_list[i]['country']))
-                continent_data_dict['europe_data'].push(country_data_list[i])
-            else if (Is_in_array(africa_name_list, country_data_list[i]['country']))
-                continent_data_dict['africa_data'].push(country_data_list[i])
-            else if (Is_in_array(oceania_name_list, country_data_list[i]['country']))
-                continent_data_dict['oceania_data'].push(country_data_list[i])
-            else if (Is_in_array(north_name_list, country_data_list[i]['country']))
-                continent_data_dict['north_data'].push(country_data_list[i])
-            else if (Is_in_array(south_name_list, country_data_list[i]['country']))
-                continent_data_dict['south_data'].push(country_data_list[i])
 
-        for (continent in continent_data_dict)
-            Make_short_table(continent_data_dict[continent])
-    }
-})
+
+//国内接种趋势折线图
+(function () {
+    $.ajax({
+        url: "/vaccine/trend",
+        type: "GET",
+        data: { action: "get_trend_internal" },
+        dataType: "json",
+        success: function (result) {
+            var idx;
+            var xAxis_content = [];
+            var data1 = [];
+            var data2 = [];
+            for (var i = 0; i < result["retlist"].length; i++) {
+                if (result["retlist"][i]["date"] === "03.20") {
+                    idx = i;
+                    break;
+                }
+            }
+
+            for (var i = idx; i < result["retlist"].length; i++) {
+                var items = result["retlist"][i]["date"].split(".");
+                var datestr = items.join("");
+                var datenum = parseInt(datestr);
+                var newdatestr = String(Math.floor(datenum / 100)) + "/" + String(datenum % 100);
+                xAxis_content.push(newdatestr);
+
+                data1.push(result["retlist"][i]["total_vaccinations"]);
+                data2.push(result["retlist"][i]["total_vaccinations_per_hundred"]);
+            }
+            var myChart = echarts.init(document.querySelector("#domestic_data_chart"));
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                // toolbox: {
+                //     feature: {
+                //         dataView: { show: true, readOnly: false },
+                //         magicType: { show: true, type: ['line', 'bar'] },
+                //         restore: { show: true },
+                //         saveAsImage: { show: true }
+                //     }
+                // },
+                legend: {
+                    data: ['接种量', '百人接种率']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: xAxis_content,
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '接种量',
+                        // min: 0,
+                        // max: 250,
+                        // interval: 50,
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '百人接种率',
+                        // min: 0,
+                        // max: 25,
+                        // interval: 5,
+                        axisLabel: {
+                            formatter: '{value}%'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: '接种量',
+                        type: 'bar',
+                        data: data1
+                    },
+                    {
+                        name: '百人接种率',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: data2
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            // 4. 让图表跟随屏幕自动的去适应
+            window.addEventListener("resize", function () {
+                myChart.resize();
+            });
+        }
+    })
+})();
