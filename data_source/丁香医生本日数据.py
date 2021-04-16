@@ -116,7 +116,8 @@ def DinXiang_today_data_func():
                     else:
                         area_str = city_data_div.xpath('./p[1]/span/text()')[0]
 
-                        text = city_data_div.xpath('./p[2]/text()')[0].replace(',','')
+                        #这一栏有几个是空，要判断下是不是空
+                        text = city_data_div.xpath('./p[2]/text()')[0].replace(',','') if city_data_div.xpath('./p[2]/text()') else '0'
                         current_confirm_int = eval(text) if text != '-' else -1
 
                         text = city_data_div.xpath('./p[3]/text()')[0].replace(',','')
