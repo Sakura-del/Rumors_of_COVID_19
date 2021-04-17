@@ -307,7 +307,7 @@ var convertData = function (data) {
         series: [
           {
             name: '累计谣言数量',
-            type: 'line',
+            type: 'bar',
             data: rumor_sum_data
           }
         ]
