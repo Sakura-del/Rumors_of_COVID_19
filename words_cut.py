@@ -124,17 +124,15 @@ def chinese_word_cut(mytext):
 
 def cut_rumors_sklearn():
     qs = RumorInfo.objects.all()
+    # 将QuerySet转换成dataframe
     qs_df = read_frame(qs=qs, fieldnames=['abstract'])
-    # print(qs_df)
-    # print(qs_df.head())
 
+    # 取出abstract列的数据
     df = pd.DataFrame(qs_df['abstract'].astype(str))
+    # 分词
     df['abstract_cutted'] = df['abstract'].apply(chinese_word_cut)
-    # stopwords = []
-    # with open("cn_stopwords.txt","r",encoding="UTF-8") as f:
-    #     for line in f.readlines():
-    #         stopwords.append(line.strip())
 
+    # 加载停用词
     stopwords = [
         line.strip()
         for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
@@ -145,9 +143,10 @@ def cut_rumors_sklearn():
                                     stop_words=stopwords,
                                     max_df=0.99,
                                     min_df=0.002)  #去除文档内出现几率过大或过小的词汇
-
+    
+    print(tf_vectorizer)
     tf = tf_vectorizer.fit_transform(df.abstract_cutted)
-
+    print(tf)
     n_topics = 5
 
     lda = LatentDirichletAllocation(n_components=n_topics,
@@ -157,9 +156,9 @@ def cut_rumors_sklearn():
                                     random_state=0)
     lda.fit(tf)
     #显示主题数 model.topic_word_
-    print(lda.components_)
+    # print(lda.components_)
     #几个主题就是几行 多少个关键词就是几列
-    print(lda.components_.shape)
+    # print(lda.components_.shape)
     #定义好函数之后 暂定每个主题输出前20个关键词
     n_top_words = 20
     tf_feature_names = tf_vectorizer.get_feature_names()
