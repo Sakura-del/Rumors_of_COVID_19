@@ -14,10 +14,10 @@ function On_distinct_button_clicked(distinct_name) {
             title_div.innerHTML = agency_list[i]['title']
 
             var address_div = document.createElement('div')
-            address_div.innerHTML =  agency_list[i]['address']
+            address_div.innerHTML = agency_list[i]['address']
 
             var tel_div = document.createElement('div')
-            tel_div.innerHTML =  agency_list[i]['tel']
+            tel_div.innerHTML = agency_list[i]['tel']
 
             var agency_div = document.createElement('div')
             agency_div.appendChild(title_div)
@@ -133,6 +133,7 @@ function On_province_button_clicked(province_name) {
         },
         dataType: "json",
         success: function (result) {
+            console.log(result);
             var province_list_div = document.getElementById('province_list_div')
             province_list_div.innerHTML = ''
 
@@ -169,26 +170,29 @@ function On_province_button_clicked(province_name) {
     })
 }
 
-$.ajax({
-    url: "/vaccine/views",
-    type: "GET",
-    data: { action: "get_vaccination_point_province" },
-    dataType: "json",
-    success: function (result) {
-        var province_list_div = document.getElementById('province_list_div')
-        for (var i = 0; i < result['provinces'].length; i++) {
-            var province_name = result['provinces'][i]['province']
-            supported_province_list.push(province_name)
+(function () {
+    $.ajax({
+        url: "/vaccine/views",
+        type: "GET",
+        data: { action: "get_vaccination_point_province" },
+        dataType: "json",
+        success: function (result) {
+            // console.log(result);
+            var province_list_div = document.getElementById('province_list_div')
+            for (var i = 0; i < result['provinces'].length; i++) {
+                var province_name = result['provinces'][i]['province']
+                supported_province_list.push(province_name)
 
-            var province_button = document.createElement('button')
-            province_button.className = 'button province_button'
-            province_button.value = province_name
-            province_button.style.width = '100px';
-            province_button.style.height = '100px';
-            province_button.innerHTML = province_name
-            province_button.onclick = function () { On_province_button_clicked(this.value) }
+                var province_button = document.createElement('button')
+                province_button.className = 'button province_button'
+                province_button.value = province_name
+                province_button.style.width = '100px'
+                province_button.style.height = '100px'
+                province_button.innerHTML = province_name
+                province_button.onclick = function () { On_province_button_clicked(this.value) }
 
-            province_list_div.appendChild(province_button)
+                province_list_div.appendChild(province_button)
+            }
         }
-    }
-})
+    })
+})();

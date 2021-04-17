@@ -95,12 +95,6 @@
             font-size: 22px;
         }
 
-        #friend_link_block {
-            top: 10px;
-
-            position: sticky;
-        }
-
         #rumors_list_block .rumors_list_x_content {
             padding-left: 0;
             margin-top: 0;
@@ -144,6 +138,12 @@
             height: 120px;
             width: 80%;
             margin-left: 20%;
+        }
+
+        #friend_link_block {
+            top: 10px;
+
+            position: sticky;
         }
     </style>
 
@@ -241,51 +241,143 @@
 
             <!-- page content -->
             <div class="right_col clearfix" id="page_content" role="main">
+                <div class="row">
+                    <div class="col-md-9 col-sm-9">
+                        <div class="row" id="search_rumor_block">
+                            <div class="x_panel tile">
+                                <div class="x_title">
+                                    <h2>查询谣言</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </li>
 
-                <div class="col-md-9 col-sm-9" id="search_rumor_block">
-                    <div class="x_panel tile">
-                        <div class="x_title">
-                            <h2>查询谣言</h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li>
-                                    <a class="collapse-link">
-                                        <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                aria-expanded="false">
+                                                <i class="fa fa-wrench"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
 
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-expanded="false">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
+                                        <li>
+                                            <a class="close-link">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="x_content">
+                                    <div class="row" id="search_rumor_content_row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <input id="inputid">
+                                            <button id="btn">搜索</button>
+                                        </div>
                                     </div>
-                                </li>
-
-                                <li>
-                                    <a class="close-link">
-                                        <i class="fa fa-close"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="x_content">
-                            <div class="row" id="search_rumor_content_row">
-                                <div class="col-md-12 col-sm-12">
-                                    <input id="inputid">
-                                    <button id="btn">搜索</button>
+                        <div class="row" id="rumors_list_block">
+                            <div class="x_panel tile">
+                                <div class="x_title">
+                                    <h2>谣言速览</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                                aria-expanded="false">
+                                                <i class="fa fa-wrench"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <a class="close-link">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="x_content rumors_list_x_content">
+                                    <div class="row one_rumor_unit">
+                                        <div class="col-sm-9 rumor_text_div">
+                                            <span class="rumor_title" name="title">标题</span>
+                                            <span class="rumor_type" name="type">鉴定结果</span>
+                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                            <p class="text-muted rumor_tag" name="tag">关键词</span>
+                                        </div>
+                                        <div class="col-sm-3 rumor_pic_div">
+                                            <img name="pic" src="images/logo.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="row one_rumor_unit">
+                                        <div class="col-sm-9 rumor_text_div">
+                                            <span class="rumor_title" name="title">标题</span>
+                                            <span class="rumor_type" name="type">鉴定结果</span>
+                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                        </div>
+                                        <div class="col-sm-3 rumor_pic_div">
+                                            <img name="pic" src="images/logo.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="row one_rumor_unit">
+                                        <div class="col-sm-9 rumor_text_div">
+                                            <span class="rumor_title" name="title">标题</span>
+                                            <span class="rumor_type" name="type">鉴定结果</span>
+                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                        </div>
+                                        <div class="col-sm-3 rumor_pic_div">
+                                            <img name="pic" src="images/logo.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="row one_rumor_unit">
+                                        <div class="col-sm-9 rumor_text_div">
+                                            <span class="rumor_title" name="title">标题</span>
+                                            <span class="rumor_type" name="type">鉴定结果</span>
+                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                        </div>
+                                        <div class="col-sm-3 rumor_pic_div">
+                                            <img name="pic" src="images/logo.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="row one_rumor_unit">
+                                        <div class="col-sm-9 rumor_text_div">
+                                            <span class="rumor_title" name="title">标题</span>
+                                            <span class="rumor_type" name="type">鉴定结果</span>
+                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
+                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
+                                        </div>
+                                        <div class="col-sm-3 rumor_pic_div">
+                                            <img name="pic" src="images/logo.jpg">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-3 col-sm-3" id="friend_link_block">
-                    <div class="row">
+                    <div class="col-md-3 col-sm-3 " id="friend_link_block" style="height: 1vh;">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>友情链接</h2>
@@ -317,107 +409,15 @@
                             </div>
 
                             <div class="x_content">
-                                <!-- <img src="../static/images/weijianwei.jfif" alt="">
+                                <img src="../static/images/weijianwei.jfif" alt="" style="width:100%">
                                 <a href="http://www.nhc.gov.cn/">卫健委</a>
-                                <img src="../static/images/weijianwei.jfif" alt="">
-                                <a href="http://www.nhc.gov.cn/">卫健委</a> -->
-                                暂时还不能放东西，一放页面就崩了
+                                <img src="../static/images/weijianwei.jfif" alt="" style="width:100%">
+                                <a href="http://www.nhc.gov.cn/">卫健委</a>
+                                <!-- 暂时还不能放东西，一放页面就崩了 -->
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-9 col-sm-9" id="rumors_list_block">
-                    <div class="x_panel tile">
-                        <div class="x_title">
-                            <h2>谣言速览</h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li>
-                                    <a class="collapse-link">
-                                        <i class="fa fa-chevron-up"></i>
-                                    </a>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-expanded="false">
-                                        <i class="fa fa-wrench"></i>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a class="close-link">
-                                        <i class="fa fa-close"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div class="x_content rumors_list_x_content">
-                            <div class="row one_rumor_unit">
-                                <div class="col-sm-9 rumor_text_div">
-                                    <span class="rumor_title" name="title">标题</span>
-                                    <span class="rumor_type" name="type">鉴定结果</span>
-                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                    <p class="text-muted rumor_tag" name="tag">关键词</span>
-                                </div>
-                                <div class="col-sm-3 rumor_pic_div">
-                                    <img name="pic" src="images/logo.jpg">
-                                </div>
-                            </div>
-                            <div class="row one_rumor_unit">
-                                <div class="col-sm-9 rumor_text_div">
-                                    <span class="rumor_title" name="title">标题</span>
-                                    <span class="rumor_type" name="type">鉴定结果</span>
-                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                </div>
-                                <div class="col-sm-3 rumor_pic_div">
-                                    <img name="pic" src="images/logo.jpg">
-                                </div>
-                            </div>
-                            <div class="row one_rumor_unit">
-                                <div class="col-sm-9 rumor_text_div">
-                                    <span class="rumor_title" name="title">标题</span>
-                                    <span class="rumor_type" name="type">鉴定结果</span>
-                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                </div>
-                                <div class="col-sm-3 rumor_pic_div">
-                                    <img name="pic" src="images/logo.jpg">
-                                </div>
-                            </div>
-                            <div class="row one_rumor_unit">
-                                <div class="col-sm-9 rumor_text_div">
-                                    <span class="rumor_title" name="title">标题</span>
-                                    <span class="rumor_type" name="type">鉴定结果</span>
-                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                </div>
-                                <div class="col-sm-3 rumor_pic_div">
-                                    <img name="pic" src="images/logo.jpg">
-                                </div>
-                            </div>
-                            <div class="row one_rumor_unit">
-                                <div class="col-sm-9 rumor_text_div">
-                                    <span class="rumor_title" name="title">标题</span>
-                                    <span class="rumor_type" name="type">鉴定结果</span>
-                                    <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                    <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                </div>
-                                <div class="col-sm-3 rumor_pic_div">
-                                    <img name="pic" src="images/logo.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <!-- /page content -->
 

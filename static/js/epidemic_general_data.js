@@ -269,6 +269,7 @@
 
 
 
+//数值字符串每隔3位添加逗号
 function formatNum(str) {
   var newStr = "";
   var count = 0;

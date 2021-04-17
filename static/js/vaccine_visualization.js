@@ -1,3 +1,18 @@
+//数值字符串每隔3位添加逗号
+function formatNum(str) {
+    var newStr = "";
+    var count = 0;
+    for (var i = str.length - 1; i >= 0; i--) {
+        if (count % 3 == 0 && count != 0) {
+            newStr = str.charAt(i) + "," + newStr;
+        } else {
+            newStr = str.charAt(i) + newStr;
+        }
+        count++;
+    }
+    return newStr;
+}
+
 (function () {
     $.ajax({
         url: " /vaccine/total",
@@ -7,13 +22,13 @@
         success: function (result) {
             // console.log(result['retlist'])
             var domestic_data = result['retlist'][0]
-            document.getElementById('val1').innerHTML = domestic_data['total_vaccinations']
-            document.getElementById('incr1').innerHTML = '+' + domestic_data['new_vaccinations']
+            document.getElementById('val1').innerHTML = formatNum(String(domestic_data['total_vaccinations']))
+            document.getElementById('incr1').innerHTML = '+' + formatNum(String(domestic_data['new_vaccinations']))
             document.getElementById('val2').innerHTML = domestic_data['total_vaccinations_per_hundred']
 
             var global_data = result['retlist'][1]
-            document.getElementById('val3').innerHTML = global_data['total_vaccinations']
-            document.getElementById('incr2').innerHTML = '+' + global_data['new_vaccinations']
+            document.getElementById('val3').innerHTML = formatNum(String(global_data['total_vaccinations']))
+            document.getElementById('incr2').innerHTML = '+' + formatNum(String(global_data['new_vaccinations']))
             document.getElementById('val4').innerHTML = global_data['total_vaccinations_per_hundred']
         }
     })
@@ -276,3 +291,4 @@ function Make_complete_table(table_name) {
         }
     })
 })();
+

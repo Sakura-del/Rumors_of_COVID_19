@@ -517,7 +517,7 @@ function InitWorldMap() {
 InitChinaMap();//默认加载中国地图
 (function () {
     $("#switcher").on("click", "a", function () {
-        console.log(typeof $(this).index());
+        // console.log(typeof $(this).index());
         if ($(this).index() === 0) {//加载中国地图
             InitChinaMap();
 
