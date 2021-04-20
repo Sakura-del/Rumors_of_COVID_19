@@ -4,6 +4,7 @@ from common.models import RumorInfo
 from common.models import HeadlinesNews
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
+import fasttext
 import jieba
 
 
@@ -107,10 +108,40 @@ def list_more_rumors(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+def judge_rumors(request):
+    title = request.params['title']
+
+    # 加载那个1个多G的模型
+    model_path = 'fasttext_model.pkl'
+    clf = fasttext.load_model(model_path)
+
+    # 加载停用词表
+    stopwords = [
+        line.strip()
+        for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
+    ]
+
+    # 对输入的话进行分词处理
+    words = jieba.cut(title)
+    newstr = ""
+    for word in words:
+        if word not in stopwords:
+            newstr += word + " "
+    newstr = newstr[0:-1]  # 删除最后一个多余的空格
+
+    pred_res = clf.predict(newstr)
+    flag = pred_res[0][0]  # 预测的分类标签  __label__0表示假，即是谣言；__label__1表示真，即不是谣言
+    flag = "true" if flag=="__label__1" else "false"
+    prob = pred_res[1][0]  # 属于该类别的概率
+
+    return JsonResponse({"ret":0, "flag":flag, "prob":prob, "msg":""})
+
+
 ActionHandler = {
     'get_rumors': get_rumors,
     'list_rumors': list_rumors,
-    'list_more_rumors': list_more_rumors
+    'list_more_rumors': list_more_rumors,
+    'judge_rumors': judge_rumors
 }
 
 

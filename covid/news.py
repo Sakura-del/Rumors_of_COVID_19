@@ -71,6 +71,7 @@ def list_covid_news(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+# 列出新闻类别
 def list_fields(request):
     try:
         fields = HeadlinesNews.objects.values('field').annotate(count=Count('field'))
@@ -93,11 +94,11 @@ def load_more_news(request):
         if field == '疫苗':
             qs = HeadlinesNews.objects.values(
                 'title', 'date', 'link', 'summary'
-            ).filter(title__contains='疫苗').order_by('-date')
+            ).filter(title__contains='疫苗').distinct().order_by('-date')
         else:
             qs = HeadlinesNews.objects.values(
                 'title', 'date', 'link', 'summary'
-            ).exclude(title__contains='疫苗').filter(field__contains=field).order_by('-date')
+            ).exclude(title__contains='疫苗').distinct().filter(field__contains=field).order_by('-date')
 
         # 页数
         pagenum = request.params['pagenum']
