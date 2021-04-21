@@ -79,7 +79,7 @@ class RumorInfo(models.Model):
 
 # 用户提问
 class Question(models.Model):
-    question = models.CharField(max_length=200)
+    question = models.CharField(max_length=200, unique=True)
     question_text = models.TextField(max_length=1000,default='')
     pub_date = models.DateTimeField('date published', auto_now_add=True)
 
