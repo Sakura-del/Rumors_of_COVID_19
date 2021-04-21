@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from lib.handler import dispatcherBase
-from common.models import RumorInfo
+from common.models import RumorInfo,Question,Answer
 from common.models import HeadlinesNews
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
@@ -33,7 +33,7 @@ def get_rumors(request):
         title = request.params['title']
         stopwords = [
             line.strip() for line in open(
-                'cn_stopwords.txt', "r", encoding='UTF-8').readlines()
+                'lda_stopwords.txt', "r", encoding='UTF-8').readlines()
         ]
         # 分词，获取用户输入的关键词
         keywords = jieba.cut(title)
@@ -60,7 +60,7 @@ def get_rumors(request):
         return JsonResponse({'ret': 0, 'total_rumors': [], 'total': 0, "msg": "没有更多数据了"})
 
     except RumorInfo.DoesNotExist:
-        # 数据获取成功
+        # 数据获取失败
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     try:
@@ -118,7 +118,7 @@ def judge_rumors(request):
     # 加载停用词表
     stopwords = [
         line.strip()
-        for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
     ]
 
     # 对输入的话进行分词处理
@@ -135,6 +135,8 @@ def judge_rumors(request):
     prob = pred_res[1][0]  # 属于该类别的概率
 
     return JsonResponse({"ret":0, "flag":flag, "prob":prob, "msg":""})
+
+
 
 
 ActionHandler = {
