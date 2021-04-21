@@ -57,7 +57,6 @@
         #search_rumor_block input {
             width: 70%;
             height: 40px;
-
             border: 2px;
             border-right: 0;
             border-style: solid;
@@ -71,18 +70,17 @@
             float: left;
         }
 
-        #search_rumor_block button {
+        #search_rumor_block #search_btn {
             width: 20%;
             height: 40px;
-
+            padding: 0;
             border: 2px;
             border-left: 0;
-            border-style: solid;
             border-radius: 10px;
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
+            border-style: solid;
             border-color: rgb(236, 236, 236);
-
             margin: 0;
 
             outline: none;
@@ -92,7 +90,7 @@
             color: rgb(255, 255, 255);
             background-color: rgb(88, 209, 169);
 
-            font-size: 22px;
+            font-size: 20px;
         }
 
         #rumors_list_block .rumors_list_x_content {
@@ -234,7 +232,7 @@
                         <div class="row" id="search_rumor_block">
                             <div class="x_panel tile">
                                 <div class="x_title">
-                                    <h2>查询谣言</h2>
+                                    <h2>谣言搜索与鉴定</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li>
                                             <a class="collapse-link">
@@ -266,7 +264,7 @@
                                     <div class="row" id="search_rumor_content_row">
                                         <div class="col-md-12 col-sm-12">
                                             <input id="inputid">
-                                            <button id="btn">搜索</button>
+                                            <button class='btn' id="search_btn">搜索</button>
                                         </div>
                                     </div>
                                 </div>
@@ -469,53 +467,5 @@
 <script src="../static/js/echarts.min.js"></script>
 
 <script src="../static/js/rumor_general.js"></script>
-
-
-<script>
-    $.ajax({
-        url: "/rumor/views",
-        type: "GET",
-        data: { action: "list_rumors" },
-        dataType: "json",
-        success: function (result) {
-            console.log(result);
-            var titles = document.getElementsByName("title");
-            var dates = document.getElementsByName("date");
-            var types = document.getElementsByName("type");
-            var tags = document.getElementsByName("tag");
-            var pics = document.getElementsByName("pic");
-            var tmptag;
-            for (var i = 0; i < 5; i++) {
-                titles[i].innerHTML = result["retlist"][i]["title"];
-                dates[i].innerHTML = result["retlist"][i]["date"];
-
-                if (result["retlist"][i]["markstyle"] == "true") {
-                    types[i].innerHTML = "确实如此"
-                    types[i].style.backgroundColor = 'rgb(66, 161, 99)'
-                }
-                else if (result["retlist"][i]["markstyle"] == "fake") {
-                    types[i].innerHTML = "谣言"
-                    types[i].style.backgroundColor = 'rgb(196, 31, 32)'
-                }
-                else {
-                    types[i].innerHTML = "尚无定论"
-                    types[i].style.backgroundColor = 'rgb(72, 72, 72)'
-                }
-
-                pics[i].src = result["retlist"][i]["coversqual"];
-                var objKeys = Object.keys(result["retlist"][i]["tag"]);
-                for (var j = 0; j < objKeys.length; j++) {
-                    if (j == 0) {
-                        tmptag = result["retlist"][i]["tag"][j];
-                    }
-                    else {
-                        tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
-                    }
-                }
-                tags[i].innerHTML = tmptag;
-            }
-        }
-    });
-</script>
 
 </html>
