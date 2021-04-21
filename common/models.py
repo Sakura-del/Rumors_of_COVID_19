@@ -62,7 +62,7 @@ class RumorInfo(models.Model):
     markstyle = models.CharField(max_length=200, blank=False, default='fake')
     result = models.CharField(max_length=200, blank=False, default='假')
     explain = models.CharField(max_length=200, default='谣言')
-    abstract = models.TextField(db_index=True)
+    abstract = models.TextField(max_length=1000,db_index=True)
     tag = models.JSONField(default=list, db_index=True)
     type = models.IntegerField(default=1)
     videourl = models.CharField(default='', max_length=200)
@@ -80,7 +80,8 @@ class RumorInfo(models.Model):
 # 用户提问
 class Question(models.Model):
     question = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    question_text = models.TextField(max_length=1000,default='')
+    pub_date = models.DateTimeField('date published', auto_now_add=True)
 
     def __str__(self):
         return self.question
@@ -91,9 +92,9 @@ class Question(models.Model):
 
 # 用户回答
 class Answer(models.Model):
-    questiont = models.ForeignKey(Question, on_delete=models.CASCADE)
+    questionid = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer = models.TextField()
-    answer_date = models.DateTimeField(default=timezone.now())
+    answer_date = models.DateTimeField(auto_now_add=True)
     
     class Meta:
         db_table = 'answer'
@@ -305,7 +306,7 @@ class HeadlinesNews(models.Model):
     link = models.URLField(default= '')
     date = models.CharField(max_length=200, db_index=True)
     field = models.CharField(max_length=200)
-    summary = models.CharField(max_length=400)
+    summary = models.CharField(max_length=10000)
     tag_list = models.JSONField(default=list)
 
     class Meta:

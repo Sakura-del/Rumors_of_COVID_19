@@ -3,6 +3,7 @@
 import sys
 import os
 import django
+import csv
 import json
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(pwd + "../")
@@ -143,7 +144,7 @@ def cut_rumors_sklearn():
                                     stop_words=stopwords,
                                     max_df=0.99,
                                     min_df=0.002)  #去除文档内出现几率过大或过小的词汇
-    
+
     print(tf_vectorizer)
     tf = tf_vectorizer.fit_transform(df.abstract_cutted)
     print(tf)
@@ -179,7 +180,30 @@ def print_top_words(model, tf_feature_names, n_top_words):
         print("")
 
 
+def save_rumors():
+    qs = RumorInfo.objects.values('title','abstract', 'markstyle')
+    qs = list(qs)
+    rows = []
+    for data in qs:
+        row = []
+        row.append(data['title'])
+        row.append(data['abstract'])
+        if data['markstyle'] == 'fake':
+            row.append('1')
+        elif data['markstyle'] == 'true':
+            row.append('2')
+        else:
+            row.append('3')
+        rows.append(row)
+    print(rows)
+    with open("谣言训练.csv", "w", encoding="utf-8-sig", newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['title', 'abstract','mark'])
+        writer.writerows(rows)
+
+
 # save_data()
 # cut_words_hanlp()
 # cut_words_jieba()
-cut_rumors_sklearn()
+# cut_rumors_sklearn()
+save_rumors()
