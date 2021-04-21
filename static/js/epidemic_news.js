@@ -8,25 +8,33 @@ var father_div_news_content = document.getElementById("news_content");//插新�
         data: { action: "load_more_news", field: "健康", pagesize: 10, pagenum: 1 },
         dataType: "json",
         success: function (result) {
-            console.log(result);
+            // console.log(result);
             for (var i = 0; i < result["retlist"].length; i++) {
                 var newrow = document.createElement("div");
-                newrow.className = "col-md-12 col-sm-12";
+                newrow.className = "row";
 
-                var newdate = document.createElement("div");
-                newdate.className = "col-md-2 col-sm-2 tmp_date";
-                newdate.innerHTML = result["retlist"][i]["date"];
-                newrow.appendChild(newdate);
+                var new_4_div = document.createElement("div");
+                new_4_div.className = "col-md-4 col-sm-4";
 
-                var newtitle = document.createElement("div");
-                newdate.className = "col-md-4 col-sm-4 tmp_title";
-                newdate.innerHTML = result["retlist"][i]["title"];
-                newrow.appendChild(newtitle);
+                var new_span = document.createElement("span");
+                new_span.className = "rumor_title";
+                new_span.innerHTML = result["retlist"][i]["title"];
+                new_4_div.appendChild(new_span);
+                var new_p = document.createElement("p");
+                new_p.className = "rumor_date";
+                new_p.innerHTML = result["retlist"][i]["date"];
+                new_4_div.appendChild(new_p);
 
-                var newsummary = document.createElement("div");
-                newsummary.className = "col-md-6 col-sm-6 tmp_summary";
-                newsummary.innerHTML = result["retlist"][i]["summary"];
-                newrow.appendChild(newsummary);
+                var new_8_div = document.createElement("div");
+                new_8_div.className = "col-md-8 col-sm-8";
+
+                var new_span_summary = document.createElement("span");
+                new_span_summary.innerHTML = result["retlist"][i]["summary"];
+                new_8_div.appendChild(new_span_summary);
+
+                newrow.appendChild(new_4_div);
+                newrow.appendChild(new_8_div);
+
 
                 father_div_news_content.appendChild(newrow);
             }
@@ -42,10 +50,6 @@ var tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索"
 //点击标签时，加载该标签下第一页的10条新闻
 (function () {
     $("#switcher_row").on("click", "a", function () {
-        // alert(1);
-        // console.log($(this).index());
-        // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
-        // console.log(yearData[$(this).index()]);
         var new_idx = $(this).index();
         tag_idx = new_idx;
         var new_tag_name = tags[tag_idx];
@@ -56,26 +60,33 @@ var tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索"
             data: { action: "load_more_news", field: new_tag_name, pagesize: 10, pagenum: 1 },
             dataType: "json",
             success: function (result) {
-                console.log(result);
                 father_div_news_content.innerHTML = "";//清空原先数据
                 for (var i = 0; i < result["retlist"].length; i++) {
                     var newrow = document.createElement("div");
-                    newrow.className = "col-md-12 col-sm-12";
+                    newrow.className = "row";
 
-                    var newdate = document.createElement("div");
-                    newdate.className = "col-md-2 col-sm-2 tmp_date";
-                    newdate.innerHTML = result["retlist"][i]["date"];
-                    newrow.appendChild(newdate);
+                    var new_4_div = document.createElement("div");
+                    new_4_div.className = "col-md-4 col-sm-4";
 
-                    var newtitle = document.createElement("div");
-                    newdate.className = "col-md-4 col-sm-4 tmp_title";
-                    newdate.innerHTML = result["retlist"][i]["title"];
-                    newrow.appendChild(newtitle);
+                    var new_span = document.createElement("span");
+                    new_span.className = "rumor_title";
+                    new_span.innerHTML = result["retlist"][i]["title"];
+                    new_4_div.appendChild(new_span);
+                    var new_p = document.createElement("p");
+                    new_p.className = "rumor_date";
+                    new_p.innerHTML = result["retlist"][i]["date"];
+                    new_4_div.appendChild(new_p);
 
-                    var newsummary = document.createElement("div");
-                    newsummary.className = "col-md-6 col-sm-6 tmp_summary";
-                    newsummary.innerHTML = result["retlist"][i]["summary"];
-                    newrow.appendChild(newsummary);
+                    var new_8_div = document.createElement("div");
+                    new_8_div.className = "col-md-8 col-sm-8";
+
+                    var new_span_summary = document.createElement("span");
+                    new_span_summary.innerHTML = result["retlist"][i]["summary"];
+                    new_8_div.appendChild(new_span_summary);
+
+                    newrow.appendChild(new_4_div);
+                    newrow.appendChild(new_8_div);
+
 
                     father_div_news_content.appendChild(newrow);
                 }
@@ -105,7 +116,7 @@ var tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索"
                         if (result["total"] > 0) {
                             for (var i = 0; i < result["retlist"].length; i++) {
                                 var newrow = document.createElement("div");
-                                newrow.className = "col-md-12 col-sm-12";
+                                newrow.className = "row";
 
                                 var newdate = document.createElement("div");
                                 newdate.className = "col-md-2 col-sm-2 tmp_date";
