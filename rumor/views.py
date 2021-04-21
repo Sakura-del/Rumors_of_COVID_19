@@ -33,7 +33,7 @@ def get_rumors(request):
         title = request.params['title']
         stopwords = [
             line.strip() for line in open(
-                'lda_stopwords.txt', "r", encoding='UTF-8').readlines()
+                'search_stopwords.txt', "r", encoding='UTF-8').readlines()
         ]
         # 分词，获取用户输入的关键词
         keywords = jieba.cut(title)
@@ -118,7 +118,7 @@ def judge_rumors(request):
     # 加载停用词表
     stopwords = [
         line.strip()
-        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
     ]
 
     # 对输入的话进行分词处理

@@ -1,7 +1,6 @@
 import datetime
 # Create your models here.
 from django.db import models
-from django.utils import timezone
 
 
 # 国内总体数据
@@ -340,7 +339,7 @@ class CurrentVaccinations(models.Model):
     total_vaccinations = models.IntegerField()
     new_vaccinations = models.IntegerField()
     total_vaccinations_per_hundred = models.FloatField()
-    date = models.DateField(default=timezone.now)
+    date = models.DateField(default=datetime.datetime.now())
 
     class Meta:
         db_table = 'current_vaccinations'
@@ -447,7 +446,7 @@ class VaccineStatus(models.Model):
     progress = models.CharField(max_length=200)
     vaccine_name = models.CharField(max_length=200)
     vaccine_type = models.CharField(max_length=200)
-    update_time = models.DateTimeField(default=timezone.now())
+    update_time = models.DateTimeField(default=datetime.datetime.now())
 
     class Meta:
         db_table = 'vaccine_status'
