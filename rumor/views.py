@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from lib.handler import dispatcherBase
-from common.models import RumorInfo
+from common.models import RumorInfo,Question,Answer
 from common.models import HeadlinesNews
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
@@ -60,7 +60,7 @@ def get_rumors(request):
         return JsonResponse({'ret': 0, 'total_rumors': [], 'total': 0, "msg": "没有更多数据了"})
 
     except RumorInfo.DoesNotExist:
-        # 数据获取成功
+        # 数据获取失败
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
     try:
@@ -135,6 +135,8 @@ def judge_rumors(request):
     prob = pred_res[1][0]  # 属于该类别的概率
 
     return JsonResponse({"ret":0, "flag":flag, "prob":prob, "msg":""})
+
+
 
 
 ActionHandler = {
