@@ -236,6 +236,57 @@ var convertData = function (data) {
 })();
 
 
+function getdis(date1, date2) {
+  var items = date1.split("-");
+  var predate = items.join("");
+  predate = parseInt(predate);
+
+  var pre_year = Math.floor(predate / 10000);
+  var pre_mon = Math.floor(predate % 10000 / 100);
+  var pre_day = predate % 100;
+
+  items = date2.split("-");
+  var nextdate = items.join("");
+  nextdate = parseInt(nextdate);
+
+  var next_year = Math.floor(nextdate / 10000);
+  var next_mon = Math.floor(nextdate % 10000 / 100);
+  var next_day = nextdate % 100;
+
+  var days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if (pre_year == next_year && pre_mon == next_mon) {//同年同月
+    return next_day - pre_day + 1;
+  }
+  else {
+    if (pre_mon == 2) {
+      var ed;
+      if (pre_year == 2020) {
+        ed = 29;
+      }
+      else {
+        ed = 28;
+      }
+      return ed - pre_day + 1 + next_day;
+    }
+    else {
+      return days_in_month[pre_mon - 1] - pre_day + 1 + next_day;
+    }
+  }
+}
+
+function getlabel(date1, date2) {
+  var items = date1.split("-");
+  items.shift();
+  new1 = items.join("/");
+
+  items = date2.split("-");
+  items.shift();
+  new2 = items.join("/");
+
+  return new1 + "-" + new2;
+}
+
 //谣言数量与政府干预
 (function () {
   let xAxis_weeks = [];
@@ -248,25 +299,32 @@ var convertData = function (data) {
     success: function (result) {
       console.log(result);
       //每7天推一个日期进X轴
-      var cnt = 0;
       var sum = 0;
+      var predate = result["retlist"][0]["date"];
+      var newdate;
+      var dis;
       for (var i = 0; i < result["retlist"].length; i++) {
-        cnt += 1;
-        sum += result["retlist"][i]["rumor_count"];
-        if (cnt == 7) {
-          cnt = 0;
-          var items = result["retlist"][i]["date"].split("-");
-          items.shift();//删除年份
-          var tmpdate = items.join("/");
-          xAxis_weeks.push(tmpdate);
-          rumor_sum_data.push(sum);
+        newdate = result["retlist"][i]["date"];
+        dis = getdis(predate, newdate);
+        if (dis < 7) {
+          sum += result["retlist"][i]["rumor_count"];
         }
-        if (i == result["retlist"].length - 1) {
-          var items = result["retlist"][i]["date"].split("-");
-          items.shift();//删除年份
-          var tmpdate = items.join("/");
-          xAxis_weeks.push(tmpdate);
+        else if (dis == 7) {
+          sum += result["retlist"][i]["rumor_count"];
           rumor_sum_data.push(sum);
+          xAxis_weeks.push(getlabel(predate, newdate));
+
+          if (i + 1 < result["retlist"].length) {
+            sum = 0;
+            predate = result["retlist"][i + 1]["date"];
+          }
+        }
+        else {
+          rumor_sum_data.push(sum);
+          xAxis_weeks.push(getlabel(predate, newdate));
+
+          sum = 0;
+          predate = newdate;
         }
       }
 
@@ -284,7 +342,7 @@ var convertData = function (data) {
           }
         },
         legend: {
-          data: ['累计谣言数量']
+          data: ['谣言数量']
         },
         xAxis: [
           {
@@ -292,6 +350,9 @@ var convertData = function (data) {
             data: xAxis_weeks,
             axisPointer: {
               type: 'shadow'
+            },
+            axisLabel: {
+              rotate: 45
             }
           }
         ],
@@ -306,7 +367,7 @@ var convertData = function (data) {
         },
         series: [
           {
-            name: '累计谣言数量',
+            name: '谣言数量',
             type: 'bar',
             data: rumor_sum_data
           }
