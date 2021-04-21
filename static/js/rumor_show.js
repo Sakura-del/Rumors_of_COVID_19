@@ -56,6 +56,7 @@
     }
   });
 })();
+
 var objDeepCopy = function (source) {
   var sourceCopy = source instanceof Array ? [] : {};
   for (var item in source) {
