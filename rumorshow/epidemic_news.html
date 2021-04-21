@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,6 @@
     <!-- Custom Theme Style -->
     <link href="../static/build/css/custom.min.css" rel="stylesheet">
 
-
     <style>
         #top_nav {
             height: 100%;
@@ -48,69 +47,6 @@
             margin-left: 10px;
             height: 100%;
         }
-
-        #total_data_row #tile_count {
-            width: 100%;
-        }
-
-        #total_data_row span {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        #trend_block #switcher_row {
-            margin-top: 5px;
-        }
-
-        #trend_block #switcher_row a {
-            padding: 7px 10px;
-            border: 0px solid;
-            border-radius: 10px;
-            margin-right: 5px;
-
-            background-color: rgb(88, 209, 189);
-
-            color: rgb(255, 255, 255);
-
-            font-size: 16px;
-            font-family: "Microsoft YaHei";
-        }
-
-        #trend_block #trend_chart_title {
-            font-size: 22px;
-        }
-
-        #trend_block #change_trend {
-            width: 100%;
-            height: 40vh;
-            margin: 0;
-        }
-
-        #trend_block #top5_provinces {
-            width: 100%;
-            height: 30vh;
-            padding-left: 10px;
-        }
-
-        #age_distribution_block #pie_age {
-            width: 100%;
-            height: 30vh;
-        }
-
-        #age_distribution_block .distribution_table,
-        #job_distribution_block .distribution_table {
-            overflow: visible;
-        }
-
-        #job_distribution_block #pie_job {
-            width: 100%;
-            height: 30vh;
-        }
-
-        #total_confirm_trend{
-            width: 100%;
-            height: 30vh;
-        }
     </style>
 
 </head>
@@ -120,8 +56,11 @@
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>识谣知疫</span></a>
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title">
+                            <i class="fa fa-paw"></i>
+                            <span>识谣知疫</span>
+                        </a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -138,7 +77,7 @@
                     </div>
                     <!-- /menu profile quick info -->
 
-                    <br>
+                    <br />
 
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -171,23 +110,6 @@
                         </div>
                     </div>
                     <!-- /sidebar menu -->
-
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -209,82 +131,11 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
-                <!-- top tiles -->
-                <div class="row" id="total_data_row">
-                    <div class="tile_count" id="tile_count">
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>现存确诊</span>
-                            <div class="count" id="val1">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr1">4% </i>同比昨日</span>
-                        </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-clock-o"></i>境外输入</span>
-                            <div class="count" id="val2">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr2">4% </i>同比昨日</span>
-                        </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>现存无症状</span>
-                            <div class="count" id="val3">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr3">4% </i>同比昨日</span>
-                        </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>累计确诊</span>
-                            <div class="count" id="val4">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr4">4% </i>同比昨日</span>
-                        </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>累计治愈</span>
-                            <div class="count" id="val5">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr5">4% </i>同比昨日</span>
-                        </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>累计死亡</span>
-                            <div class="count" id="val6">2500</div>
-                            <span class="count_bottom"><i class="green" id="incr6">4% </i>同比昨日</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /top tiles -->
-
-                <div class="row" id="trend_block">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="dashboard_graph">
-                            <div class="row x_title">
-                                <div class="col-md-6">
-                                    <h3 id="trend_chart_title">变化趋势</h3>
-                                </div>
-                            </div>
-
-                            <div class="col-md-9 col-sm-9">
-                                <div id="switcher_row">
-                                    <a href="javascript:;">日视图</a>
-                                    <a href="javascript:;">月视图</a>
-                                </div>
-                                <div class="chart" id="change_trend">图表</div>
-                            </div>
-
-                            <div class="col-md-3 col-sm-3 bg-white" id="top_5_province">
-                                <div class="x_title">
-                                    <p>现存确诊人数前5的省/直辖市/地区</p>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <div class="chart" id="top5_provinces">图表</div>
-                                </div>
-                            </div>
-
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 ">
-                        <div class="x_panel tile fixed_height_320">
+                    <div class="col-md-12 col-sm-12" id="map_unit">
+                        <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>累计确诊</h2>
+                                <h2>疫情新闻</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -313,15 +164,42 @@
                             </div>
 
                             <div class="x_content">
-                                <div class="chart" id="total_confirm_trend">图表</div>
+                                <div class="row">
+                                    <div id="switcher_row">
+                                        <a href="javascript:;">健康</a>
+                                        <a href="javascript:;">疫苗</a>
+                                        <a href="javascript:;">国内</a>
+                                        <a href="javascript:;">国际</a>
+                                        <a href="javascript:;">娱乐</a>
+                                        <a href="javascript:;">房产</a>
+                                        <a href="javascript:;">探索</a>
+                                        <a href="javascript:;">教育</a>
+                                        <a href="javascript:;">新鲜事</a>
+                                        <a href="javascript:;">旅游</a>
+                                        <a href="javascript:;">汽车</a>
+                                        <a href="javascript:;">社会</a>
+                                        <a href="javascript:;">艺术</a>
+                                        <a href="javascript:;">财经</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 title">标题</div>
+                                    <div class="col-md-9 col-sm-9 summary">摘要</div>
+                                </div>
+                                
+
+                                <div class="row" id="news_content" style="height:450px;width:100%;overflow:scroll">
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-4" id="age_distribution_block">
-                        <div class="x_panel tile fixed_height_320 distribution_table">
+                    <!-- <div class="col-md-6 col-sm-6">
+                        <div class="x_panel tile fixed_height_320">
                             <div class="x_title">
-                                <h2>年龄分布</h2>
+                                <h2>表格展示</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -348,46 +226,11 @@
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="x_content pie">
-                                <div class="chart" id="pie_age">图表</div>
+
+                            <div class="x_content">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4" id="job_distribution_block">
-                        <div class="x_panel tile fixed_height_320 distribution_table">
-                            <div class="x_title">
-                                <h2>职业分布</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li>
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="close-link">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content pie">
-                                <div class="chart" id="pie_job">图表</div>
-                            </div>
-                        </div>
-                    </div>
-
+                    </div> -->
                 </div>
             </div>
             <!-- /page content -->
@@ -444,14 +287,11 @@
 <!-- bootstrap-daterangepicker -->
 <script src="../static/vendors/moment/min/moment.min.js"></script>
 <script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
 <!-- Custom Theme Scripts -->
 <script src="../static/build/js/custom.min.js"></script>
-<script src="../static/js/flexible.js"></script>
-<script src="../static/js/echarts.min.js"></script>
 
-<!-- 必须先引入china.js 这个文件 因为中国地图需要 -->
-<script src="../static/js/china.js"></script>
-<script src="../static/js/epidemic_general_data.js"></script>
+<script src="../static/js/flexible.js"></script>
+
+<script src="../static/js/epidemic_news.js"></script>
 
 </html>
