@@ -53,18 +53,49 @@
             height: 100%;
         }
 
-        .x_title {
-            margin-bottom: 0;
-        }
-
-        .x_content {
-            margin-top: 0;
-        }
-
-        .tile_stats_count {
+        #tile_count_block .tile_stats_count {
             display: table;
         }
 
+        #global_data_block .continent_data_row{
+            margin-bottom: 50px;
+        }
+
+        #global_data_block .expend_list_button {
+            width: 10px;
+            height: 10px;
+            border: 0;
+            margin-top: 7px;
+
+            outline:none;
+
+            font-size: 10px;
+
+            color: rgb(115,135,156);
+            background: rgba(0, 0, 0, 0)
+        }
+
+        #global_data_block .continent_data_table tr {
+            padding-left: 10px;
+        }
+
+        #global_data_block .continent_data_table th {
+            width: 33%;
+
+            font-size: 18px;
+
+            background-color: rgb(183, 225, 217);
+        }
+
+        #global_data_block .continent_data_table tr:nth-child(even) {
+            background-color: rgb(203, 245, 237);
+        }
+
+        #global_data_block .continent_data_table td {
+            width: 33%;
+
+            font-size: 15px;
+        }
     </style>
 
 
@@ -156,7 +187,7 @@
             <div class="right_col" role="main">
 
                 <div class="row" id="total_data_row">
-                    <div class="tile_count" id="tile_count">
+                    <div class="tile_count" id="tile_count_block">
                         <div class="col-md-2 col-sm-4 tile_stats_count">
                             <span class="count_top"><i class="fa fa-user"></i>国内总接种量</span>
                             <div class="count" id="val1">2500</div>
@@ -177,10 +208,8 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
-
-
-
                     <div class="col-md-12 col-sm-12" id="domestic_data_block">
                         <div class="x_panel tile">
                             <div class="x_title">
@@ -212,14 +241,15 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" >
-                                <div class="chart" id="domestic_data_chart" style="width: 100%;height: 40vh;">国内接种量折线图</div>
+                            <div class="x_content">
+                                <div class="chart" id="domestic_data_chart" style="width: 100%;height: 40vh;">国内接种量折线图
+                                </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="col-md-9 col-sm-9" id="globel_data_block">
+                    <div class="col-md-9 col-sm-9" id="global_data_block">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>全球疫苗接种数据</h2>
@@ -251,9 +281,6 @@
                             </div>
 
                             <div class="x_content">
-                                <div id = 'global_data_chart'>
-                                    重点国家接种量折线图
-                                </div>
                                 <div id="global_data_list"></div>
 
                             </div>
@@ -321,7 +348,7 @@
     <script src="../static/js/flexible.js"></script>
     <script src="../static/js/echarts.min.js"></script>
     <script src="../static/js/vaccine_visualization.js"></script>
-    
+
 </body>
 
 </html>
