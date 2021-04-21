@@ -40,7 +40,7 @@ def get_questions(request):
         qs = Question.objects.values('id', 'question', 'pub_date').distinct().order_by('-pub_date')
         stopwords = [
             line.strip() for line in open(
-                'stopwords.txt', "r", encoding='UTF-8').readlines()
+                'search_stopwords.txt', "r", encoding='UTF-8').readlines()
         ]
         # 分词，获取用户输入的关键词
         keywords = jieba.cut(question)

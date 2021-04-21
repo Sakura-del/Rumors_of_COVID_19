@@ -30,7 +30,7 @@ import pyLDAvis.sklearn
 def cut_words_jieba():
     stopwords = [
         line.strip() for line in open(
-            'cn_stopwords.txt', "r", encoding='UTF-8').readlines()
+            'lda_stopwords.txt', "r", encoding='UTF-8').readlines()
     ]
     rumor_text = ''
     rumor_list = RumorInfo.objects.values('abstract')
@@ -56,7 +56,7 @@ def cut_words_hanlp():
     # 加载停用词表
     stopwords = [
         line.strip()
-        for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
     ]
     rumor_text = ''
     rumor_list = RumorInfo.objects.values('abstract')
@@ -83,7 +83,7 @@ def cut_words_hanlp():
 def save_data():
     stopwords = [
         line.strip()
-        for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
     ]
     rumor_text = ''
     rumor_list = RumorInfo.objects.values('abstract')
@@ -136,7 +136,7 @@ def cut_rumors_sklearn():
     # 加载停用词
     stopwords = [
         line.strip()
-        for line in open('cn_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
     ]
     n_features = 2000
     tf_vectorizer = TfidfVectorizer(strip_accents='unicode',
