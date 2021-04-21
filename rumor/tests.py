@@ -10,8 +10,9 @@ payload = {'action': 'answer_question','question_id':1, 'answer':'我国的疫�
 # 相应内容
 # response = requests.post("http://127.0.0.1:8000/rumor/questions", json=payload)
 
-getload = {"action": 'get_count_trend', "question": "疫苗", 'pagesize': 1, 'pagenum': 1}
-response = requests.get("http://127.0.0.1:8000/rumor/shows", params=getload)
+# getload = {"action": 'search_rumors','date':'2020-02-11', "question": "疫苗", 'pagesize': 1, 'pagenum': 1}
+getload = {"action": 'get_news','title':'北京的新冠肺炎', 'pagesize': 1, 'pagenum': 1}
+response = requests.get("http://127.0.0.1:8000/rumor/views", params=getload)
 
 # 引用pprint结构化输出数据
 pprint.pprint(response.json())

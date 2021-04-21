@@ -1,11 +1,12 @@
 from django.http import JsonResponse
 from lib.handler import dispatcherBase
-from common.models import RumorInfo,Question,Answer
+from common.models import RumorInfo, Question, Answer
 from common.models import HeadlinesNews
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
 import fasttext
 import jieba
+from datetime import datetime
 
 
 # Create your views here.
@@ -20,6 +21,48 @@ def list_rumors(request):
     data = list(data)
 
     return JsonResponse({"ret": 0, "retlist": data, "total": len(data)})
+
+
+# 查询新闻
+def get_news(request):
+    try:
+        # 新闻查询
+        qs = HeadlinesNews.objects.values('title','date','link','summary').order_by('-date')
+        # 获取用户的输入
+        title = request.params['title']
+        stopwords = [
+            line.strip() for line in open(
+                'search_stopwords.txt', "r", encoding='UTF-8').readlines()
+        ]
+        # 分词，获取用户输入的关键词
+        keywords = jieba.cut(title)
+        if keywords:
+            conditions = [
+                Q(title__contains=one) for one in keywords if one not in stopwords  # 去除停用词
+            ]
+            # 引用Q查询
+            query = Q()
+            for condition in conditions:
+                query |= condition
+            qs = qs.filter(query)
+            # 获取页数
+            pagenum = request.params['pagenum']
+            # 每页谣言数量
+            pagesize = request.params['pagesize']
+            pgnt = Paginator(qs, pagesize)
+            page = pgnt.page(pagenum)
+            # 转换为可序列化的列表
+            news = list(page)
+
+            return JsonResponse({'ret': 0, 'retlist': news, 'total': len(news), 'msg': ''})
+
+    except EmptyPage:
+        # 数据查完
+        return JsonResponse({'ret': 0, 'total_rumors': [], 'total': 0, "msg": "没有更多数据了"})
+
+    except HeadlinesNews.DoesNotExist:
+        # 数据获取失败
+        return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
 # 查询谣言
@@ -84,6 +127,18 @@ def get_rumors(request):
          "msg": ""})
 
 
+def search_rumors(request):
+    date = request.params['date']
+    try:
+        qs = RumorInfo.objects.values('title', 'result', 'date', 'abstract').distinct().filter(date=date)
+
+        retlist = list(qs)
+
+        return JsonResponse({"ret": 0, 'retlist': retlist})
+    except RumorInfo.DoesNotExist:
+        return JsonResponse({'ret': 0, 'msg': "信息获取失败"})
+
+
 # 加载更多谣言
 def list_more_rumors(request):
     try:
@@ -131,19 +186,19 @@ def judge_rumors(request):
 
     pred_res = clf.predict(newstr)
     flag = pred_res[0][0]  # 预测的分类标签  __label__0表示假，即是谣言；__label__1表示真，即不是谣言
-    flag = "true" if flag=="__label__1" else "false"
+    flag = "true" if flag == "__label__1" else "false"
     prob = pred_res[1][0]  # 属于该类别的概率
 
-    return JsonResponse({"ret":0, "flag":flag, "prob":prob, "msg":""})
-
-
+    return JsonResponse({"ret": 0, "flag": flag, "prob": prob, "msg": ""})
 
 
 ActionHandler = {
     'get_rumors': get_rumors,
     'list_rumors': list_rumors,
     'list_more_rumors': list_more_rumors,
-    'judge_rumors': judge_rumors
+    'judge_rumors': judge_rumors,
+    'search_rumors': search_rumors,
+    'get_news': get_news
 }
 
 
