@@ -127,6 +127,7 @@ def get_rumors(request):
          "msg": ""})
 
 
+# 查询当日谣言
 def search_rumors(request):
     date = request.params['date']
     try:

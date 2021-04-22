@@ -1,17 +1,17 @@
 [
     {
         "country": "美国",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "强生,莫德纳,辉瑞/BioNTech",
-        "total_vaccinations": 211581309,
-        "total_vaccinations_per_hundred": 63.26
+        "total_vaccinations": 213388238,
+        "total_vaccinations_per_hundred": 63.8
     },
     {
         "country": "中国",
-        "date": "2021-04-19",
+        "date": "2021-04-21",
         "vaccinations": "国药/北京,国药/武汉,科兴生物,康希诺",
-        "total_vaccinations": 195022000,
-        "total_vaccinations_per_hundred": 13.55
+        "total_vaccinations": 204191000,
+        "total_vaccinations_per_hundred": 14.19
     },
     {
         "country": "印度",
@@ -22,59 +22,59 @@
     },
     {
         "country": "英国",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 43084487,
-        "total_vaccinations_per_hundred": 63.47
+        "total_vaccinations": 43457910,
+        "total_vaccinations_per_hundred": 64.02
     },
     {
         "country": "巴西",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,科兴生物",
-        "total_vaccinations": 33755229,
-        "total_vaccinations_per_hundred": 15.88
+        "total_vaccinations": 33807132,
+        "total_vaccinations_per_hundred": 15.9
     },
     {
         "country": "德国",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 22378776,
-        "total_vaccinations_per_hundred": 26.71
+        "total_vaccinations": 22935592,
+        "total_vaccinations_per_hundred": 27.37
     },
     {
         "country": "土耳其",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 20075504,
-        "total_vaccinations_per_hundred": 23.8
+        "total_vaccinations": 20283227,
+        "total_vaccinations_per_hundred": 24.05
     },
     {
         "country": "法国",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 17102592,
-        "total_vaccinations_per_hundred": 25.1
+        "total_vaccinations": 17445832,
+        "total_vaccinations_per_hundred": 25.6
     },
     {
         "country": "印度尼西亚",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,科兴生物",
-        "total_vaccinations": 17024955,
-        "total_vaccinations_per_hundred": 6.22
+        "total_vaccinations": 17275001,
+        "total_vaccinations_per_hundred": 6.32
     },
     {
         "country": "俄罗斯",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "EpiVacCorona,卫星-V",
-        "total_vaccinations": 16237319,
-        "total_vaccinations_per_hundred": 11.13
+        "total_vaccinations": 16567842,
+        "total_vaccinations_per_hundred": 11.35
     },
     {
         "country": "意大利",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 15558775,
-        "total_vaccinations_per_hundred": 25.73
+        "total_vaccinations": 15894532,
+        "total_vaccinations_per_hundred": 26.29
     },
     {
         "country": "墨西哥",
@@ -85,31 +85,31 @@
     },
     {
         "country": "智利",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 13163991,
-        "total_vaccinations_per_hundred": 68.86
+        "total_vaccinations": 13352602,
+        "total_vaccinations_per_hundred": 69.85
     },
     {
         "country": "西班牙",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 12853599,
-        "total_vaccinations_per_hundred": 27.49
-    },
-    {
-        "country": "以色列",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,辉瑞/BioNTech",
-        "total_vaccinations": 10341133,
-        "total_vaccinations_per_hundred": 119.47
+        "total_vaccinations": 13041032,
+        "total_vaccinations_per_hundred": 27.89
     },
     {
         "country": "加拿大",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 10243418,
-        "total_vaccinations_per_hundred": 27.14
+        "total_vaccinations": 10481418,
+        "total_vaccinations_per_hundred": 27.77
+    },
+    {
+        "country": "以色列",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,辉瑞/BioNTech",
+        "total_vaccinations": 10354300,
+        "total_vaccinations_per_hundred": 119.63
     },
     {
         "country": "阿联酋",
@@ -119,67 +119,67 @@
         "total_vaccinations_per_hundred": 97.82
     },
     {
-        "country": "摩洛哥",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康,国药/北京",
-        "total_vaccinations": 8860662,
-        "total_vaccinations_per_hundred": 24.01
-    },
-    {
         "country": "波兰",
-        "date": "2021-04-15",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 8484815,
-        "total_vaccinations_per_hundred": 22.42
+        "date": "2021-04-20",
+        "vaccinations": "强生,莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 9210419,
+        "total_vaccinations_per_hundred": 24.34
     },
     {
-        "country": "沙特阿拉伯",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 7303969,
-        "total_vaccinations_per_hundred": 20.98
+        "country": "摩洛哥",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,国药/北京",
+        "total_vaccinations": 8878445,
+        "total_vaccinations_per_hundred": 24.05
     },
     {
         "country": "孟加拉",
-        "date": "2021-04-18",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 7080699,
-        "total_vaccinations_per_hundred": 4.3
+        "total_vaccinations": 7423274,
+        "total_vaccinations_per_hundred": 4.51
+    },
+    {
+        "country": "沙特阿拉伯",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 7413220,
+        "total_vaccinations_per_hundred": 21.29
     },
     {
         "country": "阿根廷",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,国药/北京,卫星-V",
-        "total_vaccinations": 6334554,
-        "total_vaccinations_per_hundred": 14.02
+        "total_vaccinations": 6433141,
+        "total_vaccinations_per_hundred": 14.23
     },
     {
         "country": "匈牙利",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech,国药/北京,卫星-V",
-        "total_vaccinations": 4717755,
-        "total_vaccinations_per_hundred": 48.84
-    },
-    {
-        "country": "罗马尼亚",
-        "date": "2021-04-18",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 4231714,
-        "total_vaccinations_per_hundred": 22
+        "total_vaccinations": 4788720,
+        "total_vaccinations_per_hundred": 49.57
     },
     {
         "country": "荷兰",
-        "date": "2021-04-11",
+        "date": "2021-04-18",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 3783912,
-        "total_vaccinations_per_hundred": 22.08
+        "total_vaccinations": 4578432,
+        "total_vaccinations_per_hundred": 26.72
+    },
+    {
+        "country": "罗马尼亚",
+        "date": "2021-04-19",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 4306981,
+        "total_vaccinations_per_hundred": 22.39
     },
     {
         "country": "哥伦比亚",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 3769499,
-        "total_vaccinations_per_hundred": 7.41
+        "total_vaccinations": 3867076,
+        "total_vaccinations_per_hundred": 7.6
     },
     {
         "country": "塞尔维亚",
@@ -197,38 +197,38 @@
     },
     {
         "country": "葡萄牙",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 2681985,
-        "total_vaccinations_per_hundred": 26.3
+        "total_vaccinations": 2737324,
+        "total_vaccinations_per_hundred": 26.85
     },
     {
         "country": "希腊",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 2546154,
-        "total_vaccinations_per_hundred": 24.43
-    },
-    {
-        "country": "捷克",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 2527622,
-        "total_vaccinations_per_hundred": 23.6
-    },
-    {
-        "country": "奥地利",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 2512488,
-        "total_vaccinations_per_hundred": 27.9
+        "total_vaccinations": 2600998,
+        "total_vaccinations_per_hundred": 24.95
     },
     {
         "country": "瑞典",
-        "date": "2021-04-16",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 2316903,
-        "total_vaccinations_per_hundred": 22.94
+        "total_vaccinations": 2583521,
+        "total_vaccinations_per_hundred": 25.58
+    },
+    {
+        "country": "捷克",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 2581753,
+        "total_vaccinations_per_hundred": 24.11
+    },
+    {
+        "country": "奥地利",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 2557803,
+        "total_vaccinations_per_hundred": 28.4
     },
     {
         "country": "新加坡",
@@ -239,31 +239,45 @@
     },
     {
         "country": "日本",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 2054880,
-        "total_vaccinations_per_hundred": 1.62
+        "total_vaccinations": 2190413,
+        "total_vaccinations_per_hundred": 1.73
     },
     {
         "country": "瑞士",
-        "date": "2021-04-14",
+        "date": "2021-04-18",
         "vaccinations": "莫德纳,辉瑞/BioNTech",
-        "total_vaccinations": 1958210,
-        "total_vaccinations_per_hundred": 22.63
+        "total_vaccinations": 2091809,
+        "total_vaccinations_per_hundred": 24.17
     },
     {
         "country": "韩国",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1700076,
-        "total_vaccinations_per_hundred": 3.32
+        "total_vaccinations": 1832004,
+        "total_vaccinations_per_hundred": 3.57
     },
     {
         "country": "柬埔寨",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,国药/北京,科兴生物",
-        "total_vaccinations": 1656026,
-        "total_vaccinations_per_hundred": 9.91
+        "total_vaccinations": 1710932,
+        "total_vaccinations_per_hundred": 10.23
+    },
+    {
+        "country": "澳大利亚",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 1653286,
+        "total_vaccinations_per_hundred": 6.48
+    },
+    {
+        "country": "丹麦",
+        "date": "2021-04-19",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 1616555,
+        "total_vaccinations_per_hundred": 27.91
     },
     {
         "country": "尼泊尔",
@@ -273,18 +287,11 @@
         "total_vaccinations_per_hundred": 5.49
     },
     {
-        "country": "澳大利亚",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1586556,
-        "total_vaccinations_per_hundred": 6.22
-    },
-    {
-        "country": "丹麦",
-        "date": "2021-04-18",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1577772,
-        "total_vaccinations_per_hundred": 27.24
+        "country": "菲律宾",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,科兴生物",
+        "total_vaccinations": 1562563,
+        "total_vaccinations_per_hundred": 1.43
     },
     {
         "country": "多米尼加",
@@ -294,39 +301,32 @@
         "total_vaccinations_per_hundred": 13.92
     },
     {
-        "country": "菲律宾",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康,科兴生物",
-        "total_vaccinations": 1477757,
-        "total_vaccinations_per_hundred": 1.35
-    },
-    {
         "country": "芬兰",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1444597,
-        "total_vaccinations_per_hundred": 26.07
+        "total_vaccinations": 1471536,
+        "total_vaccinations_per_hundred": 26.56
     },
     {
         "country": "乌拉圭",
-        "date": "2021-04-19",
-        "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 1396009,
-        "total_vaccinations_per_hundred": 40.19
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,科兴生物",
+        "total_vaccinations": 1436135,
+        "total_vaccinations_per_hundred": 41.34
     },
     {
         "country": "挪威",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1362525,
-        "total_vaccinations_per_hundred": 25.13
+        "total_vaccinations": 1369340,
+        "total_vaccinations_per_hundred": 25.26
     },
     {
         "country": "阿塞拜疆",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "科兴生物",
-        "total_vaccinations": 1337380,
-        "total_vaccinations_per_hundred": 13.19
+        "total_vaccinations": 1352210,
+        "total_vaccinations_per_hundred": 13.34
     },
     {
         "country": "斯洛伐克",
@@ -337,44 +337,44 @@
     },
     {
         "country": "卡塔尔",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 1271478,
-        "total_vaccinations_per_hundred": 44.13
+        "total_vaccinations": 1296520,
+        "total_vaccinations_per_hundred": 45
     },
     {
         "country": "秘鲁",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "辉瑞/BioNTech,国药/北京",
-        "total_vaccinations": 1265474,
-        "total_vaccinations_per_hundred": 3.84
+        "total_vaccinations": 1284556,
+        "total_vaccinations_per_hundred": 3.9
     },
     {
         "country": "爱尔兰",
-        "date": "2021-04-17",
+        "date": "2021-04-18",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 1204063,
-        "total_vaccinations_per_hundred": 24.38
+        "total_vaccinations": 1208459,
+        "total_vaccinations_per_hundred": 24.47
     },
     {
         "country": "马来西亚",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 1144841,
-        "total_vaccinations_per_hundred": 3.54
+        "total_vaccinations": 1177648,
+        "total_vaccinations_per_hundred": 3.64
     },
     {
         "country": "巴林",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,国药/北京,卫星-V",
-        "total_vaccinations": 1097352,
-        "total_vaccinations_per_hundred": 64.49
+        "total_vaccinations": 1118519,
+        "total_vaccinations_per_hundred": 65.73
     },
     {
         "country": "尼日利亚",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 1096727,
+        "total_vaccinations": 1101827,
         "total_vaccinations_per_hundred": 0.53
     },
     {
@@ -400,17 +400,24 @@
     },
     {
         "country": "立陶宛",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 780491,
-        "total_vaccinations_per_hundred": 28.67
+        "total_vaccinations": 796009,
+        "total_vaccinations_per_hundred": 29.24
     },
     {
         "country": "加纳",
-        "date": "2021-04-15",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 755686,
-        "total_vaccinations_per_hundred": 2.43
+        "total_vaccinations": 787180,
+        "total_vaccinations_per_hundred": 2.53
+    },
+    {
+        "country": "哥斯达黎加",
+        "date": "2021-04-20",
+        "vaccinations": "辉瑞/BioNTech",
+        "total_vaccinations": 698327,
+        "total_vaccinations_per_hundred": 13.71
     },
     {
         "country": "克罗地亚",
@@ -434,6 +441,13 @@
         "total_vaccinations_per_hundred": 6.52
     },
     {
+        "country": "保加利亚",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 657333,
+        "total_vaccinations_per_hundred": 9.46
+    },
+    {
         "country": "肯尼亚",
         "date": "2021-04-16",
         "vaccinations": "牛津/阿斯利康,卫星-V",
@@ -441,18 +455,18 @@
         "total_vaccinations_per_hundred": 1.21
     },
     {
-        "country": "保加利亚",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 645486,
-        "total_vaccinations_per_hundred": 9.29
+        "country": "蒙古",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康",
+        "total_vaccinations": 637415,
+        "total_vaccinations_per_hundred": 19.44
     },
     {
-        "country": "蒙古",
-        "date": "2021-04-17",
-        "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 634240,
-        "total_vaccinations_per_hundred": 19.35
+        "country": "伊朗",
+        "date": "2021-04-20",
+        "vaccinations": "卫星-V",
+        "total_vaccinations": 621822,
+        "total_vaccinations_per_hundred": 0.74
     },
     {
         "country": "科威特",
@@ -462,18 +476,11 @@
         "total_vaccinations_per_hundred": 14.16
     },
     {
-        "country": "哥斯达黎加",
-        "date": "2021-04-12",
-        "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 586799,
-        "total_vaccinations_per_hundred": 11.52
-    },
-    {
         "country": "巴拿马",
-        "date": "2021-04-17",
+        "date": "2021-04-19",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 560691,
-        "total_vaccinations_per_hundred": 12.99
+        "total_vaccinations": 565471,
+        "total_vaccinations_per_hundred": 13.11
     },
     {
         "country": "玻利维亚",
@@ -481,13 +488,6 @@
         "vaccinations": "牛津/阿斯利康,国药/北京,卫星-V",
         "total_vaccinations": 557394,
         "total_vaccinations_per_hundred": 4.78
-    },
-    {
-        "country": "伊朗",
-        "date": "2021-04-19",
-        "vaccinations": "卫星-V",
-        "total_vaccinations": 550131,
-        "total_vaccinations_per_hundred": 0.65
     },
     {
         "country": "厄瓜多尔",
@@ -498,10 +498,10 @@
     },
     {
         "country": "斯洛文尼亚",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 521085,
-        "total_vaccinations_per_hundred": 25.07
+        "total_vaccinations": 527968,
+        "total_vaccinations_per_hundred": 25.4
     },
     {
         "country": "不丹",
@@ -512,10 +512,10 @@
     },
     {
         "country": "乌克兰",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 462794,
-        "total_vaccinations_per_hundred": 1.06
+        "total_vaccinations": 477836,
+        "total_vaccinations_per_hundred": 1.09
     },
     {
         "country": "塞内加尔",
@@ -526,10 +526,24 @@
     },
     {
         "country": "爱沙尼亚",
-        "date": "2021-04-18",
+        "date": "2021-04-20",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 372262,
-        "total_vaccinations_per_hundred": 28.06
+        "total_vaccinations": 376276,
+        "total_vaccinations_per_hundred": 28.37
+    },
+    {
+        "country": "黎巴嫩",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,国药/北京,卫星-V",
+        "total_vaccinations": 351792,
+        "total_vaccinations_per_hundred": 5.15
+    },
+    {
+        "country": "阿尔巴尼亚",
+        "date": "2021-04-20",
+        "vaccinations": "辉瑞/BioNTech,科兴生物",
+        "total_vaccinations": 350000,
+        "total_vaccinations_per_hundred": 12.16
     },
     {
         "country": "卢旺达",
@@ -539,32 +553,18 @@
         "total_vaccinations_per_hundred": 2.7
     },
     {
-        "country": "阿尔巴尼亚",
-        "date": "2021-04-19",
-        "vaccinations": "辉瑞/BioNTech,科兴生物",
-        "total_vaccinations": 345934,
-        "total_vaccinations_per_hundred": 12.02
-    },
-    {
-        "country": "黎巴嫩",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,国药/北京,卫星-V",
-        "total_vaccinations": 343286,
-        "total_vaccinations_per_hundred": 5.03
-    },
-    {
         "country": "马尔代夫",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,国药/北京",
-        "total_vaccinations": 327665,
-        "total_vaccinations_per_hundred": 60.62
+        "total_vaccinations": 335323,
+        "total_vaccinations_per_hundred": 62.03
     },
     {
         "country": "津巴布韦",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "国药/北京",
-        "total_vaccinations": 314446,
-        "total_vaccinations_per_hundred": 2.12
+        "total_vaccinations": 316991,
+        "total_vaccinations_per_hundred": 2.13
     },
     {
         "country": "萨尔瓦多",
@@ -582,17 +582,17 @@
     },
     {
         "country": "马耳他",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 276516,
-        "total_vaccinations_per_hundred": 62.63
+        "total_vaccinations": 282841,
+        "total_vaccinations_per_hundred": 64.06
     },
     {
         "country": "突尼斯",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "辉瑞/BioNTech,科兴生物,卫星-V",
-        "total_vaccinations": 258919,
-        "total_vaccinations_per_hundred": 2.19
+        "total_vaccinations": 281359,
+        "total_vaccinations_per_hundred": 2.38
     },
     {
         "country": "马拉维",
@@ -624,10 +624,17 @@
     },
     {
         "country": "乌干达",
-        "date": "2021-04-17",
+        "date": "2021-04-18",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 232514,
-        "total_vaccinations_per_hundred": 0.51
+        "total_vaccinations": 239617,
+        "total_vaccinations_per_hundred": 0.52
+    },
+    {
+        "country": "拉脱维亚",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 220870,
+        "total_vaccinations_per_hundred": 11.71
     },
     {
         "country": "阿曼",
@@ -635,13 +642,6 @@
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
         "total_vaccinations": 217582,
         "total_vaccinations_per_hundred": 4.26
-    },
-    {
-        "country": "拉脱维亚",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 213282,
-        "total_vaccinations_per_hundred": 11.31
     },
     {
         "country": "塞浦路斯",
@@ -665,11 +665,18 @@
         "total_vaccinations_per_hundred": 3.77
     },
     {
+        "country": "新西兰",
+        "date": "2021-04-20",
+        "vaccinations": "辉瑞/BioNTech",
+        "total_vaccinations": 183351,
+        "total_vaccinations_per_hundred": 3.8
+    },
+    {
         "country": "卢森堡",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "莫德纳,牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 164091,
-        "total_vaccinations_per_hundred": 26.21
+        "total_vaccinations": 165515,
+        "total_vaccinations_per_hundred": 26.44
     },
     {
         "country": "多哥",
@@ -680,10 +687,10 @@
     },
     {
         "country": "危地马拉",
-        "date": "2021-04-18",
+        "date": "2021-04-19",
         "vaccinations": "莫德纳,牛津/阿斯利康",
-        "total_vaccinations": 157800,
-        "total_vaccinations_per_hundred": 0.88
+        "total_vaccinations": 158918,
+        "total_vaccinations_per_hundred": 0.89
     },
     {
         "country": "埃及",
@@ -700,13 +707,6 @@
         "total_vaccinations_per_hundred": 1.88
     },
     {
-        "country": "新西兰",
-        "date": "2021-04-13",
-        "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 135585,
-        "total_vaccinations_per_hundred": 2.81
-    },
-    {
         "country": "牙买加",
         "date": "2021-04-13",
         "vaccinations": "牛津/阿斯利康",
@@ -721,18 +721,18 @@
         "total_vaccinations_per_hundred": 0.31
     },
     {
-        "country": "几内亚",
+        "country": "塞舌尔",
         "date": "2021-04-19",
-        "vaccinations": "卫星-V",
-        "total_vaccinations": 112506,
-        "total_vaccinations_per_hundred": 0.86
+        "vaccinations": "牛津/阿斯利康,国药/北京",
+        "total_vaccinations": 116957,
+        "total_vaccinations_per_hundred": 118.93
     },
     {
-        "country": "塞舌尔",
-        "date": "2021-04-13",
-        "vaccinations": "牛津/阿斯利康,国药/北京",
-        "total_vaccinations": 112194,
-        "total_vaccinations_per_hundred": 114.09
+        "country": "几内亚",
+        "date": "2021-04-20",
+        "vaccinations": "卫星-V",
+        "total_vaccinations": 114297,
+        "total_vaccinations_per_hundred": 0.87
     },
     {
         "country": "北塞浦路斯土耳其共和国",
@@ -740,6 +740,13 @@
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech,科兴生物",
         "total_vaccinations": 107365,
         "total_vaccinations_per_hundred": 28.09
+    },
+    {
+        "country": "越南",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康",
+        "total_vaccinations": 106929,
+        "total_vaccinations_per_hundred": 0.11
     },
     {
         "country": "缅甸",
@@ -757,17 +764,17 @@
     },
     {
         "country": "摩尔多瓦",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 96372,
-        "total_vaccinations_per_hundred": 2.39
+        "total_vaccinations": 99639,
+        "total_vaccinations_per_hundred": 2.47
     },
     {
         "country": "科特迪瓦",
-        "date": "2021-04-16",
+        "date": "2021-04-18",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 91901,
-        "total_vaccinations_per_hundred": 0.35
+        "total_vaccinations": 94818,
+        "total_vaccinations_per_hundred": 0.36
     },
     {
         "country": "巴拉圭",
@@ -777,13 +784,6 @@
         "total_vaccinations_per_hundred": 1.23
     },
     {
-        "country": "越南",
-        "date": "2021-04-19",
-        "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 80857,
-        "total_vaccinations_per_hundred": 0.08
-    },
-    {
         "country": "阿尔及利亚",
         "date": "2021-02-19",
         "vaccinations": "卫星-V",
@@ -791,18 +791,18 @@
         "total_vaccinations_per_hundred": 0.17
     },
     {
-        "country": "巴巴多斯",
-        "date": "2021-04-17",
-        "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 69490,
-        "total_vaccinations_per_hundred": 24.18
+        "country": "Curacao",
+        "date": "2021-04-20",
+        "vaccinations": "莫德纳,辉瑞/BioNTech",
+        "total_vaccinations": 71973,
+        "total_vaccinations_per_hundred": 43.86
     },
     {
-        "country": "Curacao",
-        "date": "2021-04-19",
-        "vaccinations": "莫德纳,辉瑞/BioNTech",
-        "total_vaccinations": 68760,
-        "total_vaccinations_per_hundred": 41.9
+        "country": "巴巴多斯",
+        "date": "2021-04-18",
+        "vaccinations": "牛津/阿斯利康",
+        "total_vaccinations": 70758,
+        "total_vaccinations_per_hundred": 24.62
     },
     {
         "country": "直布罗陀",
@@ -813,10 +813,10 @@
     },
     {
         "country": "马恩岛",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 65675,
-        "total_vaccinations_per_hundred": 77.24
+        "total_vaccinations": 66414,
+        "total_vaccinations_per_hundred": 78.1
     },
     {
         "country": "苏丹",
@@ -827,10 +827,10 @@
     },
     {
         "country": "开曼群岛",
-        "date": "2021-04-16",
+        "date": "2021-04-20",
         "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 61114,
-        "total_vaccinations_per_hundred": 92.99
+        "total_vaccinations": 63350,
+        "total_vaccinations_per_hundred": 96.39
     },
     {
         "country": "圭亚那",
@@ -847,6 +847,13 @@
         "total_vaccinations_per_hundred": 0.58
     },
     {
+        "country": "黑山",
+        "date": "2021-04-20",
+        "vaccinations": "国药/北京,卫星-V",
+        "total_vaccinations": 56423,
+        "total_vaccinations_per_hundred": 8.98
+    },
+    {
         "country": "斐济",
         "date": "2021-04-16",
         "vaccinations": "牛津/阿斯利康",
@@ -854,11 +861,25 @@
         "total_vaccinations_per_hundred": 6.25
     },
     {
-        "country": "黑山",
+        "country": "百慕大",
         "date": "2021-04-19",
-        "vaccinations": "国药/北京,卫星-V",
-        "total_vaccinations": 55497,
-        "total_vaccinations_per_hundred": 8.84
+        "vaccinations": "辉瑞/BioNTech",
+        "total_vaccinations": 52337,
+        "total_vaccinations_per_hundred": 84.04
+    },
+    {
+        "country": "格恩西岛",
+        "date": "2021-04-20",
+        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
+        "total_vaccinations": 46587,
+        "total_vaccinations_per_hundred": 69.48
+    },
+    {
+        "country": "赤道几内亚",
+        "date": "2021-04-20",
+        "vaccinations": "国药/北京",
+        "total_vaccinations": 45441,
+        "total_vaccinations_per_hundred": 3.24
     },
     {
         "country": "塞拉利昂",
@@ -868,11 +889,11 @@
         "total_vaccinations_per_hundred": 0.56
     },
     {
-        "country": "格恩西岛",
-        "date": "2021-04-16",
-        "vaccinations": "牛津/阿斯利康,辉瑞/BioNTech",
-        "total_vaccinations": 43007,
-        "total_vaccinations_per_hundred": 64.14
+        "country": "Aruba",
+        "date": "2021-04-20",
+        "vaccinations": "辉瑞/BioNTech",
+        "total_vaccinations": 43945,
+        "total_vaccinations_per_hundred": 41.16
     },
     {
         "country": "北马其顿",
@@ -880,13 +901,6 @@
         "vaccinations": "辉瑞/BioNTech",
         "total_vaccinations": 41421,
         "total_vaccinations_per_hundred": 1.99
-    },
-    {
-        "country": "百慕大",
-        "date": "2021-04-04",
-        "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 41152,
-        "total_vaccinations_per_hundred": 66.08
     },
     {
         "country": "苏里南",
@@ -901,13 +915,6 @@
         "vaccinations": "牛津/阿斯利康",
         "total_vaccinations": 34262,
         "total_vaccinations_per_hundred": 8.62
-    },
-    {
-        "country": "赤道几内亚",
-        "date": "2021-04-16",
-        "vaccinations": "国药/北京",
-        "total_vaccinations": 32884,
-        "total_vaccinations_per_hundred": 2.34
     },
     {
         "country": "斯威士兰",
@@ -925,10 +932,10 @@
     },
     {
         "country": "格鲁吉亚",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 30209,
-        "total_vaccinations_per_hundred": 0.76
+        "total_vaccinations": 31019,
+        "total_vaccinations_per_hundred": 0.78
     },
     {
         "country": "泽西岛",
@@ -1030,10 +1037,10 @@
     },
     {
         "country": "格陵兰",
-        "date": "2021-04-19",
+        "date": "2021-04-20",
         "vaccinations": "辉瑞/BioNTech",
-        "total_vaccinations": 10974,
-        "total_vaccinations_per_hundred": 19.33
+        "total_vaccinations": 11508,
+        "total_vaccinations_per_hundred": 20.27
     },
     {
         "country": "圣基茨和尼维斯",
@@ -1051,10 +1058,10 @@
     },
     {
         "country": "列支敦士登公国",
-        "date": "2021-04-14",
+        "date": "2021-04-18",
         "vaccinations": "莫德纳,辉瑞/BioNTech",
-        "total_vaccinations": 8275,
-        "total_vaccinations_per_hundred": 21.7
+        "total_vaccinations": 8860,
+        "total_vaccinations_per_hundred": 23.23
     },
     {
         "country": "特克斯和凯科斯群岛",
@@ -1099,6 +1106,13 @@
         "total_vaccinations_per_hundred": 0.3
     },
     {
+        "country": "赞比亚",
+        "date": "2021-04-19",
+        "vaccinations": "牛津/阿斯利康",
+        "total_vaccinations": 3391,
+        "total_vaccinations_per_hundred": 0.02
+    },
+    {
         "country": "圣赫勒拿岛",
         "date": "2021-03-15",
         "vaccinations": "牛津/阿斯利康",
@@ -1131,13 +1145,6 @@
         "date": "2021-04-17",
         "vaccinations": "国药/北京",
         "total_vaccinations": 1366,
-        "total_vaccinations_per_hundred": 0.01
-    },
-    {
-        "country": "赞比亚",
-        "date": "2021-04-18",
-        "vaccinations": "牛津/阿斯利康",
-        "total_vaccinations": 1316,
         "total_vaccinations_per_hundred": 0.01
     },
     {
