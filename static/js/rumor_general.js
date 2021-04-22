@@ -51,7 +51,3 @@ $("#search_btn").click(function () {
 })
 
 
-$("#identify_btn").click(function () {
-    var input_content = document.getElementById("inputid").value
-    
-})
