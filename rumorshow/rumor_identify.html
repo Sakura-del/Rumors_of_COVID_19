@@ -29,6 +29,10 @@
     <link href="../static/build/css/custom.min.css" rel="stylesheet">
 
     <style>
+        body {
+            font-family: 'Microsoft YaHei Light'
+        }
+
         #top_nav {
             height: 100%;
         }
@@ -49,88 +53,109 @@
             margin-left: 10px;
         }
 
-        #rumors_list_block #rumor_result_count {
-            margin: 0;
-
-            font-size: 20px;
-            font-weight: 800;
+        #rumor_identify_block .dialog_container {
+            height: 600px;
         }
 
-        #rumors_list_block .rumor_list_x_content {
-            padding-left: 0;
-            margin-top: 0;
+        .clearfix {
+            display: table;
+            clear: both;
         }
 
-        #rumors_list_block .one_rumor_unit {
-            border-bottom: 2px solid rgb(230, 237, 233);
-            padding: 10px 0;
-            margin: 0 10px;
+        #rumor_identify_block #dialog_container_div {
+            width: 95%;
+            height: 60vh;
+            border: 1px;
+            border-radius: 20px;
+            border-color: rgb(230, 237, 233);
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            overflow: auto;
+
+            background-color: rgb(239, 241, 240);
         }
 
-        #rumors_list_block .rumor_text_div .rumor_type {
-            border-radius: 3px;
-            padding: 3px 5px;
-            margin-left: 1em;
+        /* 砍掉滚动条 */
+        #rumor_identify_block #dialog_container_div::-webkit-scrollbar {
+            display: none;
+        }
+
+        #rumor_identify_block .answer_container {
+            width: 100%;
+        }
+
+        #rumor_identify_block .question_container {
+            width: 100%;
+        }
+
+        #rumor_identify_block .answer_pocket {
+            max-width: 70%;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+
+            float: left;
+
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+
+        #rumor_identify_block .question_pocket {
+            max-width: 70%;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+
+            float: right;
 
             color: rgb(255, 255, 255);
-            background: rgb(66, 161, 99);
-
-            font-size: 14px !important;
+            background-color: rgb(42, 125, 255);
         }
 
-        #rumors_list_block .rumor_text_div .rumor_title {
-            font-size: 20px;
-            font-weight: 800;
+        #rumor_identify_block #input_and_button_container {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 20px;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_date {
-            margin: 0px;
-            margin-top: 40px;
+        #rumor_identify_block #question_input {
+            height: 5em;
+            width: 85%;
+            border: 1px;
+            border-radius: 20px;
+            margin-right: 3%;
 
-            font-size: 18px;
+            outline: medium;
+            resize: none;
+
+            background-color: rgb(226, 226, 226);
         }
 
-        #rumors_list_block .rumor_text_div .rumor_tag {
-            margin: 0px;
+        #rumor_identify_block #ask_question_button {
+            width: 10%;
+            height: 2em;
+            border: 1px;
+            border-radius: 10px;
+            margin: 1.5em 0;
+            margin-right: 0px;
 
-            font-size: 18px;
+            outline: medium;
+
+            color: white;
+            background-color: rgb(83, 145, 255);
+
+            float: right;
         }
 
-        #rumors_list_block .rumor_pic_div img {
-            height: 150px;
-            width: 150px;
-            margin-left: 20%;
+        #rumor_identify_block #ask_question_button:hover {
+            background-color: rgb(93, 155, 255);
         }
 
-        /* 以下设定新闻的样式 */
-        #news_list_block #news_result_count {
-            margin: 0;
-
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        #news_list_block .news_list_x_content {
-            padding-left: 0;
-            margin-top: 0;
-        }
-
-        #news_list_block .one_rumor_unit {
-            border-bottom: 2px solid rgb(230, 237, 233);
-            padding: 10px 0;
-            margin: 0 10px;
-        }
-
-        #news_list_block .rumor_text_div .rumor_title {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        #news_list_block .rumor_text_div .rumor_date {
-            margin: 0px;
-            margin-top: 40px;
-
-            font-size: 18px;
+        #rumor_identify_block #ask_question_button:active {
+            background-color: rgb(103, 165, 255);
         }
     </style>
 
@@ -229,10 +254,10 @@
             <!-- page content -->
             <div class="right_col" role="main" id="to_insert_nums">
                 <div class="row">
-                    <div class="col-md-9 col-sm-9" id="rumors_list_block">
+                    <div class="col-md-9 col-sm-9" id="rumor_identify_block">
                         <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>谣言结果</h2>
+                                <h2>谣言鉴定机器人</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -260,116 +285,81 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" id="rumor_list_x_content">
-                                <div class="row" id="rumor_result_count"></div>
-                            </div>
-                        </div>
+                            <div class="x_content">
+                                <div id="dialog_container_div">
+                                    <div class="answer_container clearfix">
+                                        <div class='answer_pocket'>在下面输入就可以鉴定是否是谣言</div>
+                                    </div>
+                                </div>
 
-                        <div class="x_content" id="rumor_list_x_content">
+                                <div id='input_and_button_container'>
+                                    <textarea id='question_input' onkeyup='question_input_listener()'></textarea>
+                                    <button id='ask_question_button' accessKey=''>鉴定</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-3 col-sm-3" id="news_list_block">
-                        <div class="x_panel tile">
-                            <div class="x_title">
-                                <h2>相关新闻</h2>
-                                <ul class="nav navbar-right panel_toolbox">
-                                    <li>
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                    </li>
-
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Settings 1</a>
-                                            <a class="dropdown-item" href="#">Settings 2</a>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <a class="close-link">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="x_content" id="news_list_x_content">
-                                <div class="row" id="news_result_count"></div>
-                            </div>
-                        </div>
-
-                        <div class="x_content" id="rumor_list_x_content">
-                        </div>
-                    </div>
-
-
                 </div>
-                <!-- /page content -->
-
-                <!-- footer content -->
-                <footer>
-                    <div class="pull-right">
-                        powered by xxxxxxxxxxxxxx
-                    </div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
             </div>
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    powered by xxxxxxxxxxxxxx
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
         </div>
+    </div>
 
-        <!-- jQuery -->
-        <script src="../static/vendors/jquery/dist/jquery.min.js"></script>
-        <!-- 先引入jquery -->
-        <script src="../static/js/jquery.js"></script>
-        <!-- Bootstrap -->
-        <script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- FastClick -->
-        <script src="../static/vendors/fastclick/lib/fastclick.js"></script>
-        <!-- NProgress -->
-        <script src="../static/vendors/nprogress/nprogress.js"></script>
-        <!-- Chart.js -->
-        <script src="../static/vendors/Chart.js/dist/Chart.min.js"></script>
-        <!-- gauge.js -->
-        <script src="../static/vendors/gauge.js/dist/gauge.min.js"></script>
-        <!-- bootstrap-progressbar -->
-        <script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-        <!-- iCheck -->
-        <script src="../static/vendors/iCheck/icheck.min.js"></script>
-        <!-- Skycons -->
-        <script src="../static/vendors/skycons/skycons.js"></script>
-        <!-- Flot -->
-        <script src="../static/vendors/Flot/jquery.flot.js"></script>
-        <script src="../static/vendors/Flot/jquery.flot.pie.js"></script>
-        <script src="../static/vendors/Flot/jquery.flot.time.js"></script>
-        <script src="../static/vendors/Flot/jquery.flot.stack.js"></script>
-        <script src="../static/vendors/Flot/jquery.flot.resize.js"></script>
-        <!-- Flot plugins -->
-        <script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-        <script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-        <script src="../static/vendors/flot.curvedlines/curvedLines.js"></script>
-        <!-- DateJS -->
-        <script src="../static/vendors/DateJS/build/date.js"></script>
-        <!-- JQVMap -->
-        <script src="../static/vendors/jqvmap/dist/jquery.vmap.js"></script>
-        <script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-        <!-- bootstrap-daterangepicker -->
-        <script src="../static/vendors/moment/min/moment.min.js"></script>
-        <script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <!-- Custom Theme Scripts -->
-        <script src="../static/build/js/custom.min.js"></script>
+    <!-- jQuery -->
+    <script src="../static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- 先引入jquery -->
+    <script src="../static/js/jquery.js"></script>
+    <!-- Bootstrap -->
+    <script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../static/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../static/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../static/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../static/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../static/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../static/vendors/Flot/jquery.flot.js"></script>
+    <script src="../static/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../static/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../static/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../static/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../static/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../static/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../static/vendors/moment/min/moment.min.js"></script>
+    <script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../static/build/js/custom.min.js"></script>
 
-        <script src="../static/js/flexible.js"></script>
-        <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/flexible.js"></script>
+    <script src="../static/js/echarts.min.js"></script>
 
-        <script src="../static/js/rumor_search_result.js"></script>
+    <script src="../static/js/rumor_identify.js"></script>
 
 </body>
 
