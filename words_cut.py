@@ -5,13 +5,16 @@ import os
 import django
 import csv
 import json
+
+from django.db import transaction
+
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(pwd + "../")
 # 找到根目录（与工程名一样的文件夹）下的settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rumor_of_COVID_19.settings')
 
 django.setup()
-from common.models import RumorInfo,HeadlinesNews
+from common.models import RumorInfo, HeadlinesNews, Question, Answer
 import jieba
 import jieba.posseg as psg
 from collections import Counter
@@ -24,6 +27,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
 import pyLDAvis
 import pyLDAvis.sklearn
+from datetime import datetime
 
 
 # 分词
@@ -219,8 +223,8 @@ def save_rumors():
     filename = 'data_source/data_from_creeper/丁香医生谣言.json'
     with open(filename, "r", encoding='utf-8') as f23:
         rumors = json.load(f23)
-    
-    rows=[]
+
+    rows = []
     for data in rumors:
         row = []
         row.append(data['title'])
@@ -238,8 +242,36 @@ def save_rumors():
         writer.writerows(rows)
 
 
+def import_data():
+    with open('data_source/data_from_creeper/较真网问答.json',
+              'r',
+              encoding='UTF-8') as f:
+        data_list = json.load(f)
+
+    answer_list = []
+    question_list = []
+
+    for data in data_list:
+        question_list.append(data['question'])
+        answer_list.append(data['answer_list'])
+
+    with transaction.atomic():
+        for index,data in enumerate(question_list):
+            question = Question.objects.create(
+                question=data,
+                question_text=data,
+                pub_date=datetime.now(),
+            )
+            Answer.objects.create(
+                questionid=question,
+                answer=answer_list[index][0],
+                answer_date=datetime.now(),
+            )
+
+
 # save_data()
 # cut_words_hanlp()
 # cut_words_jieba()
 # cut_rumors_sklearn()
-save_rumors()
+# save_rumors()
+import_data()
