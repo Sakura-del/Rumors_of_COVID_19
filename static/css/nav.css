@@ -1,0 +1,12 @@
+/* 字体图标垂直居中 */
+.iconfont{
+    vertical-align: middle;
+    padding-right: 5px;
+} 
+
+.tag_1st{
+    vertical-align: middle;
+}
+.fa-chevron-down::before{
+    vertical-align: middle;
+}
