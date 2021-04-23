@@ -1,94 +1,96 @@
-var father_div_news_content = document.getElementById("news_content");//插新闻的地方
-
 //一开始加载健康的前10条
 (function () {
     $.ajax({
         url: "/covid/news",
         type: "GET",
-        data: { action: "load_more_news", field: "健康", pagesize: 10, pagenum: 1 },
+        data: {
+            action: "load_more_news",
+            field: "健康",
+            pagesize: 10,
+            pagenum: 1
+        },
         dataType: "json",
         success: function (result) {
-            // console.log(result);
+            news_container_div = document.getElementById("news_container_div")
+
             for (var i = 0; i < result["retlist"].length; i++) {
-                var newrow = document.createElement("div");
-                newrow.className = "row";
+                var news_title_div = document.createElement("div")
+                news_title_div.className = 'news_title_div'
+                news_title_div.innerHTML = result["retlist"][i]["title"]
 
-                var new_4_div = document.createElement("div");
-                new_4_div.className = "col-md-4 col-sm-4";
+                var news_summary_div = document.createElement("div")
+                news_summary_div.className = 'news_summary_div'
+                news_summary_div.innerHTML = result["retlist"][i]["summary"]
 
-                var new_span = document.createElement("span");
-                new_span.className = "rumor_title";
-                new_span.innerHTML = result["retlist"][i]["title"];
-                new_4_div.appendChild(new_span);
-                var new_p = document.createElement("p");
-                new_p.className = "rumor_date";
-                new_p.innerHTML = result["retlist"][i]["date"];
-                new_4_div.appendChild(new_p);
+                var news_date_div = document.createElement("div")
+                news_date_div.className = 'news_date_div'
+                news_date_div.innerHTML = result["retlist"][i]["date"]
 
-                var new_8_div = document.createElement("div");
-                new_8_div.className = "col-md-8 col-sm-8";
+                var news_spacer_div = document.createElement("div")
+                news_spacer_div.className = 'news_spacer_div'
 
-                var new_span_summary = document.createElement("span");
-                new_span_summary.innerHTML = result["retlist"][i]["summary"];
-                new_8_div.appendChild(new_span_summary);
+                var news_row = document.createElement("div")
+                news_row.className = 'news_row'
+                news_row.appendChild(news_title_div)
+                news_row.appendChild(news_summary_div)
+                news_row.appendChild(news_date_div)
+                news_row.appendChild(news_spacer_div)
 
-                newrow.appendChild(new_4_div);
-                newrow.appendChild(new_8_div);
-
-
-                father_div_news_content.appendChild(newrow);
+                news_container_div.appendChild(news_row);
             }
         }
     })
 })();
 
 
-var tag_idx = 0;//初始加载的是“健康”标签下的内容
-var page_id = 1;//初始都是第一页
-var tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索", "教育", "新鲜事", "旅游", "汽车", "社会", "艺术", "财经"];
+page_id = 1;//初始都是第一页
+tag_idx = 0
+tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索", "教育", "新鲜事", "旅游", "汽车", "社会", "艺术", "财经"];
 
 //点击标签时，加载该标签下第一页的10条新闻
 (function () {
-    $("#switcher_row").on("click", "a", function () {
-        var new_idx = $(this).index();
-        tag_idx = new_idx;
-        var new_tag_name = tags[tag_idx];
+    $("#switcher_row").on("click", "button", function () {
         page_id = 1;
+        tag_idx = $(this).index()
+
         $.ajax({
             url: "/covid/news",
             type: "GET",
-            data: { action: "load_more_news", field: new_tag_name, pagesize: 10, pagenum: 1 },
+            data: {
+                action: "load_more_news",
+                field: tags[tag_idx],
+                pagesize: 10,
+                pagenum: 1
+            },
             dataType: "json",
             success: function (result) {
-                father_div_news_content.innerHTML = "";//清空原先数据
+                news_container_div = document.getElementById("news_container_div")
+                news_container_div.innerHTML = ''
+
                 for (var i = 0; i < result["retlist"].length; i++) {
-                    var newrow = document.createElement("div");
-                    newrow.className = "row";
+                    var news_title_div = document.createElement("div")
+                    news_title_div.className = 'news_title_div'
+                    news_title_div.innerHTML = result["retlist"][i]["title"]
 
-                    var new_4_div = document.createElement("div");
-                    new_4_div.className = "col-md-4 col-sm-4";
+                    var news_summary_div = document.createElement("div")
+                    news_summary_div.className = 'news_summary_div'
+                    news_summary_div.innerHTML = result["retlist"][i]["summary"]
 
-                    var new_span = document.createElement("span");
-                    new_span.className = "rumor_title";
-                    new_span.innerHTML = result["retlist"][i]["title"];
-                    new_4_div.appendChild(new_span);
-                    var new_p = document.createElement("p");
-                    new_p.className = "rumor_date";
-                    new_p.innerHTML = result["retlist"][i]["date"];
-                    new_4_div.appendChild(new_p);
+                    var news_date_div = document.createElement("div")
+                    news_date_div.className = 'news_date_div'
+                    news_date_div.innerHTML = result["retlist"][i]["date"]
 
-                    var new_8_div = document.createElement("div");
-                    new_8_div.className = "col-md-8 col-sm-8";
+                    var news_spacer_div = document.createElement("div")
+                    news_spacer_div.className = 'news_spacer_div'
 
-                    var new_span_summary = document.createElement("span");
-                    new_span_summary.innerHTML = result["retlist"][i]["summary"];
-                    new_8_div.appendChild(new_span_summary);
+                    var news_row = document.createElement("div")
+                    news_row.className = 'news_row'
+                    news_row.appendChild(news_title_div)
+                    news_row.appendChild(news_summary_div)
+                    news_row.appendChild(news_date_div)
+                    news_row.appendChild(news_spacer_div)
 
-                    newrow.appendChild(new_4_div);
-                    newrow.appendChild(new_8_div);
-
-
-                    father_div_news_content.appendChild(newrow);
+                    news_container_div.appendChild(news_row);
                 }
             }
         })
@@ -96,88 +98,61 @@ var tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索"
 })();
 
 
-//触底则加载当前
-(function () {
-    $(document).ready(function () {
-        var nScrollHight = 0; //滚动距离总长(注意不是滚动条的长度)
-        var nScrollTop = 0;   //滚动到的当前位置
-        var nDivHight = $("#news_content").height();
-        $("#news_content").scroll(function () {
-            nScrollHight = $(this)[0].scrollHeight;
-            nScrollTop = $(this)[0].scrollTop;
-            if (nScrollTop + nDivHight >= nScrollHight) {
-                page_id += 1;
-                $.ajax({
-                    url: "/covid/news",
-                    type: "GET",
-                    data: { action: "load_more_news", field: tags[tag_idx], pagesize: 10, pagenum: page_id },
-                    dataType: "json",
-                    success: function (result) {
-                        if (result["total"] > 0) {
-                            for (var i = 0; i < result["retlist"].length; i++) {
-                                var newrow = document.createElement("div");
-                                newrow.className = "row";
 
-                                var newdate = document.createElement("div");
-                                newdate.className = "col-md-2 col-sm-2 tmp_date";
-                                newdate.innerHTML = result["retlist"][i]["date"];
-                                newrow.appendChild(newdate);
+news_coming = false
 
-                                var newtitle = document.createElement("div");
-                                newdate.className = "col-md-4 col-sm-4 tmp_title";
-                                newdate.innerHTML = result["retlist"][i]["title"];
-                                newrow.appendChild(newtitle);
+$(document).ready(function () {
+    $(window).scroll(function () {
+        console.log($(window).scrollTop() + $(window).height())
+        console.log($(document).height())
+        console.log(news_coming)
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !news_coming) {
+            news_coming = true
+            page_id += 1;
+            $.ajax({
+                url: "/covid/news",
+                type: "GET",
+                data: {
+                    action: "load_more_news",
+                    field: tags[tag_idx],
+                    pagesize: 10,
+                    pagenum: page_id
+                },
+                dataType: "json",
+                success: function (result) {
+                    if (result["total"] > 0) {
+                        news_container_div = document.getElementById("news_container_div")
 
-                                var newsummary = document.createElement("div");
-                                newsummary.className = "col-md-6 col-sm-6 tmp_summary";
-                                newsummary.innerHTML = result["retlist"][i]["summary"];
-                                newrow.appendChild(newsummary);
+                        for (var i = 0; i < result["retlist"].length; i++) {
+                            var news_title_div = document.createElement("div")
+                            news_title_div.className = 'news_title_div'
+                            news_title_div.innerHTML = result["retlist"][i]["title"]
 
-                                father_div_news_content.appendChild(newrow);
-                            }
+                            var news_summary_div = document.createElement("div")
+                            news_summary_div.className = 'news_summary_div'
+                            news_summary_div.innerHTML = result["retlist"][i]["summary"]
+
+                            var news_date_div = document.createElement("div")
+                            news_date_div.className = 'news_date_div'
+                            news_date_div.innerHTML = result["retlist"][i]["date"]
+
+                            var news_spacer_div = document.createElement("div")
+                            news_spacer_div.className = 'news_spacer_div'
+
+                            var news_row = document.createElement("div")
+                            news_row.className = 'news_row'
+                            news_row.appendChild(news_title_div)
+                            news_row.appendChild(news_summary_div)
+                            news_row.appendChild(news_date_div)
+                            news_row.appendChild(news_spacer_div)
+
+                            news_container_div.appendChild(news_row);
                         }
                     }
-                })
-            }
-        });
-    });
-    // $(window).on('scroll', function () {
-    //     var scrollTop = $(window).scrollTop(); //滚动的高度
-    //     var height = $(window).height(); // 屏幕的高度
-    //     var docHeight = $(document).height();
-    //     if ((scrollTop + height) == docHeight) {
-    //         page_id += 1;
-    //         $.ajax({
-    //             url: "/covid/news",
-    //             type: "GET",
-    //             data: { action: "load_more_news", field: tags[tag_idx], pagesize: 10, pagenum: page_id },
-    //             dataType: "json",
-    //             success: function (result) {
-    //                 if (result["total"] > 0) {
-    //                     for (var i = 0; i < result["retlist"].length; i++) {
-    //                         var newrow = document.createElement("div");
-    //                         newrow.className = "col-md-12 col-sm-12";
 
-    //                         var newdate = document.createElement("div");
-    //                         newdate.className = "col-md-2 col-sm-2 tmp_date";
-    //                         newdate.innerHTML = result["retlist"][i]["date"];
-    //                         newrow.appendChild(newdate);
-
-    //                         var newtitle = document.createElement("div");
-    //                         newdate.className = "col-md-4 col-sm-4 tmp_title";
-    //                         newdate.innerHTML = result["retlist"][i]["title"];
-    //                         newrow.appendChild(newtitle);
-
-    //                         var newsummary = document.createElement("div");
-    //                         newsummary.className = "col-md-6 col-sm-6 tmp_summary";
-    //                         newsummary.innerHTML = result["retlist"][i]["summary"];
-    //                         newrow.appendChild(newsummary);
-
-    //                         father_div_news_content.appendChild(newrow);
-    //                     }
-    //                 }
-    //             }
-    //         })
-    //     }
-    // })
-})();
+                    news_coming = false
+                }
+            })
+        }
+    })
+})
