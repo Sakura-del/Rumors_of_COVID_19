@@ -18,7 +18,7 @@ def 一键爬虫():
     from 丁香医生谣言 import func_list
     all_func_list += func_list
 
-    from 较真网 import func_list
+    from 较真网谣言 import func_list
     all_func_list += func_list
 
     from 腾讯新闻各地出行政策 import func_list

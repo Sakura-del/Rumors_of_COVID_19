@@ -11,7 +11,7 @@ if not os.path.isdir('data_source/data_from_creeper'):
     os.makedirs('data_source/data_from_creeper')
 
 
-def QQ_fact_func():
+def QQ_fact_rumor_func():
     rumor_needed_list = []
 
     def One_page_func(page):
@@ -66,4 +66,4 @@ def QQ_fact_func():
 
 
 
-func_list = [QQ_fact_func]
+func_list = [QQ_fact_rumor_func]
