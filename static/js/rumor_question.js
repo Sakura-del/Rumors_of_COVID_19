@@ -2,10 +2,9 @@ var pageid = 1;//初始加载第一页
 var btn_nums = 5;//分页按钮数量
 var father_div_question_list = document.getElementById("question_list");
 var btn_div = document.getElementById("page_button");
+
 //加载第一页，以及翻页按钮
-(function () {
-
-
+function init_first_page() {
     $.ajax({
         url: "/rumor/questions",
         type: "GET",
@@ -56,7 +55,9 @@ var btn_div = document.getElementById("page_button");
             }
         }
     })
-})();
+}
+
+init_first_page();
 
 
 //提问后刷新页面
@@ -70,7 +71,8 @@ var btn_div = document.getElementById("page_button");
             data: { action: "ask_question", question: input_title, question_text: input_detail },
             dataType: "json",
             success: function (result) {
-                window.location.reload();//刷新当前页面
+                father_div_question_list.innerHTML="";
+                init_first_page();
             }
         })
     })
