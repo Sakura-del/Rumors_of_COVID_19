@@ -124,6 +124,7 @@ def get_tag_count(request):
     # 用Counter字典计数
     c = Counter(tag_list)
     retlist = sorted(c.items(), key=lambda t: t[1], reverse=True)
+
     return JsonResponse({'ret': 0, 'retlist': retlist, 'total': len(retlist)})
 
 

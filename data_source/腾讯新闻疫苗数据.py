@@ -90,7 +90,7 @@ def Key_country_vaccines_daily_trend_func():
         file.write(json.dumps(Key_country_vaccines_daily_trend_dict,ensure_ascii = False))
 
 
-# Key_country_vaccines_daily_trend_func()
+Key_country_vaccines_daily_trend_func()
 def China_and_global_vaccination_amount_func():
     url = 'https://api.inews.qq.com/newsqa/v1/automation/modules/list'
     params = {'modules' : 'VaccineTopData'}

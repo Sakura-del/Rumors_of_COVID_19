@@ -11,7 +11,7 @@ sys.path.append(pwd + "../")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rumor_of_COVID_19.settings')
 
 django.setup()
-from common.models import RumorInfo
+from common.models import RumorInfo,HeadlinesNews
 import jieba
 import jieba.posseg as psg
 from collections import Counter
@@ -181,24 +181,60 @@ def print_top_words(model, tf_feature_names, n_top_words):
 
 
 def save_rumors():
-    qs = RumorInfo.objects.values('title','abstract', 'markstyle')
-    qs = list(qs)
-    rows = []
-    for data in qs:
+    # qs = RumorInfo.objects.values('title','abstract', 'markstyle')
+    # qs = list(qs)
+    # rows = []
+    # for data in qs:
+    #     row = []
+    #     row.append(data['title'])
+    #     row.append(data['abstract'])
+    #     if data['markstyle'] == 'fake':
+    #         row.append('1')
+    #     elif data['markstyle'] == 'true':
+    #         row.append('2')
+    #     else:
+    #         row.append('3')
+    #     rows.append(row)
+    # print(rows)
+    # with open("谣言训练.csv", "w", encoding="utf-8-sig", newline='') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(['title', 'abstract','mark'])
+    #     writer.writerows(rows)
+
+    # qs = HeadlinesNews.objects.values('title', 'summary')
+    # qs = list(qs)
+    # rows = []
+    # for data in qs:
+    #     row = []
+    #     row.append(data['title'])
+    #     row.append(data['summary'])
+    #     row.append(1)
+    #     rows.append(row)
+    # print(rows)
+    # with open("新闻.csv", "w", encoding="utf-8-sig", newline='') as f:
+    #     writer = csv.writer(f)
+    #     writer.writerow(['title', 'abstract', 'mark'])
+    #     writer.writerows(rows)
+
+    filename = 'data_source/data_from_creeper/丁香医生谣言.json'
+    with open(filename, "r", encoding='utf-8') as f23:
+        rumors = json.load(f23)
+    
+    rows=[]
+    for data in rumors:
         row = []
         row.append(data['title'])
-        row.append(data['abstract'])
-        if data['markstyle'] == 'fake':
+        row.append(data['mainSummary'])
+        if data['rumorType'] == 0:
             row.append('1')
-        elif data['markstyle'] == 'true':
+        elif data['rumorType'] == 1:
             row.append('2')
         else:
             row.append('3')
         rows.append(row)
-    print(rows)
-    with open("谣言训练.csv", "w", encoding="utf-8-sig", newline='') as f:
+    with open("丁香医生.csv", "w", encoding="utf-8-sig", newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['title', 'abstract','mark'])
+        writer.writerow(['title', 'abstract', 'mark'])
         writer.writerows(rows)
 
 
