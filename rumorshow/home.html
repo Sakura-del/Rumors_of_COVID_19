@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>识谣知疫</title>
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/assets/css/templatemo-breezed.css">
+    <link rel="stylesheet" href="../static/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="../static/assets/css/lightbox.css">
+</head>
+
+<body>
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <div class="item">
+                <div class="img-fill" style="height: 100%;">
+                    <img src="../static/assets/images/slide-01.jpg" alt="">
+                    <div class="text-content">
+                        <h3>欢迎使用《识谣知疫》</h3>
+                        <h5>谣言止于智者，疫情阿巴阿巴</h5>
+                        <a href="epidemic_general_data.html" class="main-filled-button">Get Start Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../static/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../static/assets/js/popper.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../static/assets/js/owl-carousel.js"></script>
+    <script src="../static/assets/js/scrollreveal.min.js"></script>
+    <script src="../static/assets/js/waypoints.min.js"></script>
+    <script src="../static/assets/js/jquery.counterup.min.js"></script>
+    <script src="../static/assets/js/imgfix.min.js"></script>
+    <script src="../static/assets/js/slick.js"></script>
+    <script src="../static/assets/js/lightbox.js"></script>
+    <script src="../static/assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="../static/assets/js/custom.js"></script>
+    <script>
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>
