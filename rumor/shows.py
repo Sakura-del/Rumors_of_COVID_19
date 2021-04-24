@@ -6,19 +6,20 @@ from common.models import RumorInfo
 from django.db.models import *
 from collections import *
 import jieba
+import re
+import wordcloud  # 导入词云库
+import numpy as np
+import matplotlib.pyplot as plt
+import PIL
+import datetime
 
 # Create your views here.
 # 谣言可视化界面
 
-# 加载停用词表
-stopwords = [
-    line.strip()
-    for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
-]
 
 # 中国各省份名
 province_list = ['天津', '北京', '河北', '山西', '吉林', '辽宁', '内蒙古', '黑龙江', '上海', '江苏', '浙江', '福建', '安徽', '河南', '江西', '山东', '湖北',
-                 '湖南', '广东', '海南', '广西', '重庆', '贵州', '云南', '四川', '西藏', '陕西', '青海', '甘肃', '宁夏', '新疆','澳门','香港','台湾']
+                 '湖南', '广东', '海南', '广西', '重庆', '贵州', '云南', '四川', '西藏', '陕西', '青海', '甘肃', '宁夏', '新疆', '澳门', '香港', '台湾']
 
 
 # 数量变化趋势
@@ -34,6 +35,11 @@ def get_count_trend(request):
 
 # 提取地名
 def cut_words_hanlp(rumor_text):
+    # 加载停用词表
+    stopwords = [
+        line.strip()
+        for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
+    ]
     # 去除空格
     rumor_text = rumor_text.strip()
 
@@ -52,7 +58,7 @@ def cut_words_hanlp(rumor_text):
     location_list = []
     for location in out_list:
         if '省' in location:
-            location_list.append(location.replace('省',''))
+            location_list.append(location.replace('省', ''))
         elif location in province_list:
             location_list.append(location)
         elif '市' in location:
@@ -67,7 +73,7 @@ def cut_words_hanlp(rumor_text):
             else:
                 location_list.append(location)
         else:
-            location_list.append(location+'市')
+            location_list.append(location + '市')
 
     return (location_list)
 
@@ -99,11 +105,30 @@ def get_location_date_trend(request):
         else:
             retlist[str(data['date'])].extend(cut_words)
 
+    begin = datetime.datetime.strptime('2020-01-21','%Y-%m-%d').date()
+    end = datetime.date.today()
+    interval = int((end-begin).days) +1
+    delta = datetime.timedelta(days=1)
+
+    for i in range(0,interval,1):
+        date = begin + delta * i
+        time = datetime.datetime.strftime(date,'%Y-%m-%d')
+        if time in retlist:
+            pass
+        else:
+            retlist[time]=[]
+
     return JsonResponse({"ret": 0, "retlist": retlist, "msg": ""})
 
 
 # 查询谣言
 def get_tag_count(request):
+    # 加载停用词表
+    stopwords = [
+        line.strip()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
+    ]
+
     # 得到所有谣言
     rumor_text = ''
     rumor_list = RumorInfo.objects.values('abstract')
@@ -119,13 +144,31 @@ def get_tag_count(request):
     tag_list = []
     for item in cut_rumors:
         if item not in stopwords:
-            tag_list.append(item)
+            if re.match(r"[\u4e00-\u9fa5]",item) is not None:
+                tag_list.append(item)
 
     # 用Counter字典计数
     c = Counter(tag_list)
-    retlist = sorted(c.items(), key=lambda t: t[1], reverse=True)
+    #
+    # retlist = dict()
+    # index = 0
+    # for key,value in c:
+    #     retlist['key'] = value
+    #     index +=1
+    #     if index >=200:
+    #         break
 
-    return JsonResponse({'ret': 0, 'retlist': retlist, 'total': len(retlist)})
+    image = PIL.Image.open('病毒.png')
+    mask = np.array(image)
+    wc = wordcloud.WordCloud(font_path="C:/Windows/Fonts/STXINWEI.TTF", max_words=200, width=512, height=512, mask=mask,
+                             background_color='white', repeat=False, mode='RGBA')
+    wc.generate_from_frequencies(c)
+    wc.to_file('词云图.png')
+    plt.imshow(wc)
+    plt.axis('off')
+    plt.show()
+
+    return JsonResponse({"ret":0,"msg":''})
 
 
 # 操作处理字典

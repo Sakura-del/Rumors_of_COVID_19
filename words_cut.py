@@ -1,11 +1,16 @@
 # -*-coding:utf-8-*-
 # 独立使用django的model
+import re
 import sys
 import os
+
+import PIL
 import django
 import csv
 import json
 
+import numpy as np
+import wordcloud
 from django.db import transaction
 
 pwd = os.path.dirname(os.path.realpath(__file__))
@@ -28,6 +33,7 @@ from sklearn.decomposition import LatentDirichletAllocation
 import pyLDAvis
 import pyLDAvis.sklearn
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 
 # 分词
@@ -256,7 +262,7 @@ def import_data():
         answer_list.append(data['answer_list'])
 
     with transaction.atomic():
-        for index,data in enumerate(question_list):
+        for index, data in enumerate(question_list):
             question = Question.objects.create(
                 question=data,
                 question_text=data,
@@ -269,9 +275,63 @@ def import_data():
             )
 
 
+def get_tag_count():
+    # 加载停用词表
+    stopwords = [
+        line.strip()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
+    ]
+
+    # 得到所有谣言
+    rumor_text = ''
+    rumor_list = RumorInfo.objects.values('abstract')
+
+    # 将QuerySet转成列表
+    rumor_list = list(rumor_list)
+    # 去除空格
+    for rumor in rumor_list:
+        rumor_text += rumor['abstract'].replace(' ', '')
+
+    # jieba分词
+    cut_rumors = jieba.cut(rumor_text.strip())
+    tag_list = []
+    for item in cut_rumors:
+        if item not in stopwords:
+            if re.match(r"[\u4e00-\u9fa5]", item) is not None:
+                tag_list.append(item)
+
+    # 用Counter字典计数
+    c = Counter(tag_list)
+    #
+    # retlist = dict()
+    # index = 0
+    # for key,value in c:
+    #     retlist['key'] = value
+    #     index +=1
+    #     if index >=200:
+    #         break
+
+    image = PIL.Image.open('病毒.png')
+    mask_image = np.array(image)
+    wc = wordcloud.WordCloud(font_path="C:/Windows/Fonts/STXINWEI.TTF",
+                             max_words=200,
+                             width=512,
+                             height=512,
+                             mask=mask_image,
+                             background_color='white',
+                             repeat=False,
+                             mode='RGBA')
+    word_cloud = wc.generate_from_frequencies(c)
+    word_cloud.to_file('词云图.png')
+    plt.imshow(word_cloud,interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
+
+
 # save_data()
 # cut_words_hanlp()
 # cut_words_jieba()
 # cut_rumors_sklearn()
 # save_rumors()
-import_data()
+# import_data()
+get_tag_count()
