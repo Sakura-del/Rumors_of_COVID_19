@@ -245,5 +245,5 @@ def DinXiang_today_data_func():
                                 'current_covid_national'  : global_data_list},ensure_ascii = False))
 
 
-
+DinXiang_today_data_func()
 func_list = [DinXiang_today_data_func]
