@@ -1,116 +1,100 @@
-function search_input_listener(e) { //监听文本框按回车，回车相当于点按钮
+function search_input_listener(e) { //监听文本框按回车，点按钮
     var e = e || window.event;
     if (e.keyCode == 13)
         On_search_btn_click();
 }
 
-
-$.ajax({
-    url: "/rumor/views",
-    type: "GET",
-    data: { action: "list_rumors" },
-    dataType: "json",
-    success: function (result) {
-        console.log(result);
-        var titles = document.getElementsByName("title");
-        var dates = document.getElementsByName("date");
-        var types = document.getElementsByName("type");
-        var tags = document.getElementsByName("tag");
-        var pics = document.getElementsByName("pic");
-        var tmptag;
-        for (var i = 0; i < 5; i++) {
-            titles[i].innerHTML = result["retlist"][i]["title"];
-            dates[i].innerHTML = result["retlist"][i]["date"];
-
-            if (result["retlist"][i]["markstyle"] == "true") {
-                types[i].innerHTML = "确实如此"
-                types[i].style.backgroundColor = 'rgb(66, 161, 99)'
-            }
-            else if (result["retlist"][i]["markstyle"] == "fake") {
-                types[i].innerHTML = "谣言"
-                types[i].style.backgroundColor = 'rgb(196, 31, 32)'
-            }
-            else {
-                types[i].innerHTML = "尚无定论"
-                types[i].style.backgroundColor = 'rgb(72, 72, 72)'
-            }
-
-            pics[i].src = result["retlist"][i]["coversqual"];
-            var objKeys = Object.keys(result["retlist"][i]["tag"]);
-            for (var j = 0; j < objKeys.length; j++) {
-                if (j == 0) {
-                    tmptag = result["retlist"][i]["tag"][j];
-                }
-                else {
-                    tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
-                }
-            }
-            tags[i].innerHTML = tmptag;
-        }
-    }
-});
-
-
-function On_search_btn_click(){
+function On_search_btn_click() {
     var input_content = document.getElementById("search_input").value
     window.location.href = "rumor_search_result.html" + "?content=" + input_content;
 }
 
 
 
-news_coming = false
+page_id = 1
+rumor_coming = false
 
-page_id = 1;//初始都是第一页
+function append_rumor(page_id) {
+    $.ajax({
+        url: "/rumor/views",
+        type: "GET",
+        data: {
+            action: "list_more_rumors",
+            pagesize: 10,
+            title:'北京',
+            pagenum: page_id
+        },
+        dataType: "json",
+        success: function (result) {
+            var rumors_list_container = document.getElementById('rumors_list_container')
+            rumors_list = result["retlist"]
 
-// $(document).ready(function () {
-//     $(window).scroll(function () {
-//         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !news_coming) {
-//             news_coming = true
-//             page_id += 1;
-//             $.ajax({
-//                 url: "/covid/news",
-//                 type: "GET",
-//                 data: {
-//                     action: "load_more_news",
-//                     field: tags[tag_idx],
-//                     pagesize: 10,
-//                     pagenum: page_id
-//                 },
-//                 dataType: "json",
-//                 success: function (result) {
-//                     if (result["total"] > 0) {
-//                         news_container_div = document.getElementById("news_container_div")
+            for (var i = 0; i < rumors_list.length; i++) {
+                var rumor_title_span = document.createElement('span')
+                rumor_title_span.className = 'rumor_title_span'
+                rumor_title_span.innerHTML = rumors_list[i]["title"]
 
-//                         for (var i = 0; i < result["retlist"].length; i++) {
-//                             var news_title_div = document.createElement("div")
-//                             news_title_div.className = 'news_title_div'
-//                             news_title_div.innerHTML = result["retlist"][i]["title"]
+                var rumor_type_span = document.createElement('span')
+                if (rumors_list[i]["markstyle"] == "true") {
+                    rumor_type_span.innerHTML = "确实如此"
+                    rumor_type_span.className = 'rumor_type_span true_rumor'
+                }
+                else if (rumors_list[i]["markstyle"] == "fake") {
+                    rumor_type_span.innerHTML = "谣言"
+                    rumor_type_span.className = 'rumor_type_span fake_rumor'
+                }
+                else {
+                    rumor_type_span.innerHTML = "尚无定论"
+                    rumor_type_span.className = 'rumor_type_span unknown_rumor'
+                }
 
-//                             var news_summary_div = document.createElement("div")
-//                             news_summary_div.className = 'news_summary_div'
-//                             news_summary_div.innerHTML = result["retlist"][i]["summary"]
+                var rumor_date_p = document.createElement('p')
+                rumor_date_p.className = 'rumor_date_p'
+                rumor_date_p.innerHTML = rumors_list[i]["date"]
 
-//                             var news_date_div = document.createElement("div")
-//                             news_date_div.className = 'news_date_div'
-//                             news_date_div.innerHTML = result["retlist"][i]["date"]
+                var rumor_tag_p = document.createElement('p')
+                rumor_tag_p.className = 'rumor_tag_p'
+                rumor_tag_p.innerHTML = rumors_list[i]["tag"]
 
-//                             var news_spacer_div = document.createElement("div")
-//                             news_spacer_div.className = 'news_spacer_div'
+                var rumor_text_div = document.createElement('div')
+                rumor_text_div.className = 'col-md-9 col-sm-9 rumor_text_div'
+                rumor_text_div.appendChild(rumor_title_span)
+                rumor_text_div.appendChild(rumor_type_span)
+                rumor_text_div.appendChild(rumor_date_p)
+                rumor_text_div.appendChild(rumor_tag_p)
 
-//                             var news_row = document.createElement("div")
-//                             news_row.className = 'news_row'
-//                             news_row.appendChild(news_title_div)
-//                             news_row.appendChild(news_summary_div)
-//                             news_row.appendChild(news_date_div)
-//                             news_row.appendChild(news_spacer_div)
+                var rumor_img = document.createElement('img')
+                rumor_img.className = 'rumor_img'
+                rumor_img.src = rumors_list[i]["coversqual"];
 
-//                             news_container_div.appendChild(news_row);
-//                         }
-//                     }
+                var rumor_img_container = document.createElement('div')
+                rumor_img_container.className = 'col-md-3 col-sm-3 rumor_img_container'
+                rumor_img_container.appendChild(rumor_img)
 
-//                     news_coming = false
-//                 }
-//             })
-//         }
-//     })
-// })
+                var one_rumor_unit = document.createElement('div')
+                one_rumor_unit.className = 'one_rumor_unit clearfix'
+                one_rumor_unit.appendChild(rumor_text_div)
+                one_rumor_unit.appendChild(rumor_img_container)
+
+                rumors_list_container.appendChild(one_rumor_unit)
+            }
+
+            rumor_coming = false
+        }
+    })
+}
+
+
+append_rumor(page_id)
+
+
+
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
+            rumor_coming = true
+            page_id += 1;
+            append_rumor(page_id)
+        }
+    })
+})

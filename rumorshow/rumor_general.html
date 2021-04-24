@@ -51,7 +51,7 @@
             margin-left: 10px;
         }
 
-        #page_content .clearfix::after {
+        .clearfix {
             display: table;
             clear: both;
         }
@@ -105,23 +105,24 @@
             background-color: rgb(108, 229, 189);
         }
 
-        #rumors_list_block .rumors_list_x_content {
+        #rumors_list_block .rumors_list_container {
             padding-left: 0;
             margin-top: 0;
         }
 
         #rumors_list_block .one_rumor_unit {
+            width: 100%;
             border-bottom: 2px solid rgb(230, 237, 233);
             padding: 10px 0;
             margin: 0 10px;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_title {
+        #rumors_list_block .rumor_text_div .rumor_title_span {
             font-size: 20px;
             font-weight: 800;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_type {
+        #rumors_list_block .rumor_text_div .rumor_type_span {
             border-radius: 3px;
             padding: 3px 5px;
 
@@ -131,20 +132,32 @@
             font-size: 14px !important;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_date {
+        #rumors_list_block .rumor_text_div .true_rumor{
+            background-color:rgb(66, 161, 99);
+        }
+
+        #rumors_list_block .rumor_text_div .fake_rumor{
+            background-color:rgb(196, 31, 32);
+        }
+
+        #rumors_list_block .rumor_text_div .unknown_rumor{
+            background-color:rgb(72, 72, 72);
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_date_p {
             margin: 0px;
             margin-top: 40px;
 
             font-size: 18px;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_tag {
+        #rumors_list_block .rumor_text_div .rumor_tag_p {
             margin: 0px;
 
             font-size: 18px;
         }
 
-        #rumors_list_block .rumor_pic_div img {
+        #rumors_list_block .rumor_img {
             height: 120px;
             width: 80%;
             margin-left: 20%;
@@ -316,62 +329,8 @@
                                     <div class="clearfix"></div>
                                 </div>
 
-                                <div class="x_content rumors_list_x_content">
-                                    <div class="row one_rumor_unit">
-                                        <div class="col-sm-9 rumor_text_div">
-                                            <span class="rumor_title" name="title">标题</span>
-                                            <span class="rumor_type" name="type">鉴定结果</span>
-                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                            <p class="text-muted rumor_tag" name="tag">关键词</span>
-                                        </div>
-                                        <div class="col-sm-3 rumor_pic_div">
-                                            <img name="pic" src="images/logo.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="row one_rumor_unit">
-                                        <div class="col-sm-9 rumor_text_div">
-                                            <span class="rumor_title" name="title">标题</span>
-                                            <span class="rumor_type" name="type">鉴定结果</span>
-                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                        </div>
-                                        <div class="col-sm-3 rumor_pic_div">
-                                            <img name="pic" src="images/logo.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="row one_rumor_unit">
-                                        <div class="col-sm-9 rumor_text_div">
-                                            <span class="rumor_title" name="title">标题</span>
-                                            <span class="rumor_type" name="type">鉴定结果</span>
-                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                        </div>
-                                        <div class="col-sm-3 rumor_pic_div">
-                                            <img name="pic" src="images/logo.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="row one_rumor_unit">
-                                        <div class="col-sm-9 rumor_text_div">
-                                            <span class="rumor_title" name="title">标题</span>
-                                            <span class="rumor_type" name="type">鉴定结果</span>
-                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                        </div>
-                                        <div class="col-sm-3 rumor_pic_div">
-                                            <img name="pic" src="images/logo.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="row one_rumor_unit">
-                                        <div class="col-sm-9 rumor_text_div">
-                                            <span class="rumor_title" name="title">标题</span>
-                                            <span class="rumor_type" name="type">鉴定结果</span>
-                                            <p class="text-muted rumor_date" name="date">发布日期之类的</p>
-                                            <p class="text-muted rumor_tag" name="tag">关键词</p>
-                                        </div>
-                                        <div class="col-sm-3 rumor_pic_div">
-                                            <img name="pic" src="images/logo.jpg">
-                                        </div>
-                                    </div>
+                                <div class="x_content" id='rumors_list_container'>
+
                                 </div>
                             </div>
                         </div>
@@ -481,53 +440,5 @@
 <script src="../static/js/echarts.min.js"></script>
 
 <script src="../static/js/rumor_general.js"></script>
-
-
-<script>
-    $.ajax({
-        url: "/rumor/views",
-        type: "GET",
-        data: { action: "list_rumors" },
-        dataType: "json",
-        success: function (result) {
-            console.log(result);
-            var titles = document.getElementsByName("title");
-            var dates = document.getElementsByName("date");
-            var types = document.getElementsByName("type");
-            var tags = document.getElementsByName("tag");
-            var pics = document.getElementsByName("pic");
-            var tmptag;
-            for (var i = 0; i < 5; i++) {
-                titles[i].innerHTML = result["retlist"][i]["title"];
-                dates[i].innerHTML = result["retlist"][i]["date"];
-
-                if (result["retlist"][i]["markstyle"] == "true") {
-                    types[i].innerHTML = "确实如此"
-                    types[i].style.backgroundColor = 'rgb(66, 161, 99)'
-                }
-                else if (result["retlist"][i]["markstyle"] == "fake") {
-                    types[i].innerHTML = "谣言"
-                    types[i].style.backgroundColor = 'rgb(196, 31, 32)'
-                }
-                else {
-                    types[i].innerHTML = "尚无定论"
-                    types[i].style.backgroundColor = 'rgb(72, 72, 72)'
-                }
-
-                pics[i].src = result["retlist"][i]["coversqual"];
-                var objKeys = Object.keys(result["retlist"][i]["tag"]);
-                for (var j = 0; j < objKeys.length; j++) {
-                    if (j == 0) {
-                        tmptag = result["retlist"][i]["tag"][j];
-                    }
-                    else {
-                        tmptag = tmptag + ", " + result["retlist"][i]["tag"][j];
-                    }
-                }
-                tags[i].innerHTML = tmptag;
-            }
-        }
-    });
-</script>
 
 </html>
