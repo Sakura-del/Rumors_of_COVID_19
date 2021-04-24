@@ -56,7 +56,7 @@
             clear: both;
         }
 
-        #search_rumor_block input {
+        #search_rumor_block #search_input {
             width: 70%;
             height: 40px;
 
@@ -73,7 +73,7 @@
             float: left;
         }
 
-        #search_rumor_block button {
+        #search_rumor_block #search_button {
             width: 20%;
             height: 40px;
 
@@ -95,6 +95,14 @@
             background-color: rgb(88, 209, 169);
 
             font-size: 22px;
+        }
+
+        #search_rumor_block #search_button:hover {
+            background-color: rgb(98, 219, 179);
+        }
+
+        #search_rumor_block #search_button:active {
+            background-color: rgb(108, 229, 189);
         }
 
         #rumors_list_block .rumors_list_x_content {
@@ -181,7 +189,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
+                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -190,7 +199,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span
+                                            class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="epidemic_general_data.html">疫情可视化</a></li>
                                         <li><a href="epidemic_specific_data.html">详情数据</a></li>
@@ -198,7 +208,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span
+                                            class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="vaccine_visualization.html">疫苗可视化</a></li>
                                         <li><a href="vaccine_development.html">研发进度</a></li>
@@ -266,8 +277,8 @@
                                 <div class="x_content">
                                     <div class="row" id="search_rumor_content_row">
                                         <div class="col-md-12 col-sm-12">
-                                            <input id="inputid">
-                                            <button id="search_btn">搜索</button>
+                                            <input id="search_input" onkeyup='search_input_listener()'>
+                                            <button id="search_button" onclick='On_search_btn_click()'>搜索</button>
                                         </div>
                                     </div>
                                 </div>

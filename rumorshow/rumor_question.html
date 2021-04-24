@@ -49,6 +49,12 @@
             margin-left: 10px;
             height: 100%;
         }
+
+        #question_list_block #raise_question_container #input_title,
+        #question_list_block #raise_question_container #input_detail,
+        #question_list_block #raise_question_container #search_btn {
+            display: block;
+        }
     </style>
 
 </head>
@@ -83,7 +89,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
+                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -92,7 +99,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span
+                                            class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="epidemic_general_data.html">疫情可视化</a></li>
                                         <li><a href="epidemic_specific_data.html">详情数据</a></li>
@@ -100,7 +108,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span
+                                            class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="vaccine_visualization.html">疫苗可视化</a></li>
                                         <li><a href="vaccine_development.html">研发进度</a></li>
@@ -133,7 +142,7 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="row">
-                    <div class="col-md-10 col-sm-10" id="map_unit">
+                    <div class="col-md-10 col-sm-10" id="question_list_block">
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>在线问答平台</h2>
@@ -166,17 +175,17 @@
 
                             <div class="x_content">
 
-                                <div class="row" id="question_list">
+                                <div class="row" id="question_list_container">
 
                                 </div>
-                                <div class="row" id="page_button">
+                                <div class="row" id="page_button_container">
 
                                 </div>
-                                <div class="row" id="raise_a_question">
+                                <div class="row" id="raise_question_container">
                                     <div>提一个问题吧~</div>
-                                    <input id="input_title" style="display: block;"> 
-                                    <input id="input_detail" style="display: block;">
-                                    <button id="search_btn" style="display: block;">提问</button>
+                                    <input id="input_title">
+                                    <input id="input_detail">
+                                    <button id="search_btn">提问</button>
                                 </div>
                             </div>
                         </div>

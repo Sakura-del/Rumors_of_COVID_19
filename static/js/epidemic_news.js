@@ -103,9 +103,6 @@ news_coming = false
 
 $(document).ready(function () {
     $(window).scroll(function () {
-        console.log($(window).scrollTop() + $(window).height())
-        console.log($(document).height())
-        console.log(news_coming)
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !news_coming) {
             news_coming = true
             page_id += 1;
