@@ -6,23 +6,22 @@ function search_input_listener(e) { //监听文本框按回车，点按钮
 
 function On_search_btn_click() {
     var input_content = document.getElementById("search_input").value
-    window.location.href = "rumor_search_result.html" + "?content=" + input_content;
+    window.location.href = "rumor_search_result.html?content=" + input_content;
 }
 
 
 
-page_id = 1
+page_index = 1
 rumor_coming = false
 
-function append_rumor(page_id) {
+function append_rumor(page_index) {
     $.ajax({
         url: "/rumor/views",
         type: "GET",
         data: {
             action: "list_more_rumors",
             pagesize: 10,
-            title:'北京',
-            pagenum: page_id
+            pagenum: page_index
         },
         dataType: "json",
         success: function (result) {
@@ -84,17 +83,14 @@ function append_rumor(page_id) {
     })
 }
 
-
-append_rumor(page_id)
-
-
+append_rumor(page_index)
 
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
             rumor_coming = true
-            page_id += 1;
-            append_rumor(page_id)
+            page_index += 1;
+            append_rumor(page_index)
         }
     })
 })

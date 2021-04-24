@@ -22,7 +22,7 @@
     <!-- bootstrap-progressbar -->
     <link href="../static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="../static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <link href="../static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="../static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
@@ -80,7 +80,7 @@
             background-color: rgb(239, 241, 240);
         }
 
-        /* 砍掉滚动条 */
+        /* 砍掉dialog_container_div的滚动条 */
         #rumor_identify_block #dialog_container_div::-webkit-scrollbar {
             display: none;
         }
@@ -89,8 +89,19 @@
             width: 100%;
         }
 
-        #rumor_identify_block .question_container {
-            width: 100%;
+        #rumor_identify_block .robot_icon {
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            border-radius: 25px;
+            border-color: rgb(226, 226, 226);
+
+            font-size: 50px;
+
+            color: blue;
+
+
+
         }
 
         #rumor_identify_block .answer_pocket {
@@ -103,6 +114,10 @@
 
             color: rgb(0, 0, 0);
             background-color: rgb(255, 255, 255);
+        }
+
+        #rumor_identify_block .question_container {
+            width: 100%;
         }
 
         #rumor_identify_block .question_pocket {
@@ -193,7 +208,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
+                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -202,7 +218,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span
+                                            class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="epidemic_general_data.html">疫情可视化</a></li>
                                         <li><a href="epidemic_specific_data.html">详情数据</a></li>
@@ -210,7 +227,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span
+                                            class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="vaccine_visualization.html">疫苗可视化</a></li>
                                         <li><a href="vaccine_development.html">研发进度</a></li>
@@ -277,7 +295,8 @@
                             <div class="x_content">
                                 <div id="dialog_container_div">
                                     <div class="answer_container clearfix">
-                                        <div class='answer_pocket'>在下面输入就可以鉴定是否是谣言</div>
+                                        <span class='answer_pocket'>在下面输入就可以鉴定是否是谣言</span>
+                                        <span class='robot_icon fa fa-bath'></span>
                                     </div>
                                 </div>
 

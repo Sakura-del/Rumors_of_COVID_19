@@ -51,28 +51,26 @@
             margin-left: 10px;
         }
 
-        #rumors_list_block #rumor_result_count {
-            margin: 0;
-
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        #rumors_list_block .rumor_list_x_content {
+        #rumors_list_block .rumors_list_container {
             padding-left: 0;
             margin-top: 0;
         }
 
         #rumors_list_block .one_rumor_unit {
+            width: 100%;
             border-bottom: 2px solid rgb(230, 237, 233);
             padding: 10px 0;
             margin: 0 10px;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_type {
+        #rumors_list_block .rumor_text_div .rumor_title_span {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_type_span {
             border-radius: 3px;
             padding: 3px 5px;
-            margin-left: 1em;
 
             color: rgb(255, 255, 255);
             background: rgb(66, 161, 99);
@@ -80,27 +78,34 @@
             font-size: 14px !important;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_title {
-            font-size: 20px;
-            font-weight: 800;
+        #rumors_list_block .rumor_text_div .true_rumor{
+            background-color:rgb(66, 161, 99);
         }
 
-        #rumors_list_block .rumor_text_div .rumor_date {
+        #rumors_list_block .rumor_text_div .fake_rumor{
+            background-color:rgb(196, 31, 32);
+        }
+
+        #rumors_list_block .rumor_text_div .unknown_rumor{
+            background-color:rgb(72, 72, 72);
+        }
+
+        #rumors_list_block .rumor_text_div .rumor_date_p {
             margin: 0px;
             margin-top: 40px;
 
             font-size: 18px;
         }
 
-        #rumors_list_block .rumor_text_div .rumor_tag {
+        #rumors_list_block .rumor_text_div .rumor_tag_p {
             margin: 0px;
 
             font-size: 18px;
         }
 
-        #rumors_list_block .rumor_pic_div img {
-            height: 150px;
-            width: 150px;
+        #rumors_list_block .rumor_img {
+            height: 120px;
+            width: 80%;
             margin-left: 20%;
         }
 
@@ -168,7 +173,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
+                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -177,7 +183,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span
+                                            class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="epidemic_general_data.html">疫情可视化</a></li>
                                         <li><a href="epidemic_specific_data.html">详情数据</a></li>
@@ -185,7 +192,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span
+                                            class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="vaccine_visualization.html">疫苗可视化</a></li>
                                         <li><a href="vaccine_development.html">研发进度</a></li>
@@ -249,13 +257,12 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" id="rumor_list_x_content">
-                                <div class="row" id="rumor_result_count"></div>
+                            <div class="x_content" id="rumors_list_container">
+
                             </div>
                         </div>
 
-                        <div class="x_content" id="rumor_list_container">
-                        </div>
+
                     </div>
 
                     <div class="col-md-3 col-sm-3" id="news_list_block">
