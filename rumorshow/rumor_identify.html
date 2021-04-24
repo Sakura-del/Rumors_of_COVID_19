@@ -92,23 +92,27 @@
         #rumor_identify_block .robot_icon {
             width: 50px;
             height: 50px;
-            border: 1px;
+            border: 3px;
+            border-style: solid;
+            border-color: rgb(125, 125, 125);
             border-radius: 25px;
-            border-color: rgb(226, 226, 226);
+            padding: 0;
+            margin-right: 10px;
 
-            font-size: 50px;
+            text-align: center;
+            font-size: 30px;
 
-            color: blue;
+            float: left;
 
-
-
+            color: rgb(125, 125, 125);
+            background-color: rgb(255, 255, 255);
         }
 
         #rumor_identify_block .answer_pocket {
             max-width: 70%;
             border-radius: 10px;
             padding: 10px 15px;
-            margin-bottom: 5px;
+            margin-top: 5px;
 
             float: left;
 
@@ -120,11 +124,30 @@
             width: 100%;
         }
 
+        #rumor_identify_block .user_icon {
+            width: 50px;
+            height: 50px;
+            border: 3px;
+            border-style: solid;
+            border-color: rgb(125, 125, 125);
+            border-radius: 25px;
+            padding: 0;
+            margin-left: 10px;
+
+            text-align: center;
+            font-size: 30px;
+
+            float: right;
+
+            color: rgb(125, 125, 125);
+            background-color: rgb(255, 255, 255);
+        }
+
         #rumor_identify_block .question_pocket {
             max-width: 70%;
             border-radius: 10px;
             padding: 10px 15px;
-            margin-bottom: 5px;
+            margin-top: 5px;
 
             float: right;
 
@@ -208,8 +231,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
-                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i>
+                                        <span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -295,14 +318,14 @@
                             <div class="x_content">
                                 <div id="dialog_container_div">
                                     <div class="answer_container clearfix">
-                                        <span class='answer_pocket'>在下面输入就可以鉴定是否是谣言</span>
-                                        <span class='robot_icon fa fa-bath'></span>
+                                        <div class="robot_icon iconfont">&#xe6ac;</div>
+                                        <div class='answer_pocket'>在下面输入就可以鉴定是否是谣言</div>
                                     </div>
                                 </div>
 
                                 <div id='input_and_button_container'>
-                                    <textarea id='question_input' onkeyup='question_input_listener()'></textarea>
-                                    <button id='ask_question_button' accessKey=''>鉴定</button>
+                                    <textarea id='question_input' onkeypress="question_input_listener()"></textarea>
+                                    <button id='ask_question_button' onclick='on_ask_question_button_click()'>鉴定</button>
                                 </div>
                             </div>
                         </div>
