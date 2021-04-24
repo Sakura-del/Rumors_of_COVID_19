@@ -69,11 +69,12 @@ def listCurrentProvinces(request):
     data = CurrentCovidProvinces.objects.values().filter(date=datetime.date.today())
     data = list(data)
 
+
     return JsonResponse({"ret": 0, "data": data, "total": len(data), "msg": ""})
 
 
 def listCurrentNations(request):
-    data = CurrentCovidNational.objects.values().filter(data=datetime.date.today())
+    data = CurrentCovidNational.objects.values().filter(date=datetime.date.today())
     data = list(data)
 
     return JsonResponse({"ret": 0, "data": data, "total": len(data), "msg":""})
