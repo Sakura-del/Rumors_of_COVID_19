@@ -3,7 +3,7 @@
 #0.首页  已经做了个简陋的首页，点击开始后跳转到疫情总体数据展示页面
 # 1.问答原始数据
 
-2.新闻页美工
+#2.新闻页美工
 3.问答平台功能 美工
 
 底栏 powered by xxxxxxxxxxxxxx 团队名
@@ -18,35 +18,29 @@
 12.epidemic_specific_data.html 全球按钮
 13.部署
 14.rumor_general.html 友情链接
-15.rumor_general.html 触底加载 
-查询谣言快捷键 
+15.rumor_general.html 触底加载
+查询谣言快捷键
 搜索按钮样式 hover
 
-rumor_search_result.html 相关新闻 
-数据源更换 
-较真网跳转 
-触底加载 
+rumor_search_result.html 相关新闻
+数据源更换
+较真网跳转
+触底加载
 # 搜索到XXX条谣言
 
 rumor_identify.html 头像 字体 输入空处理 句式
 
-
-
 vaccine_development.html 接种点查询搬进来
 
-rumor_show.html 加载慢 词云图后端办了  布局 
+rumor_show.html 加载慢 词云图后端办了  布局
 # 谣言数量变化趋势图 配色 动态变化 数据补0
-
 
 lda.html 引入
 
-
-vaccine_visualization.html 
+vaccine_visualization.html
 顶栏 字号 间距 图标
 国内疫苗接种数据 block 配色
 全球疫苗接种数据 block 图表 州名 字号
-
-
 
 vaccine_vaccination.html 接种点链接
  广东 东莞 bug
