@@ -19,7 +19,7 @@ sys.path.append(pwd + "../")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Rumor_of_COVID_19.settings')
 
 django.setup()
-from common.models import RumorInfo, HeadlinesNews, Question, Answer
+from common.models import RumorInfo, HeadlinesNews, Question, Answer,NLPrumors
 import jieba
 import jieba.posseg as psg
 from collections import Counter
@@ -134,7 +134,7 @@ def chinese_word_cut(mytext):
 
 
 def cut_rumors_sklearn():
-    qs = RumorInfo.objects.all()
+    qs = NLPrumors.objects.all()
     # 将QuerySet转换成dataframe
     qs_df = read_frame(qs=qs, fieldnames=['abstract'])
 
@@ -254,6 +254,8 @@ def import_data():
               encoding='UTF-8') as f:
         data_list = json.load(f)
 
+    Question.objects.all().delete()
+    Answer.objects.all().delete()
     answer_list = []
     question_list = []
 
@@ -333,5 +335,5 @@ def get_tag_count():
 # cut_words_jieba()
 # cut_rumors_sklearn()
 # save_rumors()
-# import_data()
-get_tag_count()
+import_data()
+# get_tag_count()

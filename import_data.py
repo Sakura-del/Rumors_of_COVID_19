@@ -63,7 +63,8 @@ with open(filename1, "r", encoding='utf-8') as f1:
     rumors_data = json.load(f1)
 RumorInfo.objects.all().delete()
 for rumor in rumors_data:
-    RumorInfo.objects.create(title=rumor['title'],
+    RumorInfo.objects.create(
+                             title=rumor['title'],
                              author=rumor['author'],
                              authordesc=rumor['authordesc'],
                              date=rumor['date'],
@@ -505,6 +506,34 @@ for data in vaccine_status_list:
                                  update_time=datetime.datetime.now()
                                  )
 
+
+# 谣言数据
+filename24 = 'data_source/data_from_creeper/较真网.json'
+with open(filename24, "r", encoding='utf-8') as f24:
+    rumors_data = json.load(f24)
+NLPrumors.objects.all().delete()
+for rumor in rumors_data:
+    NLPrumors.objects.create(
+                             title=rumor['title'],
+                             author=rumor['author'],
+                             authordesc=rumor['authordesc'],
+                             date=rumor['date'],
+                             markstyle=rumor['markstyle'],
+                             result=rumor['result'],
+                             explain=rumor['explain'],
+                             abstract=rumor['abstract'],
+                             tag=rumor['tag'],
+                             type=rumor['type'],
+                             videourl=rumor['videourl'],
+                             cover=rumor['cover'],
+                             coverrect=rumor['coverrect'],
+                             coversqual=rumor['coversqual'],
+                             section=rumor['section'],
+                             iscolled=rumor['iscolled'],
+                             arttype=rumor['arttype'])
+
+
+
 # 谣言数据
 filename23 = 'data_source/data_from_creeper/中国互联网联合辟谣.json'
 with open(filename23, "r", encoding='utf-8') as f23:
@@ -524,7 +553,7 @@ for rumor in rumors_lhpy_data:
         markstyle = 'doubt'
         result = '疑'
         explain = '有失实'
-    RumorInfo.objects.create(title=rumor['title'],
+    NLPrumors.objects.create(title=rumor['title'],
                              author=rumor['source'],
                              authordesc=rumor['source'],
                              date=rumor['date'],

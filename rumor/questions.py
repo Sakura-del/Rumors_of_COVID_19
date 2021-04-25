@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
 from django.http import JsonResponse
 from django.utils import timezone
-from django.db.models import Q
+from django.db.models import Q, Count
 from lib.handler import dispatcherBase
 from common.models import Question, Answer
 from django.db import transaction
@@ -9,22 +9,25 @@ from django.core.paginator import Paginator, EmptyPage
 import jieba
 
 
+# 展示问题
 def list_questions(request):
     try:
-        qs = Question.objects.values('question', 'id', 'pub_date').distinct().order_by('-pub_date')
-
+        qs = Question.objects.values('question', 'question_text', 'id', 'pub_date').distinct().order_by('-pub_date')
         # 页数
         pagenum = request.params['pagenum']
         # 页大小
         pagesize = request.params['pagesize']
 
         pgnt = Paginator(qs, pagesize)
+        # 问题总数
+        total_questions = pgnt.count
 
         page = pgnt.page(pagenum)
 
         page = list(page)
 
-        return JsonResponse({"ret": 0, "retlist": page, "total": len(page), "msg": ""})
+        return JsonResponse(
+            {"ret": 0, "retlist": page, 'total_questions': total_questions, "total": len(page), "msg": ""})
     except EmptyPage:
         # 数据查完
         return JsonResponse({'ret': 0, 'total_rumors': [], 'total': 0, "msg": "没有更多数据了"})
@@ -37,7 +40,7 @@ def list_questions(request):
 def get_questions(request):
     question = request.params['question']
     try:
-        qs = Question.objects.values('id', 'question', 'pub_date').distinct().order_by('-pub_date')
+        qs = Question.objects.values('id', 'question', 'question_text', 'pub_date').distinct().order_by('-pub_date')
         stopwords = [
             line.strip() for line in open(
                 'search_stopwords.txt', "r", encoding='UTF-8').readlines()
@@ -128,7 +131,7 @@ ActionHandler = {
     'question_details': question_details,
     'ask_question': ask_question,
     'answer_question': answer_question,
-    'get_questions':get_questions
+    'get_questions': get_questions
 }
 
 

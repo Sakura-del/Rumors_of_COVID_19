@@ -54,6 +54,7 @@ class CurrentCovidNational(models.Model):
 
 # 谣言信息
 class RumorInfo(models.Model):
+    urlid = models.CharField(max_length=200,default='')
     title = models.CharField(max_length=200, blank=False, db_index=True)
     author = models.CharField(max_length=200, default='中国互联网联合辟谣')
     authordesc = models.CharField(max_length=200, default='中国互联网联合辟谣')
@@ -76,9 +77,33 @@ class RumorInfo(models.Model):
         db_table = 'rumor_info'
 
 
+# 自然语言处理库
+class NLPrumors(models.Model):
+    title = models.CharField(max_length=200, blank=False, db_index=True)
+    author = models.CharField(max_length=200, default='中国互联网联合辟谣')
+    authordesc = models.CharField(max_length=200, default='中国互联网联合辟谣')
+    date = models.CharField(max_length=200, blank=False, db_index=True)
+    markstyle = models.CharField(max_length=200, blank=False, default='fake')
+    result = models.CharField(max_length=200, blank=False, default='假')
+    explain = models.CharField(max_length=200, default='谣言')
+    abstract = models.TextField(max_length=1000,db_index=True)
+    tag = models.JSONField(default=list, db_index=True)
+    type = models.IntegerField(default=1)
+    videourl = models.CharField(default='', max_length=200)
+    cover = models.CharField(max_length=200, default='')
+    coverrect = models.CharField(max_length=200, default='')
+    coversqual = models.CharField(max_length=200, default='')
+    section = models.CharField(max_length=200, default='')
+    iscolled = models.BooleanField(default=False)
+    arttype = models.CharField(default='normal', max_length=200)
+
+    class Meta:
+        db_table = 'nlp_rumors'
+
+
 # 用户提问
 class Question(models.Model):
-    question = models.CharField(max_length=200, unique=True)
+    question = models.CharField(max_length=200)
     question_text = models.TextField(max_length=1000,default='')
     pub_date = models.DateTimeField('date published', auto_now_add=True)
 
