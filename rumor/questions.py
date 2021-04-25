@@ -14,9 +14,9 @@ def list_questions(request):
     try:
         # qs = Question.objects.values('question', 'question_text', 'id', 'pub_date').annotate(
         #     answer_count=Count(Answer)).distinct().order_by('-pub_date')
-        qs = Question.objects.annotate(
+        qs = Question.objects.values('question','question_text','pub_date','id').annotate(
             answer_count=Count('answer'))
-        qs = qs.values_list('question','question_text','pub_date','answer_count','id')
+        # qs = qs.values_list('question','question_text','pub_date','answer_count','id')
         # 页数
         pagenum = request.params['pagenum']
         # 页大小
