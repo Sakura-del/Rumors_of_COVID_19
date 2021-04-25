@@ -13,7 +13,7 @@ from datetime import datetime
 # 谣言初始化界面
 def list_rumors(request):
     try:
-        data = RumorInfo.objects.values('title', 'date', 'markstyle', 'result',
+        data = RumorInfo.objects.values('urlid','title', 'date', 'markstyle', 'result',
                                         'explain', 'tag', 'videourl', 'cover',
                                         'coverrect', 'coversqual').order_by('-date')[:10]
     except RumorInfo.DoesNotExist:
@@ -69,7 +69,7 @@ def get_news(request):
 def get_rumors(request):
     try:
         # 谣言查询
-        qs = RumorInfo.objects.values('id', 'title', 'date', 'markstyle', 'result',
+        qs = RumorInfo.objects.values('urlid','id', 'title', 'date', 'markstyle', 'result',
                                       'explain', 'tag', 'videourl', 'cover',
                                       'coverrect', 'coversqual').order_by('-date')
         # 获取用户的输入
@@ -172,7 +172,7 @@ def search_rumors(request):
 # 加载更多谣言
 def list_more_rumors(request):
     try:
-        qs = RumorInfo.objects.values('id', 'title', 'date', 'markstyle', 'result',
+        qs = RumorInfo.objects.values('urlid','id', 'title', 'date', 'markstyle', 'result',
                                       'explain', 'tag', 'videourl', 'cover',
                                       'coverrect', 'coversqual').order_by('date')
         # 页数
