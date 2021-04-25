@@ -20,7 +20,7 @@ def QQ_news_vaccination_place_func():
                           for city in response['data']['data']]
 
     vaccination_place_list = []
-    def city_vaccination_place_func(city,province):
+    def city_one_page_func(city,province,page):
         url = 'https://apis.map.qq.com/place_cloud/search/region'
         headers = { 'Origin'     : 'https://new.qq.com',
                     'Referer'    : 'https://new.qq.com/',
@@ -30,7 +30,7 @@ def QQ_news_vaccination_place_func():
                     'orderby'    : 'distance(39.90387,116.389893)',
                     'table_id'   : '5fed45b33fc08460dcadf521',
                     'page_size'  : 20,
-                    'page_index' : 1}
+                    'page_index' : page}
         #城市列表里有些城市是没有数据的，发请求会返回请求非法，所以要try一下
         try:
             response = requests.get(url = url,headers = headers,params = params).json()
@@ -44,8 +44,14 @@ def QQ_news_vaccination_place_func():
                                                 'title'    : hospital['title'],
                                                 'tel'      : hospital['tel']}
                 vaccination_place_list.append(city_vaccination_place_dict)
+
         except :
             return
+
+    def city_vaccination_place_func(city,province):
+        for page in range(100):
+            city_one_page_func(city,province,page)
+
 
 
     thread_list = []
@@ -62,5 +68,5 @@ def QQ_news_vaccination_place_func():
         file.write(json.dumps(vaccination_place_list, ensure_ascii = False))
 
 
-
+QQ_news_vaccination_place_func()
 func_list = [QQ_news_vaccination_place_func]
