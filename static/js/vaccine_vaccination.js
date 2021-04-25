@@ -78,6 +78,8 @@ function On_province_button_clicked(province_name) {
         },
         dataType: "json",
         success: function (result) {
+            console.log(result)
+
             var city_block = document.getElementById('city_block')
             city_block.innerHTML = ''
             var district_block = document.getElementById('district_block')

@@ -56,6 +56,13 @@
             margin-top: 0;
         }
 
+        #rumors_list_block #rumor_count_div{
+            margin-bottom: 10px;
+
+            font-size:20px;
+            font-weight: bold;
+        }
+
         #rumors_list_block .one_rumor_unit {
             width: 100%;
             border-bottom: 2px solid rgb(230, 237, 233);
@@ -117,27 +124,15 @@
             font-weight: 800;
         }
 
-        #news_list_block .news_list_x_content {
+        #news_list_block .news_list_container {
             padding-left: 0;
             margin-top: 0;
         }
 
-        #news_list_block .one_rumor_unit {
-            border-bottom: 2px solid rgb(230, 237, 233);
-            padding: 10px 0;
-            margin: 0 10px;
-        }
+        #news_list_block .news_title_div{
+            margin-bottom: 15px;
 
-        #news_list_block .rumor_text_div .rumor_title {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        #news_list_block .rumor_text_div .rumor_date {
-            margin: 0px;
-            margin-top: 40px;
-
-            font-size: 18px;
+            font-weight:bold;
         }
     </style>
 
@@ -296,12 +291,8 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content" id="news_list_x_content">
-                                <div class="row" id="news_result_count"></div>
+                            <div class="x_content" id="news_list_container">
                             </div>
-                        </div>
-
-                        <div class="x_content" id="rumor_list_x_content">
                         </div>
                     </div>
 

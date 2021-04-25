@@ -18,8 +18,13 @@ function append_rumor(page_index) {
         },
         dataType: "json",
         success: function (result) {
-            console.log(result)
+            var rumor_count_div = document.createElement('div')
+            rumor_count_div.id = 'rumor_count_div'
+            rumor_count_div.innerHTML = '为您找到相关结果' + result["total"] + '个'
+
             var rumors_list_container = document.getElementById('rumors_list_container')
+            rumors_list_container.appendChild(rumor_count_div)
+
             rumors_list = result["rumors"]
 
             for (var i = 0; i < rumors_list.length; i++) {
@@ -92,4 +97,35 @@ $(document).ready(function () {
             append_rumor(page_index)
         }
     })
+})
+
+
+
+$.ajax({
+    url: "/rumor/views",
+    type: "GET",
+    data: {
+        action: "get_news",
+        title:'北京',
+        pagesize: 10,
+        pagenum: 1
+    },
+    dataType: "json",
+    success: function (result) {
+        news_list = result['retlist']
+        var news_list_container = document.getElementById('news_list_container')
+
+        for (var i = 0;i<news_list.length;i++){
+            var news_title_div = document.createElement('div')
+            news_title_div.className = 'news_title_div'
+            news_title_div.innerHTML = news_list[i]['title']
+
+            var news_unit_a = document.createElement('a')
+            news_unit_a.className = 'news_unit_a'
+            news_unit_a.href = news_list[i]['link']
+            news_unit_a.appendChild(news_title_div)
+
+            news_list_container.appendChild(news_unit_a)
+        }
+    }
 })
