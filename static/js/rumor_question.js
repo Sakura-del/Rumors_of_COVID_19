@@ -3,6 +3,40 @@ btn_num = 5;//分页按钮数量
 question_list_container = document.getElementById("question_list_container");
 page_button_container = document.getElementById("page_button_container");
 
+
+
+function load_page(page){
+    $.ajax({
+        url: "/rumor/questions",
+        type: "GET",
+        data: {
+            action: "list_questions",
+            pagenum: page_ID,
+            pagesize: 5
+        },
+        dataType: "json",
+        success: function (result) {
+            console.log(result)
+            question_list_container = document.getElementById("question_list_container")
+            question_list_container.innerHTML = ''
+        }
+    })
+}
+
+load_page(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
 //加载第一页，以及翻页按钮
 function init_first_page() {
     $.ajax({
@@ -15,7 +49,6 @@ function init_first_page() {
         },
         dataType: "json",
         success: function (result) {
-            console.log(result)
 
             for (var i = 0; i < btn_num; i++) {
                 var page_button = document.createElement("button");

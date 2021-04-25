@@ -55,11 +55,17 @@
             height: 100%;
         }
 
-        #tile_count_block .tile_stats_count {
-            display: table;
+        #tile_count_block {
+            width: 100%;
         }
 
-        #global_data_block .continent_data_row{
+        #global_data_block .continent_name_div{
+            margin-bottom:10px;
+
+            font-size:30px;
+        }
+
+        #global_data_block .continent_data_row {
             margin-bottom: 50px;
         }
 
@@ -68,12 +74,15 @@
             height: 10px;
             border: 0;
             margin-top: 7px;
+            margin-left: 5%;
 
-            outline:none;
+            outline: none;
 
             font-size: 10px;
 
-            color: rgb(115,135,156);
+            display: inline-block;
+
+            color: rgb(115, 135, 156);
             background: rgba(0, 0, 0, 0)
         }
 
@@ -135,7 +144,8 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe76f;</i><span
+                                            class="tag_1st">谣言专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="rumor_show.html">谣言可视化</a></li>
                                         <li><a href="rumor_general.html">速览与查询</a></li>
@@ -144,7 +154,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xe7a0;</i><span
+                                            class="tag_1st">疫情专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="epidemic_general_data.html">疫情可视化</a></li>
                                         <li><a href="epidemic_specific_data.html">详情数据</a></li>
@@ -152,7 +163,8 @@
                                     </ul>
                                 </li>
 
-                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a> 
+                                <li><a><i class="iconfont" style="font-size:25px">&#xeb4c;</i><span
+                                            class="tag_1st">疫苗专栏</span><span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="vaccine_visualization.html">疫苗可视化</a></li>
                                         <li><a href="vaccine_development.html">研发进度</a></li>
@@ -187,28 +199,29 @@
             <!-- page content -->
             <div class="right_col" role="main">
 
-                <div class="row" id="total_data_row">
+                <div class="row">
                     <div class="tile_count" id="tile_count_block">
-                        <div class="col-md-2 col-sm-4 tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>国内总接种量</span>
+                        <div class="col-md-3 col-sm-4 tile_stats_count">
+                            <span class="count_top">国内总接种量</span>
                             <div class="count" id="val1">2500</div>
                             <span class="count_bottom"><i class="green" id="incr1">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4 tile_stats_count">
-                            <span class="count_top"><i class="fa fa-clock-o"></i>国内百人接种率</span>
+                        <div class="col-md-3 col-sm-4 tile_stats_count">
+                            <span class="count_top">国内百人接种率</span>
                             <div class="count" id="val2">2500</div>
                         </div>
-                        <div class="col-md-2 col-sm-4 tile_stats_count">
-                            <span class="count_top"><i class="fa fa-user"></i>全球总接种量</span>
+                        <div class="col-md-3 col-sm-4 tile_stats_count">
+                            <span class="count_top">全球总接种量</span>
                             <div class="count" id="val3">2500</div>
                             <span class="count_bottom"><i class="green" id="incr2">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4 tile_stats_count">
-                            <span class="count_top"><i class="fa fa-clock-o"></i>全球百人接种率</span>
+                        <div class="col-md-3 col-sm-4 tile_stats_count">
+                            <span class="count_top">全球百人接种率</span>
                             <div class="count" id="val4">2500</div>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12" id="domestic_data_block">

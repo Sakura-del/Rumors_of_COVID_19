@@ -6,26 +6,34 @@ error_pattern = ['好家伙，你这发的啥玩意，我都看不懂🤨', '请
 function question_input_listener(e) { //监听文本框按回车，回车相当于点检测按钮
     var e = e || window.event;
     if (e.keyCode == 13) {
-        document.getElementById("ask_question_button").click();
+        e.preventDefault();
+        on_ask_question_button_click()
     }
 }
 
 
 
-$("#ask_question_button").on("click", function () {
-    question = document.getElementById('question_input').value
+function on_ask_question_button_click() {
+    var user_icon = document.createElement('div')
+    user_icon.className = 'user_icon iconfont'
+    user_icon.innerHTML = '&#xe610;'
+
+    var question = document.getElementById('question_input').value
     question = question.replaceAll('\n', '')
     document.getElementById('question_input').value = ''
+    if (question.length == 0)
+        return
 
-    question_pocket = document.createElement('div')
+    var question_pocket = document.createElement('div')
     question_pocket.className = 'question_pocket'
     question_pocket.innerHTML = question
 
-    question_container = document.createElement('div')
+    var question_container = document.createElement('div')
     question_container.className = 'question_container clearfix'
+    question_container.appendChild(user_icon)
     question_container.appendChild(question_pocket)
 
-    dialog_container_div = document.getElementById('dialog_container_div')
+    var dialog_container_div = document.getElementById('dialog_container_div')
     dialog_container_div.appendChild(question_container)
     dialog_container_div.scrollTop = dialog_container_div.scrollHeight
 
@@ -38,7 +46,11 @@ $("#ask_question_button").on("click", function () {
         },
         dataType: "json",
         success: function (result) {
-            if (result['prob'] > 0.7) {
+            var robot_icon = document.createElement('div')
+            robot_icon.className = 'robot_icon iconfont'
+            robot_icon.innerHTML = '&#xe6ac;'
+
+            if (result['prob'] > 0.7) 
                 if (result['flag'] == 'false') {
                     answer = false_pattern[Math.floor(Math.random() * false_pattern.length)]
                     answer = answer.replaceAll('{prob}', Math.round(result['prob'] * 100))
@@ -49,7 +61,6 @@ $("#ask_question_button").on("click", function () {
                     answer = answer.replaceAll('{prob}', Math.round(result['prob'] * 100))
                     answer = answer.replaceAll('{flag}', '真')
                 }
-            }
 
             else {
                 answer = emmm_pattern[Math.floor(Math.random() * emmm_pattern.length)]
@@ -57,32 +68,38 @@ $("#ask_question_button").on("click", function () {
                 answer = answer.replaceAll('{flag}', result['flag'] == '真' ? '真' : '假')
             }
 
-            answer_pocket = document.createElement('div')
+            var answer_pocket = document.createElement('div')
             answer_pocket.className = 'answer_pocket'
             answer_pocket.innerHTML = answer
 
-            answer_container = document.createElement('div')
+            var answer_container = document.createElement('div')
             answer_container.className = 'answer_container clearfix'
+            answer_container.appendChild(robot_icon)
             answer_container.appendChild(answer_pocket)
 
-            dialog_container_div = document.getElementById('dialog_container_div')
+            var dialog_container_div = document.getElementById('dialog_container_div')
             dialog_container_div.appendChild(answer_container)
             dialog_container_div.scrollTop = dialog_container_div.scrollHeight
         },
         error: function () {
-            answer = error_pattern[Math.floor(Math.random() * error_pattern.length)]
+            var robot_icon = document.createElement('div')
+            robot_icon.className = 'robot_icon iconfont'
+            robot_icon.innerHTML = '&#xe6ac;'
 
-            answer_pocket = document.createElement('div')
+            var answer = error_pattern[Math.floor(Math.random() * error_pattern.length)]
+
+            var answer_pocket = document.createElement('div')
             answer_pocket.className = 'answer_pocket'
             answer_pocket.innerHTML = answer
 
-            answer_container = document.createElement('div')
+            var answer_container = document.createElement('div')
             answer_container.className = 'answer_container clearfix'
+            answer_container.appendChild(robot_icon)
             answer_container.appendChild(answer_pocket)
 
-            dialog_container_div = document.getElementById('dialog_container_div')
+            var dialog_container_div = document.getElementById('dialog_container_div')
             dialog_container_div.appendChild(answer_container)
             dialog_container_div.scrollTop = dialog_container_div.scrollHeight
         }
     })
-})
+}

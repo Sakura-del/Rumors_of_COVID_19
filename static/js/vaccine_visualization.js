@@ -23,12 +23,12 @@ function formatNum(str) {
             var domestic_data = result['retlist'][0]
             document.getElementById('val1').innerHTML = formatNum(String(domestic_data['total_vaccinations']))
             document.getElementById('incr1').innerHTML = '+' + formatNum(String(domestic_data['new_vaccinations']))
-            document.getElementById('val2').innerHTML = domestic_data['total_vaccinations_per_hundred']
+            document.getElementById('val2').innerHTML = domestic_data['total_vaccinations_per_hundred'] + '%'
 
             var global_data = result['retlist'][1]
             document.getElementById('val3').innerHTML = formatNum(String(global_data['total_vaccinations']))
             document.getElementById('incr2').innerHTML = '+' + formatNum(String(global_data['new_vaccinations']))
-            document.getElementById('val4').innerHTML = global_data['total_vaccinations_per_hundred']
+            document.getElementById('val4').innerHTML = global_data['total_vaccinations_per_hundred'] + '%'
         }
     })
 })();
@@ -216,8 +216,19 @@ function Make_complete_table(continent_data_row_id) {
                 else if (Is_in_array(south_name_list, country_data_list[i]['country']))
                     continent_data_dict['south_data'].push(country_data_list[i])
 
-
+            continent_name_dict = {
+                'asia_data': '亚洲',
+                'europe_data': '欧洲',
+                'africa_data': '非洲',
+                'oceania_data': '大洋洲',
+                'north_data': '北美洲',
+                'south_data': '南美洲'
+            }
             for (key_continent in key_continent_data_dict) {
+                var continent_name_div = document.createElement("div")
+                continent_name_div.className = 'continent_name_div'
+                continent_name_div.innerHTML = continent_name_dict[key_continent]
+
                 var continent_chart_container = document.createElement("div")
                 continent_chart_container.className = 'col-md-6 col-sm-6 continent_chart_container'
                 continent_chart_container.id = key_continent + '_chart'
@@ -243,8 +254,9 @@ function Make_complete_table(continent_data_row_id) {
                 continent_data_row.appendChild(expend_list_button)
                 continent_data_row.appendChild(continent_data_table)
 
-
-                document.getElementById('global_data_list').appendChild(continent_data_row)
+                global_data_list = document.getElementById('global_data_list')
+                global_data_list.appendChild(continent_name_div)
+                global_data_list.appendChild(continent_data_row)
 
                 Make_short_table(key_continent)
             }

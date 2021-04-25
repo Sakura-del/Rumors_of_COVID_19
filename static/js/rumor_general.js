@@ -6,26 +6,26 @@ function search_input_listener(e) { //监听文本框按回车，点按钮
 
 function On_search_btn_click() {
     var input_content = document.getElementById("search_input").value
-    window.location.href = "rumor_search_result.html" + "?content=" + input_content;
+    window.location.href = "rumor_search_result.html?content=" + input_content;
 }
 
 
 
-page_id = 1
+page_index = 1
 rumor_coming = false
 
-function append_rumor(page_id) {
+function append_rumor(page_index) {
     $.ajax({
         url: "/rumor/views",
         type: "GET",
         data: {
             action: "list_more_rumors",
             pagesize: 10,
-            title:'北京',
-            pagenum: page_id
+            pagenum: page_index
         },
         dataType: "json",
         success: function (result) {
+            console.log(result)
             var rumors_list_container = document.getElementById('rumors_list_container')
             rumors_list = result["retlist"]
 
@@ -33,6 +33,10 @@ function append_rumor(page_id) {
                 var rumor_title_span = document.createElement('span')
                 rumor_title_span.className = 'rumor_title_span'
                 rumor_title_span.innerHTML = rumors_list[i]["title"]
+
+                var rumor_title_a = document.createElement('a')
+                rumor_title_a.href = 'https://vp.fact.qq.com/article?id=' + rumors_list[i]["id"]
+                rumor_title_a.appendChild(rumor_title_span)
 
                 var rumor_type_span = document.createElement('span')
                 if (rumors_list[i]["markstyle"] == "true") {
@@ -58,7 +62,7 @@ function append_rumor(page_id) {
 
                 var rumor_text_div = document.createElement('div')
                 rumor_text_div.className = 'col-md-9 col-sm-9 rumor_text_div'
-                rumor_text_div.appendChild(rumor_title_span)
+                rumor_text_div.appendChild(rumor_title_a)
                 rumor_text_div.appendChild(rumor_type_span)
                 rumor_text_div.appendChild(rumor_date_p)
                 rumor_text_div.appendChild(rumor_tag_p)
@@ -84,17 +88,14 @@ function append_rumor(page_id) {
     })
 }
 
-
-append_rumor(page_id)
-
-
+append_rumor(page_index)
 
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
             rumor_coming = true
-            page_id += 1;
-            append_rumor(page_id)
+            page_index += 1;
+            append_rumor(page_index)
         }
     })
 })

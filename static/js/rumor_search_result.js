@@ -5,13 +5,8 @@ function getQueryString(name) {
         return decodeURI(r[2]); //解决中文乱码问题
 }
 
-rumor_list_container = document.getElementById("rumor_list_container");
-rumor_result_count = document.getElementById("rumor_result_count");
 
-father_div_news = document.getElementById("news_list_x_content");
-news_result_count = document.getElementById("news_result_count");
-
-function load_more_rumor(page) {
+function append_rumor(page_index) {
     $.ajax({
         url: "/rumor/views",
         type: "GET",
@@ -19,94 +14,118 @@ function load_more_rumor(page) {
             action: "get_rumors",
             title: getQueryString("content"),
             pagesize: 20,
-            pagenum: page
+            pagenum: page_index
         },
         dataType: "json",
         success: function (result) {
-            console.log(result)
-            var rumor_list_container = document.getElementById('rumor_list_container')
+            var rumor_count_div = document.createElement('div')
+            rumor_count_div.id = 'rumor_count_div'
+            rumor_count_div.innerHTML = '为您找到相关结果' + result["total"] + '个'
 
-            for (var i = 0; i < result["rumors"].length; i++) {
-                var rumor_title_span = document.createElement("span");
-                rumor_title_span.className = "rumor_title";
-                rumor_title_span.innerHTML = result["rumors"][i]["title"];
+            var rumors_list_container = document.getElementById('rumors_list_container')
+            rumors_list_container.appendChild(rumor_count_div)
 
-                var rumor_type_span = document.createElement("span");
-                rumor_type_span.className = "rumor_type";
+            rumors_list = result["rumors"]
 
-                if (result["rumors"][i]["markstyle"] == "true") {
+            for (var i = 0; i < rumors_list.length; i++) {
+                var rumor_title_span = document.createElement('span')
+                rumor_title_span.className = 'rumor_title_span'
+                rumor_title_span.innerHTML = rumors_list[i]["title"]
+
+                var rumor_type_span = document.createElement('span')
+                if (rumors_list[i]["markstyle"] == "true") {
                     rumor_type_span.innerHTML = "确实如此"
-                    rumor_type_span.style.backgroundColor = 'rgb(66, 161, 99)'
+                    rumor_type_span.className = 'rumor_type_span true_rumor'
                 }
-                else if (result["rumors"][i]["markstyle"] == "fake") {
+                else if (rumors_list[i]["markstyle"] == "fake") {
                     rumor_type_span.innerHTML = "谣言"
-                    rumor_type_span.style.backgroundColor = 'rgb(196, 31, 32)'
+                    rumor_type_span.className = 'rumor_type_span fake_rumor'
                 }
                 else {
                     rumor_type_span.innerHTML = "尚无定论"
-                    rumor_type_span.style.backgroundColor = 'rgb(72, 72, 72)'
+                    rumor_type_span.className = 'rumor_type_span unknown_rumor'
                 }
 
-                var rumor_date_p = document.createElement("p");
-                rumor_date_p.className = "rumor_date";
-                rumor_date_p.innerHTML = result["rumors"][i]["date"];
+                var rumor_date_p = document.createElement('p')
+                rumor_date_p.className = 'rumor_date_p'
+                rumor_date_p.innerHTML = rumors_list[i]["date"]
 
-                var rumor_tag_p = document.createElement("p");
-                rumor_tag_p.className = "rumor_tag";
-                var tmp_tag;
-                for (var j = 0; j < result["rumors"][i]["tag"].length; j++)
-                    if (j == 0)
-                        tmp_tag = result["rumors"][i]["tag"][j];
-                    else
-                        tmp_tag = tmp_tag + ", " + result["rumors"][i]["tag"][j];
-                rumor_tag_p.innerHTML = tmp_tag;
+                var rumor_tag_p = document.createElement('p')
+                rumor_tag_p.className = 'rumor_tag_p'
+                rumor_tag_p.innerHTML = rumors_list[i]["tag"]
 
-
-                var rumor_text_div = document.createElement("div");
-                rumor_text_div.className = 'rumor_text_div'
+                var rumor_text_div = document.createElement('div')
+                rumor_text_div.className = 'col-md-9 col-sm-9 rumor_text_div'
                 rumor_text_div.appendChild(rumor_title_span)
                 rumor_text_div.appendChild(rumor_type_span)
                 rumor_text_div.appendChild(rumor_date_p)
                 rumor_text_div.appendChild(rumor_tag_p)
 
+                var rumor_img = document.createElement('img')
+                rumor_img.className = 'rumor_img'
+                rumor_img.src = rumors_list[i]["coversqual"];
 
-                var rumor_pic_img = document.createElement("img");
-                rumor_pic_img.src = result["rumors"][i]["coversqual"];
+                var rumor_img_container = document.createElement('div')
+                rumor_img_container.className = 'col-md-3 col-sm-3 rumor_img_container'
+                rumor_img_container.appendChild(rumor_img)
 
-                var rumor_pic_div = document.createElement("div");
-                rumor_pic_div.appendChild(rumor_pic_img)
+                var one_rumor_unit = document.createElement('div')
+                one_rumor_unit.className = 'one_rumor_unit clearfix'
+                one_rumor_unit.appendChild(rumor_text_div)
+                one_rumor_unit.appendChild(rumor_img_container)
 
-                var one_rumor_unit = document.createElement("div");
-                one_rumor_unit.className = "row one_rumor_unit";
-                one_rumor_unit.appendChild(rumor_text_div);
-                one_rumor_unit.appendChild(rumor_pic_div);
-
-                rumor_list_x_content.appendChild(one_rumor_unit);
+                rumors_list_container.appendChild(one_rumor_unit)
             }
 
-            // for (var i = 0; i < 10 && i < result["news"].length; i++) {
-            //     var new_col_sm_12_div = document.createElement("div");
-            //     new_col_sm_12_div.className = "col-sm-12 rumor_text_div";
-
-            //     var new_span = document.createElement("span");
-            //     new_span.className = "rumor_title";
-            //     new_span.innerHTML = result["news"][i]["title"];
-            //     new_col_sm_12_div.appendChild(new_span);
-
-
-            //     var new_p = document.createElement("p");
-            //     new_p.className = "rumor_date";
-            //     new_p.innerHTML = result["news"][i]["date"];
-            //     new_col_sm_12_div.appendChild(new_p);
-
-            //     var new_row_div = document.createElement("div");
-            //     new_row_div.className = "row one_rumor_unit";
-            //     new_row_div.appendChild(new_col_sm_12_div);
-
-            //     father_div_news.appendChild(new_row_div);
-            // }
+            rumor_coming = false
         }
     })
 }
 
-load_more_rumor(1)
+
+
+page_index = 1
+rumor_coming = false
+
+append_rumor(page_index)
+
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
+            rumor_coming = true
+            page_index += 1;
+            append_rumor(page_index)
+        }
+    })
+})
+
+
+
+$.ajax({
+    url: "/rumor/views",
+    type: "GET",
+    data: {
+        action: "get_news",
+        title:'北京',
+        pagesize: 10,
+        pagenum: 1
+    },
+    dataType: "json",
+    success: function (result) {
+        news_list = result['retlist']
+        var news_list_container = document.getElementById('news_list_container')
+
+        for (var i = 0;i<news_list.length;i++){
+            var news_title_div = document.createElement('div')
+            news_title_div.className = 'news_title_div'
+            news_title_div.innerHTML = news_list[i]['title']
+
+            var news_unit_a = document.createElement('a')
+            news_unit_a.className = 'news_unit_a'
+            news_unit_a.href = news_list[i]['link']
+            news_unit_a.appendChild(news_title_div)
+
+            news_list_container.appendChild(news_unit_a)
+        }
+    }
+})
