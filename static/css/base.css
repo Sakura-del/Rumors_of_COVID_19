@@ -55,17 +55,19 @@
 
 #left_col #project_logo {
     width: 30%;
-    margin: auto;
-
+    margin: 0;
 }
 
 #left_col #project_name {
+    padding-left: 20px;
+
     vertical-align: middle;
     font-size: 25px;
 }
 
 #left_col .side-menu a {
     padding-left: 20px;
+
     font-size: 18px;
 }
 
@@ -84,25 +86,18 @@
 
 /* 顶栏相关 */
 #top_nav #nav_menu {
-    height: 50px;
-
     position: relative;
 }
 
-#top_nav #menu_toggle{
-    height:1em;
-    margin: auto 0;
-
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    position: absolute;
+#top_nav #menu_toggle {
+    padding: 0.25em 0;
+    padding-left: 0.4em;
 
     font-size: 30px;
 }
 
 #top_nav #project_slogn {
-    height:1em;
+    height: 1em;
     margin: auto 0;
 
     right: 30px;
@@ -116,10 +111,10 @@
     font-size: 20px;
 }
 
-#top_nav #slogan_top {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    float: right;
-}
 
-/* 底栏相关 */
+
+/* 高度塌陷 */
+.clearfix {
+    display: table;
+    clear: both;
+}
