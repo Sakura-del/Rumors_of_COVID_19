@@ -33,133 +33,10 @@
     <link href="../static/css/base.css" rel="stylesheet">
 
     <style>
-        #vaccine_development_block #table_legend {
-            padding-right: 40px;
-        }
-
-        #vaccine_development_block .legend_color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            margin-left: 15px;
-            margin-right: 5px;
-
-            float: right;
-
+        #question_list_block #raise_question_container #input_title,
+        #question_list_block #raise_question_container #input_detail,
+        #question_list_block #raise_question_container #search_btn {
             display: block;
-        }
-
-        #vaccine_development_block .legend_color_1 {
-            background: rgb(57, 197, 187);
-        }
-
-        #vaccine_development_block .legend_color_2 {
-            background: rgb(255, 165, 0);
-        }
-
-        #vaccine_development_block .legend_color_3 {
-            background: rgb(102, 204, 255);
-        }
-
-        #vaccine_development_block .legend_color_4 {
-            background: rgb(255, 192, 203);
-        }
-
-        #vaccine_development_block .legend_type {
-            height: 20px;
-            padding-top: 1px;
-
-            line-height: 20px;
-
-            float: right;
-            overflow: hidden;
-
-            display: block;
-        }
-
-        #vaccine_development_block #table_container {
-            padding: 0 30px;
-            padding-top: 50px;
-            padding-bottom: 30px;
-        }
-
-        #vaccine_development_block #vaccine_table {
-            width: 100%;
-        }
-
-        #vaccine_development_block #table_col_1 {
-            width: 40%;
-        }
-
-        #vaccine_development_block #table_col_2,
-        #vaccine_development_block #table_col_3,
-        #vaccine_development_block #table_col_4,
-        #vaccine_development_block #table_col_5 {
-            width: 15%;
-
-            text-align: center;
-        }
-
-        #vaccine_development_block #vaccine_table_tbody tr:nth-child(even) {
-            background-color: rgb(203, 245, 237);
-        }
-
-        #vaccine_development_block #table_spacer {
-            height: 10px;
-
-            display: block;
-        }
-
-        #vaccine_development_block .vaccine_org_div {
-            padding-top: 5px;
-            padding-left: 8px;
-
-            color: rgb(115, 135, 156);
-
-            font-size: 18px;
-        }
-
-        #vaccine_development_block .vaccine_name_div {
-            padding-bottom: 5px;
-            padding-left: 8px;
-
-            color: rgb(145, 175, 196);
-
-            font-size: 15px;
-        }
-
-        #vaccine_development_block .vaccine_progress_div {
-            height: 16px;
-            border: 16px;
-            border-bottom-right-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        #vaccine_development_block .vaccine_progress_td {
-            position: relative;
-        }
-
-        #vaccine_development_block .vaccine_progress_div {
-            position: relative;
-            z-index: 5;
-        }
-
-        #vaccine_development_block .vaccine_progress_divider {
-            width: 100%;
-            height: 100%;
-
-            position: absolute;
-        }
-
-        #vaccine_development_block .vaccine_progress_divider_line {
-            height: 100%;
-            width: 2px;
-
-            top: -50%;
-
-            position: absolute;
-
-            background-color: rgb(203, 245, 237);
         }
     </style>
 
@@ -234,10 +111,10 @@
             <div class="right_col" role="main">
 
                 <div class="row">
-                    <div class="col-md-12 col-sm-12" id="vaccine_development_block">
+                    <div class="col-md-10 col-sm-10" id="question_list_block">
                         <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>疫苗研发状况</h2>
+                                <h2>在线问答平台</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -266,33 +143,19 @@
                             </div>
 
                             <div class="x_content">
-                                <div id='table_legend'>
-                                    <span class='legend_type'>重组蛋白疫苗</span>
-                                    <span class='legend_color legend_color_4'></span>
-                                    <span class='legend_type'>核酸疫苗</span>
-                                    <span class='legend_color legend_color_3'></span>
-                                    <span class='legend_type'>腺病毒载体疫苗</span>
-                                    <span class='legend_color legend_color_2'></span>
-                                    <span class='legend_type'>灭活疫苗</span>
-                                    <span class='legend_color legend_color_1'></span>
-                                </div>
-                            </div>
-                            <div id='table_container'>
-                                <table id="vaccine_table">
-                                    <thead id='table_head'>
-                                        <tr>
-                                            <th id='table_col_1'>研发机构/疫苗名称</th>
-                                            <th id='table_col_2'>临床II期</th>
-                                            <th id='table_col_3'>临床II/III期</th>
-                                            <th id='table_col_4'>临床III期</td>
-                                            <th id='table_col_5'>上市</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="vaccine_table_tbody">
-                                        <tr id='table_spacer'></tr>
 
-                                    </tbody>
-                                </table>
+                                <div class="row" id="question_list_container">
+
+                                </div>
+                                <div class="row" id="page_button_container">
+
+                                </div>
+                                <div class="row" id="raise_question_container">
+                                    <div>提一个问题吧~</div>
+                                    <input id="input_title">
+                                    <input id="input_detail">
+                                    <button id="search_btn">提问</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -356,6 +219,6 @@
 
 
 
-<script src="../static/js/vaccine_development.js"></script>
+<script src="../static/js/rumor_question_detail.js"></script>
 
 </html>

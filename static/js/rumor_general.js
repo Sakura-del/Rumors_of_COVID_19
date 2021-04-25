@@ -25,7 +25,6 @@ function append_rumor(page_index) {
         },
         dataType: "json",
         success: function (result) {
-            console.log(result)
             var rumors_list_container = document.getElementById('rumors_list_container')
             rumors_list = result["retlist"]
 
@@ -35,7 +34,7 @@ function append_rumor(page_index) {
                 rumor_title_span.innerHTML = rumors_list[i]["title"]
 
                 var rumor_title_a = document.createElement('a')
-                rumor_title_a.href = 'https://vp.fact.qq.com/article?id=' + rumors_list[i]["id"]
+                rumor_title_a.href = 'https://vp.fact.qq.com/article?id=' + rumors_list[i]["urlid"]
                 rumor_title_a.appendChild(rumor_title_span)
 
                 var rumor_type_span = document.createElement('span')

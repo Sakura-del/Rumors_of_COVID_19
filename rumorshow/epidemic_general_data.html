@@ -33,14 +33,35 @@
     <link href="../static/css/base.css" rel="stylesheet">
 
     <style>
-        #total_data_row #tile_count {
+        #total_data_block {
+            width: 100%;
+            margin-top: 10vh;
+
+            display: block;
+        }
+
+        #total_data_block #total_data_container {
             width: 100%;
         }
 
-        #total_data_row span {
-            font-size: 16px;
-            font-weight: 500;
+        #total_data_block .data_unit:not(:first-child){
+            border: 0;
+            border-left: 2px;
+            border-style:solid;
+            border-color: rgb(173,183,181);
+            padding-left: 1%;
         }
+
+        #total_data_block .count_number {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #total_data_block .count_top,
+        #total_data_block .count_bottom {
+            font-size: 25px;
+        }
+
 
         #trend_block #switcher_row {
             margin-top: 5px;
@@ -168,36 +189,36 @@
             <div class="right_col" role="main">
 
                 <!-- top tiles -->
-                <div class="row" id="total_data_row">
-                    <div class="tile_count" id="tile_count">
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                <div class="row clearfix" id="total_data_block">
+                    <div class="tile_count clearfix" id="total_data_container">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>现存确诊</span>
-                            <div class="count" id="val1">2500</div>
+                            <div class="count_number" id="val1">2500</div>
                             <span class="count_bottom"><i class="green" id="incr1">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>境外输入</span>
-                            <div class="count" id="val2">2500</div>
+                            <div class="count_number" id="val2">2500</div>
                             <span class="count_bottom"><i class="green" id="incr2">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>现存无症状</span>
-                            <div class="count" id="val3">2500</div>
+                            <div class="count_number" id="val3">2500</div>
                             <span class="count_bottom"><i class="green" id="incr3">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>累计确诊</span>
-                            <div class="count" id="val4">2500</div>
+                            <div class="count_number" id="val4">2500</div>
                             <span class="count_bottom"><i class="green" id="incr4">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>累计治愈</span>
-                            <div class="count" id="val5">2500</div>
+                            <div class="count_number" id="val5">2500</div>
                             <span class="count_bottom"><i class="green" id="incr5">4% </i>同比昨日</span>
                         </div>
-                        <div class="col-md-2 col-sm-4  tile_stats_count">
+                        <div class="col-md-2 col-sm-4 data_unit">
                             <span class="count_top"><i class="fa fa-user"></i>累计死亡</span>
-                            <div class="count" id="val6">2500</div>
+                            <div class="count_number" id="val6">2500</div>
                             <span class="count_bottom"><i class="green" id="incr6">4% </i>同比昨日</span>
                         </div>
                     </div>

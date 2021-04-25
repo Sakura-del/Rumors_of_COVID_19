@@ -1,4 +1,4 @@
-page_ID = 1;//初始加载第一页
+page_index = 1;//初始加载第一页
 btn_num = 5;//分页按钮数量
 question_list_container = document.getElementById("question_list_container");
 page_button_container = document.getElementById("page_button_container");
@@ -11,22 +11,21 @@ function load_page(page){
         type: "GET",
         data: {
             action: "list_questions",
-            pagenum: page_ID,
-            pagesize: 5
+            pagenum: page_index,
+            pagesize: 10
         },
         dataType: "json",
         success: function (result) {
             console.log(result)
             question_list_container = document.getElementById("question_list_container")
             question_list_container.innerHTML = ''
+
+            
         }
     })
 }
 
 load_page(1)
-
-
-
 
 
 
