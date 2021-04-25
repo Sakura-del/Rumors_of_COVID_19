@@ -5,6 +5,11 @@ agency_list = []
 
 
 function On_district_button_clicked(district_name) {
+    document.getElementById('district_node').innerHTML = district_name
+
+    search_result_list = document.getElementById('search_result_list')
+    search_result_list.innerHTML = ''
+
     for (var i = 0; i < agency_list.length; i++)
         if (agency_list[i]['district'] == district_name) {
             var title_div = document.createElement('div')
@@ -38,22 +43,22 @@ function On_city_button_clicked(city_name) {
     var district_block = document.getElementById('district_block')
     district_block.innerHTML = ''
 
+    document.getElementById('city_node').innerHTML = city_name
+    document.getElementById('district_node').innerHTML = '区'
 
+    supported_district_list = []
+
+    function is_key_in_array(key, array) {
+        for (var i = 0; i < array.length; i++)
+            if (key == array[i])
+                return true
+
+        return false
+    }
 
     for (var i = 0; i < agency_list.length; i++)
-        if (agency_list[i]['city'] == city_name)
-            supported_district_list.push(agency_list[i]['district'] != '' ? agency_list[i]['district'] : agency_list[i]['city'])
-    supported_district_list.sort()
-
-    var temp_array = []
-    for (var i = 1; i < supported_district_list.length; i++)
-        if (supported_district_list[i] != supported_district_list[i - 1])
-            temp_array.push(supported_district_list[i])
-    if (temp_array.length == 0)
-        temp_array.push(supported_district_list[0])
-    supported_district_list = temp_array
-
-
+        if (agency_list[i]['city'] == city_name && !is_key_in_array(agency_list[i]['district'], supported_district_list))
+            supported_district_list.push(agency_list[i]['district'])
 
     for (var i = 0; i < supported_district_list.length; i++) {
         district_name = supported_district_list[i]
@@ -78,12 +83,18 @@ function On_province_button_clicked(province_name) {
         },
         dataType: "json",
         success: function (result) {
-            console.log(result)
-
             var city_block = document.getElementById('city_block')
             city_block.innerHTML = ''
             var district_block = document.getElementById('district_block')
             district_block.innerHTML = ''
+
+            document.getElementById('province_node').innerHTML = province_name
+            document.getElementById('city_node').innerHTML = '市'
+            document.getElementById('district_node').innerHTML = '区'
+
+            supported_city_list = []
+            supported_district_list = []
+            agency_list = []
 
             for (i in result['citys']) {
                 city_name = result['citys'][i][0]['city']
@@ -98,9 +109,8 @@ function On_province_button_clicked(province_name) {
                 city_block.appendChild(city_button)
             }
 
-            console.log(result)
-            for (i in result['citys'])
-                for (j in result['citys'][i]) {
+            for (var i in result['citys'])
+                for (var j in result['citys'][i]) {
                     if (result['citys'][i][j]['district'] == '')
                         result['citys'][i][j]['district'] = result['citys'][i][j]['city']
                     agency_list.push(result['citys'][i][j])
@@ -123,7 +133,6 @@ function On_province_button_clicked(province_name) {
 
                 var province_button = document.createElement('button')
                 province_button.className = 'button province_button'
-                province_button.id = province_name + '_button'
                 province_button.value = province_name
                 province_button.innerHTML = province_name
                 province_button.onclick = function () { On_province_button_clicked(this.value) }

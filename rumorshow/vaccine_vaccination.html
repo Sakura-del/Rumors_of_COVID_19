@@ -63,13 +63,35 @@
             margin-top: 0;
         }
 
-        #friend_link_div {
-            top: 10px;
-            position: sticky;
-        }
-
         #search_block #button_container_div {
             padding-top: 20px;
+        }
+
+        #search_block #location_tree{
+            margin-left:30px;
+
+            font-size: 20px;
+        }
+
+        #search_block #province_block {
+            height: 100%;
+            padding-right: 10px;
+        }
+
+        #search_block #city_block {
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 3px;
+            border-top: 0;
+            border-bottom: 0;
+            border-style: solid;
+            border-color: rgb(236, 236, 236);
+        }
+
+        #search_block #district_block {
+            height: 100%;
+            padding-left: 10px;
         }
 
         #search_block .button {
@@ -92,18 +114,6 @@
 
         #search_block .button:active {
             background: rgb(88, 209, 189);
-        }
-
-        #search_block .back_button {
-            background: rgb(20, 149, 129);
-        }
-
-        #search_block .back_button:hover {
-            background: rgb(30, 159, 139);
-        }
-
-        #search_block .back_button:active {
-            background: rgb(40, 169, 149);
         }
 
         #search_result_block #search_result_list {
@@ -262,12 +272,12 @@
 
                             <div class="x_content">
                                 <div class="row">
-                                    <div id = 'location_tree'>
+                                    <div id='location_tree'>
                                         <span id="province_node">省</span>
-                                        <span class = 'fa fa-chevron-right'></span>
-                                        <span id="province_node">市</span>
-                                        <span class = 'fa fa-chevron-right'></span>
-                                        <span id="province_node">区</span>
+                                        <span class='fa fa-chevron-right'></span>
+                                        <span id="city_node">市</span>
+                                        <span class='fa fa-chevron-right'></span>
+                                        <span id="district_node">区</span>
                                     </div>
 
                                     <div class="col-md-12 col-sm-12" id="button_container_div">
