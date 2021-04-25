@@ -7,6 +7,8 @@
 .tag_1st{
     vertical-align: middle;
 }
-.fa-chevron-down::before{
+.arrow{
     vertical-align: middle;
+    padding-left: 45%;
+    font-size: 8px !important;
 }
