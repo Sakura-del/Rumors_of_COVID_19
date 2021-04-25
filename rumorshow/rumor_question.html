@@ -33,10 +33,110 @@
     <link href="../static/css/base.css" rel="stylesheet">
 
     <style>
-        #question_list_block #raise_question_container #input_title,
-        #question_list_block #raise_question_container #input_detail,
-        #question_list_block #raise_question_container #search_btn {
+        #question_list_block #question_list_row {
+            padding: 20px 10px;
+        }
+
+        #question_list_block #question_list_row .question_unit_div {
+            width: 100%;
+            border: 0;
+            border-bottom: 2px;
+            border-style: solid;
+            border-color: rgb(236, 236, 236);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        #question_list_block #question_list_row .question_title_div {
+            margin-bottom: 30px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #question_list_block #question_list_row .question_detail_div {
+            font-size: 16px;
+        }
+
+        #question_list_block #page_button_row {
             display: block;
+        }
+
+        #question_list_block #page_button_row #page_button_container {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        #question_list_block #page_button_row .button {
+            height: 40px;
+            padding: 0 20px;
+            border: 0px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 8px;
+
+            outline: medium;
+
+            color: rgb(255, 255, 255);
+            background: rgb(68, 189, 169);
+        }
+
+        #question_list_block #page_button_row .button:hover {
+            background: rgb(78, 199, 179);
+        }
+
+        #question_list_block #page_button_row .button:active {
+            background: rgb(88, 209, 189);
+        }
+
+        #question_list_block #raise_question_row #input_title,
+        #question_list_block #raise_question_row #input_detail,
+        #question_list_block #raise_question_row #search_btn {
+            display: block;
+        }
+
+        #question_list_block #ask_question_row #input_title{
+            width:100%;
+            border: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            margin: 10px 0;
+
+            display: block;
+        }
+        #question_list_block #ask_question_row #input_detail{
+            height: 5rem;
+            width:100%;
+            border: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            margin: 10px 0;
+
+            outline: none;
+            resize: none;
+
+            display: block;
+        }
+        #question_list_block #ask_question_row #ask_question_btn{
+            height: 40px;
+            padding: 0 20px;
+            border: 0px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 8px;
+
+            float: right;
+            outline: medium;
+
+            color: rgb(255, 255, 255);
+            background: rgb(68, 189, 169);
+        }
+        #question_list_block #ask_question_row #ask_question_btn:hover {
+            background: rgb(78, 199, 179);
+        }
+
+        #question_list_block #ask_question_row #ask_question_btn:active {
+            background: rgb(88, 209, 189);
         }
     </style>
 
@@ -144,17 +244,22 @@
 
                             <div class="x_content">
 
-                                <div class="row" id="question_list_container">
+                                <div id="question_list_row">
 
                                 </div>
-                                <div class="row" id="page_button_container">
-
+                                <div id="page_button_row">
+                                    <div id='page_button_container'>
+                                        <button class='button' id='previous_button'
+                                            onclick='on_previous_button_click()'>上一页</button>
+                                        <button class='button' id='next_button '
+                                            onclick='on_next_button_click()'>下一页</button>
+                                    </div>
                                 </div>
-                                <div class="row" id="raise_question_container">
+                                <div id="ask_question_row">
                                     <div>提一个问题吧~</div>
                                     <input id="input_title">
-                                    <input id="input_detail">
-                                    <button id="search_btn">提问</button>
+                                    <textarea id="input_detail"></textarea>
+                                    <button id="ask_question_btn" onclick='on_ask_question_button_click()'>提问</button>
                                 </div>
                             </div>
                         </div>
