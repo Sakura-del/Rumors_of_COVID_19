@@ -64,6 +64,7 @@ with open(filename1, "r", encoding='utf-8') as f1:
 RumorInfo.objects.all().delete()
 for rumor in rumors_data:
     RumorInfo.objects.create(
+                             urlid = rumor['id'],
                              title=rumor['title'],
                              author=rumor['author'],
                              authordesc=rumor['authordesc'],

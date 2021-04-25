@@ -105,7 +105,7 @@ class NLPrumors(models.Model):
 class Question(models.Model):
     question = models.CharField(max_length=200)
     question_text = models.TextField(max_length=1000,default='')
-    pub_date = models.DateTimeField('date published', auto_now_add=True)
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.question
@@ -118,8 +118,8 @@ class Question(models.Model):
 class Answer(models.Model):
     questionid = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer = models.TextField()
-    answer_date = models.DateTimeField(auto_now_add=True)
-    
+    answer_date = models.DateTimeField()
+
     class Meta:
         db_table = 'answer'
 
