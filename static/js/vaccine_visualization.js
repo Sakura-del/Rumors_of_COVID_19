@@ -230,7 +230,7 @@ function Make_complete_table(continent_data_row_id) {
                 continent_name_div.innerHTML = continent_name_dict[key_continent]
 
                 var continent_chart_container = document.createElement("div")
-                continent_chart_container.className = 'col-md-6 col-sm-6 continent_chart_container'
+                continent_chart_container.className = 'col-md-5 col-sm-5 continent_chart_container'
                 continent_chart_container.id = key_continent + '_chart'
                 // continent_chart_container.style.width = '200px';
                 // continent_chart_container.style.height = '500px';
@@ -273,34 +273,52 @@ function Make_complete_table(continent_data_row_id) {
                         }
                     },
                     legend: {
-                        data: ['百人接种率']
+                        data: ['百人接种率'],
+                        textStyle: {
+                            fontSize: 16,
+                            color: "#73879C",
+                        },
                     },
-                    xAxis: [
-                        {
-                            type: 'category',
-                            data: xAxis_content,
-                            axisPointer: {
-                                type: 'shadow'
+                    xAxis: {
+                        type: 'category',
+                        data: xAxis_content,
+                        axisPointer: {
+                            type: 'shadow'
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                fontSize: 16,
+                                color: "#73879C"
                             }
-                        }
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value',
-                            name: '百人接种率',
-                            // min: 0,
-                            // max: 25,
-                            // interval: 5,
-                            axisLabel: {
-                                formatter: '{value}%'
+                        },
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '百人接种率',
+                        nameTextStyle: {
+                            fontSize: 16,
+                            color: "#73879C",
+                        },
+                        // min: 0,
+                        // max: 25,
+                        // interval: 5,
+                        axisLabel: {
+                            formatter: '{value}%',
+                            textStyle: {
+                                fontSize: 16,
+                                color: "#73879C",
                             }
+                        },
+                        splitLine: {
+                            show: false
                         }
-                    ],
+                    },
                     series: [
                         {
                             name: '百人接种率',
                             type: 'bar',
-                            data: data1
+                            data: data1,
+                            color: "#39C5BB"
                         }
                     ]
                 };
@@ -319,7 +337,7 @@ function Make_complete_table(continent_data_row_id) {
                 expend_list_button.onclick = function () { Make_complete_table(this.value) }
 
                 var continent_data_table = document.createElement("table")
-                continent_data_table.className = 'col-md-5 col-sm-5 continent_data_table'
+                continent_data_table.className = 'col-md-6 col-sm-6 continent_data_table'
                 continent_data_table.id = key_continent + "_table"
 
                 var continent_data_row = document.createElement("div")
@@ -374,6 +392,7 @@ function Make_complete_table(continent_data_row_id) {
             }
             var myChart = echarts.init(document.querySelector("#domestic_data_chart"));
             var option = {
+
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
@@ -392,36 +411,70 @@ function Make_complete_table(continent_data_row_id) {
                 //     }
                 // },
                 legend: {
-                    data: ['接种量', '百人接种率']
+                    data: ['接种量', '百人接种率'],
+                    textStyle: {
+                        fontSize: 16,
+                        color: "#73879C",
+                    },
                 },
-                xAxis: [
-                    {
-                        type: 'category',
-                        data: xAxis_content,
-                        axisPointer: {
-                            type: 'shadow'
+                xAxis: {
+                    type: 'category',
+                    data: xAxis_content,
+                    axisPointer: {
+                        type: 'shadow'
+                    },
+                    axisLabel: {
+                        textStyle: {
+                            fontSize: 16,
+                            color: "#73879C",
                         }
+                    },
+                    splitLine: {
+                        show: false
                     }
-                ],
+
+                },
                 yAxis: [
                     {
                         type: 'value',
                         name: '接种量',
+                        nameTextStyle: {
+                            fontSize: 16,
+                            color: "#73879C",
+                        },
                         // min: 0,
                         // max: 250,
                         // interval: 50,
                         axisLabel: {
-                            formatter: '{value}'
+                            formatter: '{value}',
+                            textStyle: {
+                                fontSize: 16,
+                                color: "#73879C",
+                            }
+                        },
+                        splitLine: {
+                            show: false
                         }
                     },
                     {
                         type: 'value',
                         name: '百人接种率',
+                        nameTextStyle: {
+                            fontSize: 16,
+                            color: "#73879C",
+                        },
                         // min: 0,
                         // max: 25,
                         // interval: 5,
                         axisLabel: {
-                            formatter: '{value}%'
+                            formatter: '{value}%',
+                            textStyle: {
+                                fontSize: 16,
+                                color: "#73879C",
+                            }
+                        },
+                        splitLine: {
+                            show: false
                         }
                     }
                 ],
@@ -429,7 +482,8 @@ function Make_complete_table(continent_data_row_id) {
                     {
                         name: '接种量',
                         type: 'bar',
-                        data: data1
+                        data: data1,
+                        color: "#39C5BB"
                     },
                     {
                         name: '百人接种率',

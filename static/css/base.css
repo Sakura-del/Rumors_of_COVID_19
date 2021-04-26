@@ -113,6 +113,32 @@
 
 
 
+
+/* 低栏相关 */
+#footer{
+    position: relative;
+}
+
+#footer #powered_by{
+    height: 1em;
+    margin: auto 0;
+
+    line-height: 1em;
+
+    top: 0;
+    bottom: 0;
+    right: 2%;
+    position: absolute;
+
+    font-size: 16px;
+}
+
+
+
+
+
+
+
 /* 高度塌陷 */
 .clearfix {
     display: table;
