@@ -318,7 +318,7 @@ function nextday(date) {
           option.dataZoom[0].startValue = option.dataZoom[0].startValue + 1;
         }
         myChart.setOption(option);
-      }, 500);
+      }, 1200);
 
       // 3. 把配置给实例对象
       // myChart.setOption(option);
@@ -387,24 +387,149 @@ function nextday(date) {
       //rumor_sum_data中添加富文本
       rumor_sum_data[3]["label"] = {
         normal: {
-          position:['200%', '0%'],
+          position: ['200%', '0%'],
           show: true,
           formatter: [
-            'Label Text',
+            '{title|2020年2月11日}',
+            '{hr|}',
+            '中央依法治国办、中央政法委、最高法、最高检、',
+            '公安部、司法部联合印发《关于依法惩治妨害新',
+            '型冠状病毒感染肺炎疫情防控违法犯罪的意见》。'
           ].join('\n'),
           backgroundColor: '#eee',
-          borderColor: '#555',
-          borderWidth: 2,
-          borderRadius: 5,
-          padding: 10,
-          fontSize: 18,
+          borderColor: '#777',
+          borderWidth: 1,
+          borderRadius: 4,
+          fontSize: '16px',
+          padding: 5,
           shadowBlur: 3,
           shadowColor: '#888',
           shadowOffsetX: 0,
           shadowOffsetY: 3,
-          textBorderColor: '#000',
-          textBorderWidth: 3,
-          color: '#fff'
+          lineHeight: 20,
+          rich: {
+            title: {
+              color: '#000',
+              align: 'center',
+              fontSize: "16px"
+            },
+            hr: {
+              borderColor: '#777',
+              width: '100%',
+              borderWidth: 1,
+              height: 0
+            },
+          }
+        }
+      };
+
+      rumor_sum_data[12]["label"] = {
+        normal: {
+          position: ['0%', '-75%'],
+          show: true,
+          formatter: [
+            '{title|2020年4月18日}',
+            '{hr|}',
+            '国务院联防联控机制日前印发《关于做好离汉人',
+            '员新冠肺炎检测和健康管理服务工作的通知》。'
+          ].join('\n'),
+          backgroundColor: '#eee',
+          borderColor: '#777',
+          borderWidth: 1,
+          borderRadius: 4,
+          fontSize: '16px',
+          padding: 5,
+          shadowBlur: 3,
+          shadowColor: '#888',
+          shadowOffsetX: 0,
+          shadowOffsetY: 3,
+          lineHeight: 20,
+          rich: {
+            title: {
+              color: '#000',
+              align: 'center',
+              fontSize: "16px"
+            },
+            hr: {
+              borderColor: '#777',
+              width: '100%',
+              borderWidth: 1,
+              height: 0
+            },
+          }
+        }
+      };
+
+      rumor_sum_data[21]["label"] = {
+        normal: {
+          position: ['200%', '0%'],
+          show: true,
+          formatter: [
+            '{title|2020年6月18日}',
+            '{hr|}',
+            '“一带一路”国际合作高级别视频会议在北京成功举行。'
+          ].join('\n'),
+          backgroundColor: '#eee',
+          borderColor: '#777',
+          borderWidth: 1,
+          borderRadius: 4,
+          fontSize: '16px',
+          padding: 5,
+          shadowBlur: 3,
+          shadowColor: '#888',
+          shadowOffsetX: 0,
+          shadowOffsetY: 3,
+          lineHeight: 20,
+          rich: {
+            title: {
+              color: '#000',
+              align: 'center',
+              fontSize: "16px"
+            },
+            hr: {
+              borderColor: '#777',
+              width: '100%',
+              borderWidth: 1,
+              height: 0
+            },
+          }
+        }
+      };
+
+      rumor_sum_data[51]["label"] = {
+        normal: {
+          position: ['-700%', '-67%'],
+          show: true,
+          formatter: [
+            '{title|2021年1月16日}',
+            '{hr|}',
+            '人社部等七部门印发通知，鼓励引导农民工',
+            '等务工人员留在就业地安心过年。'
+          ].join('\n'),
+          backgroundColor: '#eee',
+          borderColor: '#777',
+          borderWidth: 1,
+          borderRadius: 4,
+          fontSize: '16px',
+          padding: 5,
+          shadowBlur: 3,
+          shadowColor: '#888',
+          shadowOffsetX: 0,
+          shadowOffsetY: 3,
+          lineHeight: 20,
+          rich: {
+            title: {
+              color: '#000',
+              align: 'center',
+              fontSize: "16px"
+            },
+            hr: {
+              borderColor: '#777',
+              width: '100%',
+              borderWidth: 1,
+              height: 0
+            },
+          }
         }
       };
 
@@ -423,13 +548,14 @@ function nextday(date) {
           }
         },
         legend: {
-          data: ['谣言数量']
+          data: ['谣言数量'],
+          top: "2%"
         },
         grid: {
           top: "9%",
           left: "1.5%",
           right: "2%",
-          bottom: "-2%",
+          bottom: "0%",
           show: true, // 显示边框
           borderColor: "#73879C", // 边框颜色
           containLabel: true // 包含刻度文字在内
@@ -480,18 +606,20 @@ function nextday(date) {
   let months_range = [];
   let date = new Date();
   let nowyear = date.getFullYear();
-  // let nowmonth = date.getMonth() + 1;
-  let nowmonth = date.getMonth() + 1 - 2;//目前只有到2月的数据比较齐全
+  let nowmonth = date.getMonth() + 1 - 1;
   // let nowdate = nowyear + (nowmonth < 10 ? "0" + nowmonth : nowmonth) + (nowday < 10 ? "0" + nowday : nowday);
   //nowmonth = date.getMonth() + 1;
-  let stmonth, edmonth;
-  //最近12个月
-  for (var i = 0; i < 12; i++) {
+  let stmonth, edmonth, styear, edyear;
+  //最近15个月
+  var month_num = 15;//去年1月到今年3月
+  for (var i = 0; i < month_num; i++) {
     if (i === 0) {
       edmonth = nowmonth;
+      edyear = nowyear;
     }
-    if (i === 11) {
+    if (i === month_num - 1) {
       stmonth = nowmonth;
+      styear = nowyear;
     }
 
     var tmp = String(nowyear) + "/" + String(nowmonth);
@@ -614,47 +742,40 @@ function nextday(date) {
   var myChart = echarts.init(document.querySelector("#rumor_district"));
   var mapName = "china";
 
+  var dd = [];
+  var mapData = [];
+
+  for (var i = 0; i < month_num; i++) {
+    mapData.push([]);
+    dd.push({});
+  }
   $.ajax({
     url: "/rumor/shows",
     type: "GET",
     data: { action: "get_location_date_trend" },
     dataType: "json",
     success: function (result) {
-      // console.log(result);
+      // result["retlist"]["2021-13-31"]=[];//添加截止项
+      console.log(result);
       nowmonth = stmonth;
       let tmp_month_data = objDeepCopy(basedata);
       let tmp_month_tooltipdata = objDeepCopy(base_tooltipdata);
       let totaldata = [];
-      let toolTipData = [];
       for (let key in result["retlist"]) {
-        // console.log(key);
         var items = key.split("-");
         var tmpdate = items.join("");
         tmpdate = parseInt(tmpdate);
-        // console.log(tmpdate);
         tmpmonth = Math.floor(tmpdate % 10000 / 100);
-        // console.log(tmpmonth);
-        if (tmpmonth < stmonth && Math.floor(tmpdate / 10000) == nowyear - 1) {
-          continue;
-        }
 
-        if (tmpmonth > edmonth && Math.floor(tmpdate / 10000) == nowyear) {
-          // console.log("最后一次推进来了");
-          // totaldata.push(tmp_month_data);
-          // toolTipData.push(tmp_month_tooltipdata);
+
+        if (tmpmonth > edmonth && Math.floor(tmpdate / 10000) == edyear) {
           totaldata.push(tmp_month_data);
-          toolTipData.push(tmp_month_tooltipdata);
           break;
         }
-        // console.log(String(tmpmonth)+"--"+String(nowmonth));
-        if (tmpmonth > nowmonth || (nowmonth == 12 && tmpmonth < 12)) {
-          // console.log("中间推进来了");
+        if (tmpmonth > nowmonth || (nowmonth === 12 && tmpmonth < 12)) {
           nowmonth = tmpmonth;
           totaldata.push(tmp_month_data);
           tmp_month_data = objDeepCopy(basedata);
-
-          toolTipData.push(tmp_month_tooltipdata);
-          tmp_month_tooltipdata = objDeepCopy(base_tooltipdata);
         }
         for (var i = 0; i < result["retlist"][key].length; i++) {
           var tmpstr = result["retlist"][key][i];
@@ -663,7 +784,6 @@ function nextday(date) {
             for (var m = 0; m < 34; m++) {
               if (tmpstr === tmp_month_data[m]["name"]) {
                 tmp_month_data[m]["value"] = tmp_month_data[m]["value"] + 1;
-                tmp_month_tooltipdata[m]["value"][0]["value"] = tmp_month_tooltipdata[m]["value"][0]["value"] + 1;
                 break;
               }
             }
@@ -676,7 +796,6 @@ function nextday(date) {
                 if (tmpstr == citys[j]["city"][k]) {
                   flag = 1;
                   tmp_month_data[j]["value"] = tmp_month_data[j]["value"] + 1;
-                  tmp_month_tooltipdata[j]["value"][0]["value"] = tmp_month_tooltipdata[j]["value"][0]["value"] + 1;
                   break;
                 }
               }
@@ -687,8 +806,6 @@ function nextday(date) {
           }
         }
       }
-      // console.log(totaldata);
-      // console.log(toolTipData);
       /*获取地图数据*/
       myChart.showLoading();
       var mapFeatures = echarts.getMap(mapName).geoJson.features;
@@ -699,1159 +816,303 @@ function nextday(date) {
         // 地区经纬度
         geoCoordMap[name] = v.properties.cp;
       });
+      console.log(geoCoordMap);
 
-      var option = {
-        baseOption: {
-          timeline: {
-            data: months_range,
-            axisType: 'category',
-            autoPlay: true,
-            playInterval: 3000,
-            left: '10%',
-            right: '10%',
-            bottom: '-2%',
-            width: '80%',
-            label: {
-              normal: {
-                textStyle: {
-                  color: 'rgb(179, 239, 255)'
-                }
+      for (var i = 0; i < month_num; i++) {
+        for (var j = 0; j < totaldata[i].length; j++) {
+          var tname = totaldata[i][j]["name"];
+          var tval = totaldata[i][j]["value"];
+          dd[i][tname] = tval;
+        }
+      }
+
+      for (var key in geoCoordMap) {
+        for (var i = 0; i < month_num; i++) {
+          mapData[i].push({
+            year: months_range[i],
+            name: key,
+            value: dd[i][key],
+          });
+        }
+      }
+      var categoryData = [];
+      var barData = [];
+
+      for (var i = 0; i < mapData.length; i++) {
+        mapData[i].sort(function sortNumber(a, b) {
+          return a.value - b.value;
+        });
+        barData.push([]);
+        categoryData.push([]);
+        for (var j = 0; j < mapData[i].length; j++) {
+          barData[i].push(mapData[i][j].value);
+          categoryData[i].push(mapData[i][j].name);
+        }
+      }
+
+      var optionXyMap01 = {
+        timeline: {
+          data: months_range,
+          axisType: 'category',
+          autoPlay: true,
+          playInterval: 1500,
+          left: '10%',
+          right: '10%',
+          bottom: '2%',
+          width: '80%',
+          label: {
+            normal: {
+              textStyle: {
+                color: '#ddd',
               },
-              emphasis: {
-                textStyle: {
-                  color: '#fff'
-                }
-              }
             },
-            currentIndex: 0,
-            symbolSize: 10,
-            lineStyle: {
-              color: '#8df4f4'
-            },
-            checkpointStyle: {
-              borderColor: '#8df4f4',
-              color: '#53D9FF',
-              borderWidth: 2,
-            },
-            controlStyle: {
-              showNextBtn: true,
-              showPrevBtn: true,
-              normal: {
-                color: '#53D9FF',
-                borderColor: '#53D9FF'
+            emphasis: {
+              textStyle: {
+                color: '#fff',
               },
-              emphasis: {
-                color: 'rgb(58,115,192)',
-                borderColor: 'rgb(58,115,192)'
-              }
             },
           },
-          visualMap: {
-            show: true,
-            min: 0,
-            max: 40,
-            left: 'left',
-            top: 'bottom',
-            text: ['高', '低'], // 文本，默认为数值文本
-            textStyle: {
-              color: "#73879C",
-              fontSize: "12"
+          symbolSize: 10,
+          lineStyle: {
+            color: '#555',
+          },
+          checkpointStyle: {
+            borderColor: '#777',
+            borderWidth: 2,
+          },
+          controlStyle: {
+            showNextBtn: true,
+            showPrevBtn: true,
+            normal: {
+              color: '#666',
+              borderColor: '#666',
             },
-            calculable: true,
-            seriesIndex: [1],
-            inRange: {
-              // color: ['#3B5077', '#031525'] // 蓝黑
-              color: ['#ffc0cb', '#800080'] // 红紫
-              // color: ['#3C3B3F', '#605C3C'] // 黑绿
-              // color: ['#0f0c29', '#302b63', '#24243e'] // 黑紫黑
-              // color: ['#23074d', '#cc5333'] // 紫红
-              // color: ['#00467F', '#A5CC82'] // 蓝绿
-              // color: ['#1488CC', '#2B32B2'] // 浅蓝
-            }
+            emphasis: {
+              color: '#aaa',
+              borderColor: '#aaa',
+            },
+          },
+        },
+        baseOption: {
+          animation: true,
+          animationDuration: 1000,
+          animationEasing: 'cubicInOut',
+          animationDurationUpdate: 1000,
+          animationEasingUpdate: 'cubicInOut',
+          grid: {
+            right: '1%',
+            top: '15%',
+            bottom: '10%',
+            width: '20%',
+          },
+          tooltip: {
+            trigger: 'axis', // hover触发器
+            axisPointer: {
+              // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+              shadowStyle: {
+                color: 'rgba(150,150,150,0.1)', //hover颜色
+              },
+            },
           },
           geo: {
             show: true,
-            map: mapName,
+            map: 'china',
+            roam: true,
+            zoom: 1,
+            center: [113.83531246, 34.0267395887],
             label: {
-              normal: {
-                show: false
-              },
               emphasis: {
                 show: false,
-              }
+              },
             },
-            roam: true,
             itemStyle: {
               normal: {
-                areaColor: '#031525',
-                borderColor: '#3B5077',
+                borderColor: 'rgba(147, 235, 248, 1)',
+                borderWidth: 1,
+                areaColor: {
+                  type: 'radial',
+                  x: 0.5,
+                  y: 0.5,
+                  r: 0.8,
+                  colorStops: [
+                    {
+                      offset: 0,
+                      color: 'rgba(147, 235, 248, 0)', // 0% 处的颜色
+                    },
+                    {
+                      offset: 1,
+                      color: 'rgba(147, 235, 248, .2)', // 100% 处的颜色
+                    },
+                  ],
+                  globalCoord: false, // 缺省为 false
+                },
+                shadowColor: 'rgba(128, 217, 248, 1)',
+                // shadowColor: 'rgba(255, 255, 255, 1)',
+                shadowOffsetX: -2,
+                shadowOffsetY: 2,
+                shadowBlur: 10,
               },
               emphasis: {
-                areaColor: '#2B91B7',
-              }
-            }
-          }
+                areaColor: '#389BB7',
+                borderWidth: 0,
+              },
+            },
+          },
         },
-        options: [
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[0].length; i++) {
-                    if (params.name == toolTipData[0][i].name) {
-                      toolTiphtml += toolTipData[0][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[0][i].value.length; j++) {
-                        toolTiphtml += toolTipData[0][i].value[j].name + ':' + toolTipData[0][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[0].length; i++) {
-                    if (params.name == toolTipData[0][i].name) {
-                      toolTiphtml += toolTipData[0][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[0][i].value.length; j++) {
-                        toolTiphtml += toolTipData[0][i].value[j].name + ':' + toolTipData[0][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[0]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
+        options: [],
+      };
+
+      for (var n = 0; n < months_range.length; n++) {
+        optionXyMap01.options.push({
+          backgroundColor: '#013954',
+          title: [
+            {},//地图就不需要标题了
+            {
+              id: 'statistic',
+              text: months_range[n] + '数据统计情况',
+              left: '80%',
+              top: '6%',
+              textStyle: {
+                color: '#fff',
+                fontSize: 18,
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[0]
-              }
-            ]
+            },
+          ],
+          xAxis: {
+            type: 'value',
+            scale: true,
+            position: 'top',
+            min: 0,
+            boundaryGap: false,
+            splitLine: {
+              show: false,
+            },
+            axisLine: {
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            axisLabel: {
+              margin: 2,
+              textStyle: {
+                color: '#aaa',
+              },
+            },
           },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[1].length; i++) {
-                    if (params.name == toolTipData[1][i].name) {
-                      toolTiphtml += toolTipData[1][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[1][i].value.length; j++) {
-                        toolTiphtml += toolTipData[1][i].value[j].name + ':' + toolTipData[1][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[1].length; i++) {
-                    if (params.name == toolTipData[1][i].name) {
-                      toolTiphtml += toolTipData[1][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[1][i].value.length; j++) {
-                        toolTiphtml += toolTipData[1][i].value[j].name + ':' + toolTipData[1][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[1]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
+          yAxis: {
+            type: 'category',
+            //  name: 'TOP 20',
+            nameGap: 16,
+            axisLine: {
+              show: true,
+              lineStyle: {
+                color: '#ddd',
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[1]
-              }
-            ]
+            },
+            axisTick: {
+              show: false,
+              lineStyle: {
+                color: '#ddd',
+              },
+            },
+            axisLabel: {
+              interval: 0,
+              textStyle: {
+                color: '#ddd',
+              },
+            },
+            data: categoryData[n],
           },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[2].length; i++) {
-                    if (params.name == toolTipData[2][i].name) {
-                      toolTiphtml += toolTipData[2][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[2][i].value.length; j++) {
-                        toolTiphtml += toolTipData[2][i].value[j].name + ':' + toolTipData[2][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[2].length; i++) {
-                    if (params.name == toolTipData[2][i].name) {
-                      toolTiphtml += toolTipData[2][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[2][i].value.length; j++) {
-                        toolTiphtml += toolTipData[2][i].value[j].name + ':' + toolTipData[2][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[2]),
-                symbolSize: function (val) {
-                  return val[2];
+
+          series: [
+            //地图
+            {
+              type: 'map',
+              map: 'china',
+              geoIndex: 0,
+              aspectScale: 0.75, //长宽比
+              showLegendSymbol: false, // 存在legend时显示
+              label: {
+                normal: {
+                  show: false,
                 },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
+                emphasis: {
+                  show: false,
+                  textStyle: {
+                    color: '#fff',
                   },
-                  emphasis: {
-                    show: false
-                  }
                 },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
+              roam: true,
+              itemStyle: {
+                normal: {
+                  areaColor: '#031525',
+                  borderColor: '#FFFFFF',
                 },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
+                emphasis: {
+                  areaColor: '#2B91B7',
                 },
-                animation: false,
-                data: totaldata[2]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[3].length; i++) {
-                    if (params.name == toolTipData[3][i].name) {
-                      toolTiphtml += toolTipData[3][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[3][i].value.length; j++) {
-                        toolTiphtml += toolTipData[3][i].value[j].name + ':' + toolTipData[3][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[3].length; i++) {
-                    if (params.name == toolTipData[3][i].name) {
-                      toolTiphtml += toolTipData[3][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[3][i].value.length; j++) {
-                        toolTiphtml += toolTipData[3][i].value[j].name + ':' + toolTipData[3][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[3]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[3]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[4].length; i++) {
-                    if (params.name == toolTipData[4][i].name) {
-                      toolTiphtml += toolTipData[4][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[4][i].value.length; j++) {
-                        toolTiphtml += toolTipData[4][i].value[j].name + ':' + toolTipData[4][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[4].length; i++) {
-                    if (params.name == toolTipData[4][i].name) {
-                      toolTiphtml += toolTipData[4][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[4][i].value.length; j++) {
-                        toolTiphtml += toolTipData[4][i].value[j].name + ':' + toolTipData[4][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
+              animation: false,
+              data: mapData,
             },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[4]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
+
+            //地图中闪烁的点
+            {
+              //  name: 'Top 10',
+              type: 'effectScatter',
+              coordinateSystem: 'geo',
+              data: convertData(
+                mapData[n]
+                  .sort(function (a, b) {
+                    return b.value - a.value;
+                  })
+                  .slice(0, 10)
+              ),
+              symbolSize: function (val) {
+                return val[2];
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
+              showEffectOn: 'render',
+              rippleEffect: {
+                brushType: 'stroke',
+              },
+              hoverAnimation: true,
+              label: {
+                normal: {
+                  formatter: '{b}',
+                  position: 'right',
+                  show: true,
                 },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
+              },
+              itemStyle: {
+                normal: {
+                  color: "#FFC809",
+                  shadowBlur: 10,
+                  shadowColor: "#FFC809",
                 },
-                animation: false,
-                data: totaldata[4]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[5].length; i++) {
-                    if (params.name == toolTipData[5][i].name) {
-                      toolTiphtml += toolTipData[5][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[5][i].value.length; j++) {
-                        toolTiphtml += toolTipData[5][i].value[j].name + ':' + toolTipData[5][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[5].length; i++) {
-                    if (params.name == toolTipData[5][i].name) {
-                      toolTiphtml += toolTipData[5][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[5][i].value.length; j++) {
-                        toolTiphtml += toolTipData[5][i].value[j].name + ':' + toolTipData[5][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
+              },
+              zlevel: 1,
             },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[5]),
-                symbolSize: function (val) {
-                  return val[2];
+            //柱状图
+            {
+              zlevel: 1.5,
+              type: 'bar',
+              symbol: 'none',
+              itemStyle: {
+                normal: {
+                  color: "#FFC809",
                 },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
               },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[5]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[6].length; i++) {
-                    if (params.name == toolTipData[6][i].name) {
-                      toolTiphtml += toolTipData[6][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[6][i].value.length; j++) {
-                        toolTiphtml += toolTipData[6][i].value[j].name + ':' + toolTipData[6][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[6].length; i++) {
-                    if (params.name == toolTipData[6][i].name) {
-                      toolTiphtml += toolTipData[6][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[6][i].value.length; j++) {
-                        toolTiphtml += toolTipData[6][i].value[j].name + ':' + toolTipData[6][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
+              data: barData[n],
             },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[6]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[6]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[7].length; i++) {
-                    if (params.name == toolTipData[7][i].name) {
-                      toolTiphtml += toolTipData[7][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[7][i].value.length; j++) {
-                        toolTiphtml += toolTipData[7][i].value[j].name + ':' + toolTipData[7][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[7].length; i++) {
-                    if (params.name == toolTipData[7][i].name) {
-                      toolTiphtml += toolTipData[7][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[7][i].value.length; j++) {
-                        toolTiphtml += toolTipData[7][i].value[j].name + ':' + toolTipData[7][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[7]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[7]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[8].length; i++) {
-                    if (params.name == toolTipData[8][i].name) {
-                      toolTiphtml += toolTipData[8][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[8][i].value.length; j++) {
-                        toolTiphtml += toolTipData[8][i].value[j].name + ':' + toolTipData[8][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[8].length; i++) {
-                    if (params.name == toolTipData[8][i].name) {
-                      toolTiphtml += toolTipData[8][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[8][i].value.length; j++) {
-                        toolTiphtml += toolTipData[8][i].value[j].name + ':' + toolTipData[8][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[8]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[8]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[9].length; i++) {
-                    if (params.name == toolTipData[9][i].name) {
-                      toolTiphtml += toolTipData[9][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[9][i].value.length; j++) {
-                        toolTiphtml += toolTipData[9][i].value[j].name + ':' + toolTipData[9][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[9].length; i++) {
-                    if (params.name == toolTipData[9][i].name) {
-                      toolTiphtml += toolTipData[9][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[9][i].value.length; j++) {
-                        toolTiphtml += toolTipData[9][i].value[j].name + ':' + toolTipData[9][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[9]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[9]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[10].length; i++) {
-                    if (params.name == toolTipData[10][i].name) {
-                      toolTiphtml += toolTipData[10][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[10][i].value.length; j++) {
-                        toolTiphtml += toolTipData[10][i].value[j].name + ':' + toolTipData[10][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[10].length; i++) {
-                    if (params.name == toolTipData[10][i].name) {
-                      toolTiphtml += toolTipData[10][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[10][i].value.length; j++) {
-                        toolTiphtml += toolTipData[10][i].value[j].name + ':' + toolTipData[10][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[10]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[10]
-              }
-            ]
-          },
-          {
-            tooltip: {
-              trigger: 'item',
-              formatter: function (params) {
-                if (typeof (params.value)[2] == "undefined") {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[11].length; i++) {
-                    if (params.name == toolTipData[11][i].name) {
-                      toolTiphtml += toolTipData[11][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[11][i].value.length; j++) {
-                        toolTiphtml += toolTipData[11][i].value[j].name + ':' + toolTipData[11][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  // console.log(convertData(data))
-                  return toolTiphtml;
-                }
-                else {
-                  var toolTiphtml = ''
-                  for (var i = 0; i < toolTipData[11].length; i++) {
-                    if (params.name == toolTipData[11][i].name) {
-                      toolTiphtml += toolTipData[11][i].name + ':<br>'
-                      for (var j = 0; j < toolTipData[11][i].value.length; j++) {
-                        toolTiphtml += toolTipData[11][i].value[j].name + ':' + toolTipData[11][i].value[j].value + "<br>"
-                      }
-                    }
-                  }
-                  return toolTiphtml;
-                }
-              }
-            },
-            series: [
-              {
-                name: '散点',
-                type: 'scatter',
-                coordinateSystem: 'geo',
-                data: convertData(totaldata[11]),
-                symbolSize: function (val) {
-                  return val[2];
-                },
-                label: {
-                  normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                  },
-                  emphasis: {
-                    show: false
-                  }
-                },
-                itemStyle: {
-                  normal: {
-                    color: 'rgba(255,255,255,1)',
-                  }
-                }
-              },
-              {
-                type: 'map',
-                map: mapName,
-                geoIndex: 0,
-                aspectScale: 0.75, //长宽比
-                showLegendSymbol: false, // 存在legend时显示
-                label: {
-                  normal: {
-                    show: true
-                  },
-                  emphasis: {
-                    show: false,
-                    textStyle: {
-                      color: '#fff'
-                    }
-                  }
-                },
-                roam: true,
-                itemStyle: {
-                  normal: {
-                    areaColor: '#031525',
-                    borderColor: '#3B5077',
-                  },
-                  emphasis: {
-                    areaColor: '#2B91B7'
-                  }
-                },
-                animation: false,
-                data: totaldata[11]
-              }
-            ]
-          }
-        ]
+          ],
+        });
       }
-      myChart.setOption(option);
+
+
+      myChart.setOption(optionXyMap01);
       // 监听浏览器缩放，图表对象调用缩放resize函数
       window.addEventListener("resize", function () {
         myChart.resize();

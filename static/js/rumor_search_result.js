@@ -18,6 +18,7 @@ function append_rumor(page_index) {
         },
         dataType: "json",
         success: function (result) {
+            console.log(result)
             var rumor_count_div = document.createElement('div')
             rumor_count_div.id = 'rumor_count_div'
             rumor_count_div.innerHTML = '为您找到相关结果' + result["total"] + '个'
@@ -31,6 +32,10 @@ function append_rumor(page_index) {
                 var rumor_title_span = document.createElement('span')
                 rumor_title_span.className = 'rumor_title_span'
                 rumor_title_span.innerHTML = rumors_list[i]["title"]
+
+                var rumor_title_a = document.createElement('a')
+                rumor_title_a.href = 'https://vp.fact.qq.com/article?id=' + rumors_list[i]["urlid"]
+                rumor_title_a.appendChild(rumor_title_span)
 
                 var rumor_type_span = document.createElement('span')
                 if (rumors_list[i]["markstyle"] == "true") {
@@ -56,7 +61,7 @@ function append_rumor(page_index) {
 
                 var rumor_text_div = document.createElement('div')
                 rumor_text_div.className = 'col-md-9 col-sm-9 rumor_text_div'
-                rumor_text_div.appendChild(rumor_title_span)
+                rumor_text_div.appendChild(rumor_title_a)
                 rumor_text_div.appendChild(rumor_type_span)
                 rumor_text_div.appendChild(rumor_date_p)
                 rumor_text_div.appendChild(rumor_tag_p)
