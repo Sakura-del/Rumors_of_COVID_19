@@ -7,6 +7,7 @@ from common.models import Question, Answer
 from django.db import transaction
 from django.core.paginator import Paginator, EmptyPage
 import jieba
+import datetime
 
 
 # 展示问题
@@ -103,13 +104,17 @@ def ask_question(request):
     question = request.params['question']
     question_text = request.params['question_text']
     try:
-        qs = Question.objects.values().filter(question=question)
-        qs = list(qs)
-        return JsonResponse({"ret": 1, 'msg': '该问题已存在', 'retlist': qs})
+        qs = Question.objects.get(question=question)
+        if qs:
+            return JsonResponse({"ret": 1, 'msg': '该问题已存在', 'retlist': qs})
+        else:
+            with transaction.atomic():
+                new_question = Question.objects.create(question=question, question_text=question_text,
+                                                       pub_date=datetime.datetime.now())
     except Question.DoesNotExist:
         with transaction.atomic():
             new_question = Question.objects.create(question=question, question_text=question_text,
-                                                   pub_date=timezone.now())
+                                                   pub_date=datetime.datetime.now())
 
     return JsonResponse({"ret": 0, "question_id": new_question.id, "msg": ""})
 
