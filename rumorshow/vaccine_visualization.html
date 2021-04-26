@@ -37,6 +37,15 @@
             width: 100%;
         }
 
+        #tile_count_block .count_top,
+        #tile_count_block .count_bottom{
+            font-size:25px;
+        }
+
+        #tile_count_block .count_number{
+            font-size:40px;
+        }
+
         #global_data_block .continent_name_div{
             margin-bottom:10px;
 
@@ -71,7 +80,7 @@
         #global_data_block .continent_data_table th {
             width: 33%;
 
-            font-size: 18px;
+            font-size: 25px;
 
             background-color: rgb(183, 225, 217);
         }
@@ -83,7 +92,7 @@
         #global_data_block .continent_data_table td {
             width: 33%;
 
-            font-size: 15px;
+            font-size: 20px;
         }
     </style>
 
@@ -164,7 +173,7 @@
                     <div class="tile_count" id="tile_count_block">
                         <div class="col-md-3 col-sm-4 tile_stats_count">
                             <span class="count_top"><i class="fa fa-user"></i>国内总接种量</span>
-                            <div class="count" id="val1">2500</div>
+                            <div class="count_number" id="val1">2500</div>
                             <span class="count_bottom"><i class="green" id="incr1">4% </i>同比昨日</span>
                         </div>
                         <div class="col-md-3 col-sm-4 tile_stats_count">

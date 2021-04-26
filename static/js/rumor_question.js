@@ -22,13 +22,18 @@ function load_page(page) {
                 question_title_div.className = 'question_title_div'
                 question_title_div.innerHTML = question_data[0]
 
+                var question_title_a = document.createElement('a')
+                question_title_a.className = 'question_title_a'
+                question_title_a.href = 'rumor_question_detail.html?id=' + question_data[3]
+                question_title_a.appendChild(question_title_div)
+
                 var question_detail_div = document.createElement('div')
                 question_detail_div.className = 'question_detail_div'
                 question_detail_div.innerHTML = question_data[1]
 
                 var question_unit_div = document.createElement('div')
-                question_unit_div.className = 'question_unit_div'
-                question_unit_div.appendChild(question_title_div)
+                question_unit_div.className = 'question_unit_div'+
+                question_unit_div.appendChild(question_title_a)
                 question_unit_div.appendChild(question_detail_div)
 
                 question_list_row.appendChild(question_unit_div)
@@ -85,7 +90,7 @@ function on_ask_question_button_click() {
 
 
 
-// //加载第一页，以及翻页按钮
+//加载第一页，以及翻页按钮
 // function init_first_page() {
 //     $.ajax({
 //         url: "/rumor/questions",
