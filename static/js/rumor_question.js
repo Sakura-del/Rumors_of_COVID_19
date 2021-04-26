@@ -24,7 +24,7 @@ function load_page(page) {
 
                 var question_title_a = document.createElement('a')
                 question_title_a.className = 'question_title_a'
-                // question_title_a.href = 'rumor_question_detail.html?id=' + question_data[id]
+                question_title_a.href = 'rumor_question_detail.html?id=' + question_data['id']
                 question_title_a.appendChild(question_title_div)
 
                 var question_detail_div = document.createElement('div')
@@ -32,7 +32,7 @@ function load_page(page) {
                 question_detail_div.innerHTML = question_data['question_text']
 
                 var question_unit_div = document.createElement('div')
-                question_unit_div.className = 'question_unit_div'+
+                question_unit_div.className = 'question_unit_div'
                 question_unit_div.appendChild(question_title_a)
                 question_unit_div.appendChild(question_detail_div)
 
@@ -69,7 +69,7 @@ function on_ask_question_button_click() {
     $.ajax({
         url: "/rumor/questions",
         type: "POST",
-        body: {
+        data: {
             action: "ask_question",
             question: input_title_text,
             question_text: input_detail_text
