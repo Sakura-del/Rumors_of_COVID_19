@@ -239,28 +239,28 @@ function Make_complete_table(continent_data_row_id) {
                 chartdiv.style.height = '350px';
                 chartdiv.style.width = '550px';
                 var myChart = echarts.init(chartdiv);
-                var xAxis_content,data1=[];
-                var items=key_continent.split("_");
-                for(var n=0;n<key_continent_data_dict[key_continent].length;n++){
+                var xAxis_content, data1 = [];
+                var items = key_continent.split("_");
+                for (var n = 0; n < key_continent_data_dict[key_continent].length; n++) {
                     data1.push(key_continent_data_dict[key_continent][n]["total_vaccinations_per_hundred"]);
                 }
-                if(items[0]=="asia"){
-                    xAxis_content=key_asia_name_list;
+                if (items[0] == "asia") {
+                    xAxis_content = key_asia_name_list;
                 }
-                else if(items[0]=="europe"){
-                    xAxis_content=key_europe_name_list;
+                else if (items[0] == "europe") {
+                    xAxis_content = key_europe_name_list;
                 }
-                else if(items[0]=="africa"){
-                    xAxis_content=key_africa_name_list;
+                else if (items[0] == "africa") {
+                    xAxis_content = key_africa_name_list;
                 }
-                else if(items[0]=="oceania"){
-                    xAxis_content=key_oceania_name_list;
+                else if (items[0] == "oceania") {
+                    xAxis_content = key_oceania_name_list;
                 }
-                else if(items[0]=="north"){
-                    xAxis_content=key_north_name_list;
+                else if (items[0] == "north") {
+                    xAxis_content = key_north_name_list;
                 }
-                else{
-                    xAxis_content=key_south_name_list;
+                else {
+                    xAxis_content = key_south_name_list;
                 }
                 var option = {
                     tooltip: {
