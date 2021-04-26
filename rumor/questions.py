@@ -16,7 +16,7 @@ def list_questions(request):
         # qs = Question.objects.values('question', 'question_text', 'id', 'pub_date').annotate(
         #     answer_count=Count(Answer)).distinct().order_by('-pub_date')
         qs = Question.objects.values('question','question_text','pub_date','id').annotate(
-            answer_count=Count('answer'))
+            answer_count=Count('answer')).order_by('-pub_date')
         # qs = qs.values_list('question','question_text','pub_date','answer_count','id')
         # 页数
         pagenum = request.params['pagenum']
@@ -105,6 +105,7 @@ def ask_question(request):
     question_text = request.params['question_text']
     try:
         qs = Question.objects.get(question=question)
+        qs = list(qs)
         if qs:
             return JsonResponse({"ret": 1, 'msg': '该问题已存在', 'retlist': qs})
         else:

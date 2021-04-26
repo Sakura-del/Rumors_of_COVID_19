@@ -178,7 +178,7 @@ Rumors_of_COVID_19
 
 [新闻中心-腾讯网 ](https://news.qq.com/)
 
-[疫情 – 今日头条新闻 ()](http://www.cp79115.cn/tag/疫情)
+[疫情 – 今日头条新闻 ](http://www.cp79115.cn/tag/疫情)
 
 
 
