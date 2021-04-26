@@ -9,8 +9,10 @@ def dispatcherBase(request, ActionHandler):
 
     elif request.method in ['POST', 'PUT', 'DELETE']:
         # 根据接口，POST/PUT/DELETE 请求的消息体都是 json格式
-        print(request.body.decode())
-        request.params = json.loads(request.body.decode())
+        print(request.POST.dict())
+        request.params = json.dumps(request.POST.dict(), ensure_ascii=False)
+        request.params = json.loads(request.params)
+        print(request.params)
 
     action = request.params['action']
     if action in ActionHandler:
