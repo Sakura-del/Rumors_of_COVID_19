@@ -141,11 +141,11 @@ function Make_complete_table(continent_data_row_id) {
         country_data = data_list[i]
 
         var country_td = document.createElement('td')
-        country_td.innerHTML = country_data['country'] != '-1' ? country_data['country'] : '无相关数据'
+        country_td.innerHTML = country_data['country'] != '-1' ? country_data['country'] : '暂无数据'
         var count_td = document.createElement('td')
-        count_td.innerHTML = country_data['total_vaccinations'] != '-1' ? country_data['total_vaccinations'] : '无相关数据'
+        count_td.innerHTML = country_data['total_vaccinations'] != '-1' ? country_data['total_vaccinations'] : '暂无数据'
         var per_hundred_td = document.createElement('td')
-        per_hundred_td.innerHTML = country_data['total_vaccinations_per_hundred'] != '-1' ? country_data['total_vaccinations_per_hundred'] : '无相关数据'
+        per_hundred_td.innerHTML = country_data['total_vaccinations_per_hundred'] != '-1' ? country_data['total_vaccinations_per_hundred'] : '暂无数据'
 
         var row_tr = document.createElement('tr')
         row_tr.appendChild(country_td)
@@ -232,10 +232,85 @@ function Make_complete_table(continent_data_row_id) {
                 var continent_chart_container = document.createElement("div")
                 continent_chart_container.className = 'col-md-6 col-sm-6 continent_chart_container'
                 continent_chart_container.id = key_continent + '_chart'
-                continent_chart_container.style.width = '200px';
-                continent_chart_container.style.height = '200px';
-                continent_chart_container.style.border = '10px';
-                continent_chart_container.style.backgroundColor = 'rgb(255,255,0)';
+                // continent_chart_container.style.width = '200px';
+                // continent_chart_container.style.height = '500px';
+
+                var chartdiv = document.createElement("div");
+                chartdiv.style.height = '350px';
+                chartdiv.style.width = '550px';
+                var myChart = echarts.init(chartdiv);
+                var xAxis_content,data1=[];
+                var items=key_continent.split("_");
+                for(var n=0;n<key_continent_data_dict[key_continent].length;n++){
+                    data1.push(key_continent_data_dict[key_continent][n]["total_vaccinations_per_hundred"]);
+                }
+                if(items[0]=="asia"){
+                    xAxis_content=key_asia_name_list;
+                }
+                else if(items[0]=="europe"){
+                    xAxis_content=key_europe_name_list;
+                }
+                else if(items[0]=="africa"){
+                    xAxis_content=key_africa_name_list;
+                }
+                else if(items[0]=="oceania"){
+                    xAxis_content=key_oceania_name_list;
+                }
+                else if(items[0]=="north"){
+                    xAxis_content=key_north_name_list;
+                }
+                else{
+                    xAxis_content=key_south_name_list;
+                }
+                var option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            crossStyle: {
+                                color: '#999'
+                            }
+                        }
+                    },
+                    legend: {
+                        data: ['百人接种率']
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: xAxis_content,
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '百人接种率',
+                            // min: 0,
+                            // max: 25,
+                            // interval: 5,
+                            axisLabel: {
+                                formatter: '{value}%'
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '百人接种率',
+                            type: 'bar',
+                            data: data1
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+                // 4. 让图表跟随屏幕自动的去适应
+                window.addEventListener("resize", function () {
+                    myChart.resize();
+                });
+                continent_chart_container.appendChild(chartdiv);
+
 
                 var expend_list_button = document.createElement('button')
                 expend_list_button.className = 'fa fa-chevron-right expend_list_button'
@@ -260,6 +335,8 @@ function Make_complete_table(continent_data_row_id) {
 
                 Make_short_table(key_continent)
             }
+
+            console.log(key_continent_data_dict);
         }
     })
 })();

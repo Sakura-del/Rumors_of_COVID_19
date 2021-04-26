@@ -69,7 +69,7 @@ function on_ask_question_button_click() {
     $.ajax({
         url: "/rumor/questions",
         type: "POST",
-        data: {
+        body: {
             action: "ask_question",
             question: input_title_text,
             question_text: input_detail_text
