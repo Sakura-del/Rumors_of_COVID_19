@@ -24,7 +24,7 @@ function load_page(page) {
 
                 var question_title_a = document.createElement('a')
                 question_title_a.className = 'question_title_a'
-                question_title_a.href = 'rumor_question_detail.html?id=' + question_data[id]
+                // question_title_a.href = 'rumor_question_detail.html?id=' + question_data[id]
                 question_title_a.appendChild(question_title_div)
 
                 var question_detail_div = document.createElement('div')
