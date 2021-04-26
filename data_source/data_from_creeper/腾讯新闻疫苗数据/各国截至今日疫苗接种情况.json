@@ -8,10 +8,10 @@
     },
     {
         "country": "中国",
-        "date": "2021-04-24",
+        "date": "2021-04-25",
         "vaccinations": "国药/北京,国药/武汉,科兴生物,康希诺",
-        "total_vaccinations": 220309000,
-        "total_vaccinations_per_hundred": 15.31
+        "total_vaccinations": 224901000,
+        "total_vaccinations_per_hundred": 15.63
     },
     {
         "country": "印度",

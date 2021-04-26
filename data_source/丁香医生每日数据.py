@@ -12,23 +12,23 @@ if not os.path.isdir('data_source/data_from_creeper/丁香医生每日数据'):
 
 
 def Domestic_daily_data_func():
-    url = 'https://file1.dxycdn.com/2021/0329/072/4781419391339442743-135.json'
+    url = 'https://file1.dxycdn.com/2021/0426/763/0719264726313367743-135.json'
     response = requests.get(url = url).json()
     result = response['data']
 
     with open('data_source/data_from_creeper/丁香医生每日数据/国内每日数据.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(result,ensure_ascii = False))
 
-
+Domestic_daily_data_func()
 def Global_daily_data_func():
-    url = 'https://file1.dxycdn.com/2021/0329/270/7977712388202242743-135.json'
+    url = 'https://file1.dxycdn.com/2021/0426/329/0618653862127167743-135.json?'
     response = requests.get(url = url).json()
     result = response['data']
 
     with open('data_source/data_from_creeper/丁香医生每日数据/全球每日数据.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(result,ensure_ascii = False))
 
-
+Global_daily_data_func()
 def US_daily_data_func():
     url = ' https://file1.dxycdn.com/2020/0315/553/3402160512808052518-135.json'
     response = requests.get(url = url).json()
