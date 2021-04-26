@@ -20,16 +20,16 @@ function load_page(page) {
 
                 var question_title_div = document.createElement('div')
                 question_title_div.className = 'question_title_div'
-                question_title_div.innerHTML = question_data[0]
+                question_title_div.innerHTML = question_data['question']
 
                 var question_title_a = document.createElement('a')
                 question_title_a.className = 'question_title_a'
-                question_title_a.href = 'rumor_question_detail.html?id=' + question_data[3]
+                question_title_a.href = 'rumor_question_detail.html?id=' + question_data[id]
                 question_title_a.appendChild(question_title_div)
 
                 var question_detail_div = document.createElement('div')
                 question_detail_div.className = 'question_detail_div'
-                question_detail_div.innerHTML = question_data[1]
+                question_detail_div.innerHTML = question_data['question_text']
 
                 var question_unit_div = document.createElement('div')
                 question_unit_div.className = 'question_unit_div'+
