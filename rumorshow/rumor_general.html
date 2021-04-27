@@ -36,7 +36,6 @@
         #search_rumor_block #search_input {
             width: 70%;
             height: 40px;
-
             border: 2px;
             border-right: 0;
             border-style: solid;
@@ -44,16 +43,13 @@
             border-bottom-right-radius: 0;
             border-top-right-radius: 0;
             border-color: rgb(236, 236, 236);
-
             margin-right: 0;
-
             float: left;
         }
-
+        
         #search_rumor_block #search_button {
             width: 20%;
             height: 40px;
-
             border: 2px;
             border-left: 0;
             border-style: solid;
@@ -61,90 +57,87 @@
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
             border-color: rgb(236, 236, 236);
-
             margin: 0;
-
             outline: none;
-
             float: left;
-
             color: rgb(255, 255, 255);
             background-color: rgb(88, 209, 169);
-
             font-size: 22px;
         }
-
+        
         #search_rumor_block #search_button:hover {
             background-color: rgb(98, 219, 179);
         }
-
+        
         #search_rumor_block #search_button:active {
             background-color: rgb(108, 229, 189);
         }
-
+        
         #rumors_list_block .rumors_list_container {
             padding-left: 0;
             margin-top: 0;
         }
-
+        
         #rumors_list_block .one_rumor_unit {
             width: 100%;
             border-bottom: 2px solid rgb(230, 237, 233);
             padding: 10px 0;
             margin: 0 10px;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_title_span {
             font-size: 20px;
             font-weight: 800;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_type_span {
             border-radius: 3px;
             padding: 3px 5px;
-            margin-left:5px;
-
+            margin-left: 5px;
             color: rgb(255, 255, 255);
             background: rgb(66, 161, 99);
-
             font-size: 14px !important;
         }
-
-        #rumors_list_block .rumor_text_div .true_rumor{
-            background-color:rgb(66, 161, 99);
+        
+        #rumors_list_block .rumor_text_div .true_rumor {
+            background-color: rgb(66, 161, 99);
         }
-
-        #rumors_list_block .rumor_text_div .fake_rumor{
-            background-color:rgb(196, 31, 32);
+        
+        #rumors_list_block .rumor_text_div .fake_rumor {
+            background-color: rgb(196, 31, 32);
         }
-
-        #rumors_list_block .rumor_text_div .unknown_rumor{
-            background-color:rgb(72, 72, 72);
+        
+        #rumors_list_block .rumor_text_div .unknown_rumor {
+            background-color: rgb(72, 72, 72);
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_date_p {
             margin: 0px;
             margin-top: 40px;
-
             font-size: 18px;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_tag_p {
             margin: 0px;
-
             font-size: 18px;
         }
-
+        
         #rumors_list_block .rumor_img {
             height: 120px;
             width: 80%;
             margin-left: 20%;
         }
-
+        
         #friend_link_block {
             top: 10px;
-
             position: sticky;
+        }
+        /* #friend_link_a {
+            font-size: 18px;
+        } */
+        
+        #friend_link_img {
+            border-radius: 20px;
         }
     </style>
 
@@ -231,8 +224,7 @@
                                         </li>
 
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                aria-expanded="false">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                                 <i class="fa fa-wrench"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -273,8 +265,7 @@
                                         </li>
 
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                aria-expanded="false">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                                 <i class="fa fa-wrench"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -311,8 +302,7 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -331,12 +321,22 @@
                             </div>
 
                             <div class="x_content">
-                                <img src="../static/images/weijianwei.jfif" alt="" style="width:100%;height: 25vh;">
-                                <a href="http://www.nhc.gov.cn/">卫健委</a>
+                                <a href="http://www.nhc.gov.cn/">
+                                    <img src="../static/images/weijianwei.jfif" alt="" style="width:100%;height: 25vh;" id="friend_link_img">
+                                </a>
+                                <!-- <a href="http://www.nhc.gov.cn/" id="friend_link_a">卫健委</a> -->
                                 <br>
                                 <br>
-                                <img src="../static/images/dingxiang.jpg" alt="" style="width: 100%;height: 25vh;">
-                                <a href="https://ncov.dxy.cn/ncovh5/view/pneumonia">丁香医生</a>
+                                <a href="https://www.toutiao.com/">
+                                    <img src="../static/images/toutiao.jpeg" alt="" style="width: 100%;height: 25vh;" id="friend_link_img">
+                                </a>
+                                <!-- <a href="https://www.toutiao.com/" id="friend_link_a">头条新闻</a> -->
+                                <br>
+                                <br>
+                                <a href="https://vp.fact.qq.com/home">
+                                    <img src="../static/images/jiaozhen.jpeg" alt="" style="width: 100%;height: 25vh;" id="friend_link_img">
+                                </a>
+                                <!-- <a href="https://vp.fact.qq.com/home" id="friend_link_a">腾讯较真</a> -->
                             </div>
                         </div>
                     </div>
@@ -345,7 +345,7 @@
             <!-- /page content -->
 
             <!-- footer content -->
-            <footer  id='footer'>
+            <footer id='footer'>
                 <div class="pull-right" id='powered_by'>
                     Powered by Wu Guanzhong, Mao Yulong, Qi Jianhan
                 </div>

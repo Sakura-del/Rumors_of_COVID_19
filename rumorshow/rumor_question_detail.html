@@ -33,11 +33,17 @@
     <link href="../static/css/base.css" rel="stylesheet">
 
     <style>
-        #question_list_block #raise_question_container #input_title,
-        #question_list_block #raise_question_container #input_detail,
-        #question_list_block #raise_question_container #search_btn {
-            display: block;
+        .question_title_div {
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
         }
+        
+        .question_detail_div {
+            font-size: 16px;
+        }
+        
+        .question_date_and_answerNum_div {}
     </style>
 
 </head>
@@ -110,10 +116,10 @@
             <div class="right_col" role="main">
 
                 <div class="row">
-                    <div class="col-md-10 col-sm-10" id="question_list_block">
+                    <div class="col-md-10 col-sm-10">
                         <div class="x_panel tile">
                             <div class="x_title">
-                                <h2>在线问答平台</h2>
+                                <h2>问题描述</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li>
                                         <a class="collapse-link">
@@ -122,8 +128,7 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -141,20 +146,84 @@
                                 <div class="clearfix"></div>
                             </div>
 
-                            <div class="x_content">
+                            <div class="x_content" id="question_describe">
 
-                                <div class="row" id="question_list_container">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                </div>
-                                <div class="row" id="page_button_container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10">
+                        <div class="x_panel tile">
+                            <div class="x_title">
+                                <h2>回复详情</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
 
-                                </div>
-                                <div class="row" id="raise_question_container">
-                                    <div>提一个问题吧~</div>
-                                    <input id="input_title">
-                                    <input id="input_detail">
-                                    <button id="search_btn">提问</button>
-                                </div>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a class="close-link">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content" id="reply">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-10 col-sm-10">
+                        <div class="x_panel tile">
+                            <div class="x_title">
+                                <h2>等你来答</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li>
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Settings 1</a>
+                                            <a class="dropdown-item" href="#">Settings 2</a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <a class="close-link">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="x_content" id="new_reply">
+
                             </div>
                         </div>
                     </div>
@@ -163,7 +232,7 @@
             <!-- /page content -->
 
             <!-- footer content -->
-            <footer  id='footer'>
+            <footer id='footer'>
                 <div class="pull-right" id='powered_by'>
                     Powered by Wu Guanzhong, Mao Yulong, Qi Jianhan
                 </div>
