@@ -19,7 +19,9 @@ def QQ_news_vaccination_place_func():
                             'province' : city['province']}
                           for city in response['data']['data']]
 
+
     vaccination_place_list = []
+    vaccination_place_dict = {}
     def city_one_page_func(city,province,page):
         url = 'https://apis.map.qq.com/place_cloud/search/region'
         headers = { 'Origin'     : 'https://new.qq.com',
@@ -36,20 +38,23 @@ def QQ_news_vaccination_place_func():
             response = requests.get(url = url,headers = headers,params = params).json()
 
             result = response['result']['data']
+
             for hospital in result:
-                city_vaccination_place_dict = { 'address'  : hospital['address'],
-                                                'province' : hospital['province'],
-                                                'city'     : hospital['city'],
-                                                'district' : hospital['district'],
-                                                'title'    : hospital['title'],
-                                                'tel'      : hospital['tel']}
-                vaccination_place_list.append(city_vaccination_place_dict)
+                if hospital['province'] + hospital['district'] + hospital['title'] not in vaccination_place_dict:
+                    city_vaccination_place_dict = { 'address'  : hospital['address'],
+                                                    'province' : hospital['province'],
+                                                    'city'     : hospital['city'],
+                                                    'district' : hospital['district'],
+                                                    'title'    : hospital['title'],
+                                                    'tel'      : hospital['tel']}
+                    vaccination_place_dict.update({hospital['province'] + hospital['district'] + hospital['title']:1})
+                    vaccination_place_list.append(city_vaccination_place_dict)
 
         except :
             return
 
     def city_vaccination_place_func(city,province):
-        for page in range(100):
+        for page in range(50):
             city_one_page_func(city,province,page)
 
 

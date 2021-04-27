@@ -38,12 +38,49 @@
             font-size: 20px;
             font-weight: bold;
         }
-        
+
         .question_detail_div {
             font-size: 16px;
         }
-        
-        .question_date_and_answerNum_div {}
+
+        .reply_text_div{
+            margin-bottom: 10px;
+        }
+
+        .reply_unit{
+            border:0;
+            border-bottom: 2px;
+            border-style: solid;
+            border-color: rgb(236,236,236);
+            margin-bottom: 20px;
+        }
+
+        #answer_question_block #input_detail {
+            height: 7em;
+            width: 100%;
+            border: 1px;
+            border-radius: 20px;
+            padding:10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            outline: medium;
+            resize: none;
+            color:rgb(90,115,145);
+            background-color: rgb(226, 226, 226);
+            font-size: 20px;
+            display: block;
+        }
+
+        #answer_question_block #answer_question_button {
+            height: 40px;
+            padding: 0 20px;
+            border: 0px;
+            border-radius: 20px;
+            float: right;
+            outline: medium;
+            color: rgb(255, 255, 255);
+            background: rgb(68, 189, 169);
+        }
     </style>
 
 </head>
@@ -128,7 +165,8 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -166,7 +204,8 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -192,7 +231,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-10 col-sm-10">
+                    <div class="col-md-10 col-sm-10" id='answer_question_block'>
                         <div class="x_panel tile">
                             <div class="x_title">
                                 <h2>等你来答</h2>
@@ -204,7 +243,8 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                            aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -223,7 +263,10 @@
                             </div>
 
                             <div class="x_content" id="new_reply">
-
+                                <div id="ask_question_row">
+                                    <textarea id="input_detail"></textarea>
+                                    <button id="answer_question_button" onclick='on_answer_question_button_click()'>回答</button>
+                                </div>
                             </div>
                         </div>
                     </div>
