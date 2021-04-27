@@ -46,99 +46,24 @@ pip install Django
 
 ## 文件结构
 
-Rumors_of_COVID_19
+D:\学习资料\计算机设计大赛\Rumors_of_COVID_19
 ├── common/
-|  ├── admin.py
-|  ├── apps.py
 |  ├── migrations/
-|  ├── models.py
-|  ├── test.py
-|  ├── tests.py
-|  ├── views.py
-|  ├── __init__.py
 |  └── __pycache__/
 ├── covid/
-|  ├── admin.py
-|  ├── apps.py
-|  ├── current.py
-|  ├── daily.py
 |  ├── migrations/
-|  ├── models.py
-|  ├── news.py
-|  ├── tests.py
-|  ├── urls.py
-|  ├── views.py
-|  ├── __init__.py
 |  └── __pycache__/
 ├── data_source/
-|  ├── chromedriver.exe
 |  ├── data_from_creeper/
-|  ├── __init__.py
-|  ├── __pycache__/
-|  ├── 一键爬虫.py
-|  ├── 丁香医生本日数据.py
-|  ├── 丁香医生每日数据.py
-|  ├── 丁香医生谣言.py
-|  ├── 中国互联网联合辟谣.py
-|  ├── 头条疫情新闻.py
-|  ├── 腾讯新闻各地出行政策.py
-|  ├── 腾讯新闻各地区风险.py
-|  ├── 腾讯新闻核酸检测机构.py
-|  ├── 腾讯新闻疫情定点医院.py
-|  ├── 腾讯新闻疫情新闻.py
-|  ├── 腾讯新闻疫苗接种点.py
-|  ├── 腾讯新闻疫苗数据.py
-|  ├── 腾讯新闻疫苗研发情况.py
-|  ├── 较真网谣言.py
-|  └── 较真网问答.py
-├── db.sqlite3
-├── fasttext_model.pkl
-├── import_data.py
-├── judge_one_text.py
-├── lda_stopwords.txt
-├── lib/
-|  ├── handler.py
 |  └── __pycache__/
-├── manage.py
-├── out.md
-├── package-lock.json
-├── package.json
-├── README.md
+├── lib/
+|  └── __pycache__/
 ├── rumor/
-|  ├── admin.py
-|  ├── apps.py
 |  ├── migrations/
-|  ├── models.py
-|  ├── questions.py
-|  ├── shows.py
-|  ├── tests.py
-|  ├── urls.py
-|  ├── views.py
-|  ├── __init__.py
 |  └── __pycache__/
 ├── rumorshow/
-|  ├── epidemic.html
-|  ├── epidemic_general_data.html
-|  ├── epidemic_news.html
-|  ├── epidemic_specific_data.html
-|  ├── home.html
-|  ├── rumor_general.html
-|  ├── rumor_identify.html
-|  ├── rumor_lda.html
-|  ├── rumor_question.html
-|  ├── rumor_search_result.html
-|  ├── rumor_show.html
-|  ├── vaccine_development.html
-|  ├── vaccine_vaccination.html
-|  └── vaccine_visualization.html
 ├── Rumor_of_COVID_19/
-|  ├── asgi.py
-|  ├── settings.py
-|  ├── urls.py
-|  ├── wsgi.py
-|  ├── __init__.py
 |  └── __pycache__/
-├── search_stopwords.txt
 ├── static/
 |  ├── assets/
 |  ├── build/
@@ -148,25 +73,11 @@ Rumors_of_COVID_19
 |  ├── js/
 |  └── vendors/
 ├── vaccine/
-|  ├── admin.py
-|  ├── apps.py
 |  ├── migrations/
-|  ├── models.py
-|  ├── tests.py
-|  ├── total.py
-|  ├── trend.py
-|  ├── urls.py
-|  ├── views.py
-|  ├── __init__.py
 |  └── __pycache__/
-├── venv/
-|  ├── Lib/
-|  ├── pyvenv.cfg
-|  └── Scripts/
-├── words_cut.py
-└── 路由及接口设计.md
-
-
+└── venv/
+   ├── Lib/
+   └── Scripts/
 
 ## 参考网站
 
