@@ -90,6 +90,18 @@ def cut_words_hanlp():
     print(counter)
 
 
+def duibifenxi():
+    segment = HanLP.newSegment().enablePlaceRecognize(True)
+    cut_rumors = segment.seg('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
+    print(cut_rumors)
+    cut_rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
+    print(cut_rumors)
+    cut_rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
+    print(cut_rumors)
+
+duibifenxi()
+
+
 def save_data():
     stopwords = [
         line.strip()
@@ -146,7 +158,7 @@ def cut_rumors_sklearn():
     # 加载停用词
     stopwords = [
         line.strip()
-        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
     ]
     n_features = 2000
     tf_vectorizer = TfidfVectorizer(strip_accents='unicode',
@@ -335,5 +347,5 @@ def get_tag_count():
 # cut_words_jieba()
 # cut_rumors_sklearn()
 # save_rumors()
-import_data()
+# import_data()
 # get_tag_count()

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from gensim.models import fasttext
+import fasttext
 from lib.handler import dispatcherBase
 from common.models import RumorInfo, Question, Answer
 from common.models import HeadlinesNews
@@ -196,7 +196,7 @@ def list_more_rumors(request):
 def judge_rumors(request):
     title = request.params['title']
 
-    # 加载那个1个多G的模型
+    # 加载模型
     model_path = 'fasttext_model.pkl'
     clf = fasttext.load_model(model_path)
 
