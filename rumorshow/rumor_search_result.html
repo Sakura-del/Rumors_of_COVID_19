@@ -37,83 +37,82 @@
             padding-left: 0;
             margin-top: 0;
         }
-
+        
         #rumors_list_block #rumor_count_div {
             margin-bottom: 10px;
-
             font-size: 20px;
             font-weight: bold;
         }
-
+        
         #rumors_list_block .one_rumor_unit {
             width: 100%;
             border-bottom: 2px solid rgb(230, 237, 233);
             padding: 10px 0;
             margin: 0 10px;
+            display: block;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_title_span {
             font-size: 20px;
             font-weight: 800;
+            line-height: 20px;
+            vertical-align: middle;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_type_span {
             border-radius: 3px;
             padding: 3px 5px;
-
+            margin-left: 3px;
             color: rgb(255, 255, 255);
             background: rgb(66, 161, 99);
-
             font-size: 14px !important;
+            line-height: 14px;
+            vertical-align: middle;
         }
-
+        
         #rumors_list_block .rumor_text_div .true_rumor {
             background-color: rgb(66, 161, 99);
         }
-
+        
         #rumors_list_block .rumor_text_div .fake_rumor {
             background-color: rgb(196, 31, 32);
         }
-
+        
         #rumors_list_block .rumor_text_div .unknown_rumor {
             background-color: rgb(72, 72, 72);
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_date_p {
             margin: 0px;
             margin-top: 40px;
-
             font-size: 18px;
         }
-
+        
         #rumors_list_block .rumor_text_div .rumor_tag_p {
             margin: 0px;
-
             font-size: 18px;
         }
-
+        
         #rumors_list_block .rumor_img {
             height: 120px;
             width: 80%;
             margin-left: 20%;
         }
-
         /* 以下设定新闻的样式 */
+        
         #news_list_block #news_result_count {
             margin: 0;
-
             font-size: 20px;
             font-weight: 800;
         }
-
+        
         #news_list_block .news_list_container {
             padding-left: 0;
             margin-top: 0;
         }
-
+        
         #news_list_block .news_title_div {
             margin-bottom: 15px;
-
             font-weight: bold;
         }
     </style>
@@ -200,8 +199,7 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -239,8 +237,7 @@
                                     </li>
 
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                            aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                             <i class="fa fa-wrench"></i>
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -267,16 +264,11 @@
                 </div>
                 <!-- /page content -->
 
-                <!-- footer content -->
-                <footer>
-                    <div class="pull-right"></div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
+
             </div>
 
             <!-- footer content -->
-            <footer  id='footer'>
+            <footer id='footer'>
                 <div class="pull-right" id='powered_by'>
                     Powered by Wu Guanzhong, Mao Yulong, Qi Jianhan
                 </div>

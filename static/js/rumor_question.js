@@ -68,7 +68,7 @@ function load_page(page) {
                         answernum_i.style.paddingLeft = "30px";
                         question_date_and_answerNum_div.appendChild(answernum_i);
                         var answernum_str = document.createElement("span");
-                        answernum_str.innerHTML = String(tanswernum) + "条";
+                        answernum_str.innerHTML = String(tanswernum) + "条回答";
                         answernum_str.style.paddingLeft = "5px";
                         question_date_and_answerNum_div.appendChild(answernum_str);
 

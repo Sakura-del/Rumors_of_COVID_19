@@ -43,21 +43,19 @@
             border-bottom: 2px;
             border-style: solid;
             border-color: rgb(236, 236, 236);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         #question_list_block #question_list_row .question_title_div {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 20px;
             font-weight: bold;
         }
         
         #question_list_block #question_list_row .question_detail_div {
-            font-size: 16px;
+            font-size: 18px;
+            margin-bottom: 3px;
         }
-        
-        #question_list_block #question_list_row .question_date_and_answerNum_div {}
         
         #question_list_block #page_button_row {
             display: block;
@@ -95,23 +93,29 @@
         }
         
         #question_list_block #ask_question_row #input_title {
+            height: 1em;
             width: 100%;
             border: 1px;
-            border-style: solid;
-            border-radius: 5px;
-            margin: 10px 0;
+            border-radius: 20px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            outline: medium;
+            resize: none;
+            background-color: rgb(226, 226, 226);
+            font-size: 40px;
             display: block;
         }
         
         #question_list_block #ask_question_row #input_detail {
-            height: 5rem;
+            height: 5em;
             width: 100%;
             border: 1px;
-            border-style: solid;
-            border-radius: 5px;
-            margin: 10px 0;
-            outline: none;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            outline: medium;
             resize: none;
+            background-color: rgb(226, 226, 226);
+            font-size: 40px;
             display: block;
         }
         
@@ -120,8 +124,6 @@
             padding: 0 20px;
             border: 0px;
             border-radius: 20px;
-            margin-right: 10px;
-            margin-bottom: 8px;
             float: right;
             outline: medium;
             color: rgb(255, 255, 255);
@@ -250,9 +252,11 @@
                                 </div>
                                 <div id="ask_question_row">
                                     <div>提一个问题吧~</div>
-                                    <input id="input_title">
-                                    <textarea id="input_detail"></textarea>
-                                    <button id="ask_question_btn" onclick='on_ask_question_button_click()'>提问</button>
+                                    <textarea id="input_title">问题标题</textarea>
+                                    <d <textarea id="input_detail">
+                                        </textarea>
+                                        </textarea>
+                                        <button id=" ask_question_btn " onclick='on_ask_question_button_click()'>提问</button>
                                 </div>
                             </div>
                         </div>
@@ -263,10 +267,10 @@
 
             <!-- footer content -->
             <footer id='footer'>
-                <div class="pull-right" id='powered_by'>
+                <div class="pull-right " id='powered_by'>
                     Powered by Wu Guanzhong, Mao Yulong, Qi Jianhan
                 </div>
-                <div class="clearfix"></div>
+                <div class="clearfix "></div>
             </footer>
             <!-- /footer content -->
         </div>
@@ -275,50 +279,64 @@
 </body>
 
 <!-- jQuery -->
-<script src="../static/vendors/jquery/dist/jquery.min.js"></script>
+<script src="../static/vendors/jquery/dist/jquery.min.js "></script>
 <!-- 先引入jquery -->
-<script src="../static/js/jquery.js"></script>
+<script src="../static/js/jquery.js "></script>
 <!-- Bootstrap -->
-<script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js "></script>
 <!-- FastClick -->
-<script src="../static/vendors/fastclick/lib/fastclick.js"></script>
+<script src="../static/vendors/fastclick/lib/fastclick.js "></script>
 <!-- NProgress -->
-<script src="../static/vendors/nprogress/nprogress.js"></script>
+<script src="../static/vendors/nprogress/nprogress.js "></script>
 <!-- Chart.js -->
-<script src="../static/vendors/Chart.js/dist/Chart.min.js"></script>
+<script src="../static/vendors/Chart.js/dist/Chart.min.js "></script>
 <!-- gauge.js -->
-<script src="../static/vendors/gauge.js/dist/gauge.min.js"></script>
+<script src="../static/vendors/gauge.js/dist/gauge.min.js "></script>
 <!-- bootstrap-progressbar -->
-<script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<script src="../static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js "></script>
 <!-- iCheck -->
-<script src="../static/vendors/iCheck/icheck.min.js"></script>
+<script src="../static/vendors/iCheck/icheck.min.js "></script>
 <!-- Skycons -->
-<script src="../static/vendors/skycons/skycons.js"></script>
+<script src="../static/vendors/skycons/skycons.js "></script>
 <!-- Flot -->
-<script src="../static/vendors/Flot/jquery.flot.js"></script>
-<script src="../static/vendors/Flot/jquery.flot.pie.js"></script>
-<script src="../static/vendors/Flot/jquery.flot.time.js"></script>
-<script src="../static/vendors/Flot/jquery.flot.stack.js"></script>
-<script src="../static/vendors/Flot/jquery.flot.resize.js"></script>
+<script src="../static/vendors/Flot/jquery.flot.js "></script>
+<script src="../static/vendors/Flot/jquery.flot.pie.js "></script>
+<script src="../static/vendors/Flot/jquery.flot.time.js "></script>
+<script src="../static/vendors/Flot/jquery.flot.stack.js "></script>
+<script src="../static/vendors/Flot/jquery.flot.resize.js "></script>
 <!-- Flot plugins -->
-<script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script src="../static/vendors/flot.curvedlines/curvedLines.js"></script>
+<script src="../static/vendors/flot.orderbars/js/jquery.flot.orderBars.js "></script>
+<script src="../static/vendors/flot-spline/js/jquery.flot.spline.min.js "></script>
+<script src="../static/vendors/flot.curvedlines/curvedLines.js "></script>
 <!-- DateJS -->
-<script src="../static/vendors/DateJS/build/date.js"></script>
+<script src="../static/vendors/DateJS/build/date.js "></script>
 <!-- JQVMap -->
-<script src="../static/vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<script src="../static/vendors/jqvmap/dist/jquery.vmap.js "></script>
+<script src="../static/vendors/jqvmap/dist/maps/jquery.vmap.world.js "></script>
+<script src="../static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js "></script>
 <!-- bootstrap-daterangepicker -->
-<script src="../static/vendors/moment/min/moment.min.js"></script>
-<script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../static/vendors/moment/min/moment.min.js "></script>
+<script src="../static/vendors/bootstrap-daterangepicker/daterangepicker.js "></script>
 <!-- Custom Theme Scripts -->
-<script src="../static/build/js/custom.min.js"></script>
-<script src="../static/js/flexible.js"></script>
+<script src="../static/build/js/custom.min.js "></script>
+<script src="../static/js/flexible.js "></script>
 
 
 
-<script src="../static/js/rumor_question.js"></script>
+<script src="../static/js/rumor_question.js "></script>
+
+<script>
+    function clear_title() {
+        if (this.innerHTML == '问题标题') {
+            this.value = ''
+        }
+    };
+
+    function clear_detail() {
+        if (this.innerHTML == '问题详情') {
+            this.value = ''
+        }
+    };
+</script>
 
 </html>
