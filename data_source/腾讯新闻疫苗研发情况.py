@@ -35,5 +35,5 @@ def QQ_news_vaccine_development_status_func():
         file.write(json.dumps(vaccine_development_status_list,ensure_ascii = False))
 
 
-QQ_news_vaccine_development_status_func()
+
 func_list = [QQ_news_vaccine_development_status_func]

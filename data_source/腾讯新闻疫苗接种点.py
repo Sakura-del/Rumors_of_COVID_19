@@ -73,5 +73,5 @@ def QQ_news_vaccination_place_func():
         file.write(json.dumps(vaccination_place_list, ensure_ascii = False))
 
 
-QQ_news_vaccination_place_func()
+
 func_list = [QQ_news_vaccination_place_func]

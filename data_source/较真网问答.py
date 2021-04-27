@@ -45,5 +45,5 @@ def QQ_fact_QA_func():
         file.write(json.dumps(qa_list, ensure_ascii=False))
 
 
-QQ_fact_QA_func()
+
 func_list = [QQ_fact_QA_func]
