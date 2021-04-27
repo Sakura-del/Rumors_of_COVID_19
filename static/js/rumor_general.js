@@ -24,7 +24,7 @@ function append_rumor(page_index) {
             pagenum: page_index
         },
         dataType: "json",
-        success: function (result) {
+        success: function(result) {
             var rumors_list_container = document.getElementById('rumors_list_container')
             rumors_list = result["retlist"]
 
@@ -41,12 +41,10 @@ function append_rumor(page_index) {
                 if (rumors_list[i]["markstyle"] == "true") {
                     rumor_type_span.innerHTML = "确实如此"
                     rumor_type_span.className = 'rumor_type_span true_rumor'
-                }
-                else if (rumors_list[i]["markstyle"] == "fake") {
+                } else if (rumors_list[i]["markstyle"] == "fake") {
                     rumor_type_span.innerHTML = "谣言"
                     rumor_type_span.className = 'rumor_type_span fake_rumor'
-                }
-                else {
+                } else {
                     rumor_type_span.innerHTML = "尚无定论"
                     rumor_type_span.className = 'rumor_type_span unknown_rumor'
                 }
@@ -89,8 +87,8 @@ function append_rumor(page_index) {
 
 append_rumor(page_index)
 
-$(document).ready(function () {
-    $(window).scroll(function () {
+$(document).ready(function() {
+    $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
             rumor_coming = true
             page_index += 1;

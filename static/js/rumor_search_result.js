@@ -17,14 +17,15 @@ function append_rumor(page_index) {
             pagenum: page_index
         },
         dataType: "json",
-        success: function (result) {
-            console.log(result)
-            var rumor_count_div = document.createElement('div')
-            rumor_count_div.id = 'rumor_count_div'
-            rumor_count_div.innerHTML = '为您找到相关结果' + result["total"] + '个'
+        success: function(result) {
+            if (page_index == 1) {
+                var rumor_count_div = document.createElement('div')
+                rumor_count_div.id = 'rumor_count_div'
+                rumor_count_div.innerHTML = '为您找到相关结果' + result["total"] + '个'
 
-            var rumors_list_container = document.getElementById('rumors_list_container')
-            rumors_list_container.appendChild(rumor_count_div)
+                var rumors_list_container = document.getElementById('rumors_list_container')
+                rumors_list_container.appendChild(rumor_count_div)
+            }
 
             rumors_list = result["rumors"]
 
@@ -41,12 +42,10 @@ function append_rumor(page_index) {
                 if (rumors_list[i]["markstyle"] == "true") {
                     rumor_type_span.innerHTML = "确实如此"
                     rumor_type_span.className = 'rumor_type_span true_rumor'
-                }
-                else if (rumors_list[i]["markstyle"] == "fake") {
+                } else if (rumors_list[i]["markstyle"] == "fake") {
                     rumor_type_span.innerHTML = "谣言"
                     rumor_type_span.className = 'rumor_type_span fake_rumor'
-                }
-                else {
+                } else {
                     rumor_type_span.innerHTML = "尚无定论"
                     rumor_type_span.className = 'rumor_type_span unknown_rumor'
                 }
@@ -94,8 +93,8 @@ rumor_coming = false
 
 append_rumor(page_index)
 
-$(document).ready(function () {
-    $(window).scroll(function () {
+$(document).ready(function() {
+    $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
             rumor_coming = true
             page_index += 1;
@@ -111,16 +110,16 @@ $.ajax({
     type: "GET",
     data: {
         action: "get_news",
-        title:'北京',
+        title: '北京',
         pagesize: 10,
         pagenum: 1
     },
     dataType: "json",
-    success: function (result) {
+    success: function(result) {
         news_list = result['retlist']
         var news_list_container = document.getElementById('news_list_container')
 
-        for (var i = 0;i<news_list.length;i++){
+        for (var i = 0; i < news_list.length; i++) {
             var news_title_div = document.createElement('div')
             news_title_div.className = 'news_title_div'
             news_title_div.innerHTML = news_list[i]['title']
