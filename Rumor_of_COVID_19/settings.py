@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#这两行为了允许iframe引入lda.html
+ALLOWED_HOSTS = ['*']
+X_FRAME_OPTIONS = 'ALLOWALL'
+
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'django.contrib.admin',
