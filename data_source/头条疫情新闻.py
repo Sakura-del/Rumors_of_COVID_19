@@ -35,9 +35,7 @@ def TouTiao_epidemic_news_func():
 
     thread_list = []
     for page in range(250):
-        thread = Thread(target = One_page_func,args = (page,))
-        thread.start()
-        thread_list.append(thread)
+        One_page_func(page)
 
     for thread in thread_list:
         thread.join()
@@ -47,5 +45,5 @@ def TouTiao_epidemic_news_func():
         file.write(json.dumps(news_list,ensure_ascii = False))
 
 
-# TouTiao_epidemic_news_func()
+TouTiao_epidemic_news_func()
 func_list = [TouTiao_epidemic_news_func]
