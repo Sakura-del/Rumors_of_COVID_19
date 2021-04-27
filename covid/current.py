@@ -20,8 +20,8 @@ def listCurrentInternal(request):
     currentConfirmedIncr = data['current_confirmed']['incr']
     deadCount = data['death']['count']
     deadIncr = data['death']['incr']
-    suspectedCount = data['confirmed']['count']
-    suspectedCountIncr = data['confirmed']['incr']
+    suspectedCount = data['abroad']['count']
+    suspectedCountIncr = data['abroad']['incr']
     currentAsymCount = data['current_asym']['count']
     currentAsymIncr = data['current_asym']['incr']
     date = datetime.date.today()

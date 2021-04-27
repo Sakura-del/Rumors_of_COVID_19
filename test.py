@@ -156,7 +156,7 @@ def cut_rumors_sklearn():
     # 加载停用词
     stopwords = [
         line.strip()
-        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
     ]
     n_features = 2000
     tf_vectorizer = TfidfVectorizer(strip_accents='unicode',
@@ -168,7 +168,7 @@ def cut_rumors_sklearn():
     print(tf_vectorizer)
     tf = tf_vectorizer.fit_transform(df.abstract_cutted)
     print(tf)
-    n_topics = 6
+    n_topics = 5
 
     lda = LatentDirichletAllocation(n_components=n_topics,
                                     max_iter=100,
