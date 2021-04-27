@@ -1,10 +1,10 @@
 from django.http import JsonResponse
+from gensim.models import fasttext
 from lib.handler import dispatcherBase
 from common.models import RumorInfo, Question, Answer
 from common.models import HeadlinesNews
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage
-import fasttext
 import jieba
 from datetime import datetime
 
