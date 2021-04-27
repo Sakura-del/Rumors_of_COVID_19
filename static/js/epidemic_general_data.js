@@ -284,55 +284,16 @@ function formatNum(str) {
   return newStr;
 }
 
+
+function dateNumtoStr(date) {
+  var lastdd = date % 100;
+  var lastmm = Math.floor(date % 10000 / 100);
+  return String(lastmm) + "/" + String(lastdd);
+}
+
 // 变化趋势图
 (function () {
   let xAxiscontent = [];
-  let days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let xAxis_days = [];
-  let xAxis_months = [];
-  let date = new Date();
-  let nowyear = date.getFullYear();
-  // let nowmonth = date.getMonth() + 1;
-  let nowmonth = date.getMonth() + 1 - 1;//测试用，数据库只有到3月份的数据
-  let nowday = date.getDate();
-  let nowdate = nowyear + (nowmonth < 10 ? "0" + nowmonth : nowmonth) + (nowday < 10 ? "0" + nowday : nowday);
-  //最近12天的日期
-  for (var i = 0; i < 12; i++) {
-    var tmp = String(nowmonth) + "/" + String(nowday);
-    xAxis_days.unshift(tmp);
-    nowday = nowday - 1;
-    if (nowday === 0) {
-      nowmonth = nowmonth - 1;
-      if (nowmonth === 0) {
-        nowmonth = 12;
-        nowyear = nowyear - 1;
-      }
-      nowday = days_in_month[nowmonth - 1];
-    }
-  }
-  //nowmonth = date.getMonth() + 1;
-  nowmonth = date.getMonth() + 1 - 1;//测试用，数据库只有到3月份的数据
-  nowday = date.getDate();
-  nowyear = date.getFullYear();
-  let stmonth, edmonth;
-  //最近12个月
-  for (var i = 0; i < 12; i++) {
-    if (i === 0) {
-      edmonth = nowmonth;
-    }
-    if (i === 11) {
-      stmonth = nowmonth;
-    }
-    var tmp = String(nowyear) + "/" + String(nowmonth);
-    xAxis_months.unshift(tmp);
-    nowmonth = nowmonth - 1;
-    if (nowmonth === 0) {
-      nowmonth = 12;
-      nowyear = nowyear - 1;
-    }
-  }
-  xAxiscontent.push(xAxis_days);
-  xAxiscontent.push(xAxis_months);
   let totaldata =
     [
       {
@@ -350,39 +311,41 @@ function formatNum(str) {
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
-      // console.log(result);
-      // console.log(result["data"][result["data"].length-1]);
-      var idx;
-      for (idx = result["data"].length - 1; ; idx--) {
-        if (String(result["data"][idx]["dateId"]) === nowdate)
-          break;
-      }
+      var lastmm = Math.floor(result["data"][result["data"].length - 1]["dateId"] % 10000 / 100);
+      var month_num = 12 + lastmm;//月份与天数个数
+      //填充最近天
+      let xAxis_days = [];
+
       let incr_confirm_day = [];
       let incr_suspect_day = [];
       let incr_cured_day = [];
-      //填充近12天
-      for (var i = 0; i < 12; i++) {
-        incr_confirm_day.unshift(result["data"][idx - i]["confirmedIncr"]);
-        incr_suspect_day.unshift(result["data"][idx - i]["suspectedCountIncr"]);
-        incr_cured_day.unshift(result["data"][idx - i]["curedIncr"]);
+      for (var i = 0; i < month_num; i++) {
+        xAxis_days.unshift(dateNumtoStr(result["data"][result["data"].length - 1 - i]["dateId"]));
+        incr_confirm_day.unshift(result["data"][result["data"].length - 1 - i]["confirmedIncr"]);
+        incr_suspect_day.unshift(result["data"][result["data"].length - 1 - i]["suspectedCountIncr"]);
+        incr_cured_day.unshift(result["data"][result["data"].length - 1 - i]["curedIncr"]);
       }
+      xAxiscontent.push(xAxis_days);
+
       totaldata[0]["data"].push(incr_confirm_day);
       totaldata[0]["data"].push(incr_suspect_day);
       totaldata[0]["data"].push(incr_cured_day);
 
-      //填充近12个月
-      for (idx = 0; ; idx++) {
-        // console.log(result["data"][idx]["dateId"]);
-        if (Math.floor(result["data"][idx]["dateId"] % 10000 / 100) === stmonth) {
-          break;
-        }
+      let xAxis_months = [];
+      for (var i = 1; i <= 12; i++) {
+        xAxis_months.push("2020/" + String(i));
       }
+      for (var i = 1; i <= lastmm; i++) {
+        xAxis_months.push("2021/" + String(i));
+      }
+      xAxiscontent.push(xAxis_months);
+
       let incr_confirm_month = [];
       let incr_suspect_month = [];
       let incr_cured_month = [];
       let sum1 = 0, sum2 = 0, sum3 = 0;
-      let monthnow = stmonth;
-      for (var i = idx; i < result["data"].length; i++) {
+      let monthnow = 1;
+      for (var i = 0; i < result["data"].length; i++) {
         if (monthnow != Math.floor(result["data"][i]["dateId"] % 10000 / 100)) {
           incr_confirm_month.push(sum1);
           incr_suspect_month.push(sum2);
@@ -398,7 +361,7 @@ function formatNum(str) {
         sum1 += result["data"][i]["confirmedIncr"];
         sum2 += result["data"][i]["suspectedCountIncr"];
         sum3 += result["data"][i]["curedIncr"];
-        if (monthnow === edmonth && (result["data"][i]["dateId"] % 10000 % 100 > nowday || i == result["data"].length - 1)) {
+        if (i == result["data"].length - 1) {
           incr_confirm_month.push(sum1);
           incr_suspect_month.push(sum2);
           incr_cured_month.push(sum3);
@@ -522,6 +485,7 @@ function formatNum(str) {
   // console.log(xAxiscontent);
 })();
 
+//顶栏数据
 (function () {
   $.ajax({
     url: "/covid/current",
@@ -595,46 +559,44 @@ function formatNum(str) {
 })();
 
 //累计确诊变化图
-//2020年2月至现在，每月一变
+//2020年1月至现在，每月一变
 (function () {
-  let xAxis_content = ["2020/2", "2020/3", "2020/4", "2020/5", "2020/6", "2020/7", "2020/8", "2020/9", "2020/10", "2020/11", "2020/12", "2021/1", "2021/2", "2021/3"];
+  let xAxis_content = [];
   let confirmed_data = [];
-  let stmonth = 2;
-  let edmonth = 3;
+  let days_in_month = [-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   $.ajax({
     url: "/covid/daily",
     type: "GET",
     data: { action: "get_daily_internal" },
     dataType: "json",
     success: function (result) {
+      var lastmm = Math.floor(result["data"][result["data"].length - 1]["dateId"] % 10000 / 100);
+      for (var i = 1; i <= 12; i++) {
+        xAxis_content.push("2020/" + String(i));
+      }
+      for (var i = 1; i <= lastmm; i++) {
+        xAxis_content.push("2021/" + String(i));
+      }
+
       console.log(result["data"]);
       for (var i = 0; i < result["data"].length; i++) {
         var yy = Math.floor(result["data"][i]["dateId"] / 10000);
         var mm = Math.floor(result["data"][i]["dateId"] % 10000 / 100);
         var dd = result["data"][i]["dateId"] % 10000 % 100;
-        if (mm < stmonth && yy == 2020) {
-          continue;
-        }
-        // console.log(result["data"][i]["confirmedCount"]);
-
-        if (dd == 1) {
+        if (dd == days_in_month[mm] && mm != 2) {
           confirmed_data.push(result["data"][i]["confirmedCount"]);
         }
-        else {
-          if (mm == edmonth && yy == 2021) {
-            break;
-          }
+        else if (mm == 2 && (dd == 29 && yy == 2020) || (dd == 28 && yy == 2021)) {
+          confirmed_data.push(result["data"][i]["confirmedCount"]);
         }
       }
-      console.log(confirmed_data);
-      console.log(xAxis_content);
       var myChart = echarts.init(document.querySelector("#total_confirm_trend"));
       var option = {
         tooltip: {
           trigger: "axis"
         },
         legend: {
-          top: "3%",
+          top: "-2%",
           right: "0.5%",
           data: ["累计确诊"],
           textStyle: {
@@ -645,7 +607,7 @@ function formatNum(str) {
 
         grid: {
           left: "0",
-          top: "30",
+          top: "10%",
           right: "7.5",
           bottom: "0",
           containLabel: true
@@ -658,10 +620,9 @@ function formatNum(str) {
             data: xAxis_content,
             // 文本颜色为rgba(255,255,255,.6)  文字大小为 12
             axisLabel: {
-              textStyle: {
-                color: "#73879C",
-                fontSize: 12
-              }
+              color: "#73879C",
+              fontSize: 12,
+              rotate: 30
             },
             // x轴线的颜色为   rgba(255,255,255,.2)
             axisLine: {
