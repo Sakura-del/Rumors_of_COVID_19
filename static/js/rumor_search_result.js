@@ -110,7 +110,7 @@ $.ajax({
     type: "GET",
     data: {
         action: "get_news",
-        title: '北京',
+        title: getQueryString("content"),
         pagesize: 10,
         pagenum: 1
     },

@@ -40,14 +40,16 @@
 #left_col #logo_row {
     width: 100%;
     padding: 2vh;
-    margin-top: 8vh;
-    margin-bottom: 8vh;
+    margin-top: 0;
+    margin-bottom: 0;
     background-color: rgb(22, 43, 64);
 }
 
 #left_col #project_logo {
     width: 30%;
+    border: 0;
     margin: 0;
+    background-color: rgba(255,255,255,0);
 }
 
 #left_col #project_name {
@@ -55,7 +57,13 @@
     vertical-align: middle;
     font-size: 25px;
 }
-
+#left_col #project_describe{
+    margin-top: 10%;
+    text-align: center;
+    
+font-size: 18px;
+color: rgb(255,255,255);
+}
 #left_col .side-menu a {
     padding-left: 20px;
     font-size: 18px;

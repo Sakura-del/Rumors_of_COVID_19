@@ -489,7 +489,8 @@ function Make_complete_table(continent_data_row_id) {
                         name: '百人接种率',
                         type: 'line',
                         yAxisIndex: 1,
-                        data: data2
+                        data: data2,
+                        color:"#EF9500"
                     }
                 ]
             };

@@ -12,11 +12,17 @@
         dataType: "json",
         success: function (result) {
             news_container_div = document.getElementById("news_container_div")
-
+            
             for (var i = 0; i < result["retlist"].length; i++) {
+                
                 var news_title_div = document.createElement("div")
                 news_title_div.className = 'news_title_div'
                 news_title_div.innerHTML = result["retlist"][i]["title"]
+
+                var news_title_a = document.createElement("a")
+                news_title_a.className = 'news_title_a'
+                news_title_a.href = result["retlist"][i]["link"]
+                news_title_a.appendChild(news_title_div)
 
                 var news_summary_div = document.createElement("div")
                 news_summary_div.className = 'news_summary_div'
@@ -31,7 +37,7 @@
 
                 var news_row = document.createElement("div")
                 news_row.className = 'news_row'
-                news_row.appendChild(news_title_div)
+                news_row.appendChild(news_title_a)
                 news_row.appendChild(news_summary_div)
                 news_row.appendChild(news_date_div)
                 news_row.appendChild(news_spacer_div)
