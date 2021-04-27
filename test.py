@@ -93,13 +93,11 @@ def cut_words_hanlp():
 def duibifenxi():
     segment = HanLP.newSegment().enablePlaceRecognize(True)
     cut_rumors = segment.seg('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
-    print(cut_rumors)
-    cut_rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
-    print(cut_rumors)
-    cut_rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
-    print(cut_rumors)
-
-duibifenxi()
+    print([str(i.word) for i in cut_rumors])
+    rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病')
+    print(' '.join(rumors))
+    rumors = jieba.cut('辉瑞承认研发疫苗不为终结疫情，而是将其变成流行病',cut_all=True)
+    print(' '.join(rumors))
 
 
 def save_data():
@@ -158,7 +156,7 @@ def cut_rumors_sklearn():
     # 加载停用词
     stopwords = [
         line.strip()
-        for line in open('search_stopwords.txt', encoding='UTF-8').readlines()
+        for line in open('lda_stopwords.txt', encoding='UTF-8').readlines()
     ]
     n_features = 2000
     tf_vectorizer = TfidfVectorizer(strip_accents='unicode',
@@ -170,7 +168,7 @@ def cut_rumors_sklearn():
     print(tf_vectorizer)
     tf = tf_vectorizer.fit_transform(df.abstract_cutted)
     print(tf)
-    n_topics = 5
+    n_topics = 6
 
     lda = LatentDirichletAllocation(n_components=n_topics,
                                     max_iter=100,
@@ -345,7 +343,7 @@ def get_tag_count():
 # save_data()
 # cut_words_hanlp()
 # cut_words_jieba()
-# cut_rumors_sklearn()
+cut_rumors_sklearn()
 # save_rumors()
 # import_data()
 # get_tag_count()
