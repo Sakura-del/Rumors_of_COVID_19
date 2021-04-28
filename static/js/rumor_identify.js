@@ -50,21 +50,21 @@ function on_ask_question_button_click() {
             robot_icon.className = 'robot_icon iconfont'
             robot_icon.innerHTML = '&#xe6ac;'
 
-            if (result['prob'] > 0.7) 
+            if (result['prob'] > 0.7)
                 if (result['flag'] == 'false') {
                     answer = false_pattern[Math.floor(Math.random() * false_pattern.length)]
-                    answer = answer.replaceAll('{prob}', Math.round(result['prob'] * 100))
+                    answer = answer.replaceAll('{prob}', String(result['prob']>0.85? result['prob'] * 100 * 0.9 :result['prob'] * 100).substring(0,5))
                     answer = answer.replaceAll('{flag}', '假')
                 }
                 else {
                     answer = true_pattern[Math.floor(Math.random() * true_pattern.length)]
-                    answer = answer.replaceAll('{prob}', Math.round(result['prob'] * 100))
+                    answer = answer.replaceAll('{prob}', String(result['prob']>0.85? result['prob'] * 100 * 0.9 :result['prob'] * 100).substring(0,5))
                     answer = answer.replaceAll('{flag}', '真')
                 }
 
             else {
                 answer = emmm_pattern[Math.floor(Math.random() * emmm_pattern.length)]
-                answer = answer.replaceAll('{prob}', Math.round(result['prob'] * 100))
+                answer = answer.replaceAll('{prob}', String(result['prob']>0.85? result['prob'] * 100 * 0.9 :result['prob'] * 100).substring(0,5))
                 answer = answer.replaceAll('{flag}', result['flag'] == '真' ? '真' : '假')
             }
 
