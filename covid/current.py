@@ -42,7 +42,9 @@ def listCurrentInternal(request):
 
 
 def listCurrentGlobal(request):
-    data = CurrentCovidGlobal.objects.all().order_by('-date').first()
+    qs = CurrentCovidGlobal.objects.values().order_by('-date').first()
+    date = qs['date']
+    data = CurrentCovidGlobal.objects.all().filter(date=date).first()
     data = model_to_dict(data)
     confirmedCount = data['confirmed']['count']
     confirmedIncr = data['confirmed']['incr']
