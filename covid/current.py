@@ -10,7 +10,7 @@ from lib.handler import dispatcherBase
 
 # 列出当前国内疫情
 def listCurrentInternal(request):
-    data = CurrentCovidInternal.objects.all().filter(date=datetime.date.today()).first()
+    data = CurrentCovidInternal.objects.all().order_by('-date').first()
     data = model_to_dict(data)
     confirmedCount = data['confirmed']['count']
     confirmedIncr = data['confirmed']['incr']
@@ -42,7 +42,7 @@ def listCurrentInternal(request):
 
 
 def listCurrentGlobal(request):
-    data = CurrentCovidGlobal.objects.all().filter(date=datetime.date.today()).first()
+    data = CurrentCovidGlobal.objects.all().order_by('-date').first()
     data = model_to_dict(data)
     confirmedCount = data['confirmed']['count']
     confirmedIncr = data['confirmed']['incr']
@@ -65,16 +65,18 @@ def listCurrentGlobal(request):
                          "date": date})
 
 
+# 列出当前各省份疫情情况
 def listCurrentProvinces(request):
-    data = CurrentCovidProvinces.objects.values().filter(date=datetime.date.today())
-    data = list(data)
+    data = CurrentCovidProvinces.objects.values().order_by('-date').first()
+    date = data['date']
+    qs = CurrentCovidProvinces.objects.values().filter(date=date)
+    qs = list(qs)
 
-
-    return JsonResponse({"ret": 0, "data": data, "total": len(data), "msg": ""})
+    return JsonResponse({"ret": 0, "data": qs, "total": len(data), "msg": ""})
 
 
 def listCurrentNations(request):
-    data = CurrentCovidNational.objects.values().filter(date=datetime.date.today())
+    data = CurrentCovidNational.objects.values().order_by('-date').first()
     data = list(data)
 
     return JsonResponse({"ret": 0, "data": data, "total": len(data), "msg":""})
