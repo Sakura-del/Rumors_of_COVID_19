@@ -1,10 +1,11 @@
+//将lda.html引入到谣言聚类_block的iframe中
 var iframe = document.createElement("iframe")
 iframe.src = "lda.html"
 iframe.id = 'lda_iframe'
 iframe.name = 'lda_iframe'
-
 document.getElementById('lda_container').appendChild(iframe)
 
+//将lda.html中的英文替换为中文
 function standard_lad() {
     var iframe_document = document.getElementById('lda_iframe').contentWindow.document
 
@@ -22,6 +23,7 @@ function standard_lad() {
     iframe_document.querySelector('#ldavis_el2796014679140315603587449340-bar-freqs>a').remove() 
 }
 
+//lda.html加载完成后执行英文替换
 if (iframe.attachEvent) {
     iframe.attachEvent("onload", function () {
         standard_lad()

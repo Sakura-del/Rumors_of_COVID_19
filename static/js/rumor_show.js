@@ -1,3 +1,4 @@
+//深拷贝函数
 var objDeepCopy = function (source) {
     var sourceCopy = source instanceof Array ? [] : {};
     for (var item in source) {
@@ -8,6 +9,7 @@ var objDeepCopy = function (source) {
 
 
 var geoCoordMap = {};
+//规范化日期
 var convertData = function (data) {
     var res = [];
     for (var i = 0; i < data.length; i++) {
@@ -23,7 +25,7 @@ var convertData = function (data) {
 };
 
 
-
+//将后端给的数据按月分开
 function getdis(date1, date2) {
     var items = date1.split("-");
     var predate = items.join("");
@@ -60,6 +62,7 @@ function getdis(date1, date2) {
     }
 }
 
+//格式化后端给的数据
 function getlabel(date1, date2) {
     var items = date1.split("-");
     items.shift();
@@ -114,7 +117,7 @@ function nextday(date) {
     }
     return nexty + "-" + nextm + "-" + nextd;
 }
-
+//比较两个对象
 var compare = function (prop) {
     return function (obj1, obj2) {
         var val1 = obj1[prop];

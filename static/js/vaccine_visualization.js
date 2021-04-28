@@ -13,6 +13,7 @@ function formatNum(str) {
     return newStr;
 }
 
+//疫苗总体数据
 (function () {
     $.ajax({
         url: " /vaccine/total",
@@ -34,7 +35,7 @@ function formatNum(str) {
 })();
 
 
-
+//各州重点国家名字
 key_asia_name_list = ['中国', '印度', '日本', '越南', '土耳其']
 key_europe_name_list = ['俄罗斯', '英国', '法国', '德国', '意大利']
 key_africa_name_list = ['南非', '埃及', '尼日利亚', '肯尼亚', '安哥拉']
@@ -42,6 +43,7 @@ key_oceania_name_list = ['澳大利亚', '新西兰']
 key_north_name_list = ['美国', '加拿大', '墨西哥', '巴拿马', '危地马拉']
 key_south_name_list = ['巴西', '阿根廷', '秘鲁', '玻利维亚', '委内瑞拉',]
 
+//各州重点国家数据
 key_continent_data_dict = {
     'asia_data': [],//存储各国数据的列表
     'europe_data': [],
@@ -51,6 +53,7 @@ key_continent_data_dict = {
     'south_data': [],
 }
 
+//各州所有有数据国家名字
 asia_name_list = ['以色列', '阿联酋', '沙特阿拉伯', '柬埔寨', '韩国', '菲律宾', '卡塔尔', '巴林', '斯里兰卡', '蒙古', '不丹', '乌兹别克斯坦', '印度尼西亚', '孟加拉', '泰国', '哈萨克斯坦', '马尔代夫', '黎巴嫩', '马来西亚', '↵巴勒斯坦', '叙利亚', '约旦', '阿富汗', '吉尔吉斯斯坦', '新加坡', '阿曼', '伊拉克', '科索沃', '文莱', '巴基斯坦', '科威特', '尼泊尔', '伊朗', '老挝', '缅甸']
 europe_name_list = ['波兰', '匈牙利', '比利时', '葡萄牙', '奥地利', '捷克', '丹麦', '芬兰', '斯洛伐克', '立陶宛', '保加利亚', '乌克兰', '爱沙尼亚', '摩尔多瓦', '马恩岛', '黑山', '安道尔', '罗马尼亚', '塞尔维亚', '希腊', '阿塞拜疆', '克罗地亚', '阿尔巴尼亚', '马耳他', '拉脱维亚', '直布罗陀', '北马其顿', '格鲁吉亚', '圣马力诺', '西班牙', '瑞典', '爱尔兰', '斯洛文尼亚', '塞浦路斯', '冰岛', '波黑', '格陵兰', '挪威', '卢森堡', '法罗群岛克朗', '瑞士', '格恩西岛', '列支敦士登公国', '荷兰', '北塞浦路斯土耳其共和国', '摩纳哥', '泽西岛', '阿尔及利亚', '白俄罗斯']
 africa_name_list = ['加纳', '摩洛哥', '塞内加尔', '毛里塔尼亚', '赤道几内亚', '津巴布韦', '马拉维', '突尼斯', '塞拉利昂', '科特迪瓦', '加蓬', '乌干达', '几内亚', '纳米比亚', '塞舌尔', '苏丹', '斯威士兰', '马里', '圣多美和普林西比', '卢旺达', '多哥', '圣赫勒拿岛', '毛里求斯']
@@ -58,6 +61,7 @@ oceania_name_list = ['巴布亚新几内亚',]
 north_name_list = ['萨尔瓦多', '圣卢西亚', '圣文森特和格林纳丁斯', '圣基茨和尼维斯', '巴巴多斯', '开曼群岛', '洪都拉斯', '伯利兹', '哥斯达黎加', '百慕大', '多米尼加', '安提瓜和巴布达', '安圭拉', '巴哈马', '特克斯和凯科斯群岛']
 south_name_list = ['智利', '哥伦比亚', '乌拉圭', '厄瓜多尔', '苏里南', '巴拉圭', 'Falkland Islands', '圭亚那', '特立尼达和多巴哥']
 
+//各州所有有数据国家数据
 continent_data_dict = {
     'asia_data': [],
     'europe_data': [],
@@ -67,6 +71,7 @@ continent_data_dict = {
     'south_data': []
 }
 
+//绘制一州重点国家统计表
 function Make_short_table(continent_data_row_id) {
     var data_list = key_continent_data_dict[continent_data_row_id]
 
@@ -114,6 +119,7 @@ function Make_short_table(continent_data_row_id) {
     continent_data_table.appendChild(table_body)
 }
 
+//绘制一州所有国家统计表
 function Make_complete_table(continent_data_row_id) {
     var data_list = continent_data_dict[continent_data_row_id]
 
@@ -161,6 +167,7 @@ function Make_complete_table(continent_data_row_id) {
     continent_data_table.appendChild(table_body)
 }
 
+//初始时向后端请求数据，绘制重点国家柱状图和统计表，并保存所有国家数据
 (function () {
     $.ajax({
         url: " /vaccine/total",

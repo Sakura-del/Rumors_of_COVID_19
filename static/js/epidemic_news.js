@@ -107,6 +107,7 @@ tags = ["健康", "疫苗", "国内", "国际", "娱乐", "房产", "探索", "�
 
 news_coming = false
 
+//页面滚动到底自动加载新的新闻
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !news_coming) {

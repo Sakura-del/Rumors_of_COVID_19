@@ -1,9 +1,11 @@
-function search_input_listener(e) { //监听文本框按回车，点按钮
+//监听文本框的输入，输入回车自动点击按钮
+function search_input_listener(e) {
     var e = e || window.event;
     if (e.keyCode == 13)
         On_search_btn_click();
 }
 
+//点击按钮，跳转到搜索结果页
 function On_search_btn_click() {
     var input_content = document.getElementById("search_input").value
     window.location.href = "rumor_search_result.html?content=" + input_content;
@@ -14,6 +16,7 @@ function On_search_btn_click() {
 page_index = 1
 rumor_coming = false
 
+//加载十条谣言的function
 function append_rumor(page_index) {
     $.ajax({
         url: "/rumor/views",
@@ -85,8 +88,11 @@ function append_rumor(page_index) {
     })
 }
 
+//初始自动加载10条谣言
 append_rumor(page_index)
 
+
+//网页滚动到底自动加载10条谣言
 $(document).ready(function() {
     $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {

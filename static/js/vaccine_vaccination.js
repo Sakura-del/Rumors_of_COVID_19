@@ -4,6 +4,7 @@ supported_district_list = []
 agency_list = []
 
 
+//点击区，在查询结果中展示接种点
 function On_district_button_clicked(district_name) {
     document.getElementById('district_node').innerHTML = district_name
 
@@ -39,6 +40,7 @@ function On_district_button_clicked(district_name) {
         }
 }
 
+//点击市，在右部添加本市有接种点的区的按钮
 function On_city_button_clicked(city_name) {
     var district_block = document.getElementById('district_block')
     district_block.innerHTML = ''
@@ -73,6 +75,7 @@ function On_city_button_clicked(city_name) {
     }
 }
 
+//点击省，在中部添加本省有接种点的市的按钮
 function On_province_button_clicked(province_name) {
     $.ajax({
         url: "/vaccine/views",
@@ -119,6 +122,7 @@ function On_province_button_clicked(province_name) {
     })
 }
 
+//初始时在左部添加有接种点的省的按钮
 (function () {
     $.ajax({
         url: "/vaccine/views",

@@ -1,4 +1,4 @@
-//解析URL
+//解析URL参数，获取name参数
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     var r = window.location.search.substr(1).match(reg);
@@ -111,7 +111,7 @@ function load_answer() {
 load_answer()
 
 
-
+//点击回答按钮，先后端发送回答，并刷新页面
 function on_answer_question_button_click() {
     var input_detail = document.getElementById("input_detail")
     var input_detail_text = input_detail.value;

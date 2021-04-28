@@ -1,3 +1,4 @@
+//依据后端给的数据绘制疫苗研发进度图
 (function () {
     $.ajax({
         url: "/vaccine/views",

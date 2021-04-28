@@ -132,8 +132,6 @@
 
 
 
-
-
 // 现存确诊人数前5的省份
 (function () {
   //获取各省数据
@@ -284,6 +282,7 @@ function formatNum(str) {
 }
 
 
+//将data新数据转换为字符串
 function dateNumtoStr(date) {
   var lastdd = date % 100;
   var lastmm = Math.floor(date % 10000 / 100);
@@ -700,6 +699,7 @@ function dateNumtoStr(date) {
   });
 })();
 
+//绘制疫情地图的全国视图
 function InitChinaMap() {
   var charttag = document.getElementById("china_world_map");
   var maptag = charttag.parentNode;
@@ -998,6 +998,7 @@ function InitChinaMap() {
   });
 }
 
+//全球国家中英文对照表
 var mapname = {
   "Afghanistan": "阿富汗",
   "Angola": "安哥拉",
@@ -1186,6 +1187,7 @@ var mapname = {
   "Zimbabwe": "津巴布韦"
 };
 
+//绘制疫情地图的世界视图
 function InitWorldMap() {
   var charttag = document.getElementById("china_world_map");
   var maptag = charttag.parentNode;
@@ -1560,6 +1562,8 @@ function InitWorldMap() {
 
 }
 
+
+//将中国和世界视图加载到疫情地图block
 (function () {
   $("#switcher_row2").on("click", "a", function () {
     // console.log(typeof $(this).index());

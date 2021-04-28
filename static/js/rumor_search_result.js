@@ -1,3 +1,4 @@
+//解析URL中的参数，获取name参数
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
     var r = window.location.search.substr(1).match(reg);
@@ -6,6 +7,7 @@ function getQueryString(name) {
 }
 
 
+//加载20条谣言的函数
 function append_rumor(page_index) {
     $.ajax({
         url: "/rumor/views",
@@ -90,9 +92,10 @@ function append_rumor(page_index) {
 
 page_index = 1
 rumor_coming = false
-
+//初始加载20条谣言
 append_rumor(page_index)
 
+//滚动到页面底部自动加载20条谣言
 $(document).ready(function() {
     $(window).scroll(function() {
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 10 && !rumor_coming) {
