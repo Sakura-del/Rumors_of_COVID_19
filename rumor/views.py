@@ -193,6 +193,7 @@ def list_more_rumors(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+# 加载模型判断谣言
 def judge_rumors(request):
     title = request.params['title']
 
@@ -221,7 +222,7 @@ def judge_rumors(request):
 
     return JsonResponse({"ret": 0, "flag": flag, "prob": prob, "msg": ""})
 
-
+# 函数字典
 ActionHandler = {
     'get_rumors': get_rumors,
     'list_rumors': list_rumors,

@@ -51,6 +51,7 @@ def get_risk_level(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+# 函数字典
 ActionHandler = {
     'get_travel_policy_province': get_travel_policy_province,
     'get_travel_policy_region':get_travel_policy_region,
@@ -58,5 +59,6 @@ ActionHandler = {
 }
 
 
+# 事件处理函数
 def dispatcher(request):
     return dispatcherBase(request, ActionHandler)

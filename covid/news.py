@@ -151,7 +151,7 @@ def load_more_news(request):
 #         "total": len(retlist)
 #     })
 
-
+# 函数字典
 ActionHandler = {
     # 'get_news_details': getNewsDetails,
     # 'list_vaccine_news': list_vaccine_news,
@@ -163,5 +163,6 @@ ActionHandler = {
 }
 
 
+# 事件处理函数
 def dispatcher(request):
     return dispatcherBase(request, ActionHandler)
