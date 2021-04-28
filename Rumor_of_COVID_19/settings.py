@@ -34,6 +34,9 @@ ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = 'ALLOWALL'
 
+#把html放进static后要加这个才能引入js
+SECURE_CONTENT_TYPE_NOSNIFF = False
+
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'django.contrib.admin',
