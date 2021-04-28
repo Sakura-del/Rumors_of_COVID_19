@@ -7,6 +7,7 @@ from common.models import *
 from lib.handler import dispatcherBase
 
 
+# 获取每日国内数据
 def getDailyInternal(request):
     try:
         data = InternalDailyData.objects.values()
@@ -24,6 +25,7 @@ def getDailyInternal(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取全球每日数据
 def getDailyGlobal(request):
     try:
         data = GlobalDailyData.objects.values()
@@ -41,6 +43,7 @@ def getDailyGlobal(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取俄罗斯每日数据
 def getDailyRussia(request):
     try:
         data = RussiaDailyData.objects.values()
@@ -74,6 +77,7 @@ def getDailyBrazil(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取德国每日数据
 def getDailyGermany(request):
     try:
         data = GermanyDailyData.objects.values()
@@ -91,7 +95,7 @@ def getDailyGermany(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
-
+# 获取意大利每日数据
 def getDailyItaly(request):
     try:
         data = ItalyDailyData.objects.values()
@@ -109,6 +113,7 @@ def getDailyItaly(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取法国每日数据
 def getDailyFrance(request):
     try:
         data = FranceDailyData.objects.values()
@@ -126,6 +131,7 @@ def getDailyFrance(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取美国每日数据
 def getDailyUS(request):
     try:
         data = USDailyData.objects.values()
@@ -143,6 +149,7 @@ def getDailyUS(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取英国每日数据
 def getDailyUK(request):
     try:
         data = UKDailyData.objects.values()
@@ -160,6 +167,7 @@ def getDailyUK(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 获取西班牙每日数据
 def getDailySpain(request):
     try:
         data = SpainDailyData.objects.values()
@@ -177,6 +185,7 @@ def getDailySpain(request):
         return JsonResponse({"ret": 0, "msg": "未查到相关信息"})
 
 
+# 函数字典
 ActionHandler = {
     'get_daily_internal': getDailyInternal,
     'get_daily_global': getDailyGlobal,
@@ -191,5 +200,6 @@ ActionHandler = {
 }
 
 
+# 事件处理函数
 def dispatcher(request):
     return dispatcherBase(request, ActionHandler)

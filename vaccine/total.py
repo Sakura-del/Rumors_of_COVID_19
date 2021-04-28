@@ -42,7 +42,7 @@ def getCurrentVaccinesNations(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
-
+# 函数字典
 ActionHandler = {
     "get_current_vaccinations": getCurrentVaccinations,
     "get_current_vaccines_nations": getCurrentVaccinesNations

@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import json
 
 
+# 请求处理函数
 def dispatcherBase(request, ActionHandler):
     if request.method == 'GET':
         request.params = request.GET
@@ -10,6 +11,7 @@ def dispatcherBase(request, ActionHandler):
     elif request.method in ['POST', 'PUT', 'DELETE']:
         # 根据接口，POST/PUT/DELETE 请求的消息体都是 json格式
         print(request.POST.dict())
+        # 将POST请求转字典，再转json
         request.params = json.dumps(request.POST.dict(), ensure_ascii=False)
         request.params = json.loads(request.params)
         print(request.params)

@@ -57,10 +57,12 @@ def cut_words_hanlp(rumor_text):
 
     location_list = []
     for location in out_list:
+        # 提取省
         if '省' in location:
             location_list.append(location.replace('省', ''))
         elif location in province_list:
             location_list.append(location)
+        # 提取直辖市
         elif '市' in location:
             if '北京' in location:
                 location_list.append('北京')
@@ -72,6 +74,7 @@ def cut_words_hanlp(rumor_text):
                 location_list.append('天津')
             else:
                 location_list.append(location)
+        # 提取各市
         else:
             location_list.append(location + '市')
 
@@ -105,7 +108,9 @@ def get_location_date_trend(request):
         else:
             retlist[str(data['date'])].extend(cut_words)
 
+    # 数据从2020-01-21开始
     begin = datetime.datetime.strptime('2020-01-21','%Y-%m-%d').date()
+    # 到今天为止
     end = datetime.date.today()
     interval = int((end-begin).days) +1
     delta = datetime.timedelta(days=1)

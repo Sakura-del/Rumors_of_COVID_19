@@ -136,6 +136,7 @@ def answer_question(request):
         return JsonResponse({"ret": 1, "msg": "信息获取失败"})
 
 
+# 函数字典
 ActionHandler = {
     'list_questions': list_questions,
     'question_details': question_details,

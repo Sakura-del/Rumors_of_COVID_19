@@ -51,6 +51,8 @@ def getTrendInternal(request):
         "msg": ""
     })
 
+
+# 函数字典
 ActionHandler = {
     'get_trend_nations': getTrendNations,
     "get_trend_internal": getTrendInternal
