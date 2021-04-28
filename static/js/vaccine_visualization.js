@@ -353,8 +353,7 @@ function Make_complete_table(continent_data_row_id) {
 
                 Make_short_table(key_continent)
             }
-
-            console.log(key_continent_data_dict);
+            //console.log(key_continent_data_dict);
         }
     })
 })();

@@ -219,7 +219,6 @@
                 // 此时的color 可以修改柱子的颜色
                 color: function (params) {
                   // params 传进来的是柱子对象
-                  // console.log(params);
                   // dataIndex 是当前柱子的索引号
                   return myColor[params.dataIndex];
                 }
@@ -371,7 +370,6 @@ function dateNumtoStr(date) {
       totaldata[1]["data"].push(incr_confirm_month);
       totaldata[1]["data"].push(incr_suspect_month);
       totaldata[1]["data"].push(incr_cured_month);
-      // console.log(totaldata);
       // 1. 实例化对象
       var myChart = echarts.init(document.querySelector("#change_trend"));
       // 2.指定配置
@@ -467,9 +465,7 @@ function dateNumtoStr(date) {
       // 5.点击切换效果
       $("#switcher_row").on("click", "a", function () {
         // alert(1);
-        // console.log($(this).index());
         // 点击 a 之后 根据当前a的索引号 找到对应的 yearData的相关对象
-        // console.log(yearData[$(this).index()]);
         var obj = totaldata[$(this).index()];
         option.xAxis.data = xAxiscontent[$(this).index()];
         option.series[0].data = obj.data[0];
@@ -481,8 +477,6 @@ function dateNumtoStr(date) {
 
     }
   });
-  // console.log(totaldata);
-  // console.log(xAxiscontent);
 })();
 
 //顶栏数据
@@ -493,7 +487,6 @@ function dateNumtoStr(date) {
     data: { action: "list_current_internal" },
     dataType: "json",
     success: function (result) {
-      console.log(result);
       var val1 = result["currentConfirmedCount"];
       $("#val1").html(formatNum(String(val1)));
       var incr1 = result["currentConfirmedIncr"];
@@ -578,7 +571,6 @@ function dateNumtoStr(date) {
         xAxis_content.push("2021/" + String(i));
       }
 
-      console.log(result["data"]);
       for (var i = 0; i < result["data"].length; i++) {
         var yy = Math.floor(result["data"][i]["dateId"] / 10000);
         var mm = Math.floor(result["data"][i]["dateId"] % 10000 / 100);

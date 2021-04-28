@@ -12,7 +12,7 @@ function load_page(page) {
         },
         dataType: "json",
         success: function(result) {
-            console.log(result["retlist"]);
+            //console.log(result["retlist"]);
             var question_list_row = document.getElementById("question_list_row")
             question_list_row.innerHTML = ''
 

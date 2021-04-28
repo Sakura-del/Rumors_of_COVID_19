@@ -19,7 +19,7 @@ function load_answer() {
         },
         dataType: "json",
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             var describe_div = document.getElementById("question_describe");
             describe_div.innerHTML = ''
             var reply_div = document.getElementById("reply");
@@ -78,7 +78,7 @@ function load_answer() {
             for (var i = 0; i < reply_data.length; i++) {
                 var items1 = reply_data[i]["answer_date"].split("T");
                 var timestr1 = items1[0] + " " + items1[1].substring(0, 5); //该回答发布时间字符串
-                console.log(timestr1);
+                //console.log(timestr1);
 
                 var reply_text_div = document.createElement("div"); //回复文本div
                 reply_text_div.className ='reply_text_div'
