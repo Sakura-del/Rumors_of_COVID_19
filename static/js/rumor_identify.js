@@ -5,11 +5,11 @@ emmm_pattern = ['这句不好说啊，我感觉有{prob}%的可能是{flag}的�
 error_pattern = ['好家伙，你这发的啥玩意，我都看不懂🤨', '请说碳基生物听得懂的话，谢谢😊']
 
 //监听文本框的输入，输入回车自动点击按钮
-function question_input_listener(e) { 
+function question_input_listener(e) {
     var e = e || window.event;
     if (e.keyCode == 13) {
         e.preventDefault();
-        on_ask_question_button_click()
+        on_ask_rumor_button_click()
     }
 }
 
