@@ -1,1 +1,12 @@
-{"china": {"total_vaccinations": 229489000, "new_vaccinations": 4588000, "total_vaccinations_per_hundred": 15.94}, "global": {"total_vaccinations": 1041768033, "new_vaccinations": 14236034, "total_vaccinations_per_hundred": 13.36}}
+{
+  "china": {
+    "total_vaccinations": 229489000,
+    "new_vaccinations": 4588000,
+    "total_vaccinations_per_hundred": 15.94
+  },
+  "global": {
+    "total_vaccinations": 1041768033,
+    "new_vaccinations": 14236034,
+    "total_vaccinations_per_hundred": 13.36
+  }
+}
