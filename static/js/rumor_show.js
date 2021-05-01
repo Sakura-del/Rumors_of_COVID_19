@@ -567,35 +567,6 @@ var compare = function (prop) {
 
 //地区变化趋势图
 (function () {
-    let zhixia_and_district = ["北京", "上海", "天津", "重庆", "香港", "澳门", "台湾"]; //直辖市和地区
-    let months_range = [];
-    let date = new Date();
-    let nowyear = date.getFullYear();
-    let nowmonth = date.getMonth() + 1;
-    // let nowdate = nowyear + (nowmonth < 10 ? "0" + nowmonth : nowmonth) + (nowday < 10 ? "0" + nowday : nowday);
-    //nowmonth = date.getMonth() + 1;
-    let stmonth, edmonth, styear, edyear;
-    //最近15个月
-    var month_num = 12 + nowmonth; //去年1月到今年
-    for (var i = 0; i < month_num; i++) {
-        if (i === 0) {
-            edmonth = nowmonth;
-            edyear = nowyear;
-        }
-        if (i === month_num - 1) {
-            stmonth = nowmonth;
-            styear = nowyear;
-        }
-
-        var tmp = String(nowyear) + "/" + String(nowmonth);
-        months_range.unshift(tmp);
-        nowmonth = nowmonth - 1;
-        if (nowmonth === 0) {
-            nowmonth = 12;
-            nowyear = nowyear - 1;
-        }
-    }
-    nowyear = date.getFullYear();
     var citys = [
         { province: "北京", city: [] },
         { province: "天津", city: [] },
@@ -670,14 +641,8 @@ var compare = function (prop) {
     ];
     var myChart = echarts.init(document.querySelector("#rumor_district"));
     var mapName = "china";
-
     var dd = [];
     var mapData = [];
-    for (var i = 0; i < month_num; i++) {
-        mapData.push([]);
-        dd.push({});
-    }
-
     $.ajax({
         url: "/rumor/shows",
         type: "GET",
@@ -695,18 +660,40 @@ var compare = function (prop) {
                 all.push(t);
             });
             all.sort(compare("date"));
+            var eddate = all[all.length - 1]["date"];
+            let months_range = [];
+            let nowyear = Math.floor(eddate / 10000);
+            let nowmonth = Math.floor(eddate % 10000 / 100);
+            let stmonth, edmonth, styear, edyear;
+            var month_num = 12 + nowmonth; //去年1月到今年
+            for (var i = 0; i < month_num; i++) {
+                if (i == 0) {
+                    edmonth = nowmonth;
+                    edyear = nowyear;
+                }
+                if (i === month_num - 1) {
+                    stmonth = nowmonth;
+                    styear = nowyear;
+                }
 
+                var tmp = String(nowyear) + "/" + String(nowmonth);
+                months_range.unshift(tmp);
+                nowmonth = nowmonth - 1;
+                if (nowmonth == 0) {
+                    nowmonth = 12;
+                    nowyear = nowyear - 1;
+                }
+            }
+            for (var i = 0; i < month_num; i++) {
+                mapData.push([]);
+                dd.push({});
+            }
             nowmonth = stmonth;
             let tmp_month_data = objDeepCopy(basedata);
             let totaldata = [];
 
             for (var p = 0; p < all.length; p++) {
                 var tmpmonth = Math.floor(all[p]["date"] % 10000 / 100);
-
-                if (p == all.length - 1) {
-                    totaldata.push(tmp_month_data);
-                    break;
-                }
                 if (tmpmonth > nowmonth || (nowmonth == 12 && tmpmonth < 12)) {
                     nowmonth = tmpmonth;
                     totaldata.push(tmp_month_data);
@@ -739,7 +726,13 @@ var compare = function (prop) {
                         }
                     }
                 }
+                if (p == all.length - 1) {
+                    totaldata.push(tmp_month_data);
+                    break;
+                }
             }
+            console.log(months_range);
+            console.log(totaldata);
             /*获取地图数据*/
             myChart.showLoading();
             var mapFeatures = echarts.getMap(mapName).geoJson.features;
