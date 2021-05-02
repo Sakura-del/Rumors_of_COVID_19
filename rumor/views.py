@@ -174,7 +174,7 @@ def list_more_rumors(request):
     try:
         qs = RumorInfo.objects.values('urlid','id', 'title', 'date', 'markstyle', 'result',
                                       'explain', 'tag', 'videourl', 'cover',
-                                      'coverrect', 'coversqual').order_by('date')
+                                      'coverrect', 'coversqual').order_by('-date')
         # 页数
         pagenum = request.params['pagenum']
         # 每页谣言数量
@@ -197,9 +197,12 @@ def list_more_rumors(request):
 def judge_rumors(request):
     title = request.params['title']
 
-    # 加载模型
-    model_path = 'fasttext_model.pkl'
-    clf = fasttext.load_model(model_path)
+    try:
+        # 加载模型
+        model_path = 'fasttext_model.pkl'
+        clf = fasttext.load_model(model_path)
+    except:
+        print("模型加载失败")
 
     # 加载停用词表
     stopwords = [
@@ -215,10 +218,13 @@ def judge_rumors(request):
             newstr += word + " "
     newstr = newstr[0:-1]  # 删除最后一个多余的空格
 
-    pred_res = clf.predict(newstr)
-    flag = pred_res[0][0]  # 预测的分类标签  __label__0表示假，即是谣言；__label__1表示真，即不是谣言
-    flag = "true" if flag == "__label__1" else "false"
-    prob = pred_res[1][0]  # 属于该类别的概率
+    try:
+        pred_res = clf.predict(newstr)
+        flag = pred_res[0][0]  # 预测的分类标签  __label__0表示假，即是谣言；__label__1表示真，即不是谣言
+        flag = "true" if flag == "__label__1" else "false"
+        prob = pred_res[1][0]  # 属于该类别的概率
+    except:
+        print("预测失败")
 
     return JsonResponse({"ret": 0, "flag": flag, "prob": prob, "msg": ""})
 
