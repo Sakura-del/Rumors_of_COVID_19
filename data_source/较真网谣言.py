@@ -17,16 +17,18 @@ def QQ_fact_rumor_func():
     def One_page_func(page):
         url = f'https://vp.fact.qq.com/loadmore'
         params = {  'artnum'   : 0,
+                    'token'    :'U2FsdGVkX19Bp7EXSafypXhWfJpEtu7aATM%2FbOLq4EfM1WQxnwP0BckiHwkWAAqI',
                     'page'     : page,
                     'stopic'   : '',
                     '&_'       : int(time.time()),
-                    'callback' : page,}
+                    'callback' :f'jsonp{page}',}
         text = requests.get(url = url,params = params).text
 
         try:
             rumor_list = json.loads(re.findall(r'(?:\d*)[(](.*)[)]$',text,re.S)[0].replace('\\n','').replace('\\',''))['content']
         except:
             print(f'较真网，第{page}页解析为json失败')
+            print(text)
             return
 
         target_tag_list = ['疫情','新冠','疫苗','新型冠状']
@@ -61,9 +63,9 @@ def QQ_fact_rumor_func():
         thread.join()
 
 
-    with open('data_source/data_from_creeper/较真网.json','w',encoding = 'utf-8') as file:
+    with open('data_source/data_from_creeper/较真网谣言.json','w',encoding = 'utf-8') as file:
         file.write(json.dumps(rumor_needed_list,ensure_ascii = False))
 
 
-
+QQ_fact_rumor_func()
 func_list = [QQ_fact_rumor_func]
